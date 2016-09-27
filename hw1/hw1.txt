@@ -1,0 +1,516 @@
+Homework 1
+MPCS 51100
+Due Date: Wed, Oct 5, 2016 @ midnight
+
+You should upload 10 .c source code files to your submission dropbox,
+named p1.c, p2.c .. p10.c. Each program must compile with
+gcc on the MPCS cluster / lab computers using -ansi -pedantic. If they fail to compile
+we cannot test them and you will receive no credit.
+
+Grading Notes (very important!):
+
+- All problems are worth an equal 10 points.
+
+- You must include a README.txt file that lists your name, the assignment,
+and a discussion of any shortcomings your code may have. You will receive
+more partial credit if you are able to clearly identify faults or problems
+with your code, rather than letting us find them ourselves.
+
+- Your assignments will be auto-tested. This means that the output
+from your programs must match the formatting shown in the assignment
+sample output EXACTLY. Deviations in formatting may result in large
+deductions. If you are unable to implement the program correctly or
+fully, you may still receive partial credit, so turn in what you have
+done, and specify in the README where things may be problematic. If
+you have questions regarding expectations on the homework, please post
+your questions to Piazza.
+
+- Homework is due at the time listed at the top of the
+assignment. Solutions will be released at the time homework is due;
+thus, under no circumstance will we accept late homework assignments.
+
+- You are welcome to use any sources you wish (text-book, internet,
+etc) as references for this homework assignment. However, you MUST
+identify this reference as a comment in your source code file or
+README, along with the location from which it can be accessed (url,
+etc). Even more importantly -- all submitted work must be original.
+You are NOT allowed to copy verbatim any code from anywhere, even
+if you make a few alterations after copying.
+
+==============================================================================
+
+1 - Integer Endianness - p1.c
+
+Write a program that takes a single integer as input and flips its endianness.
+The integer should be a 4 byte (32 bit) integer (usually type 'int' in C). You 
+will need use bitshifting and the bitwise operators to accomplish this task.
+
+Note that endianness is usually thought of in terms of byte ordering, not
+bit ordering. I.e, if we take the number 457,553 we should get the following
+bit patterns:  
+
+Integer: 457553
+Little Endian Bit Pattern: 10001010 11011111 01100000 00000000
+Big Endian Bit Pattern:    00000000 01100000 11011111 10001010
+Integer: 1375405568
+
+Your program should run as follows:
+
+PROMPT>> ./p1 1
+16777216
+(program ends)
+
+PROMPT>> ./p1 453
+-989790208
+(program ends)
+
+PROMPT>> ./p1 12312
+405798912
+(program ends)
+
+==============================================================================
+
+2 - Floating Point Bit Pattern - p2.c
+
+Write a program that prints the bit pattern of a float. To accomplish this
+task, you will need use bitshifting and the bitwise operators. What are
+the max and min values of a float on the platform you're using?
+
+PROMPT>> ./p2 <input float>
+<output bit pattern (sign exponent mantissa)>
+(program ends)
+
+PROMPT>> ./p2 19.86
+0 10000011 00111101110000101001000
+(program ends)
+
+PROMPT>> ./p2 -19.86
+1 10000011 00111101110000101001000
+(program ends)
+
+PROMPT>> ./p2 4.65e7
+0 10011000 01100010110001000101000
+(program ends)
+
+==============================================================================
+
+3 - Heap - p3.c
+
+A "heap" is defined as a one-dimensional array with the following property:
+
+a[j/2] >= a[j]   for  1 <= j/2 < j <= N
+
+where N/2 means "integer divide" -- that is, the result is
+truncated to the nearest integer. So for example:
+
+a[1] >= a[2]; a[1] >= a[3];
+a[2] >= a[4]; a[2] >= a[5];
+		  .
+		  .
+This makes more sense if we think of it as a tree with a[1] at the root:
+
+           a[1]
+          /    \
+        a[2]  a[3]
+        /  \     
+      a[4] a[5]
+
+
+Then each "parent" must be greater than or equal to its two
+"children". In any case, this turns out to be a very convenient
+arrangement for performing further work very efficiently, such as
+sorting the array.
+
+Write a function heapify as
+
+void heapify(int *f, int n);
+
+that arranges an arbitrary list of integers
+into a heap. For simplicity you should take the integers as input from argv and
+copy them to a separate array after converting with atoi() - this should be done
+in the following function:
+
+int * allocate_array( int argc, char * argv[]);
+
+NOTE - You are NOT allowed to call the C standard library quicksort or any other sorting
+function from within your heapify() function.
+
+NOTE - You must implement an efficient heapify algorithm. Doing a full sort on the
+list (via an insertion sort or a quicksort algorithm, etc) will not count for credit, since
+these are less efficient than simply creating a heap.
+
+Once you have implemented your heapify function, use it in a program that
+accepts an arbitrary length list of integers from the command line via argv, calls
+heapify() on this list, and then outputs the resulting list to stdout.
+
+Here is the starting point for your file (You should only alter the
+heapify() functon and the allocate_array() function. Do not alter test_heap
+or main.):
+
+#include<stdio.h>
+  
+void heapify(int *f, int n)
+{
+	/* Your Code Here */
+}
+
+int * allocate_array( int argc, char * argv[])
+{
+	/* Your Code Here */
+}
+
+int test_heap( int * f, int n)
+{
+	int i;
+	int child_A, child_B;
+
+	for( i = 0; i < n; i++ )
+	{
+		child_A = ( 2 * i ) + 1;
+		child_B = ( 2 * i ) + 2;
+
+		if( child_A < n )
+			if( f[i] < f[child_A] )
+				return -1;
+		
+		if( child_B < n )
+			if( f[i] < f[child_B] )
+				return -1;
+	}
+
+	return 1;
+}
+
+int main(int argc, char * argv[])
+{
+	int result;
+	int i;
+	int n = argc - 1;
+	int * arr = allocate_array( argc, argv );
+
+	heapify( arr, n );
+	result = test_heap( arr, n );
+
+	for( i = 0; i < n; i++ )
+		printf("%d ", arr[i]);
+	printf("\n");
+
+	if( result == 1 )
+		printf("Heap test success!\n");
+	else
+		printf("Heap test failed.\n");
+
+	free(arr);
+
+	return 0;
+}
+
+An example run might look like:
+
+PROMPT>> ./p3 3 1 2 7 4 0 2
+7 4 3 2 0 2 1 
+Heap test success!
+(program ends)
+
+==============================================================================
+4 - 2D Array - p4.c
+
+Write a function that returns a pointer to a pointer to a double
+where the pointer points to a valid address of m pointers-to-double each
+of which points to a valid address of n doubles.
+
+      double **dmatrix(size_t m, size_t n);
+
+Then, write a test main that uses your dmatrix function to allocate
+an array of dimension n x n (inputted via command line, argv[1]).
+Have your test main fill this array with sequential values beginning
+with 0. Then, print these values to standard out in matrix format.
+Specifically, a sample run should look like:
+
+PROMPT>> ./p4 4
+0.0 1.0 2.0 3.0
+4.0 5.0 6.0 7.0
+8.0 9.0 10.0 11.0
+12.0 13.0 14.0 15.0
+(program ends)
+
+==============================================================================
+5 - 2D Contiguous Array - p5.c
+
+Redo (4) now enforcing that the entire allocated block of data
+be contiguous in memory -- ie that each allocated block of size n
+doubles is adjacent to its neighbor block. The prototype should be the same:
+      
+	  double **dmatrix(size_t m, size_t n);
+
+I.e., for an array of 4 x 4, we should be able to access the last element
+with your returned double ** pointer using 1-D or 2-D as:
+
+double ** ptr = dmatrix(4, 4);
+
+ptr[3][3] = 15.0;
+
+if( ptr[3][3] == 15.0 && ptr[0][ (4*4) - 1 ] == 15.0 )
+	printf("Passed Contiguous check\n");
+
+
+Above, we can see that both 2D indexing (ptr[3][3]) and 1D indexing
+(ptr[0][(4*4) - 1]) both work correctly, showing that our matrix
+is indeed contiguous.
+
+Now, write a test main that uses your dmatrix function to allocate
+an array of dimension n x n (inputted via command line, argv[1]).
+Have your test main fill this array with sequential values beginning
+with 0. Then, print these values to standard out in matrix format in
+using both 2D and 1D indexing.
+
+Specifically, a sample run should look like:
+
+PROMPT>> ./p5 4
+Matrix with 1D indexing:
+0.0 1.0 2.0 3.0
+4.0 5.0 6.0 7.0
+8.0 9.0 10.0 11.0
+12.0 13.0 14.0 15.0
+
+Matrix with 2D indexing: 
+0.0 1.0 2.0 3.0
+4.0 5.0 6.0 7.0
+8.0 9.0 10.0 11.0
+12.0 13.0 14.0 15.0
+(program ends)
+
+==============================================================================
+6 - 3D Contiguous Array - p6.c
+
+Redo (5) for a pointer to pointer to pointer to double (3D array of doubles) as:
+
+      double ***d3darr(size_t l, size_t m, size_t n);
+
+The allocation must be contiguous. I.e., for an array of 5 x 5 x
+5, we should be able to access the last element with your returned
+double *** pointer using 1-D or 3-D as:
+
+double *** ptr = d3arr(5, 5, 5);
+
+ptr[4][4][4] = 26.0;
+
+if( ptr[4][4][4] == 26.0 && ptr[0][0][ (5*5*5) - 1 ] == 26.0 )
+	printf("Passed Contiguous check\n");
+
+Now, write a test main that uses your dmatrix function to allocate
+an array of dimension n x n x n (n inputted via command line, argv[1]).
+Have your test main fill this array with sequential values beginning
+with 0. Then, print these values to standard out in matrix format
+using both 3D and 1D indexing.
+
+Specifically, a sample run should look like:
+
+PROMPT>> ./p6 3
+Matrix with 1D indexing:
+0.0 1.0 2.0
+3.0 4.0 5.0
+6.0 7.0 8.0
+
+9.0 10.0 11.0
+12.0 13.0 14.0
+15.0 16.0 17.0
+
+18.0 19.0 20.0
+21.0 22.0 23.0
+24.0 25.0 26.0
+
+Matrix with 3D indexing:
+0.0 1.0 2.0
+3.0 4.0 5.0
+6.0 7.0 8.0
+
+9.0 10.0 11.0
+12.0 13.0 14.0
+15.0 16.0 17.0
+
+18.0 19.0 20.0
+21.0 22.0 23.0
+24.0 25.0 26.0
+(program ends)
+
+==============================================================================
+
+7 - Array Performance - p7.c
+
+Write a program that tests the performance difference between three different 2D
+array of doubles implementation:
+
+	a) Statically allocated 2D array
+	b) Dynamically allocated 2D array, contiguous in memory
+	c) Dynamically allocated 2D array, distributed through memory
+
+Let the dimensions of each array be m = n = 1000, so that each array will 
+have 10^6 elements. Pass the array to the provided kernel functions and time each array. You 
+may find functions in the `time.h’ library to be helpful. The structure of the program 
+will look like
+
+void work_kernel_dynamic(double **U, int m, int n)
+{
+	int i,j;
+	double a = 1.0, b = 0.5, c;
+
+	for( i=1; i < (m-1); i++)
+		for( j=1; j < (n-1); j++)
+		{
+			c = ( a * (U[i+1][j] + U[i-1][j]) ) +
+		            ( b * (U[i][j+1] + U[i][j-1]) ) +
+	                    ( (1 - (2*a) - (2*b)) * U[i][j] );
+		}
+
+	return;
+}
+
+void work_kernel_static(double U[M][N], int m, int n)
+{
+	int i,j;
+	double a = 1.0, = 0.5, c;
+
+	for( i=1; i < (m-1); i++)
+		for( j=1; j < (n-1); j++)
+		{
+			c = ( a * (U[i+1][j] + U[i-1][j]) ) +
+		            ( b * (U[i][j+1] + U[i][j-1]) ) +
+	                    ( (1 - (2*a) - (2*b)) * U[i][j] );
+		}
+
+	return;
+}
+
+
+
+int main(int argc, char * argv[])
+{
+	
+	int m = 1000;
+	int n = 1000;
+
+	/* Declare and allocate your arrays A,B,C */
+	
+	/* Initialize arrays */
+
+	/* time A */
+	work_kernel_static( A, m, n);
+
+	/* time B */
+	work_kernel_dynamic( B, m, n);
+
+	/* time C */
+	work_kernel_dynamic( C, m, n);
+
+	/* Print out timing to stdout in seconds for each array */
+	/* Free memory*/
+	
+	return 0;
+
+}
+
+==============================================================================
+
+8 - Alphabetizer - p8.c
+
+Write a function that alphabetizes lines of text. The sort
+must be done by swapping the pointers themselves and not moving or copying the
+actual text. The function prototype must be:
+
+       void alphabetize(char *text[], int nlines);
+
+Write a test program to read lines from stdin, use alphabetize,
+and send the alphabetized list to stdout. Your program should continue
+reading lines from stdin until it receives EOF (this can be sent from
+the terminal using ctrl+D - or, you can redirect stdin from a file
+using <).
+
+You can assume a maximum number of 500 lines and 200 chars per line.
+
+For example:
+
+if input file "students.txt" reads:
+
+Fan, Aaron
+Sturt, Adam
+Chakravarty, Arnav
+Ali, Asad
+Sandman, Benjamin
+Cunningham, Bryce 
+Braun, Joseph 
+Mai, Conway 
+Du, Mu
+Tong, Jiayang
+Yang, Jinpu 
+O'Harrow, Joseph
+Liang, Junchi
+Mandava, Mayank
+Zhang, Mengyu
+Atanasov, Pero 
+Kramer, Scott 
+Liu, Sen
+Zhu, Wanqi
+Warner, Stephanie
+Wu, Yichen
+
+Running your code should look like:
+
+PROMPT>> ./p8 < students.txt
+Ali, Asad
+Atanasov, Pero 
+Braun, Joseph 
+Chakravarty, Arnav
+Cunningham, Bryce 
+Du, Mu
+Fan, Aaron
+Kramer, Scott 
+Liang, Junchi
+Liu, Sen
+Mai, Conway 
+Mandava, Mayank
+O'Harrow, Joseph
+Sandman, Benjamin
+Sturt, Adam
+Tong, Jiayang
+Warner, Stephanie
+Wu, Yichen
+Yang, Jinpu 
+Zhang, Mengyu
+Zhu, Wanqi
+
+==============================================================================
+
+9. File Read In - p9.c
+
+Write a function (not main) named read_file that reads a text
+file into an array of strings. In C one way to implement this is
+as an array of array of char of fixed length. This is declared as
+
+  char text[MAX_LINES][MAX_CHAR_PER_LINE]
+
+Where MAX_LINES and MAX_CHAR_PER_LINE are #define preprocessor macros.
+
+Write a test main that calls tests read_file (remember to call file
+p9.c) and prints contents to standard out:
+
+PROMPT>> ./p9 <input_file_name>
+(input file printed here)
+(program ends)
+
+For the purposes of this problem, please #define MAX_LINES to 1000 and 
+MAX_CHAR_PER_LINE to 1000.
+
+==============================================================================
+10. - Repeat Counter - p10.c
+
+Write a program that lists all the words in a file that contain
+a repeated letter (two consecutive occurrences of same letter). Include the number of occurrences of each word.
+
+PROMPT>> ./p10 <input_file_name>
+better : 3
+butter : 1
+tall : 1
+(program ends)
+
+You may assume that the maximum number of words in a file is 1000.
