@@ -1,4 +1,4 @@
-Homework 1
+﻿Homework 1
 MPCS 51100
 Due Date: Wed, Oct 5, 2016 @ midnight
 
@@ -514,3 +514,4 @@ tall : 1
 (program ends)
 
 You may assume that the maximum number of words in a file is 1000.
+
