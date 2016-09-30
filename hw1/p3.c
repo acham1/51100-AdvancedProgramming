@@ -1,67 +1,66 @@
 /* ==============================================================================
 
-3 - Heap - p3.c
+	3 - Heap - p3.c	
 
-A "heap" is defined as a one-dimensional array with the following property:
+	A "heap" is defined as a one-dimensional array with the following property:	
 
-a[j/2] >= a[j]   for  1 <= j/2 < j <= N
+	a[j/2] >= a[j]   for  1 <= j/2 < j <= N	
 
-where N/2 means "integer divide" -- that is, the result is
-truncated to the nearest integer. So for example:
+	where N/2 means "integer divide" -- that is, the result is
+	truncated to the nearest integer. So for example:	
 
-a[1] >= a[2]; a[1] >= a[3];
-a[2] >= a[4]; a[2] >= a[5];
-		  .
-		  .
-This makes more sense if we think of it as a tree with a[1] at the root:
+	a[1] >= a[2]; a[1] >= a[3];
+	a[2] >= a[4]; a[2] >= a[5];
+			  .
+			  .
+	This makes more sense if we think of it as a tree with a[1] at the root:	
 
-           a[1]
-          /    \
-        a[2]  a[3]
-        /  \     
-      a[4] a[5]
+	           a[1]
+	          /    \
+	        a[2]  a[3]
+	        /  \     
+	      a[4] a[5]	
+	
 
+	Then each "parent" must be greater than or equal to its two
+	"children". In any case, this turns out to be a very convenient
+	arrangement for performing further work very efficiently, such as
+	sorting the array.	
 
-Then each "parent" must be greater than or equal to its two
-"children". In any case, this turns out to be a very convenient
-arrangement for performing further work very efficiently, such as
-sorting the array.
+	Write a function heapify as	
 
-Write a function heapify as
+	void heapify(int *f, int n);	
 
-void heapify(int *f, int n);
+	that arranges an arbitrary list of integers
+	into a heap. For simplicity you should take the integers as input from argv and
+	copy them to a separate array after converting with atoi() - this should be done
+	in the following function:	
 
-that arranges an arbitrary list of integers
-into a heap. For simplicity you should take the integers as input from argv and
-copy them to a separate array after converting with atoi() - this should be done
-in the following function:
+	int * allocate_array( int argc, char * argv[]);	
 
-int * allocate_array( int argc, char * argv[]);
+	NOTE - You are NOT allowed to call the C standard library quicksort or any other sorting
+	function from within your heapify() function.	
 
-NOTE - You are NOT allowed to call the C standard library quicksort or any other sorting
-function from within your heapify() function.
+	NOTE - You must implement an efficient heapify algorithm. Doing a full sort on the
+	list (via an insertion sort or a quicksort algorithm, etc) will not count for credit, since
+	these are less efficient than simply creating a heap.	
 
-NOTE - You must implement an efficient heapify algorithm. Doing a full sort on the
-list (via an insertion sort or a quicksort algorithm, etc) will not count for credit, since
-these are less efficient than simply creating a heap.
+	Once you have implemented your heapify function, use it in a program that
+	accepts an arbitrary length list of integers from the command line via argv, calls
+	heapify() on this list, and then outputs the resulting list to stdout.	
 
-Once you have implemented your heapify function, use it in a program that
-accepts an arbitrary length list of integers from the command line via argv, calls
-heapify() on this list, and then outputs the resulting list to stdout.
+	Here is the starting point for your file (You should only alter the
+	heapify() function and the allocate_array() function. Do not alter test_heap
+	or main.):	
 
-Here is the starting point for your file (You should only alter the
-heapify() function and the allocate_array() function. Do not alter test_heap
-or main.):
+	//See below	
 
-//See below
+	An example run might look like:	
 
-An example run might look like:
-
-PROMPT>> ./p3 3 1 2 7 4 0 2
-7 4 3 2 0 2 1 
-Heap test success!
-(program ends)
-
+	PROMPT>> ./p3 3 1 2 7 4 0 2
+	7 4 3 2 0 2 1 
+	Heap test success!
+	(program ends)
 
 ============================================================================== */
 

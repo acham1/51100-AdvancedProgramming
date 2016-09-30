@@ -1,24 +1,25 @@
 /* ==============================================================================
-4 - 2D Array - p4.c
 
-Write a function that returns a pointer to a pointer to a double
-where the pointer points to a valid address of m pointers-to-double each
-of which points to a valid address of n doubles.
+	4 - 2D Array - p4.c	
 
-      double **dmatrix(size_t m, size_t n);
+	Write a function that returns a pointer to a pointer to a double
+	where the pointer points to a valid address of m pointers-to-double each
+	of which points to a valid address of n doubles.	
 
-Then, write a test main that uses your dmatrix function to allocate
-an array of dimension n x n (inputted via command line, argv[1]).
-Have your test main fill this array with sequential values beginning
-with 0. Then, print these values to standard out in matrix format.
-Specifically, a sample run should look like:
+	      double **dmatrix(size_t m, size_t n);	
 
-PROMPT>> ./p4 4
-0.0 1.0 2.0 3.0
-4.0 5.0 6.0 7.0
-8.0 9.0 10.0 11.0
-12.0 13.0 14.0 15.0
-(program ends)
+	Then, write a test main that uses your dmatrix function to allocate
+	an array of dimension n x n (inputted via command line, argv[1]).
+	Have your test main fill this array with sequential values beginning
+	with 0. Then, print these values to standard out in matrix format.
+	Specifically, a sample run should look like:	
+
+	PROMPT>> ./p4 4
+	0.0 1.0 2.0 3.0
+	4.0 5.0 6.0 7.0
+	8.0 9.0 10.0 11.0
+	12.0 13.0 14.0 15.0
+	(program ends)
 
 ============================================================================== */
 
