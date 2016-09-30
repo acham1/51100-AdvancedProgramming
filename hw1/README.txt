@@ -11,3 +11,13 @@ p2.c : I got the idea of bitwise casting the float to an unsigned int from this 
 	also 32-bits, which may work in this case, but I don't think is a generally valid 
 	assumption.
 
+p3.c : my heapify function seems to be producing valid heaps, based on sample tests.
+	However, I haven't been able to replicate the example output from the instructions.
+
+p4.c :
+
+p5.c :
+
+p6.c :
+
+p7.c : 
