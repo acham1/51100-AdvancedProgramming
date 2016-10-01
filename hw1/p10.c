@@ -125,7 +125,8 @@ int main(int argc, char * argv[]) {
 		}
 		words_seen++;
 	}			
-
+	
+	print_tree(root);
 	free_tree(root);
 	return EXIT_SUCCESS;
 }
