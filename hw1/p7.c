@@ -126,9 +126,9 @@ int main(int argc, char * argv[])
 	time_C = (end - start) / (double) CLOCKS_PER_SEC;
 
 	/* Print out timing to stdout in seconds for each array */
-	printf("A: %f s\n", time_A);
-	printf("B: %f s\n", time_B);
-	printf("C: %f s\n", time_C);
+	printf("A: %.9f s\n", time_A);
+	printf("B: %.9f s\n", time_B);
+	printf("C: %.9f s\n", time_C);
 
 	/* Free memory*/
 	free(B[0]);
