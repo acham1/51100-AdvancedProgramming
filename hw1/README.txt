@@ -41,6 +41,7 @@ p8.c : OK
 p9.c : OK
 
 p10.c: My program can't handle contractions. For example, "can\'t" will be parsed
-	as two words, "can" and "t". 
-
+	as two words, "can" and "t". Similarly, hyphenated words will be treated
+	as multiple words.
+	
 ==========================
