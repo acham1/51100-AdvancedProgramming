@@ -1,4 +1,4 @@
-﻿Homework 1
+Homework 1
 MPCS 51100
 Due Date: Wed, Oct 5, 2016 @ midnight
 
@@ -369,7 +369,7 @@ void work_kernel_dynamic(double **U, int m, int n)
 void work_kernel_static(double U[M][N], int m, int n)
 {
 	int i,j;
-	double a = 1.0, = 0.5, c;
+	double a = 1.0, b = 0.5, c;
 
 	for( i=1; i < (m-1); i++)
 		for( j=1; j < (n-1); j++)
@@ -505,7 +505,8 @@ MAX_CHAR_PER_LINE to 1000.
 10. - Repeat Counter - p10.c
 
 Write a program that lists all the words in a file that contain
-a repeated letter (two consecutive occurrences of same letter). Include the number of occurrences of each word.
+a repeated letter (two consecutive occurrences of same letter). Include the number of occurrences of each word. Note that the file can contain any words as well
+as the common punctuations marks ‘.’, ‘;’, ‘?’, ‘;’, ‘:’, ‘-‘.
 
 PROMPT>> ./p10 <input_file_name>
 better : 3
@@ -514,4 +515,3 @@ tall : 1
 (program ends)
 
 You may assume that the maximum number of words in a file is 1000.
-
