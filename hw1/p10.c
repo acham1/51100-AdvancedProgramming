@@ -1,4 +1,4 @@
-/* ==============================================================================
+﻿/* ==============================================================================
 
 	10. - Repeat Counter - p10.c	
 
@@ -125,11 +125,8 @@ int main(int argc, char * argv[]) {
 		}
 		words_seen++;
 	}			
-
-	fflush(stdout);
-
-	assert(print_tree(root) == words_seen);
-
+	
+	print_tree(root);
 	free_tree(root);
 	return EXIT_SUCCESS;
 }
