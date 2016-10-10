@@ -2,6 +2,9 @@
 #include <stdlib.h>
 #include <string.h>
 
+int omp_get_thread_num(void);
+int omp_get_max_threads(void);
+
 int main(int argc, char ** argv) {
 	char D[20];
 	memset(D, 50, sizeof(char) * 20);
