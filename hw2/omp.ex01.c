@@ -7,7 +7,7 @@ int omp_get_max_threads(void);
 
 int main(int argc, char ** argv) {
 	char D[20];
-	memset(D, 50, sizeof(char) * 20);
+	memset(D, 1, sizeof(char) * 20);
 	printf("Num threads available: %d\n", omp_get_max_threads());
 	#pragma omp parallel	
 	{
