@@ -8,7 +8,7 @@
 #define M 10000
 #define N 10000
 #define mysqr(x) ((x)*(x))
-
+#define bound(x) ((x) < 1 ? 1 : (x))
 // Added argument t for number of threads to use
 double work_kernel_omp(double **U, double **V, int m, int n, int t)
 {
@@ -85,6 +85,8 @@ int main(int argc, char * argv[])
     for(i=0; i<max; i++) {
         omp_results[i] = (double *) calloc(numTrials, sizeof(double));
     }
+    
+    goto section2;
 
     printf("--------------------------------------------------------------------\n");
     printf("Part 1: Dependence of Runtime Mean and Variance on Number of Threads\n");
@@ -138,8 +140,11 @@ int main(int argc, char * argv[])
     printf("Part 2: Dependence of Runtime Mean and Variance on Problem Size\n");
     printf("---------------------------------------------------------------\n\n");
 
-    printf("The following omp timing results use %d threads:\n\n", max); fflush(stdout);
-    for (i=1; i<=m; i*=10) {
+ section2:
+
+    printf("The following omp timing results use %d threads:\n\n", bound(max/2)); fflush(stdout);
+    for (i=1; i<=M; i*=10) {
+        m = n = i;
         printf("Problem size: m = n = %d\n", i); fflush(stdout);
         printf("Running serial case %d times:\n", numTrials); fflush(stdout);
         printf("\tCollecting trial: "); fflush(stdout);
@@ -161,17 +166,17 @@ int main(int argc, char * argv[])
         printf("\tCollecting trial: "); fflush(stdout);
         for(j=1; j<=numTrials; j++) {
             printf("x"); fflush(stdout);
-            omp_results[max-1][j-1] = work_kernel_omp(B, V, m, n, max);
+            omp_results[bound(max/2) - 1][j-1] = work_kernel_omp(B, V, m, n, bound(max/2));
         }
         for(time_var = 0, j=1; j<=numTrials; j++) {
-            time_var += omp_results[max-1][j-1];
+	  time_var += omp_results[bound(max/2)-1][j-1];
         }
         mean = time_var/numTrials;
         for(variance = 0, i=0; i<numTrials; i++) {
-            variance += mysqr(omp_results[max-1][i] - mean);
+	  variance += mysqr(omp_results[bound(max/2)-1][i] - mean);
         }
         variance = variance/numTrials;
-        printf("\n\t(%2d)-thread: (%3.3lf, %lf)\n\n", max, mean, variance); fflush(stdout);
+        printf("\n\t(%2d)-thread: (%3.3lf, %lf)\n\n", bound(max/2), mean, variance); fflush(stdout);
     }
 
     /* Free memory*/
