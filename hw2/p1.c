@@ -6,6 +6,7 @@
 #include <omp.h>
 #define M 10000
 #define N 10000
+#define mysqr(x) ((x)*(x))
 
 // Added argument t for number of threads to use
 double work_kernel_omp(double **U, double **V, int m, int n, int t)
@@ -48,17 +49,21 @@ double work_kernel_serial(double **U, double **V, int m, int n)
 int main(int argc, char * argv[])
 {
 
-    int i,j;
+    int i,j,max;
     int m = M;
     int n = N;
-    double time, temp;
+    double time, mean, variance;
     int numTrials = 10;
 
-    double *thread_results = (double *) calloc(omp_get_num_threads(), sizeof(double));
+    max = omp_get_max_threads();
+    double *serial_results = (double *) calloc(numTrials, sizeof(double));
+    double **omp_results = (double **) calloc(max, sizeof(double*));
     double *B_block = (double *) malloc(sizeof(double) * m * n);
     double *V_block = (double *) malloc(sizeof(double) * m * n);
     double **B = (double **) malloc(sizeof(double*) * m); 
     double **V = (double **) malloc(sizeof(double*) * m);
+
+    printf("Thread limit: %d\n\n", max);
 
     for(i=0; i<m; i++){
         B[i] = B_block + n*i; 
@@ -71,31 +76,58 @@ int main(int argc, char * argv[])
             B[i][j] = i*n + j;
         }
     }
+    for(i=0; i<max; i++) {
+        omp_results[i] = (double *) calloc(numTrials, sizeof(double));
+    }
 
     /* time serial case  */
-    printf("Running serial case 10 times:\n");
-    for(time = 0, j = 1; j <= numTrials; j++) {
-      temp = work_kernel_serial(B, V, m, n);
-      time += temp;
-      //      printf("\tIteration %d: %lf s\n", j, temp);
+    printf("Running serial case %d times:\n", numTrials); fflush(stdout);
+    printf("\tCollecting trial: "); fflush(stdout);
+    for(j = 1; j <= numTrials; j++) {
+        printf("%d... ", j); fflush(stdout);
+        serial_results[j-1] = work_kernel_serial(B, V, m, n);
     }
-    printf("Average serial time: %lf seconds\n\n", time/numTrials);
+    printf("\n\n"); fflush(stdout);
 
     /* time omp case */
-    printf("Running omp case 10 times:\n");
-    for(i=1; i <= omp_get_max_threads(); i*=2) {
-      time = 0;
-      for(j=0; j < numTrials; j++) {
-	temp =  work_kernel_omp(B, V, m, n, i);
-	time += temp;
-	printf("\tIteration %d using %d threads: %lf\n", j+1, i, temp);
-      }
-      printf("Average %d thread time: %lf\n", i, time/numTrials);
+    for(i=1; i <= max; i++) {
+        printf("Running %d-thread omp case %d times:\n", i, numTrials);
+        printf("\tCollecting trial: ");
+        time = 0;
+        for(j=1; j <= numTrials; j++) {
+            printf("%d... ", j); fflush(stdout);
+        	omp_results[i-1][j-1] =  work_kernel_omp(B, V, m, n, i);
+        }
+        printf("\n"); fflush(stdout);
     }
-    printf("\n");
+    printf("\n"); fflush(stdout);
+
+    printf("Summary of Results (mean(s), variance(s^2)):\n"); fflush(stdout);
+    for(time = 0, i=0; i<numTrials; i++) {
+        time += serial_results[i];
+    }
+    mean = time/numTrials;
+    for(variance = 0, i=0; i<numTrials; i++) {
+        variance += mysqr(serial_results[i] - mean);
+    }
+    variance = variance/numTrials;
+    printf("\t   Serial: (%lf, %lf)\n", mean, variance); fflush(stdout);
+    for(j=1; j<=max;j++) {
+        for(time = 0, i=0; i<numTrials; i++) {
+            time += omp_results[j-1][i];
+        }
+        mean = time/numTrials;
+        for(variance = 0, i=0; i<numTrials; i++) {
+            variance += mysqr(omp_results[j-1][i] - mean);
+        }
+        variance = variance/numTrials;
+        printf("\t%2d-thread: (%lf, %lf)\n", j, mean, variance); fflush(stdout);
+    }
 
     /* Free memory*/
-    free(thread_results);
+    for(i=0; i<max; i++) free(omp_results[i]);
+    free(serial_results);
+    free(omp_results);
     free(B_block);
     free(V_block);
     free(B);
