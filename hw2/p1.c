@@ -1,12 +1,30 @@
+/** Name:       Alan Cham
+ *  Assignment: HW2 Q1 */
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <omp.h>
-#define M 1000
-#define N 1000
+#define M 10000
+#define N 10000
 
-void work_kernel_omp(double **U, double **V, int m, int n)
+double work_kernel_omp(double **U, double **V, int m, int n)
 {
-    /* Fill in your code here */
+    int i,j;
+    double a = 1.0, b = 0.5, c;
+
+    double start = omp_get_wtime();
+#pragma omp for
+    for( i=1; i < (m-1); i++) {
+        for( j=1; j < (n-1); j++) {
+            V[i][j] = ( a * (U[i+1][j] + U[i-1][j]) ) +
+                      ( b * (U[i][j+1] + U[i][j-1]) ) +
+                      ( (1 - (2*a) - (2*b)) * U[i][j] );
+        }
+        if (!(i % 100)) printf("%d at %d\n", i, omp_get_thread_num());
+    }
+    double stop = omp_get_wtime();
+
+    return stop-start;    
 }
 
 double work_kernel_serial(double **U, double **V, int m, int n)
@@ -55,6 +73,8 @@ int main(int argc, char * argv[])
     /* time serial case  */
     time = work_kernel_serial(B, V, m, n);
 	printf("Time for serial: %lf seconds\n", time);
+    time = work_kernel_omp(B, V, m, n);
+    printf("Time for omp: %lf seconds\n", time);
 
     /* Free memory*/
     free(B_block);
