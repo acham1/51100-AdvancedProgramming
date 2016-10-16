@@ -156,8 +156,8 @@ int main(int argc, char * argv[])
             time_var += serial_results[j-1];
         }
         mean = time_var/numTrials;
-        for(variance = 0, i=0; i<numTrials; i++) {
-            variance += mysqr(serial_results[i] - mean);
+        for(variance = 0, j=0; j<numTrials; j++) {
+            variance += mysqr(serial_results[j] - mean);
         }
         variance = variance/numTrials;
         printf("\n\t     Serial: (%3.3lf, %lf)\n", mean, variance); fflush(stdout);
@@ -172,8 +172,8 @@ int main(int argc, char * argv[])
 	  time_var += omp_results[bound(max/2)-1][j-1];
         }
         mean = time_var/numTrials;
-        for(variance = 0, i=0; i<numTrials; i++) {
-	  variance += mysqr(omp_results[bound(max/2)-1][i] - mean);
+        for(variance = 0, j=0; j<numTrials; j++) {
+	  variance += mysqr(omp_results[bound(max/2)-1][j] - mean);
         }
         variance = variance/numTrials;
         printf("\n\t(%2d)-thread: (%3.3lf, %lf)\n\n", bound(max/2), mean, variance); fflush(stdout);
