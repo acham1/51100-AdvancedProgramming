@@ -138,6 +138,42 @@ int main(int argc, char * argv[])
     printf("Part 2: Dependence of Runtime Mean and Variance on Problem Size\n");
     printf("---------------------------------------------------------------\n\n");
 
+    printf("The following omp timing results use %d threads:\n\n", max); fflush(stdout);
+    for (i=1; i<=m; i*=10) {
+        printf("Problem size: m = n = %d\n", i); fflush(stdout);
+        printf("Running serial case %d times:\n", numTrials); fflush(stdout);
+        printf("\tCollecting trial: "); fflush(stdout);
+        for(j=1; j<=numTrials; j++) {
+            printf("x"); fflush(stdout);
+            serial_results[j-1] = work_kernel_serial(B, V, m, n);
+        }
+        for(time_var = 0, j=1; j<=numTrials; j++) {
+            time_var += serial_results[j-1];
+        }
+        mean = time_var/numTrials;
+        for(variance = 0, i=0; i<numTrials; i++) {
+            variance += mysqr(serial_results[i] - mean);
+        }
+        variance = variance/numTrials;
+        printf("\n\t     Serial: (%3.3lf, %lf)\n", mean, variance); fflush(stdout);
+
+        printf("Running omp case %d times:\n", numTrials); fflush(stdout);
+        printf("\tCollecting trial: "); fflush(stdout);
+        for(j=1; j<=numTrials; j++) {
+            printf("x"); fflush(stdout);
+            omp_results[max-1][j-1] = work_kernel_omp(B, V, m, n, max);
+        }
+        for(time_var = 0, j=1; j<=numTrials; j++) {
+            time_var += omp_results[max-1][j-1];
+        }
+        mean = time_var/numTrials;
+        for(variance = 0, i=0; i<numTrials; i++) {
+            variance += mysqr(omp_results[max-1][i] - mean);
+        }
+        variance = variance/numTrials;
+        printf("\n\t(%2d)-thread: (%3.3lf, %lf)\n\n", max, mean, variance); fflush(stdout);
+    }
+
     /* Free memory*/
     for(i=0; i<max; i++) free(omp_results[i]);
     free(serial_results);
