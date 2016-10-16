@@ -54,7 +54,7 @@ int main(int argc, char * argv[])
     int m = M;
     int n = N;
     double time_var, mean, variance;
-    int numTrials = 10;
+    int numTrials = 2;
     time_t mytm;
 
     max = omp_get_max_threads();
