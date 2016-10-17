@@ -7,7 +7,7 @@
 #include <time.h>
 #define mysqr(x) ((x)*(x))
 #define bound(x) ((x) < 1 ? 1 : (x))
-#define N 1000
+#define N 100
 
 float **matrix(int n) {
     float *data = (float *) calloc(n*n, sizeof(float));
