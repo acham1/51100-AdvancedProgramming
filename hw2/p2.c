@@ -27,16 +27,33 @@ void init(float ** M, int n)
 			M[i][j] = (float) ( rand() % 100 );
 }
 
-double mm_omp(int n)
 /* Perform matrix multiplication using OpenMP */
-{
-    /* Fill in code here */
+double mm_omp(int n) {
+	// Allocate arrays
+	float ** A = matrix(n);
+	float ** B = matrix(n);
+	float ** C = matrix(n);
+	init(A,n);
+	init(B,n);
+
+	double start = omp_get_wtime();
+	// Multiply
+#pragma omp parallel for firstprivate(i,j,k,A,B,C,n), schedule(static)
+	for( int i = 0; i < n; i++ )
+		for( int j = 0; j < n; j++ )
+			for( int k = 0; k < n; k++ )
+				C[i][j] += A[i][k] * B[k][j];
+	double stop = omp_get_wtime();
+
+	matrix_free(A);
+	matrix_free(B);
+	matrix_free(C);
+
+    return stop-start;
 }
 
-double mm_serial( int n )
 /* Perform matrix multiplication serially */
-{
-
+double mm_serial( int n ) {
 	// Allocate arrays
 	float ** A = matrix(n);
 	float ** B = matrix(n);
@@ -57,7 +74,6 @@ double mm_serial( int n )
 	matrix_free(C);
 
     return stop-start;
-
 }
 
 int main(int argc, char * argv[])
