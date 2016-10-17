@@ -6,7 +6,7 @@
 #define WRITE_RESULT
 
 // Array dimensions
-#define DIM 500
+#define DIM 1000
 #define DONE DIM*DIM
 
 // Maximum number of iterations
