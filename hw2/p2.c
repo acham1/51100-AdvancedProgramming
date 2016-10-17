@@ -7,7 +7,7 @@
 #include <time.h>
 #define mysqr(x) ((x)*(x))
 #define bound(x) ((x) < 1 ? 1 : (x))
-#define N 10
+#define N 1000
 
 float **matrix(int n) {
     float *data = (float *) calloc(n*n, sizeof(float));
@@ -41,12 +41,11 @@ double mm_omp(int n, int t) {
 
     // Multiply
     double start = omp_get_wtime();
-    /*#pragma omp parallel for num_threads(t), firstprivate(A,B,C,n), schedule(static)*/
+#pragma omp parallel for num_threads(t), firstprivate(A,B,C,n), schedule(static)
     for (int i=0; i<n; i++)
         for (int j=0; j<n; j++)
-	  for (int k=0; k<n; k++) {
+	  for (int k=0; k<n; k++)
                 C[i][j] += A[i][k] * B[k][j];
-	  }
 
     matrix_free(A);
     matrix_free(B);
@@ -84,8 +83,9 @@ int main(int argc, char * argv[]) {
     time_t mytm;
     double time_var, temp, temp2;
     double mean, variance;
-    int numTrials = 2;
+    int numTrials = 10;
     int max = omp_get_max_threads();
+
     double *serial_results = malloc(sizeof(double) * numTrials);
     double **omp_results = malloc(sizeof(double*) * max);
     for (i=0; i<max; i++) omp_results[i] = malloc(sizeof(double) * numTrials);
@@ -147,7 +147,7 @@ int main(int argc, char * argv[]) {
     printf("---------------------------------------------------------------\n\n");
 
     printf("The following omp timing results use %d threads:\n\n", bound(max/2)); fflush(stdout);
-    for (i=1; i<= 10*N; i*=10) {
+    for (i=1; i<= N; i*=10) {
         // print heading information
         n = i;
         printf("Problem size N              : %d\n", i); fflush(stdout);
