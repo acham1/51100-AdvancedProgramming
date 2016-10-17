@@ -41,7 +41,7 @@ double mm_omp(int n, int t) {
 
     // Multiply
     double start = omp_get_wtime();
-#pragma omp parallel for num_threads(t), firstprivate(A,B,C,n), schedule(static)
+    /*#pragma omp parallel for num_threads(t), firstprivate(A,B,C,n), schedule(static)*/
     for (int i=0; i<n; i++)
         for (int j=0; j<n; j++)
             for (int k=0; k<n; k++)
