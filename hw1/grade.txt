@@ -1,0 +1,61 @@
+#####################################################################
+Grade:  97 / 100
+Student: Alan Cham
+Email: alanchamis@gmail.com
+Class: MPCS 51100 Fall 2016
+Homework: 1
+#####################################################################
+Problem 1: Integer Endianness    Grade:  9 / 10
+
+use unsigned but input and output are signed, -1
+
+you can use sizeof(int) instead of hardcoded 4
+it might be more readable to write LAST_BYTE_MASK as 0x000000FF
+no newline at end of file
+
+#####################################################################
+Problem 2: Floating Point Bit Pattern    Grade:  10 / 10
+
+
+#####################################################################
+Problem 3: Heap    Grade:  10 / 10
+
+
+
+
+#####################################################################
+Problem 4: 2D Array    Grade:  10 / 10
+
+very good code. clean and very easy to follow.
+
+#####################################################################
+Problem 5: 2D Contiguous Array    Grade:  10 / 10
+
+
+#####################################################################
+Problem 6: 3D Contiguous Array    Grade:  10 / 10
+
+
+#####################################################################
+Problem 7: Array Performance    Grade:  10 / 10
+
+
+
+#####################################################################
+Problem 8: Alphabetizer    Grade:  10 / 10
+
+
+
+#####################################################################
+Problem 9: File Read In    Grade: 10 / 10
+
+
+
+
+#####################################################################
+Problem 10: Repeat Counter    Grade:  8 / 10
+
+-2 Looks good but not quite what was asked for: wanted to find words with two
+   letters in a row, not just containing the letter more than once.
+
+#####################################################################
