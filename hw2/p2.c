@@ -83,7 +83,7 @@ int main(int argc, char * argv[]) {
     time_t mytm;
 	double time_var, temp, temp2;
     double mean, variance;
-	int numTrials = 1;
+	int numTrials = 2;
 	int max = omp_get_max_threads();
 	double *serial_results = malloc(sizeof(double) * numTrials);
 	double **omp_results = malloc(sizeof(double*) * max);
