@@ -10,70 +10,70 @@
 #define N 1000
 
 float **matrix(int n) {
-	float *data = (float *) calloc(n*n, sizeof(float));
-	float **M  = (float **) malloc(n * sizeof(float*));
+    float *data = (float *) calloc(n*n, sizeof(float));
+    float **M = (float **) malloc(n * sizeof(float*));
 
-	for (int i=0; i<n; i++)
-		M[i] = &data[i*n];
-	return M;
+    for (int i=0; i<n; i++)
+        M[i] = &data[i*n];
+    return M;
 }
 
 void matrix_free( float ** M) {
-	free(M[0]);
-	free(M);
+    free(M[0]);
+    free(M);
 }
 
 void init(float **M, int n) {
-	for (int i=0; i<n; i++)
-		for (int j=0; j<n; j++)
-			M[i][j] = (float) (rand()%100);
+    for (int i=0; i<n; i++)
+        for (int j=0; j<n; j++)
+            M[i][j] = (float) (rand()%100);
 }
 
 /* Perform matrix multiplication using OpenMP */
 // argument t is number of threads to use
 double mm_omp(int n, int t) {
-	// Allocate arrays
-	float **A = matrix(n);
-	float **B = matrix(n);
-	float **C = matrix(n);
-	init(A, n);
-	init(B, n);
+    // Allocate arrays
+    float **A = matrix(n);
+    float **B = matrix(n);
+    float **C = matrix(n);
+    init(A, n);
+    init(B, n);
 
-	// Multiply
-	double start = omp_get_wtime();
+    // Multiply
+    double start = omp_get_wtime();
 #pragma omp parallel for num_threads(t), firstprivate(A,B,C,n), schedule(static)
-	for (int i=0; i<n; i++)
-		for (int j=0; j<n; j++)
-			for (int k=0; k<n; k++)
-				C[i][j] += A[i][k] * B[k][j];
-	double stop = omp_get_wtime();
+    for (int i=0; i<n; i++)
+        for (int j=0; j<n; j++)
+            for (int k=0; k<n; k++)
+                C[i][j] += A[i][k] * B[k][j];
+    double stop = omp_get_wtime();
 
-	matrix_free(A);
-	matrix_free(B);
-	matrix_free(C);
+    matrix_free(A);
+    matrix_free(B);
+    matrix_free(C);
     return stop-start;
 }
 
 /* Perform matrix multiplication serially */
 double mm_serial(int n) {
-	// Allocate arrays
-	float **A = matrix(n);
-	float **B = matrix(n);
-	float **C = matrix(n);
-	init(A, n);
-	init(B, n);
+    // Allocate arrays
+    float **A = matrix(n);
+    float **B = matrix(n);
+    float **C = matrix(n);
+    init(A, n);
+    init(B, n);
 
-	// Multiply
-	double start = omp_get_wtime();
-	for (int i=0; i<n; i++)
-		for (int j=0; j<n; j++)
-			for (int k=0; k<n; k++)
-				C[i][j] += A[i][k] * B[k][j];
-	double stop = omp_get_wtime();
+    // Multiply
+    double start = omp_get_wtime();
+    for (int i=0; i<n; i++)
+        for (int j=0; j<n; j++)
+            for (int k=0; k<n; k++)
+                C[i][j] += A[i][k] * B[k][j];
+    double stop = omp_get_wtime();
 
-	matrix_free(A);
-	matrix_free(B);
-	matrix_free(C);
+    matrix_free(A);
+    matrix_free(B);
+    matrix_free(C);
     return stop-start;
 }
 
@@ -81,12 +81,12 @@ int main(int argc, char * argv[]) {
     int i, j;
     int n = N;
     time_t mytm;
-	double time_var, temp, temp2;
+    double time_var, temp, temp2;
     double mean, variance;
-	int numTrials = 2;
-	int max = omp_get_max_threads();
-	double *serial_results = malloc(sizeof(double) * numTrials);
-	double **omp_results = malloc(sizeof(double*) * max);
+    int numTrials = 2;
+    int max = omp_get_max_threads();
+    double *serial_results = malloc(sizeof(double) * numTrials);
+    double **omp_results = malloc(sizeof(double*) * max);
     for (i=0; i<numTrials; i++) omp_results[i] = malloc(sizeof(double) * numTrials);
 
     // print heading information
@@ -113,7 +113,7 @@ int main(int argc, char * argv[]) {
 
     /* time omp case */
     for (i=1; i<=max; i++) {
-        printf("\nRunning %02d-thread omp case %d times: ", i, numTrials);
+        printf("\nRunning %02d-thread omp case %2d times: ", i, numTrials);
         for (j=1; j<=numTrials; j++) {
             printf("x"); fflush(stdout);
             omp_results[i-1][j-1] =  mm_omp(n, i);
