@@ -6,7 +6,7 @@
 #define WRITE_RESULT
 
 // Array dimensions
-#define DIM 1000
+#define DIM 500
 #define DONE DIM*DIM
 
 // Maximum number of iterations
@@ -95,21 +95,16 @@ double mandelbrot_omp(int is_static, int print) {
 } 
 
 double mandelbrot_serial(int print) {
-    int px, py, iter, *U, i=0, start, end;
+    int px, py, iter, *U, i=0;
     double tmp;
     Complex c, z;
 
     // Allocate global array to collect data 
     U = malloc(DIM*DIM*sizeof(int));
 
-    start = 0;
-    end = DIM*DIM-1;
-
     double tick = omp_get_wtime();
-    for (px=start/DIM; px<=end/DIM; px++) {
+    for (px=0; px<DIM; px++) {
         for (py=0; py<DIM; py++) {
-            if ((px==start/DIM) && (py==0)) py=start%DIM;
-            if ((px==end/DIM) && (py>end % DIM)) break;
             c.real = XMIN + px*(XMAX - XMIN)/(double)DIM;
             c.imag = YMIN + py*(YMAX - YMIN)/(double)DIM;
             z.real = 0;
@@ -121,8 +116,7 @@ double mandelbrot_serial(int print) {
                 z.real = tmp;
                 iter++;
             }
-            U[i] = iter;
-            i++;
+            U[i++] = iter;
         }
     }
     double tock = omp_get_wtime();
