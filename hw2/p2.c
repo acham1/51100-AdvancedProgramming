@@ -76,16 +76,21 @@ double mm_serial( int n ) {
     return stop-start;
 }
 
-int main(int argc, char * argv[])
-{
-
+int main(int argc, char * argv[]) {
     int i,j;
     int n = N;
+    time_t mytm;
+
+    // print heading information
+    time(&mytm);
+    printf("Name:         Alan Cham\n");
+    printf("Date:         %s", asctime(localtime(&mytm)));
+    printf("Assignment:   Hw2 #2\n");
+    printf("Thread limit: %d (on this machine)\n\n", max);
 
 	double time = mm_serial(n);
 	printf("Time for serial: %lf seconds\n", time);
 
     return 0;
-
 }
 

@@ -64,7 +64,7 @@ int main(int argc, char * argv[]) {
     time(&mytm);
     printf("Name:         Alan Cham\n");
     printf("Date:         %s", asctime(localtime(&mytm)));
-    printf("Assignment:   Hw1 #1\n");
+    printf("Assignment:   Hw2 #1\n");
     printf("Thread limit: %d (on this machine)\n\n", max);
 
     /* Initialize arrays */
