@@ -7,3 +7,4 @@ FID = fopen([pathname filename]);
 FORMAT = repmat('%d ', 1, dim);
 [A, COUNT] = fscanf(FID, FORMAT, [dim, inf]);
 imagesc(A');
+fclose(FID);
