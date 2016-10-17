@@ -80,7 +80,7 @@ double mandelbrot_omp(int is_static, int print) {
                 z.real = tmp;
                 iter++;
             }
-            U[py*DIM + px] = iter;
+            U[px*DIM + py] = iter;
         }
     }
     double tock = omp_get_wtime();
