@@ -3,7 +3,7 @@
 #include<omp.h>
 
 // Write array of number of iterations to file
-// #define WRITE_RESULT
+#define WRITE_RESULT
 
 // Array dimensions
 #define DIM 1000
@@ -20,77 +20,121 @@
 
 // Complex number
 typedef struct complex_{
-  double real;
-  double imag;
+    double real;
+    double imag;
 } Complex;
 
-double mandelbrot_serial();
-double mandelbrot_omp();
+double mandelbrot_serial(int print);
+double mandelbrot_omp(int is_static, int print);
+void write_result();
 
 int main(int argc, char **argv){
-
-  double time;
-  time = mandelbrot_serial();
-  printf("Serial version took %f seconds.\n",time);
-  return 0;
-}
-
-double mandelbrot_omp()
-{
-    /* Fill in your code here */
+    double time;
+    time = mandelbrot_omp(1, 1);
+    printf("OMP static version took %f seconds.\n",time);
+    time = mandelbrot_omp(0, 1);
+    printf("OMP dynamic version took %f seconds.\n",time);
+    time = mandelbrot_serial(1);
+    printf("Serial version took %f seconds.\n",time);
     return 0;
 }
 
-double mandelbrot_serial()
-{
+void write_result(char* name, int* U) {
+    int px, py;
+    FILE* f;
 
-  int px, py, iter, ldim, *U, i=0, start, end;
-  double tmp;
-  Complex c, z;
-  FILE *f;
+    if ((f = fopen(name, "w")) == NULL){
+        printf("Error opening file for writing.\n");
+        exit(1);
+    }
+    for (py=0; py<DIM; py++){
+        for (px=0; px<DIM; px++) {
+            fprintf(f, "%d ", U[DIM*px + py]);
+        }
+        fprintf(f, "\n");
+    }
+    fclose(f);
+}
 
-  // Allocate global array to collect data 
-  U = malloc(DIM*DIM*sizeof(int));
+double mandelbrot_omp(int is_static, int print) {
+    /* Fill in your code here */
+    int px, py, iter, *U, i=0, start, end;
+    double tmp;
+    Complex c, z;
 
-  start = 0;
-  end = DIM*DIM-1;
+    // Allocate global array to collect data 
+    U = malloc(DIM*DIM*sizeof(int));
 
-  double tick = omp_get_wtime();
-  for(px=start/DIM; px<=end/DIM; px++){
-      for(py=0; py<DIM; py++){
-          if((px==start/DIM) && (py==0)) py=start%DIM;
-          if((px==end/DIM) && (py>end % DIM)) break;
-          c.real = XMIN + px*(XMAX - XMIN)/(double)DIM;
-          c.imag = YMIN + py*(YMAX - YMIN)/(double)DIM;
-          z.real = 0;
-          z.imag = 0;
-          iter = 0;
-          while(z.real*z.real + z.imag*z.imag < 4 && iter < MAX_ITER){
-              tmp = z.real*z.real - z.imag*z.imag + c.real;
-              z.imag = 2*z.real*z.imag + c.imag;
-              z.real = tmp;
-              iter++;
-          }
-          U[i] = iter;
-          i++;
-      }
-  }
-  double tock = omp_get_wtime();
+    start = 0;
+    end = DIM*DIM-1;
 
-  // Write DIM*DIM array of number of iterations at each point to file
-  #ifdef WRITE_RESULT
-  if((f = fopen("results.txt", "w")) == NULL){
-      printf("Error opening file for writing.\n");
-      exit(1);
-  }
-  for(py=0; py<DIM; py++){
-      for(px=0; px<DIM; px++){
-          fprintf(f, "%d ", U[DIM*px + py]);
-      }
-      fprintf(f, "\n");
-  }
-  fclose(f);
-  #endif
+    double tick = omp_get_wtime();
+    for (px=start/DIM; px<=end/DIM; px++) {
+        for (py=0; py<DIM; py++) {
+            if ((px==start/DIM) && (py==0)) py=start%DIM;
+            if ((px==end/DIM) && (py>end % DIM)) break;
+            c.real = XMIN + px*(XMAX - XMIN)/(double)DIM;
+            c.imag = YMIN + py*(YMAX - YMIN)/(double)DIM;
+            z.real = 0;
+            z.imag = 0;
+            iter = 0;
+            while (z.real*z.real + z.imag*z.imag < 4 && iter < MAX_ITER){
+                tmp = z.real*z.real - z.imag*z.imag + c.real;
+                z.imag = 2*z.real*z.imag + c.imag;
+                z.real = tmp;
+                iter++;
+            }
+            U[i] = iter;
+            i++;
+        }
+    }
+    double tock = omp_get_wtime();
+    #ifdef WRITE_RESULT
+    if (print && is_static) {
+        write_result("omp_static_results.txt", U);
+    } else if (print) {
+        write_result("omp_dynamic_results.txt", U);
+    }
+    #endif
+    return tock-tick; 
+} 
 
-  return tock-tick; 
+double mandelbrot_serial(int print) {
+    int px, py, iter, *U, i=0, start, end;
+    double tmp;
+    Complex c, z;
+
+    // Allocate global array to collect data 
+    U = malloc(DIM*DIM*sizeof(int));
+
+    start = 0;
+    end = DIM*DIM-1;
+
+    double tick = omp_get_wtime();
+    for (px=start/DIM; px<=end/DIM; px++) {
+        for (py=0; py<DIM; py++) {
+            if ((px==start/DIM) && (py==0)) py=start%DIM;
+            if ((px==end/DIM) && (py>end % DIM)) break;
+            c.real = XMIN + px*(XMAX - XMIN)/(double)DIM;
+            c.imag = YMIN + py*(YMAX - YMIN)/(double)DIM;
+            z.real = 0;
+            z.imag = 0;
+            iter = 0;
+            while (z.real*z.real + z.imag*z.imag < 4 && iter < MAX_ITER){
+                tmp = z.real*z.real - z.imag*z.imag + c.real;
+                z.imag = 2*z.real*z.imag + c.imag;
+                z.real = tmp;
+                iter++;
+            }
+            U[i] = iter;
+            i++;
+        }
+    }
+    double tock = omp_get_wtime();
+
+    // Write DIM*DIM array of number of iterations at each point to file
+    #ifdef WRITE_RESULT
+    if (print) write_result("serial_result.txt", U);
+    #endif
+    return tock-tick; 
 }
