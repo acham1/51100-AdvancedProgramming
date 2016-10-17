@@ -7,7 +7,7 @@
 #include <time.h>
 #define mysqr(x) ((x)*(x))
 #define bound(x) ((x) < 1 ? 1 : (x))
-#define N 100
+#define N 10
 
 float **matrix(int n) {
     float *data = (float *) calloc(n*n, sizeof(float));
@@ -44,13 +44,14 @@ double mm_omp(int n, int t) {
     /*#pragma omp parallel for num_threads(t), firstprivate(A,B,C,n), schedule(static)*/
     for (int i=0; i<n; i++)
         for (int j=0; j<n; j++)
-            for (int k=0; k<n; k++)
+	  for (int k=0; k<n; k++) {
                 C[i][j] += A[i][k] * B[k][j];
-    double stop = omp_get_wtime();
+	  }
 
     matrix_free(A);
     matrix_free(B);
     matrix_free(C);
+    double stop = omp_get_wtime();
     return stop-start;
 }
 
@@ -87,7 +88,7 @@ int main(int argc, char * argv[]) {
     int max = omp_get_max_threads();
     double *serial_results = malloc(sizeof(double) * numTrials);
     double **omp_results = malloc(sizeof(double*) * max);
-    for (i=0; i<numTrials; i++) omp_results[i] = malloc(sizeof(double) * numTrials);
+    for (i=0; i<max; i++) omp_results[i] = malloc(sizeof(double) * numTrials);
 
     // print heading information
     time(&mytm);
