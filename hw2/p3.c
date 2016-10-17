@@ -66,7 +66,7 @@ double mandelbrot_omp(int is_static, int print) {
     U = malloc(DIM*DIM*sizeof(int));
 
     double tick = omp_get_wtime();
-#pragma omp parallel for firstprivate(c, z, iter, U, py), schedule(static)
+    //#pragma omp parallel for firstprivate(c, z, iter, U, py), schedule(static)
     for (px=0; px<= DIM-1; px++) {
         for (py=0; py<DIM; py++) {
             c.real = XMIN + px*(XMAX - XMIN)/(double)DIM;
