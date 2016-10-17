@@ -58,21 +58,17 @@ void write_result(char* name, int* U) {
 
 double mandelbrot_omp(int is_static, int print) {
     /* Fill in your code here */
-    int px, py, iter, *U, i=0, start, end;
+    int px = 0, py = 0, iter = 0, *U;
     double tmp;
     Complex c, z;
 
     // Allocate global array to collect data 
     U = malloc(DIM*DIM*sizeof(int));
 
-    start = 0;
-    end = DIM*DIM-1;
-
     double tick = omp_get_wtime();
-    for (px=start/DIM; px<=end/DIM; px++) {
+#pragma omp parallel for firstprivate(c, z, iter, U, py), schedule(static)
+    for (px=0; px<= DIM-1; px++) {
         for (py=0; py<DIM; py++) {
-            if ((px==start/DIM) && (py==0)) py=start%DIM;
-            if ((px==end/DIM) && (py>end % DIM)) break;
             c.real = XMIN + px*(XMAX - XMIN)/(double)DIM;
             c.imag = YMIN + py*(YMAX - YMIN)/(double)DIM;
             z.real = 0;
@@ -84,8 +80,7 @@ double mandelbrot_omp(int is_static, int print) {
                 z.real = tmp;
                 iter++;
             }
-            U[i] = iter;
-            i++;
+            U[px*DIM + py] = iter;
         }
     }
     double tock = omp_get_wtime();
