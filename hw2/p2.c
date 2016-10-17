@@ -116,7 +116,7 @@ int main(int argc, char * argv[]) {
         printf("\nRunning %02d-thread omp case %2d times: ", i, numTrials);
         for (j=1; j<=numTrials; j++) {
             printf("x"); fflush(stdout);
-            omp_results[i-1][j-1] =  mm_omp(n, i);
+            omp_results[i-1][j-1] = mm_omp(n, i);
         }
     }
 
