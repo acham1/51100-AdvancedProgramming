@@ -188,6 +188,7 @@ int main(int argc, char * argv[]) {
     	printf("OMP Time Ratio to Serial    : %3.3lf\n\n", mean/temp); fflush(stdout);
     }
 
+    for (i=0; i<max; i++) free(omp_results[i]);
     free(omp_results);
     free(serial_results);
     return 0;
