@@ -184,7 +184,7 @@ int main(int argc, char **argv){
         // print results summary
         printf("\nSerial                           : (%3.3lf, %lf, %5.3lf)\n", temp, temp2, 1.0);
         printf("%02d-thread static                 : (%3.3lf, %lf, %5.3lf)\n", bound(max/2), mean, variance, mean/temp);
-        printf("%02d-thread dynamic                : (%3.3lf, %lf, %5.3lf)\n\n", bound(max/2), mean, variance, mean2/temp); 
+        printf("%02d-thread dynamic                : (%3.3lf, %lf, %5.3lf)\n\n", bound(max/2), mean2, variance, mean2/temp); 
         fflush(stdout);
     }
 
