@@ -304,9 +304,9 @@ double mandelbrot_omp(int prob_size, int is_static, int print, int threads, int 
     tock = omp_get_wtime();
     #ifdef WRITE_RESULT
     if (print && is_static) {
-        write_result("p3.static_results.txt", U, prob_size);
+        write_result("p3.results_static.txt", U, prob_size);
     } else if (print) {
-        write_result("p3.dynamic_results.txt", U, prob_size);
+        write_result("p3.results_dynamic.txt", U, prob_size);
     }
     #endif
     return tock-tick; 
@@ -341,7 +341,7 @@ double mandelbrot_serial(int prob_size, int print) {
 
     // Write DIM*DIM array of number of iterations at each point to file
     #ifdef WRITE_RESULT
-    if (print) write_result("p3.serial_result.txt", U, prob_size);
+    if (print) write_result("p3.results_serial.txt", U, prob_size);
     #endif
     return tock-tick; 
 }
