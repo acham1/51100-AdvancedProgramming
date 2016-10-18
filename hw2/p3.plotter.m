@@ -36,4 +36,4 @@ axis equal;
 title('dynamic omp');
 fclose(FID);
 
-print([pathname 'p3.mandelbot_results.png'], '-dpng');
+print([pathname 'p3.results_mandelbrot.png'], '-dpng');
