@@ -7,7 +7,7 @@
 #define WRITE_RESULT
 
 // Array dimensions
-#define DIM 100
+#define DIM 1000
 #define DONE DIM*DIM
 
 // Maximum number of iterations
@@ -33,14 +33,15 @@ double mandelbrot_omp(int prob_size, int is_static, int print, int threads, int 
 void write_result(char* name, int* U, int prob_size);
 
 int main(int argc, char **argv){
-    int i, j, n;
+    int i, j, n = DIM;
     double time_var, time_var2;
     double mean, mean2, variance, variance2;
     double temp, temp2;
-    int numTrials = 1;
+    int numTrials = 10;
     int max = omp_get_max_threads();
     time_t mytm;
 
+    double* chunk_results = malloc(sizeof(double) * numTrials);
     double* serial_results = malloc(sizeof(double) * numTrials);
     double** static_results = malloc(sizeof(double*) * max);
     for (i=0; i<max; i++) static_results[i] = malloc(sizeof(double) * numTrials);
@@ -49,9 +50,9 @@ int main(int argc, char **argv){
 
     // print heading information
     time(&mytm);
-    printf("Name:         Alan Cham\n");
-    printf("Date:         %s", asctime(localtime(&mytm)));
-    printf("Assignment:   Hw2 #3\n");
+    printf("Name        : Alan Cham\n");
+    printf("Date        : %s", asctime(localtime(&mytm)));
+    printf("Assignment  : Hw2 #3\n");
     printf("Thread limit: %d (on this machine)\n\n", max);
 
     printf("--------------------------------------------------------------------\n");
@@ -70,34 +71,39 @@ int main(int argc, char **argv){
     }
 
     /* time static omp case */
+    printf("\n");
     for (i=1; i<=max; i++) {
         printf("\nRunning %02d-thread static omp case %2d times : ", i, numTrials);
         for (j=1; j<=numTrials; j++) {
-            printf("x"); fflush(stdout);
+            printf("x"); 
+            fflush(stdout);
             static_results[i-1][j-1] = mandelbrot_omp(DIM, 1, i==max && j==numTrials, i, 0);
         }
     }
+    printf("\n");
 
     /* time dynamic omp case */
     for (i=1; i<=max; i++) {
         printf("\nRunning %02d-thread dynamic omp case %2d times: ", i, numTrials);
         for (j=1; j<=numTrials; j++) {
-            printf("x"); fflush(stdout);
+            printf("x"); 
+            fflush(stdout);
             dynamic_results[i-1][j-1] = mandelbrot_omp(DIM, 0, i==max && j==numTrials, i, 0);
         }
     }
 
     // calculate serial mean and variance
-    printf("\n\nSummary of Results (mean(s), variance(s^2), Ratio to Serial Time):\n"); fflush(stdout);
+    printf("\n\nSummary of Results (mean s, variance s^2, ratio to serial time):\n");
     for (time_var=0, i=0; i<numTrials; i++) 
         time_var += serial_results[i];
     temp = mean = time_var/numTrials;
     for(variance=0, i=0; i<numTrials; i++) 
         variance += mysqr(serial_results[i] - mean);
     variance = variance/numTrials;
-    printf("Serial           : (%3.3lf, %lf, %3.3lf)\n", mean, variance, 1.0); fflush(stdout);
+    printf("Serial   :      (%6.3lf, %6lf, %6.3lf)\n\n", mean, variance, 1.0);
     
     // calculate omp mean and variance
+    printf("Threads         Static                         Dynamic\n");
     for(j=1; j<=max;j++) {
         for(time_var = time_var2 = 0, i=0; i<numTrials; i++) {
             time_var += static_results[j-1][i];
@@ -112,20 +118,22 @@ int main(int argc, char **argv){
         }
         variance = variance/numTrials;
         variance2 = variance2/numTrials;
-        printf("%02d-thread static : (%3.3lf, %lf, %3.3lf)\n", j, mean, variance, mean/temp); fflush(stdout);
-        printf("%02d-thread dynamic: (%3.3lf, %lf, %3.3lf)\n", j, mean2, variance2, mean2/temp); fflush(stdout);
+        printf("%02d-thread:      (%6.3lf, %6lf, %6.3lf)", j, mean, variance, mean/temp); 
+        printf("     (%6.3lf, %6lf, %6.3lf)\n", mean2, variance2, mean2/temp);
     }
 
     printf("\n---------------------------------------------------------------\n");
     printf("Part 2: Dependence of Runtime Mean and Variance on Problem Size\n");
     printf("---------------------------------------------------------------\n\n");
 
-    printf("The following omp timing results use %d threads:\n\n", bound(max/2)); fflush(stdout);
+    printf("The following omp timing results use %d threads:\n", bound(max/2));
+    printf("Resuts given in tuple format (mean s, variance s^2, ratio to serial time):\n\n");
+
     for (i=1; i<= DIM; i*=10) {
         // print heading information
         n = i;
-        printf("Problem size DIM                  : %d\n", i); fflush(stdout);
-        printf("Running serial case %02d times      : ", numTrials); fflush(stdout);
+        printf("Problem size DIM                 : %d\n", i);
+        printf("Running serial case %02d times     : ", numTrials);
 
         // print progress update for serial case
         for(j=1; j<=numTrials; j++) {
@@ -142,9 +150,10 @@ int main(int argc, char **argv){
         temp2 = variance = variance/numTrials;
 
         // print progress update for static case
-        printf("\nRunning static omp case %02d times  : ", numTrials); fflush(stdout);
+        printf("\nRunning static omp case %02d times : ", numTrials);
         for(j=1; j<=numTrials; j++) {
-            printf("x"); fflush(stdout);
+            printf("x"); 
+            fflush(stdout);
             static_results[bound(max/2) - 1][j-1] = mandelbrot_omp(n, 1, 0, bound(max/2), 0);
         }
 
@@ -157,9 +166,10 @@ int main(int argc, char **argv){
         variance = variance/numTrials;
 
         // print progress update for dynamic case
-        printf("\nRunning dynamic omp case %02d times : ", numTrials); fflush(stdout);
+        printf("\nRunning dynamic omp case %02d times: ", numTrials);
         for(j=1; j<=numTrials; j++) {
-            printf("x"); fflush(stdout);
+            printf("x"); 
+            fflush(stdout);
             dynamic_results[bound(max/2) - 1][j-1] = mandelbrot_omp(n, 0, 0, bound(max/2), 0);
         }
 
@@ -172,11 +182,30 @@ int main(int argc, char **argv){
         variance2 = variance2/numTrials;
 
         // print results summary
-        printf("\nSerial (mean, variance)           : %3.3lf, %lf\n", temp, temp2); fflush(stdout);
-        printf("%02d-thread static (mean, variance) : %3.3lf, %lf\n", bound(max/2), mean, variance); fflush(stdout);
-        printf("%02d-thread dynamic (mean, variance): %3.3lf, %lf\n", bound(max/2), mean, variance); fflush(stdout);
-        printf("Static OMP Time Ratio to Serial   : %3.3lf\n", mean/temp); fflush(stdout);
-        printf("Dynamic OMP Time Ratio to Serial  : %3.3lf\n\n", mean2/temp); fflush(stdout);
+        printf("\nSerial                           : (%3.3lf, %lf, %5.3lf)\n", temp, temp2, 1.0);
+        printf("%02d-thread static                 : (%3.3lf, %lf, %5.3lf)\n", bound(max/2), mean, variance, mean/temp);
+        printf("%02d-thread dynamic                : (%3.3lf, %lf, %5.3lf)\n\n", bound(max/2), mean, variance, mean2/temp); 
+        fflush(stdout);
+    }
+
+    printf("--------------------------------------------------------------------\n");
+    printf("Part 3: Dependence of Static Runtime Mean and Variance on Chunk Size\n");
+    printf("--------------------------------------------------------------------\n\n");
+
+    printf("The following omp timing results use %d threads:\n", bound(max/2));
+    printf("The following omp timing results use problem size DIM = %d\n\n", DIM);
+
+    for (j=1; j<=DIM; j*=10) {
+        mean = variance = 0;
+        printf("Chunk size                        : %d\n", j);
+        printf("Computing static omp case %2d times: ", numTrials);
+        for (i=0; i<numTrials; i++) { 
+            printf("x");
+            chunk_results[i] = mandelbrot_omp(DIM, 1, 0, bound(max/2), j);
+        }
+	for (i=0; i<numTrials; i++) mean += chunk_results[i]/numTrials;
+        for (i=0; i<numTrials; i++) variance += mysqr(chunk_results[i] - mean)/numTrials;
+        printf("\n(Mean s, Variance s^2)            : (%5.3lf, %6lf)\n\n", mean, variance);
     }
 
     for (i=0; i<max; i++) free(static_results[i]);
