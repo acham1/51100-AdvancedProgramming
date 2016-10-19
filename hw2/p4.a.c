@@ -6,15 +6,17 @@
 #include <time.h>
 #include <ctype.h>
 #include <string.h>
-
+#include <p4.tree.h>
 #define MAX_LEN 100
 
-typedef enum command {ADD, DELETE, FIND, PRINT, IGNORE, EXCESS, EXIT, OTHER} COMMAND;
+typedef enum command_ {
+    ADD, DELETE, FIND, PRINT, IGNORE, EXCESS, EXIT, OTHER
+} Command;
 
 char burn_to_end(void);
 void print_heading(void);
 char get_string(char* destination, int maximum);
-COMMAND load_command(char* command_text, char* word, char* definition);
+Command load_command(char* command_text, char* word, char* definition);
 
 int main(int argc, char* argv[]) {
     int quit = 0;
@@ -22,7 +24,8 @@ int main(int argc, char* argv[]) {
     char definition[MAX_LEN + 1];
     char command_text[MAX_LEN + 1];
     clock_t start, end;
-    COMMAND new_command;
+    Com
+    mand new_command;
 
     print_heading();
     start = clock();
@@ -30,6 +33,7 @@ int main(int argc, char* argv[]) {
         new_command = load_command(command_text, word, definition);
         if (new_command == ADD || new_command == FIND || new_command == DELETE) {
             if (!strlen(word)) {
+           
                 printf("Error: no word detected.\n");
                 continue;
             }
@@ -92,16 +96,18 @@ char get_string(char* destination, int maximum) {
     return c;
 }
 
-COMMAND load_command(char* command_text, char* word, char* definition) {
-    COMMAND new_command;
+Command load_command(char* command_text, char* word, char* definition) {
+    Command new_command;
     int i = 0;
     char c;
 
     printf("\n%% ");
     // get first word
     c = get_string(command_text, MAX_LEN);
-    ungetc(c, stdin);
-    if (c != '\n' && !feof(stdin) && !isspace(c)) {
+    ung
+    etc(c, stdin);
+    if (c !
+        = '\n' && !feof(stdin) && !isspace(c)) {
         burn_to_end();
         return EXCESS;
     } else if (!strcmp(command_text, "add")) {
