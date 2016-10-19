@@ -67,7 +67,7 @@ int main(int argc, char* argv[]) {
     }
     end = clock();
     printf("\n==================================================================\n");
-    printf("\nTotal Runtime: %lf\n\n", (double)(start-end)/CLOCKS_PER_SEC);
+    printf("\nTotal Runtime: %lf\n\n", (double)(end-start)/CLOCKS_PER_SEC);
     return EXIT_SUCCESS;
 }
 
@@ -82,11 +82,11 @@ char burn_to_end(void) {
 // returns character after the last stored character
 char get_string(char* destination, int maximum) {
     int i = 0;
-    char c;
+    char c = EOF;
 
-    while (isspace(c = getchar()));
+    while (!feof(stdin) && isspace(c = getchar()));
     ungetc(c, stdin);
-    while (!isspace(c = getchar()) && c != EOF && i < MAX_LEN) 
+    while (!feof(stdin) && !isspace(c = getchar()) && c != EOF && i < MAX_LEN) 
         destination[i++] = c;
     destination[i++] = '\0';
     return c;
@@ -97,11 +97,11 @@ COMMAND load_command(char* command_text, char* word, char* definition) {
     int i = 0;
     char c;
 
-    printf("%% ");
+    printf("\n%% ");
     // get first word
     c = get_string(command_text, MAX_LEN);
     ungetc(c, stdin);
-    if (c != '\n' && c != EOF && !isspace(c)) {
+    if (c != '\n' && !feof(stdin) && !isspace(c)) {
         burn_to_end();
         return EXCESS;
     } else if (!strcmp(command_text, "add")) {
@@ -129,6 +129,11 @@ COMMAND load_command(char* command_text, char* word, char* definition) {
 
     // get second word
     c = get_string(word, MAX_LEN);
+    if (feof(stdin)) {
+        word[0] = '\0';
+        printf("\n");
+        return new_command;
+    }
     ungetc(c, stdin);
     if (c != '\n' && c != EOF && !isspace(c)) {
         burn_to_end();
@@ -139,7 +144,7 @@ COMMAND load_command(char* command_text, char* word, char* definition) {
     }
 
     // get third word(s)
-    while (isspace(c = getchar()) && c != '\n');
+    while (!feof(stdin) && isspace(c = getchar()) && c != '\n');
     if (c != EOF && c != '\n') {
         definition[i++] = c;
         while ((c = getchar()) != EOF && c != '\n' && c != '"' && i < MAX_LEN) {
@@ -172,5 +177,5 @@ void print_heading(void) {
     printf("    %% exit\n");
     printf("    %% // <rest of line to ignore>\n");
     printf("\n==================================================================\n");
-    printf("\nBegin here:\n\n");
+    printf("\nBegin here:\n");
 }
