@@ -32,7 +32,7 @@ double work_kernel_serial(double **U, double **V, int m, int n) {
     int i,j;
     double a = 1.0, b = 0.5, c;
 
-	double start = omp_get_wtime();
+    double start = omp_get_wtime();
     for( i=1; i < (m-1); i++) {
         for( j=1; j < (n-1); j++) {
             V[i][j] = ( a * (U[i+1][j] + U[i-1][j]) ) +
@@ -40,7 +40,7 @@ double work_kernel_serial(double **U, double **V, int m, int n) {
                       ( (1 - (2*a) - (2*b)) * U[i][j] );
         }
     }
-	double stop = omp_get_wtime();
+    double stop = omp_get_wtime();
     return stop-start;
 }
 
@@ -168,7 +168,7 @@ int main(int argc, char * argv[]) {
         // print results summary
         printf("\nSerial (mean, variance)     : %3.3lf, %lf\n", temp, temp2); fflush(stdout);
         printf("%02d-thread (mean, variance)  : %3.3lf, %lf\n", bound(max/2), mean, variance); fflush(stdout);
-    	printf("OMP Time Ratio to Serial    : %3.3lf\n\n", mean/temp); fflush(stdout);
+        printf("OMP Time Ratio to Serial    : %3.3lf\n\n", mean/temp); fflush(stdout);
     }
 
     /* Free memory*/

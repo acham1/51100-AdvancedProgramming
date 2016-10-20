@@ -203,7 +203,7 @@ int main(int argc, char **argv){
             printf("x");
             chunk_results[i] = mandelbrot_omp(DIM, 1, 0, bound(max/2), j);
         }
-	for (i=0; i<numTrials; i++) mean += chunk_results[i]/numTrials;
+    for (i=0; i<numTrials; i++) mean += chunk_results[i]/numTrials;
         for (i=0; i<numTrials; i++) variance += mysqr(chunk_results[i] - mean)/numTrials;
         printf("\n(Mean s, Variance s^2)            : (%5.3lf, %6lf)\n\n", mean, variance);
     }

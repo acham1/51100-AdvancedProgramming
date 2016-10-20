@@ -44,7 +44,7 @@ double mm_omp(int n, int t) {
 #pragma omp parallel for num_threads(t), firstprivate(A,B,C,n), schedule(static)
     for (int i=0; i<n; i++)
         for (int j=0; j<n; j++)
-	  for (int k=0; k<n; k++)
+      for (int k=0; k<n; k++)
                 C[i][j] += A[i][k] * B[k][j];
 
     matrix_free(A);
@@ -185,7 +185,7 @@ int main(int argc, char * argv[]) {
         // print results summary
         printf("\nSerial (mean, variance)     : %3.3lf, %lf\n", temp, temp2); fflush(stdout);
         printf("%02d-thread (mean, variance)  : %3.3lf, %lf\n", bound(max/2), mean, variance); fflush(stdout);
-    	printf("OMP Time Ratio to Serial    : %3.3lf\n\n", mean/temp); fflush(stdout);
+        printf("OMP Time Ratio to Serial    : %3.3lf\n\n", mean/temp); fflush(stdout);
     }
 
     for (i=0; i<max; i++) free(omp_results[i]);
