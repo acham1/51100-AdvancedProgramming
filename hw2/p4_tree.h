@@ -17,5 +17,6 @@ void* find_obj(Node* tree, void* query_key, int (*cmp)(const void*, const void*)
 int insert_node(Node* tree, void* new_key, void* new_object, int (*cmp)(const void*, const void*));
 int free_tree(Node* tree);
 int free_node(Node* node);
+int delete_node(Node* tree, void* delete_key, int (*cmp)(const void*, const void*));
 
 #endif

@@ -130,13 +130,13 @@ Command load_command(char* command_text, char* word, char* definition) {
         new_command = FIND;
     } else if (!strcmp(command_text, "delete")) {
         new_command = DELETE;
-    } else if (strstr(command_text, "//") == command_text) {
+    } else if ((c == '\n' && !strlen(command_text)) || strstr(command_text, "//") == command_text) {
         burn_to_end();
         return IGNORE;
     } else if (!strcmp(command_text, "print")) {
         burn_to_end();
         return PRINT;
-    } else if (!strlen(command_text) || !strcmp(command_text, "exit")) {
+    } else if ((!strlen(command_text) && c == EOF) || !strcmp(command_text, "exit")) {
         burn_to_end();
         return EXIT;
     } else if (!strlen(command_text) && (c == '\n' || c == EOF)) {

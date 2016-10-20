@@ -14,20 +14,15 @@ int add_word(Dictionary* dic, char* word, char* definition) {
 	int result;
 	char* new_word, * new_def;
 
-	printf("here1\n");
 	new_word = malloc(sizeof(char) * (strlen(word)+1));
 	memcpy(new_word, word, strlen(word)+1);
-	printf("here3\n");
 	new_def = malloc(sizeof(char) * (strlen(definition) + 1));
 	memcpy(new_def, definition, strlen(definition)+1);
-	printf("here4\n");
 	result = insert_node(dic, new_word, new_def, word_cmp);
-	printf("Result was %d\n", result);
 	if (result) {
 		free(new_word);
 		free(new_def);
 	}
-	printf("here2\n");
 	return result;
 }
 
@@ -50,6 +45,7 @@ int print_dict(Dictionary* dic) {
 
 // return 1 if problem, 0 otherwise
 int delete_word(Dictionary* dic, char* word) {
+	delete_node(dic, word, word_cmp);	
 	return 0;
 }
 
