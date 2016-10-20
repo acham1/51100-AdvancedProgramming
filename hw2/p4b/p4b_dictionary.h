@@ -1,6 +1,6 @@
-#ifndef DICTIONARY_H
-#define DICTIONARY_H
-#include <p4_tree.h>
+#ifndef P4B_DICTIONARY_H
+#define P4B_DICTIONARY_H
+#include <p4b_tree.h>
 
 typedef Node Dictionary;
 

@@ -6,7 +6,7 @@
 #include <time.h>
 #include <ctype.h>
 #include <string.h>
-#include <p4_dictionary.h>
+#include <p4a_dictionary.h>
 #define MAX_LEN 500
 
 typedef enum command_ {
@@ -43,20 +43,17 @@ int main(int argc, char* argv[]) {
                 || strlen(definition) < 2) {
                 printf("> Error: definition must be enclosed by quotation marks.\n");
             } else {
-                printf("> Adding word %s with definition %s.\n", word, definition);
                 if (add_word(D, word, definition)) {
                     printf("> Failed. Word exists.\n");
                 }
             }
             break;
         case DELETE:
-            printf("> Deleting word %s.\n", word);
             if (delete_word(D, word)) {
                 printf("> Failed. Word not found. \n");
             }
             break;
         case FIND:
-            printf("> Finding word %s.\n", word);
             if (find_word(D, word, definition)) {
                 printf("> Failed. Word not found. \n");
             } else { 
@@ -64,7 +61,6 @@ int main(int argc, char* argv[]) {
             }
             break;
         case PRINT:
-            printf("> Printing dictionary.\n");
             if (print_dict(D)) {
                 printf("> Failed.\n");
             }

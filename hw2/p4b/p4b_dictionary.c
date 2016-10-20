@@ -1,5 +1,5 @@
-#include <p4_dictionary.h>
-#include <p4_tree.h>
+#include <p4b_dictionary.h>
+#include <p4b_tree.h>
 #include <string.h>
 #include <stdlib.h>
 #include <stdio.h>
@@ -42,7 +42,7 @@ int find_word(Dictionary* dic, char* word, char* def) {
 int print_dict(Dictionary* dic) {
     if (dic->right == NULL) {
         if (dic->left != NULL) {
-            printf("%s: %s\n", (char*) dic->key, (char*) dic->left);
+            printf("> %s: %s\n", (char*) dic->key, (char*) dic->left);
         }
     } else {
         print_dict(dic->left);

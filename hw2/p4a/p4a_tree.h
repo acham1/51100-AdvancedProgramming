@@ -1,8 +1,8 @@
 /** Alan Cham
   * HW2 Q4 */
 
-#ifndef TREE_H
-#define TREE_H
+#ifndef P4A_TREE_H
+#define P4A_TREE_H
 
 typedef struct node_ {
     void* key;
