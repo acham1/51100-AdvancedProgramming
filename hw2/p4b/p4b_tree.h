@@ -5,7 +5,7 @@
 #define P4B_TREE_H
 
 typedef enum color_ {
-    RED, Black
+    RED, BLACK
 } Color;
 
 typedef struct node_ {
@@ -14,6 +14,7 @@ typedef struct node_ {
     void* data;
     struct node_* left;
     struct node_* right;
+    struct node_* parent;
 } Node;
 
 Node* create_tree(void);
@@ -23,5 +24,7 @@ int insert_node(Node* tree, void* new_key, void* new_object, int (*cmp)(const vo
 int free_tree(Node* tree);
 int free_node(Node* node);
 int delete_node(Node* tree, void* delete_key, int (*cmp)(const void*, const void*));
+int get_uncle(Node* node);
+int get_grandparent(Node* node);
 
 #endif

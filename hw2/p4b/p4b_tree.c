@@ -8,6 +8,8 @@
 
 Node* create_node(void) {
     Node* new_node = malloc(sizeof(Node));
+    new_node->color = BLACK;
+    new_node->parent = NULL;
     new_node->left = NULL;
     new_node->right = NULL;
     new_node->key = NULL;
