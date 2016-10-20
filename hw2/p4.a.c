@@ -33,7 +33,7 @@ int main(int argc, char* argv[]) {
         new_command = load_command(command_text, word, definition);
         if ((new_command == ADD || new_command == FIND || new_command == DELETE) 
             && !strlen(word)) {
-            printf("Error: no word detected.\n");
+            printf("> Error: no word detected.\n");
             continue;
         }
         
@@ -41,45 +41,45 @@ int main(int argc, char* argv[]) {
         case ADD:
             if (definition[0] != '"' || definition[strlen(definition) - 1] != '"' 
                 || strlen(definition) < 2) {
-                printf("Error: definition must be enclosed by quotation marks.\n");
+                printf("> Error: definition must be enclosed by quotation marks.\n");
             } else {
-                printf("Adding word %s with definition %s.\n", word, definition);
+                printf("> Adding word %s with definition %s.\n", word, definition);
                 if (add_word(D, word, definition)) {
-                    printf("Failed.\n");
+                    printf("> Failed. Word exists.\n");
                 }
             }
             break;
         case DELETE:
-            printf("Deleting word %s.\n", word);
+            printf("> Deleting word %s.\n", word);
             if (delete_word(D, word)) {
-                printf("Failed.\n");
+                printf("> Failed. Word not found. \n");
             }
             break;
         case FIND:
-            printf("Finding word %s.\n", word);
+            printf("> Finding word %s.\n", word);
             if (find_word(D, word, definition)) {
-                printf("Failed.\n");
+                printf("> Failed. Word not found. \n");
             } else { 
-                printf("%s is defined as %s.\n", word, definition);
+                printf("> %s: %s.\n", word, definition);
             }
             break;
         case PRINT:
-            printf("Printing dictionary.\n");
+            printf("> Printing dictionary.\n");
             if (print_dict(D)) {
-                printf("Failed.\n");
+                printf("> Failed.\n");
             }
             break;
         case EXCESS:
-            printf("Error: excessive input length (limit %d chars).\n", MAX_LEN);
+            printf("> Error: excessive input length (limit %d chars).\n", MAX_LEN);
             break;
         case EXIT:
-            printf("Good-bye.\n");
+            printf("> Good-bye.\n");
             quit = 1;
             break;
         case IGNORE:
             break;
         default:
-            printf("Error: %s is not a recognized command.\n", command_text);
+            printf("> Error: %s is not a recognized command.\n", command_text);
             break;
         }
     }

@@ -40,18 +40,25 @@ int find_word(Dictionary* dic, char* word, char* def) {
 
 // return 1 if problem, 0 otherwise
 int print_dict(Dictionary* dic) {
+    if (dic->right == NULL) {
+        if (dic->left != NULL) {
+            printf("%s: %s\n", (char*) dic->key, (char*) dic->left);
+        }
+    } else {
+        print_dict(dic->left);
+        print_dict(dic->right);
+    }
     return 0;
 }
 
 // return 1 if problem, 0 otherwise
 int delete_word(Dictionary* dic, char* word) {
-    delete_node(dic, word, word_cmp);    
-    return 0;
+    return delete_node(dic, word, word_cmp);    
 }
 
 // return 1 if problem, 0 otherwise
 int free_dictionary(Dictionary* dic) {
-    return 0;
+    return free_tree(dic);
 }
 
 // return 1 is str1 is alphabetically later

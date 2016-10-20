@@ -21,7 +21,14 @@ Node* create_tree(void) {
     return tree;
 }
 
-int free_tree(Node* tree) {
+int free_tree(Node* node) {
+    if (node->right == NULL) {
+        free_node(node);
+    } else {
+        free_tree(node->left);
+        free_tree(node->right);
+        free(node);
+    }
     return 0;
 }
 
@@ -110,13 +117,13 @@ int insert_node(Node* tree, void* new_key, void* new_object, int (*cmp)(const vo
 int delete_node(Node* tree, void* delete_key, int (*cmp)(const void*, const void*)) {
     Node* tmp_node, * upper_node, * other_node;
 
-    printf("Asked to delete %s\n", (char*) delete_key);
     if (tree->left == NULL) {
         return 0;
     } else if (tree->right == NULL) {
-        if (!cmp(tree->key, delete_key)) {
-            printf("here");
+        if (cmp(tree->key, delete_key) == 0) {
             free(tree->left);
+            free(tree->key);
+            tree->key = NULL;
             tree->left = NULL;
             return 0;
         } else {
