@@ -6,8 +6,8 @@
 #include <time.h>
 #include <ctype.h>
 #include <string.h>
-#include <p4.tree.h>
-#define MAX_LEN 100
+#include <p4_dictionary.h>
+#define MAX_LEN 500
 
 typedef enum command_ {
     ADD, DELETE, FIND, PRINT, IGNORE, EXCESS, EXIT, OTHER
@@ -24,36 +24,50 @@ int main(int argc, char* argv[]) {
     char definition[MAX_LEN + 1];
     char command_text[MAX_LEN + 1];
     clock_t start, end;
-    Com
-    mand new_command;
+    Command new_command;
+    Dictionary* D = create_dictionary();
 
     print_heading();
     start = clock();
     while (!feof(stdin) && !quit) {
         new_command = load_command(command_text, word, definition);
-        if (new_command == ADD || new_command == FIND || new_command == DELETE) {
-            if (!strlen(word)) {
-           
-                printf("Error: no word detected.\n");
-                continue;
-            }
+        if ((new_command == ADD || new_command == FIND || new_command == DELETE) 
+            && !strlen(word)) {
+            printf("Error: no word detected.\n");
+            continue;
         }
         
         switch (new_command) {
         case ADD:
-            if (definition[0] != '"' || definition[strlen(definition) - 1] != '"')
+            if (definition[0] != '"' || definition[strlen(definition) - 1] != '"' 
+                || strlen(definition) < 2) {
                 printf("Error: definition must be enclosed by quotation marks.\n");
-            else
+            } else {
                 printf("Adding word %s with definition %s.\n", word, definition);
+                if (add_word(D, word, definition)) {
+                    printf("Failed.\n");
+                }
+            }
             break;
         case DELETE:
             printf("Deleting word %s.\n", word);
+            if (delete_word(D, word)) {
+                printf("Failed.\n");
+            }
             break;
         case FIND:
             printf("Finding word %s.\n", word);
+            if (find_word(D, word, definition)) {
+                printf("Failed.\n");
+            } else { 
+                printf("%s is defined as %s.\n", word, definition);
+            }
             break;
         case PRINT:
             printf("Printing dictionary.\n");
+            if (print_dict(D)) {
+                printf("Failed.\n");
+            }
             break;
         case EXCESS:
             printf("Error: excessive input length (limit %d chars).\n", MAX_LEN);
@@ -72,6 +86,8 @@ int main(int argc, char* argv[]) {
     end = clock();
     printf("\n==================================================================\n");
     printf("\nTotal Runtime: %lf\n\n", (double)(end-start)/CLOCKS_PER_SEC);
+
+    free_dictionary(D);
     return EXIT_SUCCESS;
 }
 
@@ -88,9 +104,9 @@ char get_string(char* destination, int maximum) {
     int i = 0;
     char c = EOF;
 
-    while (!feof(stdin) && isspace(c = getchar()));
+    while (!feof(stdin) && isspace(c = getchar()) && c != '\n');
     ungetc(c, stdin);
-    while (!feof(stdin) && !isspace(c = getchar()) && c != EOF && i < MAX_LEN) 
+    while (!feof(stdin) && !isspace(c = getchar()) && c != EOF && c != '\n' && i < MAX_LEN) 
         destination[i++] = c;
     destination[i++] = '\0';
     return c;
@@ -104,10 +120,8 @@ Command load_command(char* command_text, char* word, char* definition) {
     printf("\n%% ");
     // get first word
     c = get_string(command_text, MAX_LEN);
-    ung
-    etc(c, stdin);
-    if (c !
-        = '\n' && !feof(stdin) && !isspace(c)) {
+    ungetc(c, stdin);
+    if (c != '\n' && !feof(stdin) && !isspace(c)) {
         burn_to_end();
         return EXCESS;
     } else if (!strcmp(command_text, "add")) {
@@ -122,7 +136,7 @@ Command load_command(char* command_text, char* word, char* definition) {
     } else if (!strcmp(command_text, "print")) {
         burn_to_end();
         return PRINT;
-    } else if (!strcmp(command_text, "exit")) {
+    } else if (!strlen(command_text) || !strcmp(command_text, "exit")) {
         burn_to_end();
         return EXIT;
     } else if (!strlen(command_text) && (c == '\n' || c == EOF)) {
@@ -137,6 +151,7 @@ Command load_command(char* command_text, char* word, char* definition) {
     c = get_string(word, MAX_LEN);
     if (feof(stdin)) {
         word[0] = '\0';
+        definition[0] = '\0';
         printf("\n");
         return new_command;
     }
@@ -167,6 +182,8 @@ Command load_command(char* command_text, char* word, char* definition) {
             ungetc(c, stdin);
             burn_to_end();
         }
+    } else {
+        definition[0] = '\0';
     }
     return ADD;
 }
