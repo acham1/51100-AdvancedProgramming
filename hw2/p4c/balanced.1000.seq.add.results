@@ -1,0 +1,6012 @@
+
+==================================================================
+
+Alan Cham
+p4.b: Simple Dictionary via Balanced Model 1 Binary Tree
+
+Acceptable case-sensitive commands (maximum line length 500 chars): 
+    % add word "definition"
+    % delete word
+    % find word
+    % print
+    % exit
+    % // <rest of line to ignore>
+
+==================================================================
+
+Begin here:
+
+% 
+% 
+% > Error: when is not a recognized command.
+
+% insert_case1
+
+% insert_case1
+
+% insert_case1
+insert_case2
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% insert_case1
+insert_case2
+insert case3
+insert case4
+insert case5
+
+% 
+> Good-bye.
+
+==================================================================
+
+Total Runtime: 0.001475
+

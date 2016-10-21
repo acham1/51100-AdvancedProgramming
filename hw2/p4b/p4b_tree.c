@@ -125,7 +125,6 @@ int insert_node(Node* tree, void* new_key, void* new_object, int (*cmp)(const vo
 }
 
 int insert_case1(Node* n) {
-    printf("insert_case1\n");
     if (n->parent == NULL) {
         n->color = BLACK;
         return 0;
@@ -134,7 +133,6 @@ int insert_case1(Node* n) {
 }
 
 int insert_case2(Node* n) {
-    printf("insert_case2\n");
     if (n->parent->color == BLACK) {
         return 0;
     }
@@ -142,7 +140,6 @@ int insert_case2(Node* n) {
 }
 
 int insert_case3(Node* n) {
-    printf("insert case3\n");
     Node* u, * g;
     u = get_uncle(n);
     if (u != NULL && !is_leaf(u) && u->color == RED) {
@@ -169,7 +166,6 @@ int insert_case4(Node* n) {
 }
 
 int insert_case5(Node* n) {
-    printf("insert case5\n");
     Node* g = get_grandparent(n);
     n->parent->color = BLACK;
     g->color = RED;

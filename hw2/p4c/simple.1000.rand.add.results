@@ -1,0 +1,1397 @@
+
+==================================================================
+
+Alan Cham
+p4.a: Simple Dictionary via Unbalanced Model 1 Binary Tree
+
+Acceptable case-sensitive commands (maximum line length 500 chars): 
+    % add word "definition"
+    % delete word
+    % find word
+    % print
+    % exit
+    % // <rest of line to ignore>
+
+==================================================================
+
+Begin here:
+
+% 
+% 
+% > Error: when is not a recognized command.
+
+% 
+% 
+% 
+% 
+% 
+% 
+% 
+% 
+% 
+% 
+% 
+% 
+% 
+% 
+% 
+% 
+% 
+% 
+% 
+% 
+% 
+% 
+% 
+% 
+% 
+% 
+% 
+% 
+% 
+% 
+% 
+% 
+% 
+% 
+% 
+% 
+% 
+% 
+% 
+% 
+% 
+% 
+% 
+% 
+% 
+% > Failed. Word exists.
+
+% 
+% 
+% 
+% 
+% 
+% 
+% 
+% > Failed. Word exists.
+
+% 
+% 
+% 
+% 
+% 
+% > Failed. Word exists.
+
+% 
+% 
+% 
+% 
+% 
+% 
+% 
+% 
+% 
+% 
+% 
+% 
+% > Failed. Word exists.
+
+% 
+% 
+% 
+% 
+% 
+% 
+% 
+% 
+% 
+% 
+% 
+% 
+% > Failed. Word exists.
+
+% 
+% 
+% 
+% 
+% > Failed. Word exists.
+
+% 
+% 
+% 
+% 
+% 
+% 
+% 
+% 
+% 
+% 
+% 
+% 
+% 
+% 
+% 
+% 
+% 
+% 
+% 
+% 
+% 
+% 
+% 
+% 
+% 
+% 
+% 
+% 
+% 
+% 
+% 
+% 
+% 
+% 
+% 
+% 
+% > Failed. Word exists.
+
+% 
+% 
+% 
+% 
+% 
+% > Failed. Word exists.
+
+% 
+% 
+% 
+% 
+% 
+% 
+% 
+% 
+% 
+% > Failed. Word exists.
+
+% 
+% 
+% 
+% 
+% 
+% 
+% 
+% 
+% > Failed. Word exists.
+
+% 
+% 
+% 
+% 
+% 
+% 
+% 
+% 
+% 
+% 
+% 
+% 
+% 
+% > Failed. Word exists.
+
+% 
+% 
+% 
+% 
+% 
+% 
+% 
+% 
+% 
+% 
+% > Failed. Word exists.
+
+% 
+% 
+% > Failed. Word exists.
+
+% 
+% 
+% 
+% 
+% 
+% 
+% > Failed. Word exists.
+
+% 
+% 
+% 
+% 
+% 
+% 
+% 
+% 
+% 
+% 
+% 
+% 
+% 
+% 
+% > Failed. Word exists.
+
+% 
+% 
+% 
+% > Failed. Word exists.
+
+% 
+% > Failed. Word exists.
+
+% 
+% 
+% 
+% 
+% 
+% 
+% 
+% > Failed. Word exists.
+
+% 
+% > Failed. Word exists.
+
+% 
+% 
+% 
+% > Failed. Word exists.
+
+% 
+% > Failed. Word exists.
+
+% 
+% 
+% 
+% 
+% 
+% > Failed. Word exists.
+
+% 
+% 
+% 
+% 
+% 
+% 
+% > Failed. Word exists.
+
+% > Failed. Word exists.
+
+% 
+% 
+% 
+% 
+% 
+% 
+% 
+% > Failed. Word exists.
+
+% 
+% 
+% > Failed. Word exists.
+
+% > Failed. Word exists.
+
+% 
+% 
+% 
+% > Failed. Word exists.
+
+% 
+% > Failed. Word exists.
+
+% 
+% 
+% 
+% 
+% 
+% 
+% 
+% > Failed. Word exists.
+
+% 
+% 
+% 
+% 
+% 
+% 
+% 
+% 
+% 
+% 
+% 
+% 
+% 
+% 
+% 
+% 
+% 
+% 
+% > Failed. Word exists.
+
+% > Failed. Word exists.
+
+% 
+% 
+% 
+% > Failed. Word exists.
+
+% 
+% 
+% 
+% > Failed. Word exists.
+
+% 
+% 
+% 
+% 
+% > Failed. Word exists.
+
+% > Failed. Word exists.
+
+% 
+% 
+% 
+% 
+% 
+% 
+% > Failed. Word exists.
+
+% 
+% 
+% 
+% > Failed. Word exists.
+
+% 
+% > Failed. Word exists.
+
+% 
+% 
+% 
+% 
+% > Failed. Word exists.
+
+% > Failed. Word exists.
+
+% > Failed. Word exists.
+
+% 
+% > Failed. Word exists.
+
+% 
+% 
+% 
+% > Failed. Word exists.
+
+% > Failed. Word exists.
+
+% 
+% 
+% 
+% 
+% 
+% 
+% 
+% 
+% 
+% 
+% 
+% 
+% 
+% 
+% 
+% > Failed. Word exists.
+
+% 
+% > Failed. Word exists.
+
+% 
+% 
+% > Failed. Word exists.
+
+% 
+% 
+% > Failed. Word exists.
+
+% 
+% 
+% 
+% 
+% 
+% 
+% 
+% 
+% 
+% 
+% 
+% > Failed. Word exists.
+
+% 
+% > Failed. Word exists.
+
+% 
+% 
+% 
+% 
+% 
+% 
+% 
+% 
+% 
+% > Failed. Word exists.
+
+% > Failed. Word exists.
+
+% 
+% > Failed. Word exists.
+
+% 
+% 
+% 
+% 
+% 
+% 
+% 
+% 
+% 
+% > Failed. Word exists.
+
+% 
+% 
+% 
+% 
+% 
+% 
+% 
+% 
+% 
+% > Failed. Word exists.
+
+% 
+% > Failed. Word exists.
+
+% 
+% > Failed. Word exists.
+
+% 
+% 
+% > Failed. Word exists.
+
+% 
+% 
+% 
+% 
+% 
+% 
+% 
+% 
+% 
+% > Failed. Word exists.
+
+% 
+% 
+% 
+% > Failed. Word exists.
+
+% > Failed. Word exists.
+
+% > Failed. Word exists.
+
+% 
+% 
+% 
+% 
+% 
+% 
+% > Failed. Word exists.
+
+% 
+% 
+% 
+% > Failed. Word exists.
+
+% > Failed. Word exists.
+
+% 
+% 
+% > Failed. Word exists.
+
+% > Failed. Word exists.
+
+% 
+% 
+% 
+% > Failed. Word exists.
+
+% 
+% > Failed. Word exists.
+
+% > Failed. Word exists.
+
+% 
+% 
+% 
+% > Failed. Word exists.
+
+% 
+% > Failed. Word exists.
+
+% 
+% 
+% 
+% 
+% 
+% > Failed. Word exists.
+
+% 
+% 
+% 
+% 
+% > Failed. Word exists.
+
+% 
+% 
+% 
+% 
+% 
+% > Failed. Word exists.
+
+% 
+% > Failed. Word exists.
+
+% 
+% > Failed. Word exists.
+
+% > Failed. Word exists.
+
+% 
+% 
+% > Failed. Word exists.
+
+% > Failed. Word exists.
+
+% 
+% 
+% 
+% 
+% 
+% > Failed. Word exists.
+
+% 
+% 
+% > Failed. Word exists.
+
+% > Failed. Word exists.
+
+% 
+% 
+% 
+% 
+% > Failed. Word exists.
+
+% > Failed. Word exists.
+
+% > Failed. Word exists.
+
+% 
+% 
+% 
+% > Failed. Word exists.
+
+% 
+% > Failed. Word exists.
+
+% > Failed. Word exists.
+
+% 
+% > Failed. Word exists.
+
+% 
+% 
+% > Failed. Word exists.
+
+% > Failed. Word exists.
+
+% 
+% > Failed. Word exists.
+
+% 
+% 
+% 
+% > Failed. Word exists.
+
+% > Failed. Word exists.
+
+% 
+% > Failed. Word exists.
+
+% > Failed. Word exists.
+
+% > Failed. Word exists.
+
+% > Failed. Word exists.
+
+% > Failed. Word exists.
+
+% 
+% 
+% 
+% 
+% 
+% 
+% > Failed. Word exists.
+
+% > Failed. Word exists.
+
+% 
+% 
+% > Failed. Word exists.
+
+% 
+% > Failed. Word exists.
+
+% 
+% 
+% 
+% 
+% > Failed. Word exists.
+
+% > Failed. Word exists.
+
+% 
+% 
+% > Failed. Word exists.
+
+% 
+% 
+% 
+% > Failed. Word exists.
+
+% 
+% 
+% 
+% > Failed. Word exists.
+
+% > Failed. Word exists.
+
+% 
+% > Failed. Word exists.
+
+% 
+% > Failed. Word exists.
+
+% 
+% > Failed. Word exists.
+
+% > Failed. Word exists.
+
+% 
+% 
+% > Failed. Word exists.
+
+% > Failed. Word exists.
+
+% > Failed. Word exists.
+
+% 
+% 
+% > Failed. Word exists.
+
+% > Failed. Word exists.
+
+% > Failed. Word exists.
+
+% > Failed. Word exists.
+
+% 
+% > Failed. Word exists.
+
+% 
+% > Failed. Word exists.
+
+% > Failed. Word exists.
+
+% > Failed. Word exists.
+
+% 
+% 
+% > Failed. Word exists.
+
+% 
+% > Failed. Word exists.
+
+% > Failed. Word exists.
+
+% > Failed. Word exists.
+
+% > Failed. Word exists.
+
+% 
+% 
+% 
+% 
+% > Failed. Word exists.
+
+% > Failed. Word exists.
+
+% 
+% 
+% > Failed. Word exists.
+
+% > Failed. Word exists.
+
+% 
+% > Failed. Word exists.
+
+% > Failed. Word exists.
+
+% > Failed. Word exists.
+
+% 
+% 
+% 
+% 
+% 
+% 
+% > Failed. Word exists.
+
+% 
+% > Failed. Word exists.
+
+% > Failed. Word exists.
+
+% 
+% > Failed. Word exists.
+
+% > Failed. Word exists.
+
+% 
+% > Failed. Word exists.
+
+% 
+% 
+% 
+% 
+% > Failed. Word exists.
+
+% 
+% 
+% > Failed. Word exists.
+
+% 
+% 
+% 
+% 
+% > Failed. Word exists.
+
+% 
+% 
+% > Failed. Word exists.
+
+% 
+% > Failed. Word exists.
+
+% > Failed. Word exists.
+
+% > Failed. Word exists.
+
+% 
+% 
+% > Failed. Word exists.
+
+% > Failed. Word exists.
+
+% 
+% > Failed. Word exists.
+
+% 
+% > Failed. Word exists.
+
+% 
+% > Failed. Word exists.
+
+% > Failed. Word exists.
+
+% 
+% 
+% 
+% 
+% > Failed. Word exists.
+
+% 
+% 
+% 
+% > Failed. Word exists.
+
+% > Failed. Word exists.
+
+% > Failed. Word exists.
+
+% > Failed. Word exists.
+
+% > Failed. Word exists.
+
+% 
+% 
+% > Failed. Word exists.
+
+% 
+% 
+% 
+% 
+% 
+% > Failed. Word exists.
+
+% 
+% 
+% 
+% > Failed. Word exists.
+
+% > Failed. Word exists.
+
+% > Failed. Word exists.
+
+% 
+% 
+% > Failed. Word exists.
+
+% > Failed. Word exists.
+
+% 
+% > Failed. Word exists.
+
+% 
+% > Failed. Word exists.
+
+% > Failed. Word exists.
+
+% 
+% > Failed. Word exists.
+
+% > Failed. Word exists.
+
+% > Failed. Word exists.
+
+% > Failed. Word exists.
+
+% > Failed. Word exists.
+
+% > Failed. Word exists.
+
+% > Failed. Word exists.
+
+% 
+% 
+% > Failed. Word exists.
+
+% > Failed. Word exists.
+
+% > Failed. Word exists.
+
+% 
+% > Failed. Word exists.
+
+% > Failed. Word exists.
+
+% > Failed. Word exists.
+
+% 
+% > Failed. Word exists.
+
+% 
+% 
+% > Failed. Word exists.
+
+% > Failed. Word exists.
+
+% > Failed. Word exists.
+
+% 
+% > Failed. Word exists.
+
+% 
+% 
+% > Failed. Word exists.
+
+% 
+% 
+% > Failed. Word exists.
+
+% 
+% 
+% 
+% > Failed. Word exists.
+
+% > Failed. Word exists.
+
+% > Failed. Word exists.
+
+% 
+% 
+% 
+% > Failed. Word exists.
+
+% > Failed. Word exists.
+
+% 
+% 
+% 
+% > Failed. Word exists.
+
+% 
+% 
+% 
+% 
+% > Failed. Word exists.
+
+% > Failed. Word exists.
+
+% > Failed. Word exists.
+
+% > Failed. Word exists.
+
+% > Failed. Word exists.
+
+% > Failed. Word exists.
+
+% > Failed. Word exists.
+
+% > Failed. Word exists.
+
+% > Failed. Word exists.
+
+% > Failed. Word exists.
+
+% 
+% 
+% > Failed. Word exists.
+
+% 
+% 
+% > Failed. Word exists.
+
+% > Failed. Word exists.
+
+% 
+% > Failed. Word exists.
+
+% 
+% 
+% > Failed. Word exists.
+
+% 
+% > Failed. Word exists.
+
+% > Failed. Word exists.
+
+% > Failed. Word exists.
+
+% > Failed. Word exists.
+
+% 
+% > Failed. Word exists.
+
+% > Failed. Word exists.
+
+% > Failed. Word exists.
+
+% 
+% > Failed. Word exists.
+
+% 
+% > Failed. Word exists.
+
+% 
+% > Failed. Word exists.
+
+% 
+% 
+% > Failed. Word exists.
+
+% 
+% > Failed. Word exists.
+
+% > Failed. Word exists.
+
+% > Failed. Word exists.
+
+% > Failed. Word exists.
+
+% > Failed. Word exists.
+
+% > Failed. Word exists.
+
+% 
+% > Failed. Word exists.
+
+% 
+% > Failed. Word exists.
+
+% 
+% > Failed. Word exists.
+
+% > Failed. Word exists.
+
+% 
+% > Failed. Word exists.
+
+% > Failed. Word exists.
+
+% 
+% > Failed. Word exists.
+
+% > Failed. Word exists.
+
+% > Failed. Word exists.
+
+% 
+% 
+% > Failed. Word exists.
+
+% 
+% > Failed. Word exists.
+
+% 
+% 
+% 
+% > Failed. Word exists.
+
+% 
+% 
+% 
+% > Failed. Word exists.
+
+% > Failed. Word exists.
+
+% 
+% 
+% 
+% > Failed. Word exists.
+
+% > Failed. Word exists.
+
+% 
+% 
+% 
+% > Failed. Word exists.
+
+% 
+% > Failed. Word exists.
+
+% > Failed. Word exists.
+
+% > Failed. Word exists.
+
+% 
+% 
+% > Failed. Word exists.
+
+% > Failed. Word exists.
+
+% 
+% > Failed. Word exists.
+
+% 
+% 
+% 
+% 
+% > Failed. Word exists.
+
+% > Failed. Word exists.
+
+% > Failed. Word exists.
+
+% > Failed. Word exists.
+
+% > Failed. Word exists.
+
+% > Failed. Word exists.
+
+% > Failed. Word exists.
+
+% > Failed. Word exists.
+
+% > Failed. Word exists.
+
+% 
+% > Failed. Word exists.
+
+% > Failed. Word exists.
+
+% 
+% > Failed. Word exists.
+
+% 
+% > Failed. Word exists.
+
+% > Failed. Word exists.
+
+% > Failed. Word exists.
+
+% > Failed. Word exists.
+
+% > Failed. Word exists.
+
+% > Failed. Word exists.
+
+% > Failed. Word exists.
+
+% 
+% > Failed. Word exists.
+
+% > Failed. Word exists.
+
+% 
+% > Failed. Word exists.
+
+% > Failed. Word exists.
+
+% 
+% > Failed. Word exists.
+
+% 
+% > Failed. Word exists.
+
+% > Failed. Word exists.
+
+% > Failed. Word exists.
+
+% > Failed. Word exists.
+
+% 
+% 
+% 
+% > Failed. Word exists.
+
+% 
+% > Failed. Word exists.
+
+% 
+% 
+% 
+% > Failed. Word exists.
+
+% > Failed. Word exists.
+
+% > Failed. Word exists.
+
+% 
+% > Failed. Word exists.
+
+% > Failed. Word exists.
+
+% > Failed. Word exists.
+
+% > Failed. Word exists.
+
+% > Failed. Word exists.
+
+% > Failed. Word exists.
+
+% 
+% > Failed. Word exists.
+
+% 
+% 
+% 
+% > Failed. Word exists.
+
+% 
+% > Failed. Word exists.
+
+% 
+% > Failed. Word exists.
+
+% > Failed. Word exists.
+
+% 
+% > Failed. Word exists.
+
+% 
+% > Failed. Word exists.
+
+% 
+% > Failed. Word exists.
+
+% > Failed. Word exists.
+
+% > Failed. Word exists.
+
+% 
+% > Failed. Word exists.
+
+% > Failed. Word exists.
+
+% 
+% > Failed. Word exists.
+
+% > Failed. Word exists.
+
+% 
+% > Failed. Word exists.
+
+% > Failed. Word exists.
+
+% 
+% 
+% > Failed. Word exists.
+
+% > Failed. Word exists.
+
+% 
+% > Failed. Word exists.
+
+% > Failed. Word exists.
+
+% 
+% 
+% > Failed. Word exists.
+
+% 
+% 
+% > Failed. Word exists.
+
+% > Failed. Word exists.
+
+% > Failed. Word exists.
+
+% 
+% > Failed. Word exists.
+
+% > Failed. Word exists.
+
+% 
+% > Failed. Word exists.
+
+% 
+% 
+% > Failed. Word exists.
+
+% > Failed. Word exists.
+
+% > Failed. Word exists.
+
+% > Failed. Word exists.
+
+% 
+% 
+% > Failed. Word exists.
+
+% 
+% > Failed. Word exists.
+
+% > Failed. Word exists.
+
+% 
+% > Failed. Word exists.
+
+% > Failed. Word exists.
+
+% 
+% > Failed. Word exists.
+
+% 
+% 
+% > Failed. Word exists.
+
+% > Failed. Word exists.
+
+% > Failed. Word exists.
+
+% > Failed. Word exists.
+
+% > Failed. Word exists.
+
+% > Failed. Word exists.
+
+% 
+% > Failed. Word exists.
+
+% > Failed. Word exists.
+
+% > Failed. Word exists.
+
+% > Failed. Word exists.
+
+% > Failed. Word exists.
+
+% 
+% 
+% > Failed. Word exists.
+
+% > Failed. Word exists.
+
+% 
+% > Failed. Word exists.
+
+% 
+% 
+% > Failed. Word exists.
+
+% > Failed. Word exists.
+
+% 
+% > Failed. Word exists.
+
+% > Failed. Word exists.
+
+% > Failed. Word exists.
+
+% 
+% > Failed. Word exists.
+
+% 
+% > Failed. Word exists.
+
+% > Failed. Word exists.
+
+% > Failed. Word exists.
+
+% 
+% > Failed. Word exists.
+
+% > Failed. Word exists.
+
+% 
+% > Failed. Word exists.
+
+% > Failed. Word exists.
+
+% > Failed. Word exists.
+
+% > Failed. Word exists.
+
+% > Failed. Word exists.
+
+% > Failed. Word exists.
+
+% > Failed. Word exists.
+
+% > Failed. Word exists.
+
+% > Failed. Word exists.
+
+% > Failed. Word exists.
+
+% > Failed. Word exists.
+
+% > Failed. Word exists.
+
+% > Failed. Word exists.
+
+% 
+% > Failed. Word exists.
+
+% 
+> Good-bye.
+
+==================================================================
+
+Total Runtime: 0.001353
+
