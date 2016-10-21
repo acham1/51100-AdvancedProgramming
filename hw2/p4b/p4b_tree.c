@@ -153,7 +153,6 @@ int insert_case3(Node* n) {
 }
 
 int insert_case4(Node* n) {
-    printf("insert case4\n");
     Node* g = get_grandparent(n);
     if (n == n->parent->right && n->parent == g->left) {
         rotate_left(n->parent);
