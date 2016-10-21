@@ -6,6 +6,9 @@
 #include <string.h>
 #include <stdio.h>
 
+// Insertion code based on notes/slides
+// Deletion based on purdue link from notes
+
 Node* create_node(void) {
     Node* new_node = malloc(sizeof(Node));
     new_node->color = RED;
@@ -208,7 +211,7 @@ int delete_node(Node* tree, void* delete_key, int (*cmp)(const void*, const void
     Node* tmp_node, * upper_node, * other_node;
 
     if (tree->left == NULL) {
-        return 0;
+        return 1;
     } else if (tree->right == NULL) {
         if (cmp(tree->key, delete_key) == 0) {
             free(tree->left);
@@ -237,8 +240,12 @@ int delete_node(Node* tree, void* delete_key, int (*cmp)(const void*, const void
             upper_node->key = other_node->key;
             upper_node->left = other_node->left;
             upper_node->right = other_node->right;
+            upper_node->color = other_node->color;
             free(other_node);
             free_node(tmp_node);
+            if (upper_node->color == RED) {
+                return insert_case1(upper_node);
+            }
             return 0;
         }
     }

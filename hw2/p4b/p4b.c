@@ -57,7 +57,7 @@ int main(int argc, char* argv[]) {
             if (find_word(D, word, definition)) {
                 printf("> Failed. Word not found. \n");
             } else { 
-                printf("> %s: %s.\n", word, definition);
+                printf("> %s: %s\n", word, definition);
             }
             break;
         case PRINT:
