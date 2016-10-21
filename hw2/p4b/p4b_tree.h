@@ -24,7 +24,15 @@ int insert_node(Node* tree, void* new_key, void* new_object, int (*cmp)(const vo
 int free_tree(Node* tree);
 int free_node(Node* node);
 int delete_node(Node* tree, void* delete_key, int (*cmp)(const void*, const void*));
-int get_uncle(Node* node);
-int get_grandparent(Node* node);
-
+Node* get_uncle(Node* node);
+Node* get_grandparent(Node* node);
+int insert_case1(Node* n);
+int insert_case2(Node* n);
+int insert_case3(Node* n);
+int insert_case4(Node* n);
+int insert_case5(Node* n);
+void rotate_right(Node* n);
+void rotate_left(Node* n);
+void fix_parent(Node* n, int repeat);
+int is_leaf(Node* n);
 #endif
