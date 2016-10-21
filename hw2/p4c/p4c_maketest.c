@@ -13,8 +13,4 @@ int main(int argc, char* argv[]) {
     }
     return 0;
 
-    for (int i = 0; i < max; i++) {
-      printf("find %d\n", rand() % max);
-    }
-    return EXIT_SUCCESS;
 }
