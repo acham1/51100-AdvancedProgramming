@@ -9,7 +9,7 @@
 #define S_TO_MS 1000
 #define NUM_ARRAYS 68
 #define FILE_NAME_INDEX 1
-#define NUM_WORK_ITERATIONS 1
+#define NUM_WORK_ITERATIONS 1000
 #define my_max(x, y) ((x) > (y) ? (x) : (y))
 #define my_min(x, y) ((x) < (y) ? (x) : (y))
 
@@ -25,7 +25,7 @@ array_set load_arrays(int k, char* file_name);
 long* solution1(double find, array_set arrays, int new);
 long* solution2(double find, array_set arrays, int new);
 long* solution3(double find, array_set arrays, int new);
-long db_bsearch(double* array, long start, long end, double key);
+long db_bsearch(double* array, long start, long end, long len, double key);
 double work_kernel(int iters, array_set arrays, long* (*solution)(double, array_set, int));
 
 int main (int argc, char* argv[]) {
@@ -44,6 +44,7 @@ int main (int argc, char* argv[]) {
         return EXIT_FAILURE;
     }
 
+    srand(time(NULL));
     printf("Working strategy 1: ");
     time1 = work_kernel(wi, arrays, solution1);
     printf("Working strategy 2: ");
@@ -72,19 +73,42 @@ double work_kernel(int iters, array_set arrays, long* (*solve)(double, array_set
 
     for (int i = 0; i < iters; i++) {
         find = arrays.min + factor*rand();
-        printf("x");
+//        printf("finding %lf\n", find);
+//        printf("x");
         fflush(stdin);
         start = clock();
         indices = solve(find, arrays, i == 0);
         elapsed += (clock() - start)/(double)CLOCKS_PER_SEC;
+//        for (int j = 0; j < arrays.num_arrays; j++) {
+//            printf("%lf ", arrays.array_2d[j][indices[j]]);
+//        }
+//        printf("\nend\n");
         free(indices);
     }
     printf("\n");
+//    printf("wk_end\n");
     return elapsed;
 }
 
-long db_bsearch(double* array, long start, long end, double key) {
-    return 0;
+long db_bsearch(double* array, long start, long end, long len, double key) {
+    long mid = (start+end+1)/2;
+
+    if (start >= end) {
+        if (key == array[end]) {
+            return end;
+        } else if (key > array[end]) {
+            return my_min(end+1, len-1);
+        } else {
+            return end;
+        }
+    }
+    if (key == array[mid]) {
+        return mid;
+    } else if (key < array[mid]) {
+        return db_bsearch(array, start, mid-1, len, key);
+    } else {
+        return db_bsearch(array, mid+1, end, len, key);
+    }
 }
 
 long* solution1(double find, array_set arrays, int new) {
@@ -94,7 +118,7 @@ long* solution1(double find, array_set arrays, int new) {
 
     for (int i = 0; i < num_arrays; i++) {
         len = arrays.lens[i];
-        indices[i] = db_bsearch(arrays.array_2d[i], 0, len - 1, find);
+        indices[i] = db_bsearch(arrays.array_2d[i], 0, len - 1, len, find);
     }
     return indices;
 }
