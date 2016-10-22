@@ -4,21 +4,28 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
+#include <float.h>
 
-#define FILE_NAME_INDEX 1
+#define S_TO_MS 1000
 #define NUM_ARRAYS 68
+#define FILE_NAME_INDEX 1
 #define NUM_WORK_ITERATIONS 1
+#define my_max(x, y) ((x) > (y) ? (x) : (y))
+#define my_min(x, y) ((x) < (y) ? (x) : (y))
 
 typedef struct array_set {
     double** array_2d;
     int num_arrays;
     long* lens;
+    double min;
+    double max;
 } array_set;
 
 array_set load_arrays(int k, char* file_name);
 long* solution1(double find, array_set arrays, int new);
 long* solution2(double find, array_set arrays, int new);
 long* solution3(double find, array_set arrays, int new);
+long db_bsearch(double* array, long start, long end, double key);
 double work_kernel(int iters, array_set arrays, long* (*solution)(double, array_set, int));
 
 int main (int argc, char* argv[]) {
@@ -37,13 +44,16 @@ int main (int argc, char* argv[]) {
         return EXIT_FAILURE;
     }
 
+    printf("Working strategy 1: ");
     time1 = work_kernel(wi, arrays, solution1);
+    printf("Working strategy 2: ");
     time2 = work_kernel(wi, arrays, solution2);
+    printf("Working strategy 3: ");
     time3 = work_kernel(wi, arrays, solution3);
 
-    printf("Solution 1: takes %lf s\n", time1);
-    printf("Solution 2: takes %lf s\n", time2);
-    printf("Solution 3: takes %lf s\n", time3);
+    printf("Solution 1: takes %lf ms\n", time1*S_TO_MS);
+    printf("Solution 2: takes %lf ms\n", time2*S_TO_MS);
+    printf("Solution 3: takes %lf ms\n", time3*S_TO_MS);
 
     for (int i = 0; i < k; i++) {
         free(arrays.array_2d[i]);
@@ -54,11 +64,39 @@ int main (int argc, char* argv[]) {
 }
 
 double work_kernel(int iters, array_set arrays, long* (*solve)(double, array_set, int)) {
+    double factor = (arrays.max-arrays.min)/RAND_MAX;
+    double elapsed = 0;
+    long* indices;
+    clock_t start;
+    double find;
+
+    for (int i = 0; i < iters; i++) {
+        find = arrays.min + factor*rand();
+        printf("x");
+        fflush(stdin);
+        start = clock();
+        indices = solve(find, arrays, i == 0);
+        elapsed += (clock() - start)/(double)CLOCKS_PER_SEC;
+        free(indices);
+    }
+    printf("\n");
+    return elapsed;
+}
+
+long db_bsearch(double* array, long start, long end, double key) {
     return 0;
 }
 
 long* solution1(double find, array_set arrays, int new) {
-    return NULL;
+    long* indices = malloc(sizeof(long) * arrays.num_arrays);
+    int num_arrays = arrays.num_arrays;
+    long len;
+
+    for (int i = 0; i < num_arrays; i++) {
+        len = arrays.lens[i];
+        indices[i] = db_bsearch(arrays.array_2d[i], 0, len - 1, find);
+    }
+    return indices;
 }
 
 long* solution2(double find, array_set arrays, int new) {
@@ -74,6 +112,8 @@ array_set load_arrays(int k, char* file_name) {
     long num_nums;
     array_set arrays;
     double** array_2d;
+    double max = -DBL_MAX;
+    double min = +DBL_MAX;
     FILE* file_ptr = fopen(file_name, "r");
 
     if (file_ptr == NULL) {
@@ -84,21 +124,20 @@ array_set load_arrays(int k, char* file_name) {
     lens = malloc(sizeof(long) * k);
     for (int i = 0; i < k; i++) {
         fscanf(file_ptr, " %ld ", &num_nums);
-        printf("num_nums: %ld\n", num_nums);
         lens[i] = num_nums;
         array_2d[i] = malloc(sizeof(double) * num_nums);
         for (int j = 0; j < num_nums; j++) {
             fscanf(file_ptr, " %lf ", &array_2d[i][j]);
         }
-        printf("%20.20lf\n", array_2d[i][1]);
-        printf("%20.20lf\n", array_2d[i][2]);
-        printf("%20.20lf\n", array_2d[i][num_nums-3]);
-        printf("%20.20lf\n", array_2d[i][num_nums-2]);
+        max = my_max(max, array_2d[i][num_nums-1]);
+        min = my_min(min, array_2d[i][0]);
     }
 
     arrays.array_2d = array_2d;
     arrays.num_arrays = k;
     arrays.lens = lens;
+    arrays.max = max;
+    arrays.min = min;
     fclose(file_ptr);
     return arrays;
 }
