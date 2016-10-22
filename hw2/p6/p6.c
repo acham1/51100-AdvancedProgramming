@@ -21,6 +21,13 @@ typedef struct array_set {
     double max;
 } array_set;
 
+typedef struct union_pkg {
+    double* unionized;
+    long num_elements;
+    long** ptr_arrays;
+} union_pkg;
+
+union_pkg merge(array_set arrays);
 array_set load_arrays(int k, char* file_name);
 long* solution1(double find, array_set arrays, int new);
 long* solution2(double find, array_set arrays, int new);
@@ -29,11 +36,12 @@ long db_bsearch(double* array, long start, long end, long len, double key);
 double work_kernel(int iters, array_set arrays, long* (*solution)(double, array_set, int));
 
 int main (int argc, char* argv[]) {
-    array_set arrays;
-    int k = NUM_ARRAYS;
-    double time1, time2, time3;
+    array_set erase = {NULL, 0, NULL, 0, 0};
     int wi = NUM_WORK_ITERATIONS;
- 
+    double time1, time2, time3;
+    int k = NUM_ARRAYS;
+    array_set arrays;
+
     if (argc < 2) {
         printf("Error: please enter filename as command-line argument.\n");
         return EXIT_FAILURE;        
@@ -49,6 +57,7 @@ int main (int argc, char* argv[]) {
     time1 = work_kernel(wi, arrays, solution1);
     printf("Working strategy 2: ");
     time2 = work_kernel(wi, arrays, solution2);
+    work_kernel(1, erase, solution2); // free memory
     printf("Working strategy 3: ");
     time3 = work_kernel(wi, arrays, solution3);
 
@@ -75,7 +84,7 @@ double work_kernel(int iters, array_set arrays, long* (*solve)(double, array_set
         find = arrays.min + factor*rand();
 //        printf("finding %lf\n", find);
 //        printf("x");
-        fflush(stdin);
+//        fflush(stdout);
         start = clock();
         indices = solve(find, arrays, i == 0);
         elapsed += (clock() - start)/(double)CLOCKS_PER_SEC;
@@ -112,10 +121,11 @@ long db_bsearch(double* array, long start, long end, long len, double key) {
 }
 
 long* solution1(double find, array_set arrays, int new) {
-    long* indices = malloc(sizeof(long) * arrays.num_arrays);
     int num_arrays = arrays.num_arrays;
+    long* indices;
     long len;
 
+    indices = malloc(sizeof(long) * arrays.num_arrays);
     for (int i = 0; i < num_arrays; i++) {
         len = arrays.lens[i];
         indices[i] = db_bsearch(arrays.array_2d[i], 0, len - 1, len, find);
@@ -123,8 +133,85 @@ long* solution1(double find, array_set arrays, int new) {
     return indices;
 }
 
+union_pkg merge(array_set arrays) {
+    long num_elements = 0;
+    long** ptr_arrays;
+    double* unionized;
+    long counter = 0;
+    union_pkg u_pkg;
+    int num_arrays;
+    long* list_pos;
+    double least;
+    int finished;
+  
+    num_arrays = arrays.num_arrays;
+    for (int i = 0; i < num_arrays; i++) {
+        num_elements += arrays.lens[i];
+    }
+    ptr_arrays = malloc(sizeof(long*) * num_arrays);
+    for (int i = 0; i < num_arrays; i++) {
+        ptr_arrays[i] = malloc(sizeof(long) * num_elements);
+    }
+    unionized = malloc(sizeof(double) * num_elements);
+    list_pos = malloc(sizeof(long) * num_arrays);
+    for (int i = 0; i < num_arrays; i++) {
+        list_pos[i] = 0;
+    }
+    for (int i = 0; i < num_elements; i++) {
+        least = DBL_MAX;
+        finished = 1;
+            // find lowest element
+            // label in ptr array if array has it or not
+
+        for (int j = 0; i < num_arrays; i++) {
+        }
+        // CONTINUE HERE
+        if (finished) {
+            break;
+        }
+        counter++;
+    }
+    // polish the ptr array to fill out -1
+    free(list_pos);
+    u_pkg.num_elements = num_elements;
+    u_pkg.ptr_arrays = ptr_arrays;
+    u_pkg.unionized = unionized;
+    return u_pkg;
+}
+
 long* solution2(double find, array_set arrays, int new) {
-    return NULL;
+    static double* unionized = NULL;
+    static long** ptr_arrays = NULL;
+    static long num_elements = 0;
+    static long num_arrays = 0;
+    union_pkg u_pkg;
+    long* indices;
+    long u_index;
+
+    if (new) {
+        free(unionized);
+        if (ptr_arrays != NULL) {
+            for (int i = 0; i < num_arrays; i++) {
+                free(ptr_arrays[i]);
+            }
+            free(ptr_arrays);
+        }
+        if (arrays.array_2d == NULL) {
+            return NULL;
+        }
+        u_pkg = merge(arrays);
+        num_elements = u_pkg.num_elements;
+        num_arrays = arrays.num_arrays;
+        ptr_arrays = u_pkg.ptr_arrays;
+        unionized = u_pkg.unionized;
+    }
+
+    u_index = db_bsearch(unionized, 0, num_elements-1, num_elements, find);
+    indices = malloc(sizeof(long) * num_arrays);
+    for (int i = 0; i < num_arrays; i++) {
+        indices[i] = ptr_arrays[i][u_index];
+    }
+    return indices;
 }
 
 long* solution3(double find, array_set arrays, int new) {
@@ -132,13 +219,13 @@ long* solution3(double find, array_set arrays, int new) {
 }
 
 array_set load_arrays(int k, char* file_name) {
-    long* lens;
-    long num_nums;
-    array_set arrays;
-    double** array_2d;
-    double max = -DBL_MAX;
-    double min = +DBL_MAX;
     FILE* file_ptr = fopen(file_name, "r");
+    double min = +DBL_MAX;
+    double max = -DBL_MAX;
+    double** array_2d;
+    array_set arrays;
+    long num_nums;
+    long* lens;
 
     if (file_ptr == NULL) {
         arrays.array_2d = NULL;
