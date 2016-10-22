@@ -84,12 +84,16 @@ array_set load_arrays(int k, char* file_name) {
     lens = malloc(sizeof(long) * k);
     for (int i = 0; i < k; i++) {
         fscanf(file_ptr, " %ld ", &num_nums);
+        printf("num_nums: %ld\n", num_nums);
         lens[i] = num_nums;
         array_2d[i] = malloc(sizeof(double) * num_nums);
         for (int j = 0; j < num_nums; j++) {
             fscanf(file_ptr, " %lf ", &array_2d[i][j]);
         }
-        printf("%f\n", array_2d[i][num_nums-1]);
+        printf("%20.20lf\n", array_2d[i][1]);
+        printf("%20.20lf\n", array_2d[i][2]);
+        printf("%20.20lf\n", array_2d[i][num_nums-3]);
+        printf("%20.20lf\n", array_2d[i][num_nums-2]);
     }
 
     arrays.array_2d = array_2d;
