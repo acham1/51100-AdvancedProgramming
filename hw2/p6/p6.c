@@ -89,6 +89,7 @@ array_set load_arrays(int k, char* file_name) {
         for (int j = 0; j < num_nums; j++) {
             fscanf(file_ptr, " %lf ", &array_2d[i][j]);
         }
+        printf("%f\n", array_2d[i][num_nums-1]);
     }
 
     arrays.array_2d = array_2d;
