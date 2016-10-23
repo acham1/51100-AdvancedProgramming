@@ -1,0 +1,131 @@
+Name        : Alan Cham
+Date        : Sun Oct 23 16:54:57 2016
+Assignment  : Hw2 #3
+Thread limit: 16 (on this machine)
+
+--------------------------------------------------------------------
+Part 1: Dependence of Runtime Mean and Variance on Number of Threads
+--------------------------------------------------------------------
+
+Problem size DIM                           : 1000
+Number of samples per test                 : 10
+
+Running serial case 10 times               : xxxxxxxxxx
+
+Running 01-thread static omp case 10 times : xxxxxxxxxx
+Running 02-thread static omp case 10 times : xxxxxxxxxx
+Running 03-thread static omp case 10 times : xxxxxxxxxx
+Running 04-thread static omp case 10 times : xxxxxxxxxx
+Running 05-thread static omp case 10 times : xxxxxxxxxx
+Running 06-thread static omp case 10 times : xxxxxxxxxx
+Running 07-thread static omp case 10 times : xxxxxxxxxx
+Running 08-thread static omp case 10 times : xxxxxxxxxx
+Running 09-thread static omp case 10 times : xxxxxxxxxx
+Running 10-thread static omp case 10 times : xxxxxxxxxx
+Running 11-thread static omp case 10 times : xxxxxxxxxx
+Running 12-thread static omp case 10 times : xxxxxxxxxx
+Running 13-thread static omp case 10 times : xxxxxxxxxx
+Running 14-thread static omp case 10 times : xxxxxxxxxx
+Running 15-thread static omp case 10 times : xxxxxxxxxx
+Running 16-thread static omp case 10 times : xxxxxxxxxx
+
+Running 01-thread dynamic omp case 10 times: xxxxxxxxxx
+Running 02-thread dynamic omp case 10 times: xxxxxxxxxx
+Running 03-thread dynamic omp case 10 times: xxxxxxxxxx
+Running 04-thread dynamic omp case 10 times: xxxxxxxxxx
+Running 05-thread dynamic omp case 10 times: xxxxxxxxxx
+Running 06-thread dynamic omp case 10 times: xxxxxxxxxx
+Running 07-thread dynamic omp case 10 times: xxxxxxxxxx
+Running 08-thread dynamic omp case 10 times: xxxxxxxxxx
+Running 09-thread dynamic omp case 10 times: xxxxxxxxxx
+Running 10-thread dynamic omp case 10 times: xxxxxxxxxx
+Running 11-thread dynamic omp case 10 times: xxxxxxxxxx
+Running 12-thread dynamic omp case 10 times: xxxxxxxxxx
+Running 13-thread dynamic omp case 10 times: xxxxxxxxxx
+Running 14-thread dynamic omp case 10 times: xxxxxxxxxx
+Running 15-thread dynamic omp case 10 times: xxxxxxxxxx
+Running 16-thread dynamic omp case 10 times: xxxxxxxxxx
+
+Summary of Results (mean s, variance s^2, ratio to serial time):
+Serial   :      (22.539, 0.000679,  1.000)
+
+Threads         Static                         Dynamic
+01-thread:      (22.803, 0.000418,  1.012)     (22.795, 0.000093,  1.011)
+02-thread:      (16.525, 0.000001,  0.733)     (11.410, 26.166342,  0.506)
+03-thread:      (14.817, 0.000004,  0.657)     ( 7.610, 51.943482,  0.338)
+04-thread:      (14.834, 0.000002,  0.658)     ( 5.728, 82.927645,  0.254)
+05-thread:      (10.934, 0.000032,  0.485)     ( 4.572, 40.476786,  0.203)
+06-thread:      (10.392, 0.000030,  0.461)     ( 3.811, 43.300306,  0.169)
+07-thread:      ( 9.194, 0.000038,  0.408)     ( 3.263, 35.173631,  0.145)
+08-thread:      ( 7.443, 0.000032,  0.330)     ( 2.859, 21.015590,  0.127)
+09-thread:      ( 7.402, 0.000026,  0.328)     ( 2.543, 23.605025,  0.113)
+10-thread:      ( 6.681, 0.000023,  0.296)     ( 2.293, 19.250861,  0.102)
+11-thread:      ( 5.968, 0.000084,  0.265)     ( 2.098, 14.975573,  0.093)
+12-thread:      ( 5.805, 0.000026,  0.258)     ( 1.936, 14.969906,  0.086)
+13-thread:      ( 5.130, 0.000023,  0.228)     ( 1.799, 11.097465,  0.080)
+14-thread:      ( 4.970, 0.000007,  0.220)     ( 1.682, 10.809367,  0.075)
+15-thread:      ( 4.785, 0.000043,  0.212)     ( 1.582, 10.261878,  0.070)
+16-thread:      ( 4.130, 0.000022,  0.183)     ( 1.499, 6.921013,  0.067)
+
+---------------------------------------------------------------
+Part 2: Dependence of Runtime Mean and Variance on Problem Size
+---------------------------------------------------------------
+
+The following omp timing results use 8 threads:
+Resuts given in tuple format (mean s, variance s^2, ratio to serial time):
+
+Problem size DIM                 : 1
+Running serial case 10 times     : xxxxxxxxxx
+Running static omp case 10 times : xxxxxxxxxx
+Running dynamic omp case 10 times: xxxxxxxxxx
+Serial                           : (0.000, 0.000000, 1.000)
+08-thread static                 : (0.000, 0.000000, 57.398)
+08-thread dynamic                : (0.000, 0.000000, 33.954)
+
+Problem size DIM                 : 10
+Running serial case 10 times     : xxxxxxxxxx
+Running static omp case 10 times : xxxxxxxxxx
+Running dynamic omp case 10 times: xxxxxxxxxx
+Serial                           : (0.003, 0.000000, 1.000)
+08-thread static                 : (0.001, 0.000000, 0.270)
+08-thread dynamic                : (0.001, 0.000000, 0.269)
+
+Problem size DIM                 : 100
+Running serial case 10 times     : xxxxxxxxxx
+Running static omp case 10 times : xxxxxxxxxx
+Running dynamic omp case 10 times: xxxxxxxxxx
+Serial                           : (0.228, 0.000000, 1.000)
+08-thread static                 : (0.075, 0.000000, 0.327)
+08-thread dynamic                : (0.030, 0.000000, 0.133)
+
+Problem size DIM                 : 1000
+Running serial case 10 times     : xxxxxxxxxx
+Running static omp case 10 times : xxxxxxxxxx
+Running dynamic omp case 10 times: xxxxxxxxxx
+Serial                           : (22.559, 0.001779, 1.000)
+08-thread static                 : (7.435, 0.000000, 0.330)
+08-thread dynamic                : (2.861, 0.000000, 0.127)
+
+--------------------------------------------------------------------
+Part 3: Dependence of Static Runtime Mean and Variance on Chunk Size
+--------------------------------------------------------------------
+
+The following omp timing results use 8 threads:
+The following omp timing results use problem size DIM = 1000
+
+Chunk size                        : 1
+Computing static omp case 10 times: xxxxxxxxxx
+(Mean s, Variance s^2)            : (2.863, 0.000051)
+
+Chunk size                        : 10
+Computing static omp case 10 times: xxxxxxxxxx
+(Mean s, Variance s^2)            : (3.050, 0.000103)
+
+Chunk size                        : 100
+Computing static omp case 10 times: xxxxxxxxxx
+(Mean s, Variance s^2)            : (6.690, 0.000118)
+
+Chunk size                        : 1000
+Computing static omp case 10 times: xxxxxxxxxx
+(Mean s, Variance s^2)            : (22.811, 0.000695)
+
