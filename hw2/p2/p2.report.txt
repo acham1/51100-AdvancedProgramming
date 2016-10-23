@@ -1,0 +1,83 @@
+Name:         Alan Cham
+Date:         Sun Oct 23 17:54:08 2016
+Assignment:   Hw2 #2
+Thread limit: 16 (on this machine)
+
+--------------------------------------------------------------------
+Part 1: Dependence of Runtime Mean and Variance on Number of Threads
+--------------------------------------------------------------------
+
+Problem size N                     : 1000
+Number of samples per test         : 10
+
+Running serial case 10 times       : xxxxxxxxxx
+Running 01-thread omp case 10 times: xxxxxxxxxx
+Running 02-thread omp case 10 times: xxxxxxxxxx
+Running 03-thread omp case 10 times: xxxxxxxxxx
+Running 04-thread omp case 10 times: xxxxxxxxxx
+Running 05-thread omp case 10 times: xxxxxxxxxx
+Running 06-thread omp case 10 times: xxxxxxxxxx
+Running 07-thread omp case 10 times: xxxxxxxxxx
+Running 08-thread omp case 10 times: xxxxxxxxxx
+Running 09-thread omp case 10 times: xxxxxxxxxx
+Running 10-thread omp case 10 times: xxxxxxxxxx
+Running 11-thread omp case 10 times: xxxxxxxxxx
+Running 12-thread omp case 10 times: xxxxxxxxxx
+Running 13-thread omp case 10 times: xxxxxxxxxx
+Running 14-thread omp case 10 times: xxxxxxxxxx
+Running 15-thread omp case 10 times: xxxxxxxxxx
+Running 16-thread omp case 10 times: xxxxxxxxxx
+
+Summary of Results (mean(s), variance(s^2), Ratio to Serial Time):
+Serial   : (13.204, 0.000126, 1.000)
+01-thread: (13.166, 0.000032, 0.997)
+02-thread: (6.606, 0.000054, 0.500)
+03-thread: (4.421, 0.000131, 0.335)
+04-thread: (3.332, 0.000349, 0.252)
+05-thread: (2.660, 0.000179, 0.201)
+06-thread: (2.211, 0.000004, 0.167)
+07-thread: (1.898, 0.000028, 0.144)
+08-thread: (1.662, 0.000023, 0.126)
+09-thread: (1.498, 0.000001, 0.113)
+10-thread: (1.350, 0.000031, 0.102)
+11-thread: (1.242, 0.000014, 0.094)
+12-thread: (1.162, 0.000008, 0.088)
+13-thread: (1.069, 0.000042, 0.081)
+14-thread: (1.006, 0.000017, 0.076)
+15-thread: (0.887, 0.002505, 0.067)
+16-thread: (0.806, 0.000187, 0.061)
+
+---------------------------------------------------------------
+Part 2: Dependence of Runtime Mean and Variance on Problem Size
+---------------------------------------------------------------
+
+The following omp timing results use 8 threads:
+
+Problem size N              : 1
+Running serial case 10 times: xxxxxxxxxx
+Running omp case 10 times   : xxxxxxxxxx
+Serial (mean, variance)     : 0.000, 0.000000
+08-thread (mean, variance)  : 0.000, 0.000000
+OMP Time Ratio to Serial    : 636.695
+
+Problem size N              : 10
+Running serial case 10 times: xxxxxxxxxx
+Running omp case 10 times   : xxxxxxxxxx
+Serial (mean, variance)     : 0.000, 0.000000
+08-thread (mean, variance)  : 0.000, 0.000000
+OMP Time Ratio to Serial    : 1.321
+
+Problem size N              : 100
+Running serial case 10 times: xxxxxxxxxx
+Running omp case 10 times   : xxxxxxxxxx
+Serial (mean, variance)     : 0.009, 0.000000
+08-thread (mean, variance)  : 0.001, 0.000000
+OMP Time Ratio to Serial    : 0.141
+
+Problem size N              : 1000
+Running serial case 10 times: xxxxxxxxxx
+Running omp case 10 times   : xxxxxxxxxx
+Serial (mean, variance)     : 11.390, 0.000100
+08-thread (mean, variance)  : 1.432, 0.000046
+OMP Time Ratio to Serial    : 0.126
+
