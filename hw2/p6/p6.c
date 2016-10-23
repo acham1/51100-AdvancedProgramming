@@ -6,10 +6,10 @@
 #include <time.h>
 #include <float.h>
 
-#define S_TO_MS 1000
+#define MS_PER_S 1000
 #define NUM_ARRAYS 68
 #define FILE_NAME_INDEX 1
-#define NUM_WORK_ITERATIONS 1
+#define NUM_WORK_ITERATIONS 100000
 #define my_max(x, y) ((x) > (y) ? (x) : (y))
 #define my_min(x, y) ((x) < (y) ? (x) : (y))
 #define my_abs(x) (((x) < 0) ? -(x) : (x)) 
@@ -45,7 +45,6 @@ double work_kernel(int iters, array_set arrays, long* (*solution)(double, array_
 
 int main(int argc, char* argv[]) {
     array_set erase = {NULL, 0, NULL, 0, 0, 0};
-    int wi = NUM_WORK_ITERATIONS;
     double time1, time2, time3;
     int k = NUM_ARRAYS;
     array_set arrays;
@@ -60,19 +59,27 @@ int main(int argc, char* argv[]) {
         return EXIT_FAILURE;
     }
 
+    printf("Alan Cham\n");
+    printf("HW2 P6\n");
+    printf("-------------------------------------------------------------------------\n");
+    printf("Making raw performance analysis results:\n");
+    printf("Top    : total runtime (ms)\n");
+    printf("Bottom : average runtime per iteration (ms)\n");
+    printf("-------------------------------------------------------------------------\n");
+    printf("%15s%15s%15s%15s\n", "Iterations", "Strategy 1", "Stragegy 2", "Strategy 3");
     srand(time(NULL));
-    printf("Working strategy 1: \n");
-    time1 = work_kernel(wi, arrays, solution1);
-    printf("Working strategy 2: \n");
-    time2 = work_kernel(wi, arrays, solution2);
-    work_kernel(1, erase, solution2); // free memory
-    printf("Working strategy 3: \n");
-    time3 = work_kernel(wi, arrays, solution3);
-    work_kernel(1, erase, solution3); // free memory
-
-    printf("Solution 1: takes %lf ms\n", time1*S_TO_MS);
-    printf("Solution 2: takes %lf ms\n", time2*S_TO_MS);
-    printf("Solution 3: takes %lf ms\n", time3*S_TO_MS);
+    for (int wi=1; wi <= NUM_WORK_ITERATIONS; wi*=10) {
+        printf("%15d", wi);       
+        time1 = work_kernel(wi, arrays, solution1);
+        printf("%15lf", time1*MS_PER_S);
+        time2 = work_kernel(wi, arrays, solution2);
+        printf("%15lf", time2*MS_PER_S);
+        work_kernel(1, erase, solution2); // free memory
+        time3 = work_kernel(wi, arrays, solution3);
+        printf("%15lf\n", time3*MS_PER_S);
+        work_kernel(1, erase, solution3); // free memory
+        printf("%15s%15lf%15lf%15lf\n\n", "", time1/wi*MS_PER_S, time2/wi*MS_PER_S, time3/wi*MS_PER_S);
+    }
 
     for (int i = 0; i < k; i++) {
         free(arrays.array_2d[i]);
@@ -235,12 +242,16 @@ long* solution2(double find, array_set arrays, int new) {
     long u_index;
 
     if (new) {
-        free(unionized);
+        if (unionized != NULL) {
+            free(unionized);
+            unionized = NULL;
+        }
         if (ptr_arrays != NULL) {
             for (int i = 0; i < num_arrays; i++) {
                 free(ptr_arrays[i]);
             }
             free(ptr_arrays);
+            ptr_arrays = NULL;
         }
         if (arrays.array_2d == NULL) {
             return NULL;
@@ -282,6 +293,7 @@ long* solution3(double find, array_set arrays, int new) {
             }
             free(M);
             free(M_lens);
+            M = NULL;
             if (arrays.array_2d == NULL) {
                 return NULL;
             }
