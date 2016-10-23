@@ -12,6 +12,7 @@
 #define NUM_WORK_ITERATIONS 1
 #define my_max(x, y) ((x) > (y) ? (x) : (y))
 #define my_min(x, y) ((x) < (y) ? (x) : (y))
+#define my_abs(x) (((x) < 0) ? -(x) : (x)) 
 
 typedef struct array_set {
     double** array_2d;
@@ -19,6 +20,7 @@ typedef struct array_set {
     long* lens;
     double min;
     double max;
+    double minmax;
 } array_set;
 
 typedef struct union_pkg {
@@ -26,6 +28,12 @@ typedef struct union_pkg {
     long num_elements;
     long** ptr_arrays;
 } union_pkg;
+
+typedef struct M_node {
+    double val;
+    long p1;
+    long p2;
+} M_node;
 
 union_pkg merge(array_set arrays);
 array_set load_arrays(int k, char* file_name);
@@ -35,8 +43,8 @@ long* solution3(double find, array_set arrays, int new);
 long db_bsearch(double* array, long start, long end, long len, double key);
 double work_kernel(int iters, array_set arrays, long* (*solution)(double, array_set, int));
 
-int main (int argc, char* argv[]) {
-    array_set erase = {NULL, 0, NULL, 0, 0};
+int main(int argc, char* argv[]) {
+    array_set erase = {NULL, 0, NULL, 0, 0, 0};
     int wi = NUM_WORK_ITERATIONS;
     double time1, time2, time3;
     int k = NUM_ARRAYS;
@@ -53,13 +61,14 @@ int main (int argc, char* argv[]) {
     }
 
     srand(time(NULL));
-    printf("Working strategy 1: ");
+    printf("Working strategy 1: \n");
     time1 = work_kernel(wi, arrays, solution1);
     printf("Working strategy 2: \n");
     time2 = work_kernel(wi, arrays, solution2);
     work_kernel(1, erase, solution2); // free memory
-    printf("Working strategy 3: ");
+    printf("Working strategy 3: \n");
     time3 = work_kernel(wi, arrays, solution3);
+    work_kernel(1, erase, solution3); // free memory
 
     printf("Solution 1: takes %lf ms\n", time1*S_TO_MS);
     printf("Solution 2: takes %lf ms\n", time2*S_TO_MS);
@@ -74,7 +83,7 @@ int main (int argc, char* argv[]) {
 }
 
 double work_kernel(int iters, array_set arrays, long* (*solve)(double, array_set, int)) {
-    double factor = (arrays.max-arrays.min)/RAND_MAX;
+    double factor = (arrays.minmax-arrays.min)/RAND_MAX;
     double elapsed = 0;
     long* indices;
     clock_t start;
@@ -82,19 +91,21 @@ double work_kernel(int iters, array_set arrays, long* (*solve)(double, array_set
 
     for (int i = 0; i < iters; i++) {
         find = arrays.min + factor*rand();
-        printf("finding %lf\n", find);
+//        printf("finding %lf\n", find);
 //        printf("x");
 //        fflush(stdout);
         start = clock();
         indices = solve(find, arrays, i == 0);
         elapsed += (clock() - start)/(double)CLOCKS_PER_SEC;
-        for (int j = 0; j < arrays.num_arrays; j++) {
-            printf("%.20lf ", arrays.array_2d[j][indices[j]]);
-        }
-        printf("\nend\n");
+//        for (int j = 0; j < arrays.num_arrays; j++) {
+//            printf("ind: %ld/%ld  ", indices[j],arrays.lens[j]-1);
+//            printf("%.10lf \n", arrays.array_2d[j][indices[j]]);
+//            fflush(stdout);
+//        }
+//        printf("\nend\n");
         free(indices);
     }
-    printf("\n");
+//    printf("\n");
 //    printf("wk_end\n");
     return elapsed;
 }
@@ -145,7 +156,7 @@ union_pkg merge(array_set arrays) {
     int finished;
     long key;
   
-    printf("Enter merge\n");
+//    printf("Enter merge\n");
     num_arrays = arrays.num_arrays;
     for (int i = 0; i < num_arrays; i++) {
         num_elements += arrays.lens[i];
@@ -159,7 +170,7 @@ union_pkg merge(array_set arrays) {
     for (int i = 0; i < num_arrays; i++) {
         list_pos[i] = 0;
     }
-    printf("%ld\n", num_elements);
+//    printf("%ld\n", num_elements);
     for (int i = 0; i < num_elements; i++) {
 //        printf("%d\n", i);
         least = DBL_MAX;
@@ -210,7 +221,7 @@ union_pkg merge(array_set arrays) {
     u_pkg.num_elements = counter;
     u_pkg.ptr_arrays = ptr_arrays;
     u_pkg.unionized = unionized;
-    printf("Exit merge\n");
+//    printf("Exit merge\n");
     return u_pkg;
 }
 
@@ -241,11 +252,11 @@ long* solution2(double find, array_set arrays, int new) {
         unionized = u_pkg.unionized;
     }
 
-    printf("num_elements: %ld\n", num_elements);
-    printf("last: %lf\n", unionized[num_elements-1]);
+//    printf("num_elements: %ld\n", num_elements);
+//    printf("last: %lf\n", unionized[num_elements-1]);
     u_index = db_bsearch(unionized, 0, num_elements-1, num_elements, find);
-    printf("u_index: %ld\n", u_index);
-    printf("val at udex: %lf\n", unionized[u_index]);
+//    printf("u_index: %ld\n", u_index);
+//    printf("val at udex: %lf\n", unionized[u_index]);
     indices = malloc(sizeof(long) * num_arrays);
     for (int i = 0; i < num_arrays; i++) {
         indices[i] = ptr_arrays[i][u_index];
@@ -254,13 +265,112 @@ long* solution2(double find, array_set arrays, int new) {
 }
 
 long* solution3(double find, array_set arrays, int new) {
-    return NULL;
+    static long num_arrays = 0;
+    static long* M_lens = NULL;
+    static M_node** M = NULL;
+    long pos1, pos2, stop;
+    long* indices = NULL;
+    double dbl1, dbl2;
+    double* first;
+    long counter;
+    long p;
+
+    if (new) {
+        if (M != NULL) {
+            for (int i = 0; i < num_arrays; i++) {
+                free(M[i]);
+            }
+            free(M);
+            free(M_lens);
+            if (arrays.array_2d == NULL) {
+                return NULL;
+            }
+        }
+        num_arrays = arrays.num_arrays;
+        M_lens = malloc(sizeof(long) * num_arrays);
+        M = malloc(sizeof(M_node*) * num_arrays);
+        for (int i=num_arrays-1; i >= 0; i--) {
+            if (i == num_arrays-1) {
+                M[i] = malloc(sizeof(M_node) * arrays.lens[i]);
+                M_lens[i] = arrays.lens[i];
+                for (int j=0; j < arrays.lens[i]; j++) {
+                    M[i][j].val = arrays.array_2d[i][j];
+                    M[i][j].p1 = j;
+                }
+            } else {
+                M_lens[i] = arrays.lens[i] + M_lens[i+1]/2;
+                M[i] = malloc(sizeof(M_node) * M_lens[i]);
+                pos1 = counter = 0;
+                pos2 = 1;
+                stop = M_lens[i+1]/2*2;
+                while (pos1 < arrays.lens[i] || pos2 < stop) {
+                    dbl1 = dbl2 = DBL_MAX;
+                    if (pos1 < arrays.lens[i]) {
+                        dbl1 = arrays.array_2d[i][pos1];
+//                        printf("s1\n");
+                    }
+                    if (pos2 < stop) {
+                        dbl2 = M[i+1][pos2].val;
+//                        printf("s2\n");
+                    }
+                    if (dbl1 < dbl2) {
+//                        printf("s3\n");
+                        M[i][counter].val = dbl1;
+                        M[i][counter].p1 = pos1++;
+                        M[i][counter].p2 = my_min(pos2, M_lens[i+1]-1);
+                    } else if (dbl2 < dbl1) {
+//                        printf("s4, %d\n", i);
+                        M[i][counter].val = dbl2;
+                        M[i][counter].p1 = my_min(pos1, arrays.lens[i]-1);
+                        M[i][counter].p2 = pos2;
+                        pos2 += 2;
+                    } else {
+//                        printf("s5\n");
+                        M[i][counter].val = dbl1;
+                        M[i][counter].p1 = pos1++;
+                        M[i][counter].p2 = pos2;
+                        pos2 += 2;
+                    }
+                    counter++;
+                }
+                M_lens[i] = counter;
+//                printf("last in A0: %lf\n", arrays.array_2d[i][arrays.lens[i]-1]);
+//                printf("last in M: %lf\n", M[i+1][M_lens[i+1]-1].val);
+                M[i] = realloc(M[i], sizeof(M_node) * counter);
+//                printf("Last element in M: %lf\n", M[i][M_lens[i]-1].val);
+            }
+        }
+    } //end if (new)
+    indices = malloc(sizeof(long) * num_arrays);
+    first = malloc(sizeof(double) * M_lens[0]);
+    for (int i=0; i<M_lens[0]; i++) {
+        first[i] = M[0][i].val;
+    }
+    p = db_bsearch(first, 0, M_lens[0]-1, M_lens[0], find);
+    free(first);
+    indices[0] = M[0][p].p1;
+    for (int i=1; i<num_arrays; i++) {
+        p = M[i-1][p].p2;
+        if (M[i][my_max(0, p-1)].val > find) {
+            indices[i] = M[i][my_max(0, p-1)].p1;
+            p = p-1;
+        } else {
+            indices[i] = M[i][p].p1;
+        }
+    }
+//    printf("Leave soln 3\n");
+//    for (int i=0; i<num_arrays; i++) {
+//        printf("%d %ld  \n", i, indices[i]);
+//    }
+//    printf("\n");
+    return indices;
 }
 
 array_set load_arrays(int k, char* file_name) {
     FILE* file_ptr = fopen(file_name, "r");
     double min = +DBL_MAX;
     double max = -DBL_MAX;
+    double minmax = +DBL_MAX;
     double** array_2d;
     array_set arrays;
     long num_nums;
@@ -280,12 +390,14 @@ array_set load_arrays(int k, char* file_name) {
             fscanf(file_ptr, " %lf ", &array_2d[i][j]);
         }
         max = my_max(max, array_2d[i][num_nums-1]);
+        minmax = my_min(max, minmax);
         min = my_min(min, array_2d[i][0]);
     }
 
     arrays.array_2d = array_2d;
     arrays.num_arrays = k;
     arrays.lens = lens;
+    arrays.minmax = minmax;
     arrays.max = max;
     arrays.min = min;
     fclose(file_ptr);
