@@ -2,52 +2,53 @@
   * HW 2 #5a 
   * Non-recursive BST verification */
 
-#include <stdio.h>
 #include <stdlib.h>
-#include <string.h>
 #include <limits.h>
 
-typedef struct Tree_node {
-    struct Tree_node *left, *right;
-    int data;
-} Tree_node;
+// typedef struct Tree_node {
+//     struct Tree_node *left, *right;
+//     int data;
+// } Tree_node;// 
 
-int main(void) {
-    return 0;
-}
+// int main(void) {
+//     return 0;
+// }
 
 // returns 1 if valid BST, 0 otherwise
 int isBST(Tree_node* tree) {
     const int default_stack_len = 100;
-    int stack_len = defaut_stack_len; // max space in stack
+    int stack_len = default_stack_len; // max space in stack
     Tree_node** stack;
     Tree_node* tmp;
     int min, max;
     int stack_pos;                    // position of next free index in stack
-    int min, max;
     int* mins;
     int* maxs;
 
+    if (tree == NULL) {               // treat empty tree as valid
+        return 1;
+    }
+
+    stack = malloc(sizeof(Tree_node*) * default_stack_len);
+    mins = malloc(sizeof(int) * default_stack_len);
+    maxs = malloc(sizeof(int) * default_stack_len);
     stack_pos = 1;
     stack[0] = tree;
     mins[0] = INT_MIN;
     maxs[0] = INT_MAX;
-    stack = malloc(sizeof(Tree_node*) * default_stack_len);
-    mins = malloc(sizeof(int) * default_stack_len);
-    maxs = malloc(sizeof(int) * default_stack_len);
 
     while (stack_pos > 0) {
         if (stack_pos >= stack_len-2) {
             stack_len *= 2;
-            tmp_stack = realloc(sizeof(Tree_node*) * stack_len);
-            tmp_mins = realloc(sizeof(int) * stack_len);
-            tmp_maxs = realloc(sizeof(int) * stack_len);
+            stack = realloc(stack, sizeof(Tree_node*) * stack_len);
+            mins = realloc(mins, sizeof(int) * stack_len);
+            maxs = realloc(maxs, sizeof(int) * stack_len);
         }
         --stack_pos;
         tmp = stack[stack_pos];
         min = mins[stack_pos];
         max = maxs[stack_pos];
-        if (temp->data > max || temp->data < min) {
+        if (tmp->data > max || tmp->data < min) {
             free(stack);
             free(mins);
             free(maxs);
