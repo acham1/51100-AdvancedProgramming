@@ -19,10 +19,9 @@ typedef struct node_ {
 
 Node* create_tree(void);
 Node* create_node(void);
-void* find_obj(Node* tree, void* query_key, int (*cmp)(const void*, const void*));
-int insert_node(Node* tree, void* new_key, void* new_object, int (*cmp)(const void*, const void*));
+void* find_obj(Node* tree, void* key, int (*cmp)(const void*, const void*));
+int insert_node(Node* tree, void* key, void* object, int (*cmp)(const void*, const void*));
 int free_tree(Node* tree);
-int free_node(Node* node);
 int delete_node(Node* tree, void* delete_key, int (*cmp)(const void*, const void*));
 Node* get_uncle(Node* node);
 Node* get_grandparent(Node* node);
@@ -34,5 +33,4 @@ int insert_case5(Node* n);
 void rotate_right(Node* n);
 void rotate_left(Node* n);
 void fix_parent(Node* n, int repeat);
-int is_leaf(Node* n);
 #endif

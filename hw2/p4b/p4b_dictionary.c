@@ -19,7 +19,7 @@ int add_word(Dictionary* dic, char* word, char* definition) {
     new_def = malloc(sizeof(char) * (strlen(definition) + 1));
     memcpy(new_def, definition, strlen(definition)+1);
     result = insert_node(dic, new_word, new_def, word_cmp);
-    if (result) {
+    if (result) { // encountered problem
         free(new_word);
         free(new_def);
     }
@@ -40,14 +40,12 @@ int find_word(Dictionary* dic, char* word, char* def) {
 
 // return 1 if problem, 0 otherwise
 int print_dict(Dictionary* dic) {
-    if (dic->right == NULL) {
-        if (dic->left != NULL) {
-            printf("> %s: %s\n", (char*) dic->key, (char*) dic->left);
-        }
-    } else {
-        print_dict(dic->left);
-        print_dict(dic->right);
+    if (dic == NULL) {
+        return 0;
     }
+    print_dict(dic->left);
+    printf("> %s: %s\n", (char*) dic->key, (char*) dic->data);
+    print_dict(dic->right);
     return 0;
 }
 
