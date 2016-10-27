@@ -86,7 +86,7 @@ void print_tree(Node* node) {
 
 // return 1 if problem, 0 otherwise
 int insert_node(Node* tree, void* key, void* object, int (*cmp)(const void*, const void*)) {
-            print_tree(tree);
+//            print_tree(tree);
     if (tree == NULL) {
         return 1;
     } else if (key == NULL || object == NULL) { // NULL keys not permitted
@@ -236,7 +236,7 @@ void rotate_right(Node* n) {
 
 // return 1 if problem, 0 otherwise
 int delete_node(Node* tree, void* key, int (*cmp)(const void*, const void*)) {
-    print_tree(tree);
+//    print_tree(tree);
     Node* to_delete, *tmp;
 
     to_delete = find_node(tree, key, cmp);
