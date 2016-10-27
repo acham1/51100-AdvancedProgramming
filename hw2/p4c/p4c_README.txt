@@ -20,19 +20,18 @@ I.  Sequential Add Time
     BST possible, allowing us to observe something like a worst-case
     situation.
 
-    The results show that the self-balancing BST took [0.161 ms] to complete
-    the 100 adds, whereas the simple BST took [0.192 ms] to complete.
+    The results show that the self-balancing BST took [0.154 ms] to complete
+    the 100 adds, whereas the simple BST took [0.188 ms] to complete.
     We see that for a small number of elements, the two BST's take about
     the same amount of time.
 
-    Then when I increased the problem size by a factor of 10, comprised of 1000
-    sequential adds, the results show that the self-balancing BST took [1.636 ms] 
-    to complete the 1000 adds, whereas the simple BST took [6.956 ms] to complete.
-
-    Thus when the problem size increased ten-fold, the balanced run-time only
-    increased by a factor of about 10.2, whereas the simple BST run-time increased
-    by a factor of 36.2.
-
+    The results show that the self-balancing BST took [1.192 ms] to complete
+    the 1000 adds, whereas the simple BST took [6.808 ms] to complete.
+    From this, we observe that as the number of elements increases and the
+    simple BST becomes increasingly unbalanced, it's efficiency greatly 
+    diminishes. Between the 100 and 1000 element test cases, the self-
+    balancing BST run-time grew by less than a factor of 10, whereas
+    the simple BST run-time grew by more than a factor 30.
 
 II. Random Add Time
     
@@ -44,64 +43,50 @@ II. Random Add Time
             add 004 "004"
             etc.
 
-    The simple BST took [1.326 ms] to complete the 1000 random adds, and the 
-    self-balanced BST took [1.416 ms]. Note that in both cases, less time was
-    used than in the sequential add. This is because the number of collisions 
-    increases as the number of random adds increases, since I am only generating
-    numbers in a finite range 1..1000. When a collision occurs, the tree is still
-    used to experience the collision, but balancing operations are not needed,
-    since no element is added. 
-
-    Also, it is interesting that in this case, the simple and balanced BST's 
-    performed roughly the same. I believe this is due to the random nature of 
-    the adds producing a naturally more balanced tree, so the simple BST
-    saves a lot of time during each search, by not having to the elements in
-    O(n) but more close to O(log n).
+    The results show that the self-balancing BST took [1.374 ms] to complete.
+    The results show that the simple BST took [1.257 ms] to complete. 
+    Compared to the results from Section I above, we can conclude that when
+    the words are added randomly, the simple BST retains much of its efficiency.
+    This is because randomly ordered insertions tend to produce a more balanced
+    BST even without active re-balancing.
 
 III.Random Find Time
 
     For this comparison I added 1000 "words" sequentially as in Section I.
     Then I randomly gave 1000 'find' commands.
 
-    The results show that the self-balancing BST took [2.865 ms] to complete
-    the 1000 adds and 1000 finds. The simple BST took [13.398 ms] to complete.
-    Subtracting the results from Section I, I estimate that the self-balancing
-    BST used [2.865-1.636 = 1.229 ms] for just the finding portion, whereas 
-    the simple BST took [13.398-6.956 = 6.442 ms] for just the finding portion.
+    The results show that the self-balancing BST took [7.621 ms] to complete
+    the 1000 adds and 1000 finds. The simple BST took [13.296 ms] to complete.
+    Note that the 1000 adds take only a small portion of total time, based on
+    Section I: [1.192 ms] and [6.808 ms] for the self-balancing and simple 
+    BST's respectively. 
 
-    In this case, even though the find commands were given randomly, the tree
-    was first built using sequential adds, so the simple BST couldn't benefit
-    from the random nature of the find commands, given that its shape is 
-    inherently more inefficient than the balanced BST.
+    If we estimate the time used just for the find portion, by subtracting
+    the Section III raw times from the Section I times, we have:
+    the self-balancing BST took about 6.5 ms and the simple BST took 6.5 ms
+    as well. This is counter to expectations since the unbalanced simple
+    BST would theoretically take more since each 'find' operation would
+    take about O(n) time, whereas the balanced one should take O(log n) time.
 
 IV. Random Delete Time
-
+    
     Similar to Section III, in this section I added 1000 "words" sequentially.
-    However, this time I gave 1000 random 'delete' commands subsequently.
+    Then I gave 1000 random 'delete' commands.
 
-    THe self-balancing tree took [2.867 ms] in total, compard to the simple
-    BST's [7.98 ms]. Subtracting the Section I results, I estimate that
-    the self-balancing tree used [2.867-1.636 = 1.231 ms] for just the deletions
-    and the simple BST used [7.98-6.956 = 1.024 ms] for the deletions. This 
-    is a dramatic improvement for the simple BST when comparing against its 
-    random find performance in Section III. 
-
-    This demonstrates that although the self-balanced BST is slower to increase
-    run-time for larger problem sizes, it is also slower to reduce run-time
-    as the problem size decreases. The simple BST on the other hand improves
-    dramatically with each delete command, as it shrinks down the very 
-    imbalanced list of elements it must iterate through for subsequent deletes.
+    The results show that the self-balancing BST took [6.088 ms] and the simple
+    BST took [7.678 ms]. This is also counter to expectation since one would
+    expect the unbalanced BST to take O(n) time for each search and the
+    self-balanced BST should take O(log n) time for each search. Although
+    the simple BST took more time, the difference is not as stark as expected.
 
 V.  Print Time
 
     Lastly, in this section I added 1000 "words" sequentially and then timed a
     single call to the 'print' operation.
 
-    The simple BST took [7.125 ms] total, and the balanced took [1.818 ms].
-    Subtracing the results from Section I, I estimate that the simple BST
-    used [7.125-6.956 = 0.169 ms] for the printing alone, and the balanced
-    BST used [1.818-1.636 = 0.182 ms] for the printing alone. They came out 
-    about the same, as expected, because for both types of trees, a full traversal
-    must take at least O(n), so there is no advantage from the balanced BST's
-    shape in this case.
-    
+    According to the results, the self-balancing BST took [1.403 ms] to 
+    complete whereas the simple BST took [7.067 ms]. This is counter to 
+    expectation as well. In previous tests it was expected that the simple 
+    BST should take longer. However, when it comes to printing, both trees 
+    should take the same amount of time, since all nodes have to be visited at
+    least once. The operation should be O(n) in both trees.
