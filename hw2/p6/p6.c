@@ -9,7 +9,7 @@
 #define MS_PER_S 1000
 #define NUM_ARRAYS 68
 #define FILE_NAME_INDEX 1
-#define NUM_WORK_ITERATIONS 1000
+#define NUM_WORK_ITERATIONS 10000000
 #define my_max(x, y) ((x) > (y) ? (x) : (y))
 #define my_min(x, y) ((x) < (y) ? (x) : (y))
 #define my_abs(x) (((x) < 0) ? -(x) : (x)) 
@@ -63,20 +63,20 @@ int main(int argc, char* argv[]) {
     print_header();
     srand(time(NULL));
     for (int wi=1; wi <= NUM_WORK_ITERATIONS; wi*=10) {
-        printf("%15d", wi);       
+        printf("%15e", (double) wi);       
 
         time1 = work_kernel(wi, arrays, solution1);
-        printf("%15.2lf", time1*MS_PER_S);
+        printf("%15.4lf", time1*MS_PER_S);
 
         time2 = work_kernel(wi, arrays, solution2);
-        printf("%15.2lf", time2*MS_PER_S);
+        printf("%15.4lf", time2*MS_PER_S);
         work_kernel(1, erase, solution2); // free memory
 
         time3 = work_kernel(wi, arrays, solution3);
-        printf("%15.2lf\n", time3*MS_PER_S);
+        printf("%15.4lf\n", time3*MS_PER_S);
         work_kernel(1, erase, solution3); // free memory
 
-        printf("%15.2s%15.2lf%15.2lf%15.2lf\n\n", "", time1/wi*MS_PER_S, time2/wi*MS_PER_S, time3/wi*MS_PER_S);
+        printf("%15.4s%15.4lf%15.4lf%15.4lf\n\n", "", time1/wi*MS_PER_S, time2/wi*MS_PER_S, time3/wi*MS_PER_S);
     }
 
     for (int i = 0; i < k; i++) {
@@ -262,9 +262,9 @@ long* solution3(double find, array_set arrays, int new) {
     static long num_arrays = 0;
     static long* M_lens = NULL;
     static M_node** M = NULL;
+    static double* first;      // array of values in first row of M
     long* indices = NULL;
     double dbl1, dbl2;
-    double* first;
     long counter;
     long p;
 
@@ -275,6 +275,7 @@ long* solution3(double find, array_set arrays, int new) {
             }
             free(M);
             free(M_lens);
+            free(first);
             M = NULL;
             if (arrays.array_2d == NULL) {
                 return NULL;
@@ -324,15 +325,14 @@ long* solution3(double find, array_set arrays, int new) {
             M_lens[i] = counter;
             M[i] = realloc(M[i], sizeof(M_node) * counter);   
         }
+        first = malloc(sizeof(double) * M_lens[0]);
+        for (int i=0; i<M_lens[0]; i++) {
+            first[i] = M[0][i].val;
+        }
     } //end if (new)
 
     indices = malloc(sizeof(long) * num_arrays);
-    first = malloc(sizeof(double) * M_lens[0]);
-    for (int i=0; i<M_lens[0]; i++) {
-        first[i] = M[0][i].val;
-    }
     p = db_bsearch(first, 0, M_lens[0]-1, M_lens[0], find);
-    free(first);
     indices[0] = M[0][p].p1;
     for (int i=1; i<num_arrays; i++) {
         p = M[i-1][p].p2;
