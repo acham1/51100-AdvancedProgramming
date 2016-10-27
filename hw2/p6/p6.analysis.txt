@@ -1,7 +1,7 @@
 Alan Cham
 HW2 P6
 
-The raw results from the p6.c output are reproduced below:
+The raw resuts from the tests are reproduced below:
 
 -------------------------------------------------------------------------
 Making raw performance analysis results:
@@ -9,45 +9,57 @@ Top    : total runtime (ms)
 Bottom : average runtime per iteration (ms)
 -------------------------------------------------------------------------
      Iterations     Strategy 1     Stragegy 2     Strategy 3
-              1       0.061000    2440.564000      80.336000
-                      0.061000    2440.564000      80.336000
+   1.000000e+00         0.0430      2433.0850        78.2220
+                        0.0430      2433.0850        78.2220
 
-             10       0.225000    2441.114000      86.780000
-                      0.022500     244.111400       8.678000
+   1.000000e+01         0.2520      2432.5170        79.2480
+                        0.0252       243.2517         7.9248
 
-            100       1.820000    2441.746000     122.800000
-                      0.018200      24.417460       1.228000
+   1.000000e+02         1.7940      2427.5340        78.5670
+                        0.0179        24.2753         0.7857
 
-           1000      16.913000    2446.206000     512.496000
-                      0.016913       2.446206       0.512496
+   1.000000e+03        16.9530      2426.4410        82.7740
+                        0.0170         2.4264         0.0828
 
-          10000     167.099000    2465.869000    4492.049000
-                      0.016710       0.246587       0.449205
+   1.000000e+04       167.9120      2452.7840       113.0070
+                        0.0168         0.2453         0.0113
 
-         100000    1665.892000    2664.646000   43235.648000
-                      0.016659       0.026646       0.432356
+   1.000000e+05      1676.1150      2673.9370       412.0420
+                        0.0168         0.0267         0.0041
+
+   1.000000e+06     16800.2370      4884.9220      3414.9820
+                        0.0168         0.0049         0.0034
+
+   1.000000e+07    166258.8530     27174.4050     33230.9050
+                        0.0166         0.0027         0.0033
+
 
 
 Analysis: 
-Strategy 1 gives the most consistent performance overall, and it the cost per iteration seems to level out around 0.017 ms, as it hovers around that value when total number of
-iterations increase beyond 1000.
+For small problem sizes, Strategy 1 greatly outperforms the other two; for
+example, up to a problem size of 1000 iterations, Strategy 1 is still
+five times faster than the next best, which is Strategy 3. However,
+Strategy 1 basically holds the same marginal cost per iteration regardless
+of the total number, whereas Strategy 2 and 3 both invest a large
+amount of time for the initial iteration in exchange for making all
+subsequent iterations much cheaper. It is interesting to observe that
+Strategy 2's average time per iteration scales almost perfectly until input
+size increases to around 1e5.
 
-Strategy 2 has potential for the best performance, but only if enough iterations are 
-performed to amortize the cost of the pointer array creation. The neatest part is that
-the cost per iteration seems to scale almost perfectly for the trials I used. Each time
-the problem size scales up by a factor of 10, the time per iteration decreases by a 
-factor of 10. This just attests to the fact that the first iteration's cost is absolutely
-massive compared to subsequent iterations. In all the trials I performed, the total
-run time remained almost constant because the cost of subsequent iterations are so
-insignificant.
+In theory, "marginal" cost per subsequent iteration should be:
+>>  Strategy 1: O(log n_1 + log n_2 +...+ log n_k)
+    This is because a log n_i binary search must occur for each ith array.
 
-Strategy 3 gives intermediate performance, in the case of a small number of iterations.
-It does not perform as well as Strategy 1 but outperforms Strategy 2 at least up to the first 1000 iterations. Strategy 3 seems to scale well for the first 100 iterations, but
-the cost per iteration seems to plateau beginning around 1000 iterations. Within the 
-trials used in my tests, Strategy3 is the worse performing overall for large number of 
-iterations. However, this is very possibly specific to my implementation only.
+>>  Strategy 2: O(k)
+    This is because it takes exactly k table lookups
 
-In theory, marginal cost per subsequent iteration should cost:
-  O(log n_1 + log n_2 +...+ log n_k) for Strategy 1.
-  O(k) for Strategy 2, since it takes exactly k table lookups
-  O(k + log M_0) for Strategy 3, where M_0 is the number of elements in the first array M.
+>>  Strategy 3: O(k + log M_0)
+    This is because it takes k-1 table lookups, but still requires an additional
+    O(log M_0) for the initial binary search (where M_0 denotes the length of
+    array M_0).
+
+The data corroborates these expectations, since Strategy 1 is the slowest, and
+Strategy 2 and 3 differ only by a small interval of 0.6 us per marginal iteration,
+as shown when the problem size is 1e7. This would match expectations due to
+the cost of the initial binary search in each Strategy 3 iteration.
+
