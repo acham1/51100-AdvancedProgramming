@@ -9,7 +9,7 @@
 #define MS_PER_S 1000
 #define NUM_ARRAYS 68
 #define FILE_NAME_INDEX 1
-#define NUM_WORK_ITERATIONS 100000
+#define NUM_WORK_ITERATIONS 1000
 #define my_max(x, y) ((x) > (y) ? (x) : (y))
 #define my_min(x, y) ((x) < (y) ? (x) : (y))
 #define my_abs(x) (((x) < 0) ? -(x) : (x)) 
@@ -66,17 +66,17 @@ int main(int argc, char* argv[]) {
         printf("%15d", wi);       
 
         time1 = work_kernel(wi, arrays, solution1);
-        printf("%15lf", time1*MS_PER_S);
+        printf("%15.2lf", time1*MS_PER_S);
 
         time2 = work_kernel(wi, arrays, solution2);
-        printf("%15lf", time2*MS_PER_S);
+        printf("%15.2lf", time2*MS_PER_S);
         work_kernel(1, erase, solution2); // free memory
 
         time3 = work_kernel(wi, arrays, solution3);
-        printf("%15lf\n", time3*MS_PER_S);
+        printf("%15.2lf\n", time3*MS_PER_S);
         work_kernel(1, erase, solution3); // free memory
 
-        printf("%15s%15lf%15lf%15lf\n\n", "", time1/wi*MS_PER_S, time2/wi*MS_PER_S, time3/wi*MS_PER_S);
+        printf("%15.2s%15.2lf%15.2lf%15.2lf\n\n", "", time1/wi*MS_PER_S, time2/wi*MS_PER_S, time3/wi*MS_PER_S);
     }
 
     for (int i = 0; i < k; i++) {
@@ -99,6 +99,11 @@ double work_kernel(int iters, array_set arrays, long* (*solve)(double, array_set
         start = clock();
         indices = solve(find, arrays, i == 0);
         elapsed += (clock() - start)/(double)CLOCKS_PER_SEC;
+//        printf("Finding %4.1lf: \n", find);
+//        for (int j=0; j < arrays.num_arrays; j++) {
+//            printf("%4.1lf  ", arrays.array_2d[j][indices[j]]);
+//        }
+//        printf("\n\n");
         free(indices);
     }
     return elapsed;
@@ -253,10 +258,10 @@ long* solution2(double find, array_set arrays, int new) {
 }
 
 long* solution3(double find, array_set arrays, int new) {
+    long pos1, pos2, stop1, stop2;
     static long num_arrays = 0;
     static long* M_lens = NULL;
     static M_node** M = NULL;
-    long pos1, pos2, stop;
     long* indices = NULL;
     double dbl1, dbl2;
     double* first;
@@ -275,53 +280,52 @@ long* solution3(double find, array_set arrays, int new) {
                 return NULL;
             }
         }
+
         num_arrays = arrays.num_arrays;
         M_lens = malloc(sizeof(long) * num_arrays);
         M = malloc(sizeof(M_node*) * num_arrays);
-        for (int i=num_arrays-1; i >= 0; i--) {
-            if (i == num_arrays-1) {
-                M[i] = malloc(sizeof(M_node) * arrays.lens[i]);
-                M_lens[i] = arrays.lens[i];
-                for (int j=0; j < arrays.lens[i]; j++) {
-                    M[i][j].val = arrays.array_2d[i][j];
-                    M[i][j].p1 = j;
+        M[num_arrays-1] = malloc(sizeof(M_node) * arrays.lens[num_arrays-1]);
+        M_lens[num_arrays-1] = arrays.lens[num_arrays-1];
+        for (int j=0; j < arrays.lens[num_arrays-1]; j++) {
+            M[num_arrays-1][j].val = arrays.array_2d[num_arrays-1][j];
+            M[num_arrays-1][j].p1 = j;
+        }
+        for (int i=num_arrays-2; i >= 0; i--) {
+            M_lens[i] = arrays.lens[i] + M_lens[i+1]/2 + M_lens[i+1]%2;
+            M[i] = malloc(sizeof(M_node) * M_lens[i]);
+            pos1 = pos2 = counter = 0;
+            stop1 = arrays.lens[i];
+            stop2 = M_lens[i+1];
+            while (pos1 < stop1 || pos2 < stop2) {
+                dbl1 = dbl2 = DBL_MAX;
+                if (pos1 < stop1) {
+                    dbl1 = arrays.array_2d[i][pos1];
                 }
-            } else {
-                M_lens[i] = arrays.lens[i] + M_lens[i+1]/2;
-                M[i] = malloc(sizeof(M_node) * M_lens[i]);
-                pos1 = counter = 0;
-                pos2 = 1;
-                stop = M_lens[i+1]/2*2;
-                while (pos1 < arrays.lens[i] || pos2 < stop) {
-                    dbl1 = dbl2 = DBL_MAX;
-                    if (pos1 < arrays.lens[i]) {
-                        dbl1 = arrays.array_2d[i][pos1];
-                    }
-                    if (pos2 < stop) {
-                        dbl2 = M[i+1][pos2].val;
-                    }
-                    if (dbl1 < dbl2) {
-                        M[i][counter].val = dbl1;
-                        M[i][counter].p1 = pos1++;
-                        M[i][counter].p2 = my_min(pos2, M_lens[i+1]-1);
-                    } else if (dbl2 < dbl1) {
-                        M[i][counter].val = dbl2;
-                        M[i][counter].p1 = my_min(pos1, arrays.lens[i]-1);
-                        M[i][counter].p2 = pos2;
-                        pos2 += 2;
-                    } else {
-                        M[i][counter].val = dbl1;
-                        M[i][counter].p1 = pos1++;
-                        M[i][counter].p2 = pos2;
-                        pos2 += 2;
-                    }
-                    counter++;
+                if (pos2 < stop2) {
+                    dbl2 = M[i+1][pos2].val;
                 }
-                M_lens[i] = counter;
-                M[i] = realloc(M[i], sizeof(M_node) * counter);
+                if (dbl1 < dbl2) {
+                    M[i][counter].val = dbl1;
+                    M[i][counter].p1 = pos1++;
+                    M[i][counter].p2 = my_min(pos2, M_lens[i+1]-1);
+                } else if (dbl2 < dbl1) {
+                    M[i][counter].val = dbl2;
+                    M[i][counter].p1 = my_min(pos1, arrays.lens[i]-1);
+                    M[i][counter].p2 = pos2;
+                    pos2 += 2;
+                } else {
+                    M[i][counter].val = dbl1;
+                    M[i][counter].p1 = pos1++;
+                    M[i][counter].p2 = pos2;
+                    pos2 += 2;
+                }
+                counter++;
             }
+            M_lens[i] = counter;
+            M[i] = realloc(M[i], sizeof(M_node) * counter);   
         }
     } //end if (new)
+
     indices = malloc(sizeof(long) * num_arrays);
     first = malloc(sizeof(double) * M_lens[0]);
     for (int i=0; i<M_lens[0]; i++) {
