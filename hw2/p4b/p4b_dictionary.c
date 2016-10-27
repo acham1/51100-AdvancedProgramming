@@ -40,7 +40,7 @@ int find_word(Dictionary* dic, char* word, char* def) {
 
 // return 1 if problem, 0 otherwise
 int print_dict(Dictionary* dic) {
-    if (dic == NULL) {
+    if (dic == NULL || dic->is_leaf || dic->key == NULL) {
         return 0;
     }
     print_dict(dic->left);
