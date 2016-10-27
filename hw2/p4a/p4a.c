@@ -6,7 +6,7 @@
 #include <time.h>
 #include <ctype.h>
 #include <string.h>
-#include <p4b_dictionary.h>
+#include <p4a_dictionary.h>
 #define MAX_LEN 500
 
 typedef enum command_ {

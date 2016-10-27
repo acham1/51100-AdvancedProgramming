@@ -1,0 +1,226 @@
+
+==================================================================
+
+Alan Cham
+p4.a: Simple Dictionary via Unbalanced Model 1 Binary Tree
+
+Acceptable case-sensitive commands (maximum line length 500 chars): 
+    % add word "definition"
+    % delete word
+    % find word
+    % print
+    % exit
+    % // <rest of line to ignore>
+
+==================================================================
+
+Begin here:
+
+% 
+% 
+% 
+% > Added word <00001>.
+
+% > Added word <00002>.
+
+% > Added word <00003>.
+
+% > Added word <00004>.
+
+% > Added word <00005>.
+
+% > Added word <00006>.
+
+% > Added word <00007>.
+
+% > Added word <00008>.
+
+% > Added word <00009>.
+
+% > Added word <00010>.
+
+% > Added word <00011>.
+
+% > Added word <00012>.
+
+% > Added word <00013>.
+
+% > Added word <00014>.
+
+% > Added word <00015>.
+
+% > Added word <00016>.
+
+% > Added word <00017>.
+
+% > Added word <00018>.
+
+% > Added word <00019>.
+
+% > Added word <00020>.
+
+% > Added word <00021>.
+
+% > Added word <00022>.
+
+% > Added word <00023>.
+
+% > Added word <00024>.
+
+% > Added word <00025>.
+
+% > Added word <00026>.
+
+% > Added word <00027>.
+
+% > Added word <00028>.
+
+% > Added word <00029>.
+
+% > Added word <00030>.
+
+% > Added word <00031>.
+
+% > Added word <00032>.
+
+% > Added word <00033>.
+
+% > Added word <00034>.
+
+% > Added word <00035>.
+
+% > Added word <00036>.
+
+% > Added word <00037>.
+
+% > Added word <00038>.
+
+% > Added word <00039>.
+
+% > Added word <00040>.
+
+% > Added word <00041>.
+
+% > Added word <00042>.
+
+% > Added word <00043>.
+
+% > Added word <00044>.
+
+% > Added word <00045>.
+
+% > Added word <00046>.
+
+% > Added word <00047>.
+
+% > Added word <00048>.
+
+% > Added word <00049>.
+
+% > Added word <00050>.
+
+% > Added word <00051>.
+
+% > Added word <00052>.
+
+% > Added word <00053>.
+
+% > Added word <00054>.
+
+% > Added word <00055>.
+
+% > Added word <00056>.
+
+% > Added word <00057>.
+
+% > Added word <00058>.
+
+% > Added word <00059>.
+
+% > Added word <00060>.
+
+% > Added word <00061>.
+
+% > Added word <00062>.
+
+% > Added word <00063>.
+
+% > Added word <00064>.
+
+% > Added word <00065>.
+
+% > Added word <00066>.
+
+% > Added word <00067>.
+
+% > Added word <00068>.
+
+% > Added word <00069>.
+
+% > Added word <00070>.
+
+% > Added word <00071>.
+
+% > Added word <00072>.
+
+% > Added word <00073>.
+
+% > Added word <00074>.
+
+% > Added word <00075>.
+
+% > Added word <00076>.
+
+% > Added word <00077>.
+
+% > Added word <00078>.
+
+% > Added word <00079>.
+
+% > Added word <00080>.
+
+% > Added word <00081>.
+
+% > Added word <00082>.
+
+% > Added word <00083>.
+
+% > Added word <00084>.
+
+% > Added word <00085>.
+
+% > Added word <00086>.
+
+% > Added word <00087>.
+
+% > Added word <00088>.
+
+% > Added word <00089>.
+
+% > Added word <00090>.
+
+% > Added word <00091>.
+
+% > Added word <00092>.
+
+% > Added word <00093>.
+
+% > Added word <00094>.
+
+% > Added word <00095>.
+
+% > Added word <00096>.
+
+% > Added word <00097>.
+
+% > Added word <00098>.
+
+% > Added word <00099>.
+
+% 
+> Good-bye.
+
+==================================================================
+
+Total Runtime: 0.000000
+

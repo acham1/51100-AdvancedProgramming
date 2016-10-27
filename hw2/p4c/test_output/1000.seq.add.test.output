@@ -1,0 +1,2028 @@
+
+==================================================================
+
+Alan Cham
+p4.a: Simple Dictionary via Unbalanced Model 1 Binary Tree
+
+Acceptable case-sensitive commands (maximum line length 500 chars): 
+    % add word "definition"
+    % delete word
+    % find word
+    % print
+    % exit
+    % // <rest of line to ignore>
+
+==================================================================
+
+Begin here:
+
+% 
+% 
+% 
+% > Added word <00000>.
+
+% > Added word <00001>.
+
+% > Added word <00002>.
+
+% > Added word <00003>.
+
+% > Added word <00004>.
+
+% > Added word <00005>.
+
+% > Added word <00006>.
+
+% > Added word <00007>.
+
+% > Added word <00008>.
+
+% > Added word <00009>.
+
+% > Added word <00010>.
+
+% > Added word <00011>.
+
+% > Added word <00012>.
+
+% > Added word <00013>.
+
+% > Added word <00014>.
+
+% > Added word <00015>.
+
+% > Added word <00016>.
+
+% > Added word <00017>.
+
+% > Added word <00018>.
+
+% > Added word <00019>.
+
+% > Added word <00020>.
+
+% > Added word <00021>.
+
+% > Added word <00022>.
+
+% > Added word <00023>.
+
+% > Added word <00024>.
+
+% > Added word <00025>.
+
+% > Added word <00026>.
+
+% > Added word <00027>.
+
+% > Added word <00028>.
+
+% > Added word <00029>.
+
+% > Added word <00030>.
+
+% > Added word <00031>.
+
+% > Added word <00032>.
+
+% > Added word <00033>.
+
+% > Added word <00034>.
+
+% > Added word <00035>.
+
+% > Added word <00036>.
+
+% > Added word <00037>.
+
+% > Added word <00038>.
+
+% > Added word <00039>.
+
+% > Added word <00040>.
+
+% > Added word <00041>.
+
+% > Added word <00042>.
+
+% > Added word <00043>.
+
+% > Added word <00044>.
+
+% > Added word <00045>.
+
+% > Added word <00046>.
+
+% > Added word <00047>.
+
+% > Added word <00048>.
+
+% > Added word <00049>.
+
+% > Added word <00050>.
+
+% > Added word <00051>.
+
+% > Added word <00052>.
+
+% > Added word <00053>.
+
+% > Added word <00054>.
+
+% > Added word <00055>.
+
+% > Added word <00056>.
+
+% > Added word <00057>.
+
+% > Added word <00058>.
+
+% > Added word <00059>.
+
+% > Added word <00060>.
+
+% > Added word <00061>.
+
+% > Added word <00062>.
+
+% > Added word <00063>.
+
+% > Added word <00064>.
+
+% > Added word <00065>.
+
+% > Added word <00066>.
+
+% > Added word <00067>.
+
+% > Added word <00068>.
+
+% > Added word <00069>.
+
+% > Added word <00070>.
+
+% > Added word <00071>.
+
+% > Added word <00072>.
+
+% > Added word <00073>.
+
+% > Added word <00074>.
+
+% > Added word <00075>.
+
+% > Added word <00076>.
+
+% > Added word <00077>.
+
+% > Added word <00078>.
+
+% > Added word <00079>.
+
+% > Added word <00080>.
+
+% > Added word <00081>.
+
+% > Added word <00082>.
+
+% > Added word <00083>.
+
+% > Added word <00084>.
+
+% > Added word <00085>.
+
+% > Added word <00086>.
+
+% > Added word <00087>.
+
+% > Added word <00088>.
+
+% > Added word <00089>.
+
+% > Added word <00090>.
+
+% > Added word <00091>.
+
+% > Added word <00092>.
+
+% > Added word <00093>.
+
+% > Added word <00094>.
+
+% > Added word <00095>.
+
+% > Added word <00096>.
+
+% > Added word <00097>.
+
+% > Added word <00098>.
+
+% > Added word <00099>.
+
+% > Added word <00100>.
+
+% > Added word <00101>.
+
+% > Added word <00102>.
+
+% > Added word <00103>.
+
+% > Added word <00104>.
+
+% > Added word <00105>.
+
+% > Added word <00106>.
+
+% > Added word <00107>.
+
+% > Added word <00108>.
+
+% > Added word <00109>.
+
+% > Added word <00110>.
+
+% > Added word <00111>.
+
+% > Added word <00112>.
+
+% > Added word <00113>.
+
+% > Added word <00114>.
+
+% > Added word <00115>.
+
+% > Added word <00116>.
+
+% > Added word <00117>.
+
+% > Added word <00118>.
+
+% > Added word <00119>.
+
+% > Added word <00120>.
+
+% > Added word <00121>.
+
+% > Added word <00122>.
+
+% > Added word <00123>.
+
+% > Added word <00124>.
+
+% > Added word <00125>.
+
+% > Added word <00126>.
+
+% > Added word <00127>.
+
+% > Added word <00128>.
+
+% > Added word <00129>.
+
+% > Added word <00130>.
+
+% > Added word <00131>.
+
+% > Added word <00132>.
+
+% > Added word <00133>.
+
+% > Added word <00134>.
+
+% > Added word <00135>.
+
+% > Added word <00136>.
+
+% > Added word <00137>.
+
+% > Added word <00138>.
+
+% > Added word <00139>.
+
+% > Added word <00140>.
+
+% > Added word <00141>.
+
+% > Added word <00142>.
+
+% > Added word <00143>.
+
+% > Added word <00144>.
+
+% > Added word <00145>.
+
+% > Added word <00146>.
+
+% > Added word <00147>.
+
+% > Added word <00148>.
+
+% > Added word <00149>.
+
+% > Added word <00150>.
+
+% > Added word <00151>.
+
+% > Added word <00152>.
+
+% > Added word <00153>.
+
+% > Added word <00154>.
+
+% > Added word <00155>.
+
+% > Added word <00156>.
+
+% > Added word <00157>.
+
+% > Added word <00158>.
+
+% > Added word <00159>.
+
+% > Added word <00160>.
+
+% > Added word <00161>.
+
+% > Added word <00162>.
+
+% > Added word <00163>.
+
+% > Added word <00164>.
+
+% > Added word <00165>.
+
+% > Added word <00166>.
+
+% > Added word <00167>.
+
+% > Added word <00168>.
+
+% > Added word <00169>.
+
+% > Added word <00170>.
+
+% > Added word <00171>.
+
+% > Added word <00172>.
+
+% > Added word <00173>.
+
+% > Added word <00174>.
+
+% > Added word <00175>.
+
+% > Added word <00176>.
+
+% > Added word <00177>.
+
+% > Added word <00178>.
+
+% > Added word <00179>.
+
+% > Added word <00180>.
+
+% > Added word <00181>.
+
+% > Added word <00182>.
+
+% > Added word <00183>.
+
+% > Added word <00184>.
+
+% > Added word <00185>.
+
+% > Added word <00186>.
+
+% > Added word <00187>.
+
+% > Added word <00188>.
+
+% > Added word <00189>.
+
+% > Added word <00190>.
+
+% > Added word <00191>.
+
+% > Added word <00192>.
+
+% > Added word <00193>.
+
+% > Added word <00194>.
+
+% > Added word <00195>.
+
+% > Added word <00196>.
+
+% > Added word <00197>.
+
+% > Added word <00198>.
+
+% > Added word <00199>.
+
+% > Added word <00200>.
+
+% > Added word <00201>.
+
+% > Added word <00202>.
+
+% > Added word <00203>.
+
+% > Added word <00204>.
+
+% > Added word <00205>.
+
+% > Added word <00206>.
+
+% > Added word <00207>.
+
+% > Added word <00208>.
+
+% > Added word <00209>.
+
+% > Added word <00210>.
+
+% > Added word <00211>.
+
+% > Added word <00212>.
+
+% > Added word <00213>.
+
+% > Added word <00214>.
+
+% > Added word <00215>.
+
+% > Added word <00216>.
+
+% > Added word <00217>.
+
+% > Added word <00218>.
+
+% > Added word <00219>.
+
+% > Added word <00220>.
+
+% > Added word <00221>.
+
+% > Added word <00222>.
+
+% > Added word <00223>.
+
+% > Added word <00224>.
+
+% > Added word <00225>.
+
+% > Added word <00226>.
+
+% > Added word <00227>.
+
+% > Added word <00228>.
+
+% > Added word <00229>.
+
+% > Added word <00230>.
+
+% > Added word <00231>.
+
+% > Added word <00232>.
+
+% > Added word <00233>.
+
+% > Added word <00234>.
+
+% > Added word <00235>.
+
+% > Added word <00236>.
+
+% > Added word <00237>.
+
+% > Added word <00238>.
+
+% > Added word <00239>.
+
+% > Added word <00240>.
+
+% > Added word <00241>.
+
+% > Added word <00242>.
+
+% > Added word <00243>.
+
+% > Added word <00244>.
+
+% > Added word <00245>.
+
+% > Added word <00246>.
+
+% > Added word <00247>.
+
+% > Added word <00248>.
+
+% > Added word <00249>.
+
+% > Added word <00250>.
+
+% > Added word <00251>.
+
+% > Added word <00252>.
+
+% > Added word <00253>.
+
+% > Added word <00254>.
+
+% > Added word <00255>.
+
+% > Added word <00256>.
+
+% > Added word <00257>.
+
+% > Added word <00258>.
+
+% > Added word <00259>.
+
+% > Added word <00260>.
+
+% > Added word <00261>.
+
+% > Added word <00262>.
+
+% > Added word <00263>.
+
+% > Added word <00264>.
+
+% > Added word <00265>.
+
+% > Added word <00266>.
+
+% > Added word <00267>.
+
+% > Added word <00268>.
+
+% > Added word <00269>.
+
+% > Added word <00270>.
+
+% > Added word <00271>.
+
+% > Added word <00272>.
+
+% > Added word <00273>.
+
+% > Added word <00274>.
+
+% > Added word <00275>.
+
+% > Added word <00276>.
+
+% > Added word <00277>.
+
+% > Added word <00278>.
+
+% > Added word <00279>.
+
+% > Added word <00280>.
+
+% > Added word <00281>.
+
+% > Added word <00282>.
+
+% > Added word <00283>.
+
+% > Added word <00284>.
+
+% > Added word <00285>.
+
+% > Added word <00286>.
+
+% > Added word <00287>.
+
+% > Added word <00288>.
+
+% > Added word <00289>.
+
+% > Added word <00290>.
+
+% > Added word <00291>.
+
+% > Added word <00292>.
+
+% > Added word <00293>.
+
+% > Added word <00294>.
+
+% > Added word <00295>.
+
+% > Added word <00296>.
+
+% > Added word <00297>.
+
+% > Added word <00298>.
+
+% > Added word <00299>.
+
+% > Added word <00300>.
+
+% > Added word <00301>.
+
+% > Added word <00302>.
+
+% > Added word <00303>.
+
+% > Added word <00304>.
+
+% > Added word <00305>.
+
+% > Added word <00306>.
+
+% > Added word <00307>.
+
+% > Added word <00308>.
+
+% > Added word <00309>.
+
+% > Added word <00310>.
+
+% > Added word <00311>.
+
+% > Added word <00312>.
+
+% > Added word <00313>.
+
+% > Added word <00314>.
+
+% > Added word <00315>.
+
+% > Added word <00316>.
+
+% > Added word <00317>.
+
+% > Added word <00318>.
+
+% > Added word <00319>.
+
+% > Added word <00320>.
+
+% > Added word <00321>.
+
+% > Added word <00322>.
+
+% > Added word <00323>.
+
+% > Added word <00324>.
+
+% > Added word <00325>.
+
+% > Added word <00326>.
+
+% > Added word <00327>.
+
+% > Added word <00328>.
+
+% > Added word <00329>.
+
+% > Added word <00330>.
+
+% > Added word <00331>.
+
+% > Added word <00332>.
+
+% > Added word <00333>.
+
+% > Added word <00334>.
+
+% > Added word <00335>.
+
+% > Added word <00336>.
+
+% > Added word <00337>.
+
+% > Added word <00338>.
+
+% > Added word <00339>.
+
+% > Added word <00340>.
+
+% > Added word <00341>.
+
+% > Added word <00342>.
+
+% > Added word <00343>.
+
+% > Added word <00344>.
+
+% > Added word <00345>.
+
+% > Added word <00346>.
+
+% > Added word <00347>.
+
+% > Added word <00348>.
+
+% > Added word <00349>.
+
+% > Added word <00350>.
+
+% > Added word <00351>.
+
+% > Added word <00352>.
+
+% > Added word <00353>.
+
+% > Added word <00354>.
+
+% > Added word <00355>.
+
+% > Added word <00356>.
+
+% > Added word <00357>.
+
+% > Added word <00358>.
+
+% > Added word <00359>.
+
+% > Added word <00360>.
+
+% > Added word <00361>.
+
+% > Added word <00362>.
+
+% > Added word <00363>.
+
+% > Added word <00364>.
+
+% > Added word <00365>.
+
+% > Added word <00366>.
+
+% > Added word <00367>.
+
+% > Added word <00368>.
+
+% > Added word <00369>.
+
+% > Added word <00370>.
+
+% > Added word <00371>.
+
+% > Added word <00372>.
+
+% > Added word <00373>.
+
+% > Added word <00374>.
+
+% > Added word <00375>.
+
+% > Added word <00376>.
+
+% > Added word <00377>.
+
+% > Added word <00378>.
+
+% > Added word <00379>.
+
+% > Added word <00380>.
+
+% > Added word <00381>.
+
+% > Added word <00382>.
+
+% > Added word <00383>.
+
+% > Added word <00384>.
+
+% > Added word <00385>.
+
+% > Added word <00386>.
+
+% > Added word <00387>.
+
+% > Added word <00388>.
+
+% > Added word <00389>.
+
+% > Added word <00390>.
+
+% > Added word <00391>.
+
+% > Added word <00392>.
+
+% > Added word <00393>.
+
+% > Added word <00394>.
+
+% > Added word <00395>.
+
+% > Added word <00396>.
+
+% > Added word <00397>.
+
+% > Added word <00398>.
+
+% > Added word <00399>.
+
+% > Added word <00400>.
+
+% > Added word <00401>.
+
+% > Added word <00402>.
+
+% > Added word <00403>.
+
+% > Added word <00404>.
+
+% > Added word <00405>.
+
+% > Added word <00406>.
+
+% > Added word <00407>.
+
+% > Added word <00408>.
+
+% > Added word <00409>.
+
+% > Added word <00410>.
+
+% > Added word <00411>.
+
+% > Added word <00412>.
+
+% > Added word <00413>.
+
+% > Added word <00414>.
+
+% > Added word <00415>.
+
+% > Added word <00416>.
+
+% > Added word <00417>.
+
+% > Added word <00418>.
+
+% > Added word <00419>.
+
+% > Added word <00420>.
+
+% > Added word <00421>.
+
+% > Added word <00422>.
+
+% > Added word <00423>.
+
+% > Added word <00424>.
+
+% > Added word <00425>.
+
+% > Added word <00426>.
+
+% > Added word <00427>.
+
+% > Added word <00428>.
+
+% > Added word <00429>.
+
+% > Added word <00430>.
+
+% > Added word <00431>.
+
+% > Added word <00432>.
+
+% > Added word <00433>.
+
+% > Added word <00434>.
+
+% > Added word <00435>.
+
+% > Added word <00436>.
+
+% > Added word <00437>.
+
+% > Added word <00438>.
+
+% > Added word <00439>.
+
+% > Added word <00440>.
+
+% > Added word <00441>.
+
+% > Added word <00442>.
+
+% > Added word <00443>.
+
+% > Added word <00444>.
+
+% > Added word <00445>.
+
+% > Added word <00446>.
+
+% > Added word <00447>.
+
+% > Added word <00448>.
+
+% > Added word <00449>.
+
+% > Added word <00450>.
+
+% > Added word <00451>.
+
+% > Added word <00452>.
+
+% > Added word <00453>.
+
+% > Added word <00454>.
+
+% > Added word <00455>.
+
+% > Added word <00456>.
+
+% > Added word <00457>.
+
+% > Added word <00458>.
+
+% > Added word <00459>.
+
+% > Added word <00460>.
+
+% > Added word <00461>.
+
+% > Added word <00462>.
+
+% > Added word <00463>.
+
+% > Added word <00464>.
+
+% > Added word <00465>.
+
+% > Added word <00466>.
+
+% > Added word <00467>.
+
+% > Added word <00468>.
+
+% > Added word <00469>.
+
+% > Added word <00470>.
+
+% > Added word <00471>.
+
+% > Added word <00472>.
+
+% > Added word <00473>.
+
+% > Added word <00474>.
+
+% > Added word <00475>.
+
+% > Added word <00476>.
+
+% > Added word <00477>.
+
+% > Added word <00478>.
+
+% > Added word <00479>.
+
+% > Added word <00480>.
+
+% > Added word <00481>.
+
+% > Added word <00482>.
+
+% > Added word <00483>.
+
+% > Added word <00484>.
+
+% > Added word <00485>.
+
+% > Added word <00486>.
+
+% > Added word <00487>.
+
+% > Added word <00488>.
+
+% > Added word <00489>.
+
+% > Added word <00490>.
+
+% > Added word <00491>.
+
+% > Added word <00492>.
+
+% > Added word <00493>.
+
+% > Added word <00494>.
+
+% > Added word <00495>.
+
+% > Added word <00496>.
+
+% > Added word <00497>.
+
+% > Added word <00498>.
+
+% > Added word <00499>.
+
+% > Added word <00500>.
+
+% > Added word <00501>.
+
+% > Added word <00502>.
+
+% > Added word <00503>.
+
+% > Added word <00504>.
+
+% > Added word <00505>.
+
+% > Added word <00506>.
+
+% > Added word <00507>.
+
+% > Added word <00508>.
+
+% > Added word <00509>.
+
+% > Added word <00510>.
+
+% > Added word <00511>.
+
+% > Added word <00512>.
+
+% > Added word <00513>.
+
+% > Added word <00514>.
+
+% > Added word <00515>.
+
+% > Added word <00516>.
+
+% > Added word <00517>.
+
+% > Added word <00518>.
+
+% > Added word <00519>.
+
+% > Added word <00520>.
+
+% > Added word <00521>.
+
+% > Added word <00522>.
+
+% > Added word <00523>.
+
+% > Added word <00524>.
+
+% > Added word <00525>.
+
+% > Added word <00526>.
+
+% > Added word <00527>.
+
+% > Added word <00528>.
+
+% > Added word <00529>.
+
+% > Added word <00530>.
+
+% > Added word <00531>.
+
+% > Added word <00532>.
+
+% > Added word <00533>.
+
+% > Added word <00534>.
+
+% > Added word <00535>.
+
+% > Added word <00536>.
+
+% > Added word <00537>.
+
+% > Added word <00538>.
+
+% > Added word <00539>.
+
+% > Added word <00540>.
+
+% > Added word <00541>.
+
+% > Added word <00542>.
+
+% > Added word <00543>.
+
+% > Added word <00544>.
+
+% > Added word <00545>.
+
+% > Added word <00546>.
+
+% > Added word <00547>.
+
+% > Added word <00548>.
+
+% > Added word <00549>.
+
+% > Added word <00550>.
+
+% > Added word <00551>.
+
+% > Added word <00552>.
+
+% > Added word <00553>.
+
+% > Added word <00554>.
+
+% > Added word <00555>.
+
+% > Added word <00556>.
+
+% > Added word <00557>.
+
+% > Added word <00558>.
+
+% > Added word <00559>.
+
+% > Added word <00560>.
+
+% > Added word <00561>.
+
+% > Added word <00562>.
+
+% > Added word <00563>.
+
+% > Added word <00564>.
+
+% > Added word <00565>.
+
+% > Added word <00566>.
+
+% > Added word <00567>.
+
+% > Added word <00568>.
+
+% > Added word <00569>.
+
+% > Added word <00570>.
+
+% > Added word <00571>.
+
+% > Added word <00572>.
+
+% > Added word <00573>.
+
+% > Added word <00574>.
+
+% > Added word <00575>.
+
+% > Added word <00576>.
+
+% > Added word <00577>.
+
+% > Added word <00578>.
+
+% > Added word <00579>.
+
+% > Added word <00580>.
+
+% > Added word <00581>.
+
+% > Added word <00582>.
+
+% > Added word <00583>.
+
+% > Added word <00584>.
+
+% > Added word <00585>.
+
+% > Added word <00586>.
+
+% > Added word <00587>.
+
+% > Added word <00588>.
+
+% > Added word <00589>.
+
+% > Added word <00590>.
+
+% > Added word <00591>.
+
+% > Added word <00592>.
+
+% > Added word <00593>.
+
+% > Added word <00594>.
+
+% > Added word <00595>.
+
+% > Added word <00596>.
+
+% > Added word <00597>.
+
+% > Added word <00598>.
+
+% > Added word <00599>.
+
+% > Added word <00600>.
+
+% > Added word <00601>.
+
+% > Added word <00602>.
+
+% > Added word <00603>.
+
+% > Added word <00604>.
+
+% > Added word <00605>.
+
+% > Added word <00606>.
+
+% > Added word <00607>.
+
+% > Added word <00608>.
+
+% > Added word <00609>.
+
+% > Added word <00610>.
+
+% > Added word <00611>.
+
+% > Added word <00612>.
+
+% > Added word <00613>.
+
+% > Added word <00614>.
+
+% > Added word <00615>.
+
+% > Added word <00616>.
+
+% > Added word <00617>.
+
+% > Added word <00618>.
+
+% > Added word <00619>.
+
+% > Added word <00620>.
+
+% > Added word <00621>.
+
+% > Added word <00622>.
+
+% > Added word <00623>.
+
+% > Added word <00624>.
+
+% > Added word <00625>.
+
+% > Added word <00626>.
+
+% > Added word <00627>.
+
+% > Added word <00628>.
+
+% > Added word <00629>.
+
+% > Added word <00630>.
+
+% > Added word <00631>.
+
+% > Added word <00632>.
+
+% > Added word <00633>.
+
+% > Added word <00634>.
+
+% > Added word <00635>.
+
+% > Added word <00636>.
+
+% > Added word <00637>.
+
+% > Added word <00638>.
+
+% > Added word <00639>.
+
+% > Added word <00640>.
+
+% > Added word <00641>.
+
+% > Added word <00642>.
+
+% > Added word <00643>.
+
+% > Added word <00644>.
+
+% > Added word <00645>.
+
+% > Added word <00646>.
+
+% > Added word <00647>.
+
+% > Added word <00648>.
+
+% > Added word <00649>.
+
+% > Added word <00650>.
+
+% > Added word <00651>.
+
+% > Added word <00652>.
+
+% > Added word <00653>.
+
+% > Added word <00654>.
+
+% > Added word <00655>.
+
+% > Added word <00656>.
+
+% > Added word <00657>.
+
+% > Added word <00658>.
+
+% > Added word <00659>.
+
+% > Added word <00660>.
+
+% > Added word <00661>.
+
+% > Added word <00662>.
+
+% > Added word <00663>.
+
+% > Added word <00664>.
+
+% > Added word <00665>.
+
+% > Added word <00666>.
+
+% > Added word <00667>.
+
+% > Added word <00668>.
+
+% > Added word <00669>.
+
+% > Added word <00670>.
+
+% > Added word <00671>.
+
+% > Added word <00672>.
+
+% > Added word <00673>.
+
+% > Added word <00674>.
+
+% > Added word <00675>.
+
+% > Added word <00676>.
+
+% > Added word <00677>.
+
+% > Added word <00678>.
+
+% > Added word <00679>.
+
+% > Added word <00680>.
+
+% > Added word <00681>.
+
+% > Added word <00682>.
+
+% > Added word <00683>.
+
+% > Added word <00684>.
+
+% > Added word <00685>.
+
+% > Added word <00686>.
+
+% > Added word <00687>.
+
+% > Added word <00688>.
+
+% > Added word <00689>.
+
+% > Added word <00690>.
+
+% > Added word <00691>.
+
+% > Added word <00692>.
+
+% > Added word <00693>.
+
+% > Added word <00694>.
+
+% > Added word <00695>.
+
+% > Added word <00696>.
+
+% > Added word <00697>.
+
+% > Added word <00698>.
+
+% > Added word <00699>.
+
+% > Added word <00700>.
+
+% > Added word <00701>.
+
+% > Added word <00702>.
+
+% > Added word <00703>.
+
+% > Added word <00704>.
+
+% > Added word <00705>.
+
+% > Added word <00706>.
+
+% > Added word <00707>.
+
+% > Added word <00708>.
+
+% > Added word <00709>.
+
+% > Added word <00710>.
+
+% > Added word <00711>.
+
+% > Added word <00712>.
+
+% > Added word <00713>.
+
+% > Added word <00714>.
+
+% > Added word <00715>.
+
+% > Added word <00716>.
+
+% > Added word <00717>.
+
+% > Added word <00718>.
+
+% > Added word <00719>.
+
+% > Added word <00720>.
+
+% > Added word <00721>.
+
+% > Added word <00722>.
+
+% > Added word <00723>.
+
+% > Added word <00724>.
+
+% > Added word <00725>.
+
+% > Added word <00726>.
+
+% > Added word <00727>.
+
+% > Added word <00728>.
+
+% > Added word <00729>.
+
+% > Added word <00730>.
+
+% > Added word <00731>.
+
+% > Added word <00732>.
+
+% > Added word <00733>.
+
+% > Added word <00734>.
+
+% > Added word <00735>.
+
+% > Added word <00736>.
+
+% > Added word <00737>.
+
+% > Added word <00738>.
+
+% > Added word <00739>.
+
+% > Added word <00740>.
+
+% > Added word <00741>.
+
+% > Added word <00742>.
+
+% > Added word <00743>.
+
+% > Added word <00744>.
+
+% > Added word <00745>.
+
+% > Added word <00746>.
+
+% > Added word <00747>.
+
+% > Added word <00748>.
+
+% > Added word <00749>.
+
+% > Added word <00750>.
+
+% > Added word <00751>.
+
+% > Added word <00752>.
+
+% > Added word <00753>.
+
+% > Added word <00754>.
+
+% > Added word <00755>.
+
+% > Added word <00756>.
+
+% > Added word <00757>.
+
+% > Added word <00758>.
+
+% > Added word <00759>.
+
+% > Added word <00760>.
+
+% > Added word <00761>.
+
+% > Added word <00762>.
+
+% > Added word <00763>.
+
+% > Added word <00764>.
+
+% > Added word <00765>.
+
+% > Added word <00766>.
+
+% > Added word <00767>.
+
+% > Added word <00768>.
+
+% > Added word <00769>.
+
+% > Added word <00770>.
+
+% > Added word <00771>.
+
+% > Added word <00772>.
+
+% > Added word <00773>.
+
+% > Added word <00774>.
+
+% > Added word <00775>.
+
+% > Added word <00776>.
+
+% > Added word <00777>.
+
+% > Added word <00778>.
+
+% > Added word <00779>.
+
+% > Added word <00780>.
+
+% > Added word <00781>.
+
+% > Added word <00782>.
+
+% > Added word <00783>.
+
+% > Added word <00784>.
+
+% > Added word <00785>.
+
+% > Added word <00786>.
+
+% > Added word <00787>.
+
+% > Added word <00788>.
+
+% > Added word <00789>.
+
+% > Added word <00790>.
+
+% > Added word <00791>.
+
+% > Added word <00792>.
+
+% > Added word <00793>.
+
+% > Added word <00794>.
+
+% > Added word <00795>.
+
+% > Added word <00796>.
+
+% > Added word <00797>.
+
+% > Added word <00798>.
+
+% > Added word <00799>.
+
+% > Added word <00800>.
+
+% > Added word <00801>.
+
+% > Added word <00802>.
+
+% > Added word <00803>.
+
+% > Added word <00804>.
+
+% > Added word <00805>.
+
+% > Added word <00806>.
+
+% > Added word <00807>.
+
+% > Added word <00808>.
+
+% > Added word <00809>.
+
+% > Added word <00810>.
+
+% > Added word <00811>.
+
+% > Added word <00812>.
+
+% > Added word <00813>.
+
+% > Added word <00814>.
+
+% > Added word <00815>.
+
+% > Added word <00816>.
+
+% > Added word <00817>.
+
+% > Added word <00818>.
+
+% > Added word <00819>.
+
+% > Added word <00820>.
+
+% > Added word <00821>.
+
+% > Added word <00822>.
+
+% > Added word <00823>.
+
+% > Added word <00824>.
+
+% > Added word <00825>.
+
+% > Added word <00826>.
+
+% > Added word <00827>.
+
+% > Added word <00828>.
+
+% > Added word <00829>.
+
+% > Added word <00830>.
+
+% > Added word <00831>.
+
+% > Added word <00832>.
+
+% > Added word <00833>.
+
+% > Added word <00834>.
+
+% > Added word <00835>.
+
+% > Added word <00836>.
+
+% > Added word <00837>.
+
+% > Added word <00838>.
+
+% > Added word <00839>.
+
+% > Added word <00840>.
+
+% > Added word <00841>.
+
+% > Added word <00842>.
+
+% > Added word <00843>.
+
+% > Added word <00844>.
+
+% > Added word <00845>.
+
+% > Added word <00846>.
+
+% > Added word <00847>.
+
+% > Added word <00848>.
+
+% > Added word <00849>.
+
+% > Added word <00850>.
+
+% > Added word <00851>.
+
+% > Added word <00852>.
+
+% > Added word <00853>.
+
+% > Added word <00854>.
+
+% > Added word <00855>.
+
+% > Added word <00856>.
+
+% > Added word <00857>.
+
+% > Added word <00858>.
+
+% > Added word <00859>.
+
+% > Added word <00860>.
+
+% > Added word <00861>.
+
+% > Added word <00862>.
+
+% > Added word <00863>.
+
+% > Added word <00864>.
+
+% > Added word <00865>.
+
+% > Added word <00866>.
+
+% > Added word <00867>.
+
+% > Added word <00868>.
+
+% > Added word <00869>.
+
+% > Added word <00870>.
+
+% > Added word <00871>.
+
+% > Added word <00872>.
+
+% > Added word <00873>.
+
+% > Added word <00874>.
+
+% > Added word <00875>.
+
+% > Added word <00876>.
+
+% > Added word <00877>.
+
+% > Added word <00878>.
+
+% > Added word <00879>.
+
+% > Added word <00880>.
+
+% > Added word <00881>.
+
+% > Added word <00882>.
+
+% > Added word <00883>.
+
+% > Added word <00884>.
+
+% > Added word <00885>.
+
+% > Added word <00886>.
+
+% > Added word <00887>.
+
+% > Added word <00888>.
+
+% > Added word <00889>.
+
+% > Added word <00890>.
+
+% > Added word <00891>.
+
+% > Added word <00892>.
+
+% > Added word <00893>.
+
+% > Added word <00894>.
+
+% > Added word <00895>.
+
+% > Added word <00896>.
+
+% > Added word <00897>.
+
+% > Added word <00898>.
+
+% > Added word <00899>.
+
+% > Added word <00900>.
+
+% > Added word <00901>.
+
+% > Added word <00902>.
+
+% > Added word <00903>.
+
+% > Added word <00904>.
+
+% > Added word <00905>.
+
+% > Added word <00906>.
+
+% > Added word <00907>.
+
+% > Added word <00908>.
+
+% > Added word <00909>.
+
+% > Added word <00910>.
+
+% > Added word <00911>.
+
+% > Added word <00912>.
+
+% > Added word <00913>.
+
+% > Added word <00914>.
+
+% > Added word <00915>.
+
+% > Added word <00916>.
+
+% > Added word <00917>.
+
+% > Added word <00918>.
+
+% > Added word <00919>.
+
+% > Added word <00920>.
+
+% > Added word <00921>.
+
+% > Added word <00922>.
+
+% > Added word <00923>.
+
+% > Added word <00924>.
+
+% > Added word <00925>.
+
+% > Added word <00926>.
+
+% > Added word <00927>.
+
+% > Added word <00928>.
+
+% > Added word <00929>.
+
+% > Added word <00930>.
+
+% > Added word <00931>.
+
+% > Added word <00932>.
+
+% > Added word <00933>.
+
+% > Added word <00934>.
+
+% > Added word <00935>.
+
+% > Added word <00936>.
+
+% > Added word <00937>.
+
+% > Added word <00938>.
+
+% > Added word <00939>.
+
+% > Added word <00940>.
+
+% > Added word <00941>.
+
+% > Added word <00942>.
+
+% > Added word <00943>.
+
+% > Added word <00944>.
+
+% > Added word <00945>.
+
+% > Added word <00946>.
+
+% > Added word <00947>.
+
+% > Added word <00948>.
+
+% > Added word <00949>.
+
+% > Added word <00950>.
+
+% > Added word <00951>.
+
+% > Added word <00952>.
+
+% > Added word <00953>.
+
+% > Added word <00954>.
+
+% > Added word <00955>.
+
+% > Added word <00956>.
+
+% > Added word <00957>.
+
+% > Added word <00958>.
+
+% > Added word <00959>.
+
+% > Added word <00960>.
+
+% > Added word <00961>.
+
+% > Added word <00962>.
+
+% > Added word <00963>.
+
+% > Added word <00964>.
+
+% > Added word <00965>.
+
+% > Added word <00966>.
+
+% > Added word <00967>.
+
+% > Added word <00968>.
+
+% > Added word <00969>.
+
+% > Added word <00970>.
+
+% > Added word <00971>.
+
+% > Added word <00972>.
+
+% > Added word <00973>.
+
+% > Added word <00974>.
+
+% > Added word <00975>.
+
+% > Added word <00976>.
+
+% > Added word <00977>.
+
+% > Added word <00978>.
+
+% > Added word <00979>.
+
+% > Added word <00980>.
+
+% > Added word <00981>.
+
+% > Added word <00982>.
+
+% > Added word <00983>.
+
+% > Added word <00984>.
+
+% > Added word <00985>.
+
+% > Added word <00986>.
+
+% > Added word <00987>.
+
+% > Added word <00988>.
+
+% > Added word <00989>.
+
+% > Added word <00990>.
+
+% > Added word <00991>.
+
+% > Added word <00992>.
+
+% > Added word <00993>.
+
+% > Added word <00994>.
+
+% > Added word <00995>.
+
+% > Added word <00996>.
+
+% > Added word <00997>.
+
+% > Added word <00998>.
+
+% > Added word <00999>.
+
+% 
+> Good-bye.
+
+==================================================================
+
+Total Runtime: 0.000000
+
