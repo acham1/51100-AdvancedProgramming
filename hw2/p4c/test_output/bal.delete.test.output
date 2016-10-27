@@ -2,7 +2,7 @@
 ==================================================================
 
 Alan Cham
-p4.a: Simple Dictionary via Unbalanced Model 1 Binary Tree
+p4.b: Simple Dictionary via Balanced Model 2 Binary Tree
 
 Acceptable case-sensitive commands (maximum line length 500 chars): 
     % add word "definition"
@@ -2019,431 +2019,431 @@ Begin here:
 
 % > Deleted word <00383>.
 
-% > Failed. Word <00886> not found. 
+% > Deleted word <00886>.
 
-% > Failed. Word <00777> not found. 
+% > Deleted word <00777>.
 
-% > Failed. Word <00915> not found. 
+% > Deleted word <00915>.
 
-% > Failed. Word <00793> not found. 
+% > Deleted word <00793>.
 
 % > Deleted word <00335>.
 
-% > Failed. Word <00386> not found. 
+% > Deleted word <00386>.
 
-% > Failed. Word <00492> not found. 
+% > Deleted word <00492>.
 
-% > Failed. Word <00649> not found. 
+% > Deleted word <00649>.
 
-% > Failed. Word <00421> not found. 
+% > Deleted word <00421>.
 
-% > Failed. Word <00362> not found. 
+% > Deleted word <00362>.
 
 % > Deleted word <00027>.
 
-% > Failed. Word <00690> not found. 
+% > Deleted word <00690>.
 
-% > Failed. Word <00059> not found. 
+% > Deleted word <00059>.
 
-% > Failed. Word <00763> not found. 
+% > Deleted word <00763>.
 
-% > Failed. Word <00926> not found. 
+% > Deleted word <00926>.
 
-% > Failed. Word <00540> not found. 
+% > Deleted word <00540>.
 
-% > Failed. Word <00426> not found. 
+% > Deleted word <00426>.
 
-% > Failed. Word <00172> not found. 
+% > Deleted word <00172>.
 
-% > Failed. Word <00736> not found. 
+% > Deleted word <00736>.
 
-% > Failed. Word <00211> not found. 
+% > Deleted word <00211>.
 
-% > Failed. Word <00368> not found. 
+% > Deleted word <00368>.
 
-% > Failed. Word <00567> not found. 
+% > Deleted word <00567>.
 
-% > Failed. Word <00429> not found. 
+% > Deleted word <00429>.
 
-% > Failed. Word <00782> not found. 
+% > Deleted word <00782>.
 
-% > Failed. Word <00530> not found. 
+% > Deleted word <00530>.
 
-% > Failed. Word <00862> not found. 
+% > Deleted word <00862>.
 
-% > Failed. Word <00123> not found. 
+% > Deleted word <00123>.
 
-% > Failed. Word <00067> not found. 
+% > Deleted word <00067>.
 
-% > Failed. Word <00135> not found. 
+% > Deleted word <00135>.
 
-% > Failed. Word <00929> not found. 
+% > Deleted word <00929>.
 
-% > Failed. Word <00802> not found. 
+% > Deleted word <00802>.
 
 % > Deleted word <00022>.
 
-% > Failed. Word <00058> not found. 
+% > Deleted word <00058>.
 
-% > Failed. Word <00069> not found. 
+% > Deleted word <00069>.
 
-% > Failed. Word <00167> not found. 
+% > Deleted word <00167>.
 
-% > Failed. Word <00393> not found. 
+% > Deleted word <00393>.
 
-% > Failed. Word <00456> not found. 
+% > Deleted word <00456>.
 
 % > Deleted word <00011>.
 
-% > Failed. Word <00042> not found. 
+% > Deleted word <00042>.
 
-% > Failed. Word <00229> not found. 
+% > Deleted word <00229>.
 
-% > Failed. Word <00373> not found. 
+% > Deleted word <00373>.
 
 % > Failed. Word <00421> not found. 
 
-% > Failed. Word <00919> not found. 
+% > Deleted word <00919>.
 
-% > Failed. Word <00784> not found. 
+% > Deleted word <00784>.
 
-% > Failed. Word <00537> not found. 
+% > Deleted word <00537>.
 
-% > Failed. Word <00198> not found. 
+% > Deleted word <00198>.
 
-% > Failed. Word <00324> not found. 
+% > Deleted word <00324>.
 
-% > Failed. Word <00315> not found. 
+% > Deleted word <00315>.
 
-% > Failed. Word <00370> not found. 
+% > Deleted word <00370>.
 
-% > Failed. Word <00413> not found. 
+% > Deleted word <00413>.
 
-% > Failed. Word <00526> not found. 
+% > Deleted word <00526>.
 
-% > Failed. Word <00091> not found. 
+% > Deleted word <00091>.
 
-% > Failed. Word <00980> not found. 
+% > Deleted word <00980>.
 
-% > Failed. Word <00956> not found. 
+% > Deleted word <00956>.
 
-% > Failed. Word <00873> not found. 
+% > Deleted word <00873>.
 
 % > Failed. Word <00862> not found. 
 
-% > Failed. Word <00170> not found. 
+% > Deleted word <00170>.
 
-% > Failed. Word <00996> not found. 
+% > Deleted word <00996>.
 
-% > Failed. Word <00281> not found. 
+% > Deleted word <00281>.
 
-% > Failed. Word <00305> not found. 
+% > Deleted word <00305>.
 
-% > Failed. Word <00925> not found. 
+% > Deleted word <00925>.
 
-% > Failed. Word <00084> not found. 
+% > Deleted word <00084>.
 
-% > Failed. Word <00327> not found. 
+% > Deleted word <00327>.
 
-% > Failed. Word <00336> not found. 
+% > Deleted word <00336>.
 
-% > Failed. Word <00505> not found. 
+% > Deleted word <00505>.
 
-% > Failed. Word <00846> not found. 
+% > Deleted word <00846>.
 
-% > Failed. Word <00729> not found. 
+% > Deleted word <00729>.
 
-% > Failed. Word <00313> not found. 
+% > Deleted word <00313>.
 
-% > Failed. Word <00857> not found. 
+% > Deleted word <00857>.
 
-% > Failed. Word <00124> not found. 
+% > Deleted word <00124>.
 
-% > Failed. Word <00895> not found. 
+% > Deleted word <00895>.
 
-% > Failed. Word <00582> not found. 
+% > Deleted word <00582>.
 
-% > Failed. Word <00545> not found. 
+% > Deleted word <00545>.
 
-% > Failed. Word <00814> not found. 
+% > Deleted word <00814>.
 
-% > Failed. Word <00367> not found. 
+% > Deleted word <00367>.
 
-% > Failed. Word <00434> not found. 
+% > Deleted word <00434>.
 
-% > Failed. Word <00364> not found. 
+% > Deleted word <00364>.
 
-% > Failed. Word <00043> not found. 
+% > Deleted word <00043>.
 
-% > Failed. Word <00750> not found. 
+% > Deleted word <00750>.
 
-% > Failed. Word <00087> not found. 
+% > Deleted word <00087>.
 
-% > Failed. Word <00808> not found. 
+% > Deleted word <00808>.
 
-% > Failed. Word <00276> not found. 
+% > Deleted word <00276>.
 
-% > Failed. Word <00178> not found. 
+% > Deleted word <00178>.
 
-% > Failed. Word <00788> not found. 
+% > Deleted word <00788>.
 
-% > Failed. Word <00584> not found. 
+% > Deleted word <00584>.
 
-% > Failed. Word <00403> not found. 
+% > Deleted word <00403>.
 
-% > Failed. Word <00651> not found. 
+% > Deleted word <00651>.
 
-% > Failed. Word <00754> not found. 
+% > Deleted word <00754>.
 
-% > Failed. Word <00399> not found. 
+% > Deleted word <00399>.
 
-% > Failed. Word <00932> not found. 
+% > Deleted word <00932>.
 
-% > Failed. Word <00060> not found. 
+% > Deleted word <00060>.
 
-% > Failed. Word <00676> not found. 
+% > Deleted word <00676>.
 
 % > Failed. Word <00368> not found. 
 
-% > Failed. Word <00739> not found. 
+% > Deleted word <00739>.
 
-% > Failed. Word <00012> not found. 
+% > Deleted word <00012>.
 
-% > Failed. Word <00226> not found. 
+% > Deleted word <00226>.
 
-% > Failed. Word <00586> not found. 
+% > Deleted word <00586>.
 
-% > Failed. Word <00094> not found. 
+% > Deleted word <00094>.
 
-% > Failed. Word <00539> not found. 
+% > Deleted word <00539>.
 
-% > Failed. Word <00795> not found. 
+% > Deleted word <00795>.
 
-% > Failed. Word <00570> not found. 
+% > Deleted word <00570>.
 
 % > Failed. Word <00434> not found. 
 
-% > Failed. Word <00378> not found. 
+% > Deleted word <00378>.
 
-% > Failed. Word <00467> not found. 
+% > Deleted word <00467>.
 
-% > Failed. Word <00601> not found. 
+% > Deleted word <00601>.
 
-% > Failed. Word <00097> not found. 
+% > Deleted word <00097>.
 
-% > Failed. Word <00902> not found. 
+% > Deleted word <00902>.
 
-% > Failed. Word <00317> not found. 
+% > Deleted word <00317>.
 
 % > Failed. Word <00492> not found. 
 
-% > Failed. Word <00652> not found. 
+% > Deleted word <00652>.
 
-% > Failed. Word <00756> not found. 
+% > Deleted word <00756>.
 
-% > Failed. Word <00301> not found. 
+% > Deleted word <00301>.
 
-% > Failed. Word <00280> not found. 
+% > Deleted word <00280>.
 
-% > Failed. Word <00286> not found. 
+% > Deleted word <00286>.
 
-% > Failed. Word <00441> not found. 
+% > Deleted word <00441>.
 
-% > Failed. Word <00865> not found. 
+% > Deleted word <00865>.
 
-% > Failed. Word <00689> not found. 
+% > Deleted word <00689>.
 
-% > Failed. Word <00444> not found. 
+% > Deleted word <00444>.
 
-% > Failed. Word <00619> not found. 
+% > Deleted word <00619>.
 
-% > Failed. Word <00440> not found. 
+% > Deleted word <00440>.
 
 % > Failed. Word <00729> not found. 
 
-% > Failed. Word <00031> not found. 
+% > Deleted word <00031>.
 
-% > Failed. Word <00117> not found. 
+% > Deleted word <00117>.
 
 % > Failed. Word <00097> not found. 
 
-% > Failed. Word <00771> not found. 
+% > Deleted word <00771>.
 
-% > Failed. Word <00481> not found. 
+% > Deleted word <00481>.
 
-% > Failed. Word <00675> not found. 
+% > Deleted word <00675>.
 
-% > Failed. Word <00709> not found. 
+% > Deleted word <00709>.
 
-% > Failed. Word <00927> not found. 
+% > Deleted word <00927>.
 
 % > Failed. Word <00567> not found. 
 
-% > Failed. Word <00856> not found. 
+% > Deleted word <00856>.
 
-% > Failed. Word <00497> not found. 
+% > Deleted word <00497>.
 
-% > Failed. Word <00353> not found. 
+% > Deleted word <00353>.
 
 % > Failed. Word <00586> not found. 
 
-% > Failed. Word <00965> not found. 
+% > Deleted word <00965>.
 
-% > Failed. Word <00306> not found. 
+% > Deleted word <00306>.
 
-% > Failed. Word <00683> not found. 
+% > Deleted word <00683>.
 
-% > Failed. Word <00219> not found. 
+% > Deleted word <00219>.
 
-% > Failed. Word <00624> not found. 
+% > Deleted word <00624>.
 
-% > Failed. Word <00528> not found. 
+% > Deleted word <00528>.
 
-% > Failed. Word <00871> not found. 
+% > Deleted word <00871>.
 
-% > Failed. Word <00732> not found. 
+% > Deleted word <00732>.
 
-% > Failed. Word <00829> not found. 
+% > Deleted word <00829>.
 
-% > Failed. Word <00503> not found. 
+% > Deleted word <00503>.
 
-% > Failed. Word <00019> not found. 
+% > Deleted word <00019>.
 
 % > Failed. Word <00270> not found. 
 
 % > Failed. Word <00368> not found. 
 
-% > Failed. Word <00708> not found. 
+% > Deleted word <00708>.
 
-% > Failed. Word <00715> not found. 
+% > Deleted word <00715>.
 
-% > Failed. Word <00340> not found. 
+% > Deleted word <00340>.
 
-% > Failed. Word <00149> not found. 
+% > Deleted word <00149>.
 
-% > Failed. Word <00796> not found. 
+% > Deleted word <00796>.
 
-% > Failed. Word <00723> not found. 
+% > Deleted word <00723>.
 
-% > Failed. Word <00618> not found. 
+% > Deleted word <00618>.
 
-% > Failed. Word <00245> not found. 
+% > Deleted word <00245>.
 
 % > Failed. Word <00846> not found. 
 
-% > Failed. Word <00451> not found. 
+% > Deleted word <00451>.
 
-% > Failed. Word <00921> not found. 
+% > Deleted word <00921>.
 
-% > Failed. Word <00555> not found. 
+% > Deleted word <00555>.
 
-% > Failed. Word <00379> not found. 
+% > Deleted word <00379>.
 
-% > Failed. Word <00488> not found. 
+% > Deleted word <00488>.
 
-% > Failed. Word <00764> not found. 
+% > Deleted word <00764>.
 
-% > Failed. Word <00228> not found. 
+% > Deleted word <00228>.
 
-% > Failed. Word <00841> not found. 
+% > Deleted word <00841>.
 
-% > Failed. Word <00350> not found. 
+% > Deleted word <00350>.
 
-% > Failed. Word <00193> not found. 
+% > Deleted word <00193>.
 
-% > Failed. Word <00500> not found. 
+% > Deleted word <00500>.
 
-% > Failed. Word <00034> not found. 
+% > Deleted word <00034>.
 
 % > Failed. Word <00764> not found. 
 
 % > Failed. Word <00124> not found. 
 
-% > Failed. Word <00914> not found. 
+% > Deleted word <00914>.
 
-% > Failed. Word <00987> not found. 
+% > Deleted word <00987>.
 
 % > Failed. Word <00856> not found. 
 
-% > Failed. Word <00743> not found. 
+% > Deleted word <00743>.
 
-% > Failed. Word <00491> not found. 
+% > Deleted word <00491>.
 
-% > Failed. Word <00227> not found. 
+% > Deleted word <00227>.
 
-% > Failed. Word <00365> not found. 
+% > Deleted word <00365>.
 
-% > Failed. Word <00859> not found. 
+% > Deleted word <00859>.
 
-% > Failed. Word <00936> not found. 
+% > Deleted word <00936>.
 
-% > Failed. Word <00432> not found. 
+% > Deleted word <00432>.
 
-% > Failed. Word <00551> not found. 
+% > Deleted word <00551>.
 
-% > Failed. Word <00437> not found. 
+% > Deleted word <00437>.
 
 % > Failed. Word <00228> not found. 
 
-% > Failed. Word <00275> not found. 
+% > Deleted word <00275>.
 
-% > Failed. Word <00407> not found. 
+% > Deleted word <00407>.
 
-% > Failed. Word <00474> not found. 
+% > Deleted word <00474>.
 
-% > Failed. Word <00121> not found. 
+% > Deleted word <00121>.
 
-% > Failed. Word <00858> not found. 
+% > Deleted word <00858>.
 
-% > Failed. Word <00395> not found. 
+% > Deleted word <00395>.
 
-% > Failed. Word <00029> not found. 
+% > Deleted word <00029>.
 
-% > Failed. Word <00237> not found. 
+% > Deleted word <00237>.
 
-% > Failed. Word <00235> not found. 
+% > Deleted word <00235>.
 
 % > Failed. Word <00793> not found. 
 
-% > Failed. Word <00818> not found. 
+% > Deleted word <00818>.
 
-% > Failed. Word <00428> not found. 
+% > Deleted word <00428>.
 
-% > Failed. Word <00143> not found. 
+% > Deleted word <00143>.
 
 % > Failed. Word <00011> not found. 
 
-% > Failed. Word <00928> not found. 
+% > Deleted word <00928>.
 
-% > Failed. Word <00529> not found. 
+% > Deleted word <00529>.
 
-% > Failed. Word <00776> not found. 
+% > Deleted word <00776>.
 
-% > Failed. Word <00404> not found. 
+% > Deleted word <00404>.
 
-% > Failed. Word <00443> not found. 
+% > Deleted word <00443>.
 
 % > Failed. Word <00763> not found. 
 
-% > Failed. Word <00613> not found. 
+% > Deleted word <00613>.
 
-% > Failed. Word <00538> not found. 
+% > Deleted word <00538>.
 
-% > Failed. Word <00606> not found. 
+% > Deleted word <00606>.
 
-% > Failed. Word <00840> not found. 
+% > Deleted word <00840>.
 
-% > Failed. Word <00904> not found. 
+% > Deleted word <00904>.
 
 % > Failed. Word <00818> not found. 
 
-% > Failed. Word <00128> not found. 
+% > Deleted word <00128>.
 
-% > Failed. Word <00688> not found. 
+% > Deleted word <00688>.
 
-% > Failed. Word <00369> not found. 
+% > Deleted word <00369>.
 
-% > Failed. Word <00917> not found. 
+% > Deleted word <00917>.
 
 % > Failed. Word <00917> not found. 
 
@@ -2453,79 +2453,79 @@ Begin here:
 
 % > Failed. Word <00743> not found. 
 
-% > Failed. Word <00470> not found. 
+% > Deleted word <00470>.
 
-% > Failed. Word <00183> not found. 
+% > Deleted word <00183>.
 
-% > Failed. Word <00490> not found. 
+% > Deleted word <00490>.
 
-% > Failed. Word <00499> not found. 
+% > Deleted word <00499>.
 
-% > Failed. Word <00772> not found. 
+% > Deleted word <00772>.
 
-% > Failed. Word <00725> not found. 
+% > Deleted word <00725>.
 
-% > Failed. Word <00644> not found. 
+% > Deleted word <00644>.
 
-% > Failed. Word <00590> not found. 
+% > Deleted word <00590>.
 
 % > Failed. Word <00505> not found. 
 
-% > Failed. Word <00139> not found. 
+% > Deleted word <00139>.
 
-% > Failed. Word <00954> not found. 
+% > Deleted word <00954>.
 
-% > Failed. Word <00786> not found. 
+% > Deleted word <00786>.
 
-% > Failed. Word <00669> not found. 
+% > Deleted word <00669>.
 
-% > Failed. Word <00082> not found. 
+% > Deleted word <00082>.
 
-% > Failed. Word <00542> not found. 
+% > Deleted word <00542>.
 
-% > Failed. Word <00464> not found. 
+% > Deleted word <00464>.
 
-% > Failed. Word <00197> not found. 
+% > Deleted word <00197>.
 
-% > Failed. Word <00507> not found. 
+% > Deleted word <00507>.
 
-% > Failed. Word <00355> not found. 
+% > Deleted word <00355>.
 
-% > Failed. Word <00804> not found. 
+% > Deleted word <00804>.
 
-% > Failed. Word <00348> not found. 
+% > Deleted word <00348>.
 
-% > Failed. Word <00611> not found. 
+% > Deleted word <00611>.
 
-% > Failed. Word <00622> not found. 
+% > Deleted word <00622>.
 
-% > Failed. Word <00828> not found. 
+% > Deleted word <00828>.
 
-% > Failed. Word <00299> not found. 
+% > Deleted word <00299>.
 
-% > Failed. Word <00343> not found. 
+% > Deleted word <00343>.
 
-% > Failed. Word <00746> not found. 
+% > Deleted word <00746>.
 
-% > Failed. Word <00568> not found. 
+% > Deleted word <00568>.
 
 % > Failed. Word <00340> not found. 
 
-% > Failed. Word <00422> not found. 
+% > Deleted word <00422>.
 
-% > Failed. Word <00311> not found. 
+% > Deleted word <00311>.
 
-% > Failed. Word <00810> not found. 
+% > Deleted word <00810>.
 
-% > Failed. Word <00605> not found. 
+% > Deleted word <00605>.
 
-% > Failed. Word <00801> not found. 
+% > Deleted word <00801>.
 
-% > Failed. Word <00661> not found. 
+% > Deleted word <00661>.
 
-% > Failed. Word <00730> not found. 
+% > Deleted word <00730>.
 
-% > Failed. Word <00878> not found. 
+% > Deleted word <00878>.
 
 % > Failed. Word <00305> not found. 
 
@@ -2535,219 +2535,219 @@ Begin here:
 
 % > Failed. Word <00444> not found. 
 
-% > Failed. Word <00626> not found. 
+% > Deleted word <00626>.
 
-% > Failed. Word <00522> not found. 
+% > Deleted word <00522>.
 
-% > Failed. Word <00465> not found. 
+% > Deleted word <00465>.
 
 % > Failed. Word <00708> not found. 
 
-% > Failed. Word <00416> not found. 
+% > Deleted word <00416>.
 
-% > Failed. Word <00282> not found. 
+% > Deleted word <00282>.
 
-% > Failed. Word <00258> not found. 
+% > Deleted word <00258>.
 
-% > Failed. Word <00924> not found. 
+% > Deleted word <00924>.
 
-% > Failed. Word <00637> not found. 
+% > Deleted word <00637>.
 
-% > Failed. Word <00062> not found. 
+% > Deleted word <00062>.
 
 % > Failed. Word <00624> not found. 
 
-% > Failed. Word <00600> not found. 
+% > Deleted word <00600>.
 
-% > Failed. Word <00036> not found. 
+% > Deleted word <00036>.
 
-% > Failed. Word <00452> not found. 
+% > Deleted word <00452>.
 
-% > Failed. Word <00899> not found. 
+% > Deleted word <00899>.
 
 % > Failed. Word <00379> not found. 
 
-% > Failed. Word <00550> not found. 
+% > Deleted word <00550>.
 
-% > Failed. Word <00468> not found. 
+% > Deleted word <00468>.
 
-% > Failed. Word <00071> not found. 
+% > Deleted word <00071>.
 
-% > Failed. Word <00973> not found. 
+% > Deleted word <00973>.
 
-% > Failed. Word <00131> not found. 
+% > Deleted word <00131>.
 
-% > Failed. Word <00881> not found. 
+% > Deleted word <00881>.
 
-% > Failed. Word <00930> not found. 
+% > Deleted word <00930>.
 
-% > Failed. Word <00933> not found. 
+% > Deleted word <00933>.
 
-% > Failed. Word <00894> not found. 
+% > Deleted word <00894>.
 
-% > Failed. Word <00660> not found. 
+% > Deleted word <00660>.
 
 % > Failed. Word <00163> not found. 
 
-% > Failed. Word <00199> not found. 
+% > Deleted word <00199>.
 
-% > Failed. Word <00981> not found. 
+% > Deleted word <00981>.
 
 % > Failed. Word <00899> not found. 
 
 % > Failed. Word <00996> not found. 
 
-% > Failed. Word <00959> not found. 
+% > Deleted word <00959>.
 
-% > Failed. Word <00773> not found. 
+% > Deleted word <00773>.
 
-% > Failed. Word <00813> not found. 
+% > Deleted word <00813>.
 
-% > Failed. Word <00668> not found. 
+% > Deleted word <00668>.
 
-% > Failed. Word <00190> not found. 
+% > Deleted word <00190>.
 
-% > Failed. Word <00095> not found. 
+% > Deleted word <00095>.
 
 % > Failed. Word <00926> not found. 
 
-% > Failed. Word <00466> not found. 
+% > Deleted word <00466>.
 
 % > Failed. Word <00084> not found. 
 
 % > Failed. Word <00340> not found. 
 
-% > Failed. Word <00090> not found. 
+% > Deleted word <00090>.
 
-% > Failed. Word <00684> not found. 
+% > Deleted word <00684>.
 
-% > Failed. Word <00376> not found. 
+% > Deleted word <00376>.
 
 % > Failed. Word <00542> not found. 
 
 % > Failed. Word <00936> not found. 
 
-% > Failed. Word <00107> not found. 
+% > Deleted word <00107>.
 
-% > Failed. Word <00445> not found. 
+% > Deleted word <00445>.
 
 % > Failed. Word <00756> not found. 
 
-% > Failed. Word <00179> not found. 
+% > Deleted word <00179>.
 
-% > Failed. Word <00418> not found. 
+% > Deleted word <00418>.
 
-% > Failed. Word <00887> not found. 
+% > Deleted word <00887>.
 
-% > Failed. Word <00412> not found. 
+% > Deleted word <00412>.
 
 % > Failed. Word <00348> not found. 
 
 % > Failed. Word <00172> not found. 
 
-% > Failed. Word <00659> not found. 
+% > Deleted word <00659>.
 
 % > Deleted word <00009>.
 
 % > Failed. Word <00336> not found. 
 
-% > Failed. Word <00210> not found. 
+% > Deleted word <00210>.
 
-% > Failed. Word <00342> not found. 
+% > Deleted word <00342>.
 
-% > Failed. Word <00587> not found. 
+% > Deleted word <00587>.
 
-% > Failed. Word <00206> not found. 
+% > Deleted word <00206>.
 
 % > Failed. Word <00301> not found. 
 
-% > Failed. Word <00713> not found. 
+% > Deleted word <00713>.
 
-% > Failed. Word <00372> not found. 
+% > Deleted word <00372>.
 
-% > Failed. Word <00321> not found. 
+% > Deleted word <00321>.
 
-% > Failed. Word <00255> not found. 
+% > Deleted word <00255>.
 
-% > Failed. Word <00819> not found. 
+% > Deleted word <00819>.
 
-% > Failed. Word <00599> not found. 
+% > Deleted word <00599>.
 
-% > Failed. Word <00721> not found. 
+% > Deleted word <00721>.
 
 % > Failed. Word <00904> not found. 
 
-% > Failed. Word <00939> not found. 
+% > Deleted word <00939>.
 
-% > Failed. Word <00811> not found. 
+% > Deleted word <00811>.
 
-% > Failed. Word <00940> not found. 
+% > Deleted word <00940>.
 
-% > Failed. Word <00667> not found. 
+% > Deleted word <00667>.
 
-% > Failed. Word <00705> not found. 
+% > Deleted word <00705>.
 
 % > Failed. Word <00228> not found. 
 
-% > Failed. Word <00127> not found. 
+% > Deleted word <00127>.
 
-% > Failed. Word <00150> not found. 
+% > Deleted word <00150>.
 
-% > Failed. Word <00984> not found. 
+% > Deleted word <00984>.
 
-% > Failed. Word <00658> not found. 
+% > Deleted word <00658>.
 
-% > Failed. Word <00920> not found. 
+% > Deleted word <00920>.
 
-% > Failed. Word <00224> not found. 
+% > Deleted word <00224>.
 
 % > Failed. Word <00422> not found. 
 
-% > Failed. Word <00269> not found. 
+% > Deleted word <00269>.
 
-% > Failed. Word <00396> not found. 
+% > Deleted word <00396>.
 
-% > Failed. Word <00081> not found. 
+% > Deleted word <00081>.
 
-% > Failed. Word <00630> not found. 
+% > Deleted word <00630>.
 
 % > Failed. Word <00084> not found. 
 
-% > Failed. Word <00292> not found. 
+% > Deleted word <00292>.
 
-% > Failed. Word <00972> not found. 
+% > Deleted word <00972>.
 
-% > Failed. Word <00672> not found. 
+% > Deleted word <00672>.
 
-% > Failed. Word <00850> not found. 
+% > Deleted word <00850>.
 
-% > Failed. Word <00625> not found. 
+% > Deleted word <00625>.
 
-% > Failed. Word <00385> not found. 
+% > Deleted word <00385>.
 
-% > Failed. Word <00222> not found. 
+% > Deleted word <00222>.
 
 % > Failed. Word <00299> not found. 
 
-% > Failed. Word <00640> not found. 
+% > Deleted word <00640>.
 
 % > Failed. Word <00042> not found. 
 
-% > Failed. Word <00898> not found. 
+% > Deleted word <00898>.
 
 % > Failed. Word <00713> not found. 
 
-% > Failed. Word <00298> not found. 
+% > Deleted word <00298>.
 
 % > Failed. Word <00190> not found. 
 
-% > Failed. Word <00524> not found. 
+% > Deleted word <00524>.
 
 % > Failed. Word <00590> not found. 
 
-% > Failed. Word <00209> not found. 
+% > Deleted word <00209>.
 
-% > Failed. Word <00581> not found. 
+% > Deleted word <00581>.
 
 % > Failed. Word <00819> not found. 
 
@@ -2755,17 +2755,17 @@ Begin here:
 
 % > Failed. Word <00732> not found. 
 
-% > Failed. Word <00155> not found. 
+% > Deleted word <00155>.
 
-% > Failed. Word <00994> not found. 
+% > Deleted word <00994>.
 
 % > Deleted word <00004>.
 
 % > Failed. Word <00379> not found. 
 
-% > Failed. Word <00769> not found. 
+% > Deleted word <00769>.
 
-% > Failed. Word <00273> not found. 
+% > Deleted word <00273>.
 
 % > Failed. Word <00776> not found. 
 
@@ -2773,79 +2773,79 @@ Begin here:
 
 % > Failed. Word <00255> not found. 
 
-% > Failed. Word <00860> not found. 
+% > Deleted word <00860>.
 
-% > Failed. Word <00142> not found. 
+% > Deleted word <00142>.
 
-% > Failed. Word <00579> not found. 
+% > Deleted word <00579>.
 
-% > Failed. Word <00884> not found. 
+% > Deleted word <00884>.
 
-% > Failed. Word <00993> not found. 
+% > Deleted word <00993>.
 
-% > Failed. Word <00205> not found. 
+% > Deleted word <00205>.
 
-% > Failed. Word <00621> not found. 
+% > Deleted word <00621>.
 
 % > Failed. Word <00567> not found. 
 
-% > Failed. Word <00504> not found. 
+% > Deleted word <00504>.
 
 % > Failed. Word <00613> not found. 
 
-% > Failed. Word <00961> not found. 
+% > Deleted word <00961>.
 
 % > Failed. Word <00754> not found. 
 
-% > Failed. Word <00326> not found. 
+% > Deleted word <00326>.
 
-% > Failed. Word <00259> not found. 
+% > Deleted word <00259>.
 
-% > Failed. Word <00944> not found. 
+% > Deleted word <00944>.
+
+% > Deleted word <00202>.
 
 % > Failed. Word <00202> not found. 
 
-% > Failed. Word <00202> not found. 
-
-% > Failed. Word <00506> not found. 
+% > Deleted word <00506>.
 
 % > Failed. Word <00784> not found. 
 
-% > Failed. Word <00021> not found. 
+% > Deleted word <00021>.
 
-% > Failed. Word <00842> not found. 
+% > Deleted word <00842>.
 
-% > Failed. Word <00868> not found. 
+% > Deleted word <00868>.
 
 % > Failed. Word <00528> not found. 
 
-% > Failed. Word <00189> not found. 
+% > Deleted word <00189>.
 
-% > Failed. Word <00872> not found. 
+% > Deleted word <00872>.
 
-% > Failed. Word <00908> not found. 
+% > Deleted word <00908>.
 
-% > Failed. Word <00958> not found. 
+% > Deleted word <00958>.
 
-% > Failed. Word <00498> not found. 
+% > Deleted word <00498>.
 
 % > Failed. Word <00036> not found. 
 
 % > Failed. Word <00808> not found. 
 
-% > Failed. Word <00753> not found. 
+% > Deleted word <00753>.
 
-% > Failed. Word <00248> not found. 
+% > Deleted word <00248>.
 
-% > Failed. Word <00303> not found. 
+% > Deleted word <00303>.
 
-% > Failed. Word <00333> not found. 
+% > Deleted word <00333>.
 
-% > Failed. Word <00133> not found. 
+% > Deleted word <00133>.
 
-% > Failed. Word <00648> not found. 
+% > Deleted word <00648>.
 
-% > Failed. Word <00890> not found. 
+% > Deleted word <00890>.
 
 % > Failed. Word <00754> not found. 
 
@@ -2859,77 +2859,77 @@ Begin here:
 
 % > Failed. Word <00500> not found. 
 
-% > Failed. Word <00046> not found. 
+% > Deleted word <00046>.
 
 % > Failed. Word <00788> not found. 
 
-% > Failed. Word <00797> not found. 
+% > Deleted word <00797>.
 
-% > Failed. Word <00249> not found. 
+% > Deleted word <00249>.
 
-% > Failed. Word <00990> not found. 
+% > Deleted word <00990>.
 
 % > Failed. Word <00303> not found. 
 
-% > Failed. Word <00033> not found. 
+% > Deleted word <00033>.
 
-% > Failed. Word <00363> not found. 
+% > Deleted word <00363>.
 
 % > Failed. Word <00497> not found. 
 
-% > Failed. Word <00253> not found. 
+% > Deleted word <00253>.
 
-% > Failed. Word <00892> not found. 
+% > Deleted word <00892>.
 
-% > Failed. Word <00686> not found. 
+% > Deleted word <00686>.
 
-% > Failed. Word <00125> not found. 
+% > Deleted word <00125>.
 
-% > Failed. Word <00152> not found. 
+% > Deleted word <00152>.
 
 % > Failed. Word <00996> not found. 
 
-% > Failed. Word <00975> not found. 
+% > Deleted word <00975>.
 
-% > Failed. Word <00188> not found. 
+% > Deleted word <00188>.
 
-% > Failed. Word <00157> not found. 
+% > Deleted word <00157>.
 
 % > Failed. Word <00729> not found. 
 
-% > Failed. Word <00436> not found. 
+% > Deleted word <00436>.
 
-% > Failed. Word <00460> not found. 
+% > Deleted word <00460>.
 
-% > Failed. Word <00414> not found. 
+% > Deleted word <00414>.
 
 % > Failed. Word <00921> not found. 
 
 % > Failed. Word <00460> not found. 
 
-% > Failed. Word <00304> not found. 
+% > Deleted word <00304>.
 
-% > Failed. Word <00028> not found. 
+% > Deleted word <00028>.
 
 % > Failed. Word <00027> not found. 
 
-% > Failed. Word <00050> not found. 
+% > Deleted word <00050>.
 
-% > Failed. Word <00748> not found. 
+% > Deleted word <00748>.
 
-% > Failed. Word <00556> not found. 
+% > Deleted word <00556>.
 
 % > Failed. Word <00902> not found. 
 
-% > Failed. Word <00794> not found. 
+% > Deleted word <00794>.
 
-% > Failed. Word <00697> not found. 
+% > Deleted word <00697>.
 
-% > Failed. Word <00699> not found. 
+% > Deleted word <00699>.
 
 % > Failed. Word <00043> not found. 
 
-% > Failed. Word <00039> not found. 
+% > Deleted word <00039>.
 
 % > Deleted word <00002>.
 
@@ -2939,37 +2939,37 @@ Begin here:
 
 % > Failed. Word <00500> not found. 
 
-% > Failed. Word <00681> not found. 
+% > Deleted word <00681>.
 
-% > Failed. Word <00647> not found. 
+% > Deleted word <00647>.
 
 % > Failed. Word <00538> not found. 
 
-% > Failed. Word <00159> not found. 
+% > Deleted word <00159>.
 
-% > Failed. Word <00151> not found. 
+% > Deleted word <00151>.
 
-% > Failed. Word <00535> not found. 
+% > Deleted word <00535>.
 
-% > Failed. Word <00134> not found. 
+% > Deleted word <00134>.
 
-% > Failed. Word <00339> not found. 
+% > Deleted word <00339>.
 
-% > Failed. Word <00692> not found. 
+% > Deleted word <00692>.
 
-% > Failed. Word <00215> not found. 
+% > Deleted word <00215>.
 
 % > Failed. Word <00127> not found. 
 
 % > Failed. Word <00504> not found. 
 
-% > Failed. Word <00629> not found. 
+% > Deleted word <00629>.
 
-% > Failed. Word <00049> not found. 
+% > Deleted word <00049>.
 
-% > Failed. Word <00964> not found. 
+% > Deleted word <00964>.
 
-% > Failed. Word <00285> not found. 
+% > Deleted word <00285>.
 
 % > Failed. Word <00429> not found. 
 
@@ -2977,21 +2977,21 @@ Begin here:
 
 % > Failed. Word <00335> not found. 
 
-% > Failed. Word <00177> not found. 
+% > Deleted word <00177>.
 
-% > Failed. Word <00900> not found. 
+% > Deleted word <00900>.
 
-% > Failed. Word <00238> not found. 
+% > Deleted word <00238>.
 
-% > Failed. Word <00971> not found. 
+% > Deleted word <00971>.
 
-% > Failed. Word <00949> not found. 
+% > Deleted word <00949>.
 
-% > Failed. Word <00289> not found. 
+% > Deleted word <00289>.
 
 % > Failed. Word <00367> not found. 
 
-% > Failed. Word <00988> not found. 
+% > Deleted word <00988>.
 
 % > Failed. Word <00292> not found. 
 
@@ -2999,51 +2999,51 @@ Begin here:
 
 % > Failed. Word <00743> not found. 
 
-% > Failed. Word <00144> not found. 
+% > Deleted word <00144>.
 
 % > Failed. Word <00829> not found. 
 
-% > Failed. Word <00390> not found. 
+% > Deleted word <00390>.
 
-% > Failed. Word <00682> not found. 
+% > Deleted word <00682>.
 
 % > Failed. Word <00340> not found. 
 
-% > Failed. Word <00541> not found. 
+% > Deleted word <00541>.
 
-% > Failed. Word <00569> not found. 
+% > Deleted word <00569>.
 
-% > Failed. Word <00826> not found. 
+% > Deleted word <00826>.
 
-% > Failed. Word <00232> not found. 
+% > Deleted word <00232>.
 
-% > Failed. Word <00261> not found. 
+% > Deleted word <00261>.
 
 % > Failed. Word <00042> not found. 
 
-% > Failed. Word <00360> not found. 
+% > Deleted word <00360>.
 
 % > Failed. Word <00117> not found. 
 
-% > Failed. Word <00023> not found. 
+% > Deleted word <00023>.
 
-% > Failed. Word <00761> not found. 
+% > Deleted word <00761>.
 
 % > Failed. Word <00081> not found. 
 
-% > Failed. Word <00309> not found. 
+% > Deleted word <00309>.
 
 % > Failed. Word <00190> not found. 
 
-% > Failed. Word <00425> not found. 
+% > Deleted word <00425>.
 
 % > Failed. Word <00996> not found. 
 
 % > Failed. Word <00367> not found. 
 
-% > Failed. Word <00677> not found. 
+% > Deleted word <00677>.
 
-% > Failed. Word <00234> not found. 
+% > Deleted word <00234>.
 
 % > Failed. Word <00690> not found. 
 
@@ -3051,109 +3051,109 @@ Begin here:
 
 % > Failed. Word <00524> not found. 
 
-% > Failed. Word <00057> not found. 
+% > Deleted word <00057>.
 
-% > Failed. Word <00614> not found. 
+% > Deleted word <00614>.
 
-% > Failed. Word <00168> not found. 
+% > Deleted word <00168>.
 
 % > Failed. Word <00205> not found. 
 
-% > Failed. Word <00358> not found. 
+% > Deleted word <00358>.
 
-% > Failed. Word <00312> not found. 
+% > Deleted word <00312>.
 
 % > Failed. Word <00386> not found. 
 
-% > Failed. Word <00100> not found. 
+% > Deleted word <00100>.
 
-% > Failed. Word <00346> not found. 
+% > Deleted word <00346>.
 
-% > Failed. Word <00726> not found. 
+% > Deleted word <00726>.
 
 % > Failed. Word <00994> not found. 
 
-% > Failed. Word <00916> not found. 
+% > Deleted word <00916>.
 
-% > Failed. Word <00552> not found. 
+% > Deleted word <00552>.
 
-% > Failed. Word <00578> not found. 
+% > Deleted word <00578>.
 
 % > Failed. Word <00529> not found. 
 
-% > Failed. Word <00946> not found. 
+% > Deleted word <00946>.
 
-% > Failed. Word <00290> not found. 
+% > Deleted word <00290>.
 
 % > Failed. Word <00647> not found. 
 
-% > Failed. Word <00970> not found. 
+% > Deleted word <00970>.
 
-% > Failed. Word <00051> not found. 
+% > Deleted word <00051>.
 
-% > Failed. Word <00080> not found. 
+% > Deleted word <00080>.
 
-% > Failed. Word <00631> not found. 
+% > Deleted word <00631>.
 
-% > Failed. Word <00593> not found. 
+% > Deleted word <00593>.
 
 % > Failed. Word <00857> not found. 
 
-% > Failed. Word <00627> not found. 
+% > Deleted word <00627>.
 
 % > Failed. Word <00312> not found. 
 
 % > Failed. Word <00886> not found. 
 
-% > Failed. Word <00214> not found. 
+% > Deleted word <00214>.
 
 % > Failed. Word <00355> not found. 
 
-% > Failed. Word <00512> not found. 
+% > Deleted word <00512>.
 
 % > Failed. Word <00090> not found. 
 
 % > Failed. Word <00412> not found. 
 
-% > Failed. Word <00479> not found. 
+% > Deleted word <00479>.
 
-% > Failed. Word <00610> not found. 
+% > Deleted word <00610>.
 
-% > Failed. Word <00969> not found. 
+% > Deleted word <00969>.
 
 % > Failed. Word <00189> not found. 
 
-% > Failed. Word <00274> not found. 
+% > Deleted word <00274>.
 
 % > Failed. Word <00355> not found. 
 
-% > Failed. Word <00641> not found. 
+% > Deleted word <00641>.
 
-% > Failed. Word <00620> not found. 
+% > Deleted word <00620>.
 
-% > Failed. Word <00433> not found. 
+% > Deleted word <00433>.
 
 % > Failed. Word <00987> not found. 
 
-% > Failed. Word <00888> not found. 
+% > Deleted word <00888>.
 
-% > Failed. Word <00338> not found. 
+% > Deleted word <00338>.
 
-% > Failed. Word <00566> not found. 
+% > Deleted word <00566>.
 
 % > Failed. Word <00770> not found. 
 
-% > Failed. Word <00284> not found. 
+% > Deleted word <00284>.
 
 % > Failed. Word <00856> not found. 
 
-% > Failed. Word <00417> not found. 
+% > Deleted word <00417>.
 
 % > Failed. Word <00606> not found. 
 
-% > Failed. Word <00260> not found. 
+% > Deleted word <00260>.
 
-% > Failed. Word <00849> not found. 
+% > Deleted word <00849>.
 
 % > Failed. Word <00237> not found. 
 
@@ -3161,17 +3161,17 @@ Begin here:
 
 % > Failed. Word <00059> not found. 
 
-% > Failed. Word <00217> not found. 
+% > Deleted word <00217>.
 
-% > Failed. Word <00518> not found. 
+% > Deleted word <00518>.
 
-% > Failed. Word <00945> not found. 
+% > Deleted word <00945>.
 
-% > Failed. Word <00783> not found. 
+% > Deleted word <00783>.
 
 % > Failed. Word <00873> not found. 
 
-% > Failed. Word <00458> not found. 
+% > Deleted word <00458>.
 
 % > Failed. Word <00873> not found. 
 
@@ -3179,41 +3179,41 @@ Begin here:
 
 % > Failed. Word <00289> not found. 
 
-% > Failed. Word <00483> not found. 
+% > Deleted word <00483>.
 
-% > Failed. Word <00607> not found. 
+% > Deleted word <00607>.
 
-% > Failed. Word <00478> not found. 
+% > Deleted word <00478>.
 
-% > Failed. Word <00757> not found. 
+% > Deleted word <00757>.
 
-% > Failed. Word <00314> not found. 
+% > Deleted word <00314>.
 
-% > Failed. Word <00471> not found. 
+% > Deleted word <00471>.
 
 % > Failed. Word <00729> not found. 
 
 % > Failed. Word <00100> not found. 
 
-% > Failed. Word <00459> not found. 
+% > Deleted word <00459>.
 
 % > Failed. Word <00618> not found. 
 
-% > Failed. Word <00438> not found. 
+% > Deleted word <00438>.
 
-% > Failed. Word <00025> not found. 
+% > Deleted word <00025>.
 
-% > Failed. Word <00388> not found. 
+% > Deleted word <00388>.
 
-% > Failed. Word <00074> not found. 
+% > Deleted word <00074>.
 
-% > Failed. Word <00233> not found. 
+% > Deleted word <00233>.
 
 % > Failed. Word <00157> not found. 
 
 % > Failed. Word <00681> not found. 
 
-% > Failed. Word <00493> not found. 
+% > Deleted word <00493>.
 
 % > Failed. Word <00358> not found. 
 
@@ -3223,7 +3223,7 @@ Begin here:
 
 % > Failed. Word <00417> not found. 
 
-% > Failed. Word <00839> not found. 
+% > Deleted word <00839>.
 
 % > Failed. Word <00569> not found. 
 
@@ -3233,13 +3233,13 @@ Begin here:
 
 % > Failed. Word <00794> not found. 
 
-% > Failed. Word <00173> not found. 
+% > Deleted word <00173>.
 
-% > Failed. Word <00847> not found. 
+% > Deleted word <00847>.
 
-% > Failed. Word <00431> not found. 
+% > Deleted word <00431>.
 
-% > Failed. Word <00462> not found. 
+% > Deleted word <00462>.
 
 % > Failed. Word <00682> not found. 
 
@@ -3247,43 +3247,43 @@ Begin here:
 
 % > Failed. Word <00292> not found. 
 
-% > Failed. Word <00791> not found. 
+% > Deleted word <00791>.
 
 % > Failed. Word <00057> not found. 
 
-% > Failed. Word <00115> not found. 
+% > Deleted word <00115>.
 
-% > Failed. Word <00521> not found. 
+% > Deleted word <00521>.
 
 % > Failed. Word <00157> not found. 
 
-% > Failed. Word <00574> not found. 
+% > Deleted word <00574>.
 
 % > Failed. Word <00491> not found. 
 
-% > Failed. Word <00947> not found. 
+% > Deleted word <00947>.
 
-% > Failed. Word <00951> not found. 
+% > Deleted word <00951>.
 
-% > Failed. Word <00231> not found. 
+% > Deleted word <00231>.
 
 % > Failed. Word <00021> not found. 
 
 % > Failed. Word <00537> not found. 
 
-% > Failed. Word <00740> not found. 
+% > Deleted word <00740>.
 
-% > Failed. Word <00054> not found. 
+% > Deleted word <00054>.
 
-% > Failed. Word <00030> not found. 
+% > Deleted word <00030>.
 
-% > Failed. Word <00098> not found. 
+% > Deleted word <00098>.
 
-% > Failed. Word <00325> not found. 
+% > Deleted word <00325>.
 
 % > Failed. Word <00081> not found. 
 
-% > Failed. Word <00516> not found. 
+% > Deleted word <00516>.
 
 % > Failed. Word <00516> not found. 
 
@@ -3299,9 +3299,9 @@ Begin here:
 
 % > Failed. Word <00338> not found. 
 
-% > Failed. Word <00580> not found. 
+% > Deleted word <00580>.
 
-% > Failed. Word <00218> not found. 
+% > Deleted word <00218>.
 
 % > Failed. Word <00021> not found. 
 
@@ -3309,99 +3309,99 @@ Begin here:
 
 % > Failed. Word <00862> not found. 
 
-% > Failed. Word <00812> not found. 
+% > Deleted word <00812>.
 
 % > Failed. Word <00379> not found. 
 
-% > Failed. Word <00977> not found. 
+% > Deleted word <00977>.
 
-% > Failed. Word <00685> not found. 
+% > Deleted word <00685>.
 
-% > Failed. Word <00536> not found. 
+% > Deleted word <00536>.
 
 % > Failed. Word <00904> not found. 
 
-% > Failed. Word <00176> not found. 
+% > Deleted word <00176>.
 
 % > Failed. Word <00483> not found. 
 
-% > Failed. Word <00207> not found. 
+% > Deleted word <00207>.
 
-% > Failed. Word <00759> not found. 
+% > Deleted word <00759>.
 
 % > Failed. Word <00857> not found. 
 
-% > Failed. Word <00744> not found. 
+% > Deleted word <00744>.
 
 % > Failed. Word <00499> not found. 
 
-% > Failed. Word <00911> not found. 
+% > Deleted word <00911>.
 
 % > Failed. Word <00127> not found. 
 
-% > Failed. Word <00950> not found. 
+% > Deleted word <00950>.
 
-% > Failed. Word <00236> not found. 
+% > Deleted word <00236>.
 
-% > Failed. Word <00560> not found. 
+% > Deleted word <00560>.
 
 % > Failed. Word <00818> not found. 
 
-% > Failed. Word <00105> not found. 
+% > Deleted word <00105>.
 
-% > Failed. Word <00563> not found. 
+% > Deleted word <00563>.
 
 % > Failed. Word <00049> not found. 
 
-% > Failed. Word <00244> not found. 
+% > Deleted word <00244>.
 
-% > Failed. Word <00711> not found. 
+% > Deleted word <00711>.
 
-% > Failed. Word <00805> not found. 
+% > Deleted word <00805>.
 
-% > Failed. Word <00934> not found. 
+% > Deleted word <00934>.
 
-% > Failed. Word <00291> not found. 
+% > Deleted word <00291>.
 
-% > Failed. Word <00375> not found. 
+% > Deleted word <00375>.
 
-% > Failed. Word <00955> not found. 
+% > Deleted word <00955>.
 
 % > Failed. Word <00614> not found. 
 
-% > Failed. Word <00589> not found. 
+% > Deleted word <00589>.
 
-% > Failed. Word <00768> not found. 
+% > Deleted word <00768>.
 
 % > Failed. Word <00993> not found. 
 
-% > Failed. Word <00918> not found. 
+% > Deleted word <00918>.
 
 % > Failed. Word <00805> not found. 
 
-% > Failed. Word <00882> not found. 
+% > Deleted word <00882>.
 
-% > Failed. Word <00822> not found. 
+% > Deleted word <00822>.
 
-% > Failed. Word <00982> not found. 
+% > Deleted word <00982>.
 
-% > Failed. Word <00717> not found. 
+% > Deleted word <00717>.
 
 % > Failed. Word <00030> not found. 
 
-% > Failed. Word <00093> not found. 
+% > Deleted word <00093>.
 
 % > Failed. Word <00574> not found. 
 
-% > Failed. Word <00126> not found. 
+% > Deleted word <00126>.
 
 % > Failed. Word <00593> not found. 
 
-% > Failed. Word <00486> not found. 
+% > Deleted word <00486>.
 
 % > Failed. Word <00253> not found. 
 
-% > Failed. Word <00543> not found. 
+% > Deleted word <00543>.
 
 % > Failed. Word <00074> not found. 
 
@@ -3411,39 +3411,39 @@ Begin here:
 
 % > Failed. Word <00179> not found. 
 
-% > Failed. Word <00377> not found. 
+% > Deleted word <00377>.
 
-% > Failed. Word <00762> not found. 
+% > Deleted word <00762>.
 
-% > Failed. Word <00775> not found. 
+% > Deleted word <00775>.
 
-% > Failed. Word <00088> not found. 
+% > Deleted word <00088>.
 
 % > Failed. Word <00919> not found. 
 
-% > Failed. Word <00710> not found. 
+% > Deleted word <00710>.
 
 % > Failed. Word <00732> not found. 
 
-% > Failed. Word <00294> not found. 
+% > Deleted word <00294>.
 
-% > Failed. Word <00017> not found. 
+% > Deleted word <00017>.
 
 % > Failed. Word <00346> not found. 
 
 % > Failed. Word <00235> not found. 
 
-% > Failed. Word <00137> not found. 
+% > Deleted word <00137>.
 
-% > Failed. Word <00691> not found. 
+% > Deleted word <00691>.
 
-% > Failed. Word <00153> not found. 
+% > Deleted word <00153>.
 
-% > Failed. Word <00943> not found. 
+% > Deleted word <00943>.
 
-% > Failed. Word <00573> not found. 
+% > Deleted word <00573>.
 
-% > Failed. Word <00328> not found. 
+% > Deleted word <00328>.
 
 % > Failed. Word <00925> not found. 
 
@@ -3451,61 +3451,61 @@ Begin here:
 
 % > Failed. Word <00710> not found. 
 
-% > Failed. Word <00018> not found. 
+% > Deleted word <00018>.
 
 % > Failed. Word <00217> not found. 
 
-% > Failed. Word <00836> not found. 
+% > Deleted word <00836>.
 
-% > Failed. Word <00963> not found. 
+% > Deleted word <00963>.
 
-% > Failed. Word <00055> not found. 
+% > Deleted word <00055>.
 
 % > Failed. Word <00090> not found. 
 
 % > Failed. Word <00858> not found. 
 
-% > Failed. Word <00130> not found. 
+% > Deleted word <00130>.
 
 % > Failed. Word <00904> not found. 
 
-% > Failed. Word <00571> not found. 
+% > Deleted word <00571>.
 
 % > Failed. Word <00661> not found. 
 
-% > Failed. Word <00633> not found. 
+% > Deleted word <00633>.
 
 % > Failed. Word <00685> not found. 
 
-% > Failed. Word <00789> not found. 
+% > Deleted word <00789>.
 
-% > Failed. Word <00073> not found. 
+% > Deleted word <00073>.
 
-% > Failed. Word <00604> not found. 
+% > Deleted word <00604>.
 
-% > Failed. Word <00851> not found. 
+% > Deleted word <00851>.
 
 % > Failed. Word <00805> not found. 
 
-% > Failed. Word <00250> not found. 
+% > Deleted word <00250>.
 
 % > Failed. Word <00868> not found. 
 
 % > Failed. Word <00503> not found. 
 
-% > Failed. Word <00485> not found. 
+% > Deleted word <00485>.
 
-% > Failed. Word <00006> not found. 
+% > Deleted word <00006>.
 
-% > Failed. Word <00195> not found. 
+% > Deleted word <00195>.
 
-% > Failed. Word <00639> not found. 
+% > Deleted word <00639>.
 
 % > Failed. Word <00949> not found. 
 
-% > Failed. Word <00120> not found. 
+% > Deleted word <00120>.
 
-% > Failed. Word <00967> not found. 
+% > Deleted word <00967>.
 
 % > Failed. Word <00226> not found. 
 
@@ -3513,7 +3513,7 @@ Begin here:
 
 % > Failed. Word <00677> not found. 
 
-% > Failed. Word <00596> not found. 
+% > Deleted word <00596>.
 
 % > Failed. Word <00981> not found. 
 
@@ -3533,9 +3533,9 @@ Begin here:
 
 % > Failed. Word <00342> not found. 
 
-% > Failed. Word <00532> not found. 
+% > Deleted word <00532>.
 
-% > Failed. Word <00196> not found. 
+% > Deleted word <00196>.
 
 % > Failed. Word <00379> not found. 
 
@@ -3547,23 +3547,23 @@ Begin here:
 
 % > Failed. Word <00172> not found. 
 
-% > Failed. Word <00427> not found. 
+% > Deleted word <00427>.
 
 % > Failed. Word <00234> not found. 
 
-% > Failed. Word <00040> not found. 
+% > Deleted word <00040>.
 
-% > Failed. Word <00283> not found. 
+% > Deleted word <00283>.
 
-% > Failed. Word <00072> not found. 
+% > Deleted word <00072>.
 
-% > Failed. Word <00398> not found. 
+% > Deleted word <00398>.
 
-% > Failed. Word <00830> not found. 
+% > Deleted word <00830>.
 
-% > Failed. Word <00063> not found. 
+% > Deleted word <00063>.
 
-% > Failed. Word <00347> not found. 
+% > Deleted word <00347>.
 
 % > Failed. Word <00950> not found. 
 
@@ -3571,23 +3571,23 @@ Begin here:
 
 % > Failed. Word <00573> not found. 
 
-% > Failed. Word <00714> not found. 
+% > Deleted word <00714>.
 
 % > Failed. Word <00059> not found. 
 
 % > Failed. Word <00522> not found. 
 
-% > Failed. Word <00047> not found. 
+% > Deleted word <00047>.
 
 % > Failed. Word <00924> not found. 
 
 % > Failed. Word <00082> not found. 
 
-% > Failed. Word <00435> not found. 
+% > Deleted word <00435>.
 
 % > Failed. Word <00232> not found. 
 
-% > Failed. Word <00204> not found. 
+% > Deleted word <00204>.
 
 % > Failed. Word <00954> not found. 
 
@@ -3599,41 +3599,41 @@ Begin here:
 
 % > Failed. Word <00640> not found. 
 
-% > Failed. Word <00278> not found. 
+% > Deleted word <00278>.
 
 % > Failed. Word <00159> not found. 
 
-% > Failed. Word <00262> not found. 
+% > Deleted word <00262>.
 
 % > Failed. Word <00262> not found. 
 
 % > Failed. Word <00683> not found. 
 
-% > Failed. Word <00041> not found. 
+% > Deleted word <00041>.
 
-% > Failed. Word <00848> not found. 
+% > Deleted word <00848>.
 
 % > Failed. Word <00723> not found. 
 
 % > Failed. Word <00324> not found. 
 
-% > Failed. Word <00272> not found. 
+% > Deleted word <00272>.
 
-% > Failed. Word <00122> not found. 
+% > Deleted word <00122>.
 
-% > Failed. Word <00154> not found. 
+% > Deleted word <00154>.
 
 % > Failed. Word <00335> not found. 
 
-% > Failed. Word <00821> not found. 
+% > Deleted word <00821>.
 
-% > Failed. Word <00457> not found. 
+% > Deleted word <00457>.
 
 % > Failed. Word <00365> not found. 
 
-% > Failed. Word <00747> not found. 
+% > Deleted word <00747>.
 
-% > Failed. Word <00171> not found. 
+% > Deleted word <00171>.
 
 % > Failed. Word <00776> not found. 
 
@@ -3641,35 +3641,35 @@ Begin here:
 
 % > Failed. Word <00218> not found. 
 
-% > Failed. Word <00701> not found. 
+% > Deleted word <00701>.
 
-% > Failed. Word <00703> not found. 
+% > Deleted word <00703>.
 
-% > Failed. Word <00653> not found. 
+% > Deleted word <00653>.
 
 % > Failed. Word <00933> not found. 
 
-% > Failed. Word <00907> not found. 
+% > Deleted word <00907>.
 
 % > Failed. Word <00959> not found. 
 
-% > Failed. Word <00728> not found. 
+% > Deleted word <00728>.
 
-% > Failed. Word <00806> not found. 
+% > Deleted word <00806>.
 
 % > Failed. Word <00797> not found. 
 
-% > Failed. Word <00720> not found. 
+% > Deleted word <00720>.
 
 % > Failed. Word <00084> not found. 
 
-% > Failed. Word <00308> not found. 
+% > Deleted word <00308>.
 
-% > Failed. Word <00334> not found. 
+% > Deleted word <00334>.
 
-% > Failed. Word <00698> not found. 
+% > Deleted word <00698>.
 
-% > Failed. Word <00991> not found. 
+% > Deleted word <00991>.
 
 % > Failed. Word <00376> not found. 
 
@@ -3677,23 +3677,23 @@ Begin here:
 
 % > Failed. Word <00715> not found. 
 
-% > Failed. Word <00052> not found. 
+% > Deleted word <00052>.
 
 % > Failed. Word <00171> not found. 
 
 % > Failed. Word <00189> not found. 
 
-% > Failed. Word <00559> not found. 
+% > Deleted word <00559>.
 
 % > Failed. Word <00506> not found. 
 
-% > Failed. Word <00010> not found. 
+% > Deleted word <00010>.
 
-% > Failed. Word <00016> not found. 
+% > Deleted word <00016>.
 
 % > Failed. Word <00224> not found. 
 
-% > Failed. Word <00109> not found. 
+% > Deleted word <00109>.
 
 % > Failed. Word <00539> not found. 
 
@@ -3703,25 +3703,25 @@ Begin here:
 
 % > Failed. Word <00109> not found. 
 
-% > Failed. Word <00053> not found. 
+% > Deleted word <00053>.
 
 % > Failed. Word <00081> not found. 
 
-% > Failed. Word <00114> not found. 
+% > Deleted word <00114>.
 
 % > Failed. Word <00338> not found. 
 
-% > Failed. Word <00989> not found. 
+% > Deleted word <00989>.
 
 % > Failed. Word <00426> not found. 
 
 % > Failed. Word <00067> not found. 
 
-% > Failed. Word <00147> not found. 
+% > Deleted word <00147>.
 
-% > Failed. Word <00223> not found. 
+% > Deleted word <00223>.
 
-% > Failed. Word <00787> not found. 
+% > Deleted word <00787>.
 
 % > Failed. Word <00231> not found. 
 
@@ -3731,7 +3731,7 @@ Begin here:
 
 % > Failed. Word <00281> not found. 
 
-% > Failed. Word <00875> not found. 
+% > Deleted word <00875>.
 
 % > Failed. Word <00850> not found. 
 
@@ -3739,7 +3739,7 @@ Begin here:
 
 % > Failed. Word <00590> not found. 
 
-% > Failed. Word <00254> not found. 
+% > Deleted word <00254>.
 
 % > Failed. Word <00350> not found. 
 
@@ -3749,13 +3749,13 @@ Begin here:
 
 % > Failed. Word <00857> not found. 
 
-% > Failed. Word <00494> not found. 
+% > Deleted word <00494>.
 
-% > Failed. Word <00181> not found. 
+% > Deleted word <00181>.
 
 % > Failed. Word <00081> not found. 
 
-% > Failed. Word <00603> not found. 
+% > Deleted word <00603>.
 
 % > Failed. Word <00720> not found. 
 
@@ -3765,25 +3765,25 @@ Begin here:
 
 % > Failed. Word <00181> not found. 
 
-% > Failed. Word <00487> not found. 
+% > Deleted word <00487>.
 
-% > Failed. Word <00415> not found. 
+% > Deleted word <00415>.
 
-% > Failed. Word <00296> not found. 
+% > Deleted word <00296>.
 
-% > Failed. Word <00825> not found. 
+% > Deleted word <00825>.
 
 % > Failed. Word <00404> not found. 
 
-% > Failed. Word <00722> not found. 
+% > Deleted word <00722>.
 
 % > Failed. Word <00892> not found. 
 
 % > Failed. Word <00551> not found. 
 
-% > Failed. Word <00297> not found. 
+% > Deleted word <00297>.
 
-% > Failed. Word <00032> not found. 
+% > Deleted word <00032>.
 
 % > Failed. Word <00134> not found. 
 
@@ -3797,11 +3797,11 @@ Begin here:
 
 % > Failed. Word <00708> not found. 
 
-% > Failed. Word <00595> not found. 
+% > Deleted word <00595>.
 
-% > Failed. Word <00999> not found. 
+% > Deleted word <00999>.
 
-% > Failed. Word <00962> not found. 
+% > Deleted word <00962>.
 
 % > Failed. Word <00297> not found. 
 
@@ -3819,11 +3819,11 @@ Begin here:
 
 % > Failed. Word <00932> not found. 
 
-% > Failed. Word <00382> not found. 
+% > Deleted word <00382>.
 
 % > Failed. Word <00021> not found. 
 
-% > Failed. Word <00266> not found. 
+% > Deleted word <00266>.
 
 % > Failed. Word <00563> not found. 
 
@@ -3835,7 +3835,7 @@ Begin here:
 
 % > Failed. Word <00685> not found. 
 
-% > Failed. Word <00086> not found. 
+% > Deleted word <00086>.
 
 % > Failed. Word <00285> not found. 
 
@@ -3843,19 +3843,19 @@ Begin here:
 
 % > Failed. Word <00990> not found. 
 
-% > Failed. Word <00583> not found. 
+% > Deleted word <00583>.
 
 % > Failed. Word <00314> not found. 
 
-% > Failed. Word <00476> not found. 
+% > Deleted word <00476>.
 
-% > Failed. Word <00116> not found. 
+% > Deleted word <00116>.
 
-% > Failed. Word <00820> not found. 
+% > Deleted word <00820>.
 
 % > Failed. Word <00892> not found. 
 
-% > Failed. Word <00525> not found. 
+% > Deleted word <00525>.
 
 % > Failed. Word <00528> not found. 
 
@@ -3865,15 +3865,15 @@ Begin here:
 
 % > Failed. Word <00490> not found. 
 
-% > Failed. Word <00136> not found. 
+% > Deleted word <00136>.
 
 % > Failed. Word <00360> not found. 
 
 % > Failed. Word <00618> not found. 
 
-% > Failed. Word <00643> not found. 
+% > Deleted word <00643>.
 
-% > Failed. Word <00337> not found. 
+% > Deleted word <00337>.
 
 % > Failed. Word <00928> not found. 
 
@@ -3881,23 +3881,23 @@ Begin here:
 
 % > Failed. Word <00621> not found. 
 
-% > Failed. Word <00310> not found. 
+% > Deleted word <00310>.
 
 % > Failed. Word <00955> not found. 
 
 % > Failed. Word <00888> not found. 
 
-% > Failed. Word <00225> not found. 
+% > Deleted word <00225>.
 
-% > Failed. Word <00815> not found. 
+% > Deleted word <00815>.
 
 % > Failed. Word <00570> not found. 
 
 % > Failed. Word <00437> not found. 
 
-% > Failed. Word <00853> not found. 
+% > Deleted word <00853>.
 
-% > Failed. Word <00008> not found. 
+% > Deleted word <00008>.
 
 % > Failed. Word <00722> not found. 
 
@@ -3905,11 +3905,11 @@ Begin here:
 
 % > Failed. Word <00350> not found. 
 
-% > Failed. Word <00657> not found. 
+% > Deleted word <00657>.
 
 % > Failed. Word <00097> not found. 
 
-% > Failed. Word <00827> not found. 
+% > Deleted word <00827>.
 
 % > Failed. Word <00126> not found. 
 
@@ -3921,7 +3921,7 @@ Begin here:
 
 % > Failed. Word <00149> not found. 
 
-% > Failed. Word <00910> not found. 
+% > Deleted word <00910>.
 
 % > Failed. Word <00528> not found. 
 
@@ -3935,41 +3935,41 @@ Begin here:
 
 % > Failed. Word <00393> not found. 
 
-% > Failed. Word <00577> not found. 
+% > Deleted word <00577>.
 
 % > Failed. Word <00890> not found. 
 
-% > Failed. Word <00976> not found. 
+% > Deleted word <00976>.
 
 % > Failed. Word <00199> not found. 
 
 % > Failed. Word <00552> not found. 
 
-% > Failed. Word <00931> not found. 
+% > Deleted word <00931>.
 
 % > Failed. Word <00087> not found. 
 
 % > Failed. Word <00777> not found. 
 
-% > Failed. Word <00099> not found. 
+% > Deleted word <00099>.
 
 % > Failed. Word <00657> not found. 
 
 % > Failed. Word <00566> not found. 
 
-% > Failed. Word <00952> not found. 
+% > Deleted word <00952>.
 
 % > Failed. Word <00017> not found. 
 
 % > Failed. Word <00641> not found. 
 
-% > Failed. Word <00735> not found. 
+% > Deleted word <00735>.
 
 % > Failed. Word <00368> not found. 
 
 % > Failed. Word <00298> not found. 
 
-% > Failed. Word <00184> not found. 
+% > Deleted word <00184>.
 
 % > Failed. Word <00195> not found. 
 
@@ -3997,7 +3997,7 @@ Begin here:
 
 % > Failed. Word <00672> not found. 
 
-% > Failed. Word <00774> not found. 
+% > Deleted word <00774>.
 
 % > Failed. Word <00445> not found. 
 
@@ -4005,7 +4005,7 @@ Begin here:
 
 % > Failed. Word <00325> not found. 
 
-% > Failed. Word <00997> not found. 
+% > Deleted word <00997>.
 
 % > Failed. Word <00283> not found. 
 
@@ -4022,5 +4022,5 @@ Begin here:
 
 ==================================================================
 
-Total Runtime: 0.010000
+Total Runtime: 0.002867
 

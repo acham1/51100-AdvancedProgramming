@@ -2,7 +2,7 @@
 ==================================================================
 
 Alan Cham
-p4.a: Simple Dictionary via Unbalanced Model 1 Binary Tree
+p4.b: Simple Dictionary via Balanced Model 2 Binary Tree
 
 Acceptable case-sensitive commands (maximum line length 500 chars): 
     % add word "definition"
@@ -222,5 +222,5 @@ Begin here:
 
 ==================================================================
 
-Total Runtime: 0.000000
+Total Runtime: 0.000161
 

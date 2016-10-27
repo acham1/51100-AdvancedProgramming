@@ -1,0 +1,2026 @@
+
+==================================================================
+
+Alan Cham
+p4.a: Simple Dictionary via Unbalanced Model 1 Binary Tree
+
+Acceptable case-sensitive commands (maximum line length 500 chars): 
+    % add word "definition"
+    % delete word
+    % find word
+    % print
+    % exit
+    % // <rest of line to ignore>
+
+==================================================================
+
+Begin here:
+
+% 
+% 
+% 
+% > Added word <00886>.
+
+% > Added word <00777>.
+
+% > Added word <00915>.
+
+% > Added word <00793>.
+
+% > Added word <00335>.
+
+% > Added word <00386>.
+
+% > Added word <00492>.
+
+% > Added word <00649>.
+
+% > Added word <00421>.
+
+% > Added word <00362>.
+
+% > Added word <00027>.
+
+% > Added word <00690>.
+
+% > Added word <00059>.
+
+% > Added word <00763>.
+
+% > Added word <00926>.
+
+% > Added word <00540>.
+
+% > Added word <00426>.
+
+% > Added word <00172>.
+
+% > Added word <00736>.
+
+% > Added word <00211>.
+
+% > Added word <00368>.
+
+% > Added word <00567>.
+
+% > Added word <00429>.
+
+% > Added word <00782>.
+
+% > Added word <00530>.
+
+% > Added word <00862>.
+
+% > Added word <00123>.
+
+% > Added word <00067>.
+
+% > Added word <00135>.
+
+% > Added word <00929>.
+
+% > Added word <00802>.
+
+% > Added word <00022>.
+
+% > Added word <00058>.
+
+% > Added word <00069>.
+
+% > Added word <00167>.
+
+% > Added word <00393>.
+
+% > Added word <00456>.
+
+% > Added word <00011>.
+
+% > Added word <00042>.
+
+% > Added word <00229>.
+
+% > Added word <00373>.
+
+% > Failed. Word <00421> already exists.
+
+% > Added word <00919>.
+
+% > Added word <00784>.
+
+% > Added word <00537>.
+
+% > Added word <00198>.
+
+% > Added word <00324>.
+
+% > Added word <00315>.
+
+% > Added word <00370>.
+
+% > Added word <00413>.
+
+% > Added word <00526>.
+
+% > Added word <00091>.
+
+% > Added word <00980>.
+
+% > Added word <00956>.
+
+% > Added word <00873>.
+
+% > Failed. Word <00862> already exists.
+
+% > Added word <00170>.
+
+% > Added word <00996>.
+
+% > Added word <00281>.
+
+% > Added word <00305>.
+
+% > Added word <00925>.
+
+% > Added word <00084>.
+
+% > Added word <00327>.
+
+% > Added word <00336>.
+
+% > Added word <00505>.
+
+% > Added word <00846>.
+
+% > Added word <00729>.
+
+% > Added word <00313>.
+
+% > Added word <00857>.
+
+% > Added word <00124>.
+
+% > Added word <00895>.
+
+% > Added word <00582>.
+
+% > Added word <00545>.
+
+% > Added word <00814>.
+
+% > Added word <00367>.
+
+% > Added word <00434>.
+
+% > Added word <00364>.
+
+% > Added word <00043>.
+
+% > Added word <00750>.
+
+% > Added word <00087>.
+
+% > Added word <00808>.
+
+% > Added word <00276>.
+
+% > Added word <00178>.
+
+% > Added word <00788>.
+
+% > Added word <00584>.
+
+% > Added word <00403>.
+
+% > Added word <00651>.
+
+% > Added word <00754>.
+
+% > Added word <00399>.
+
+% > Added word <00932>.
+
+% > Added word <00060>.
+
+% > Added word <00676>.
+
+% > Failed. Word <00368> already exists.
+
+% > Added word <00739>.
+
+% > Added word <00012>.
+
+% > Added word <00226>.
+
+% > Added word <00586>.
+
+% > Added word <00094>.
+
+% > Added word <00539>.
+
+% > Added word <00795>.
+
+% > Added word <00570>.
+
+% > Failed. Word <00434> already exists.
+
+% > Added word <00378>.
+
+% > Added word <00467>.
+
+% > Added word <00601>.
+
+% > Added word <00097>.
+
+% > Added word <00902>.
+
+% > Added word <00317>.
+
+% > Failed. Word <00492> already exists.
+
+% > Added word <00652>.
+
+% > Added word <00756>.
+
+% > Added word <00301>.
+
+% > Added word <00280>.
+
+% > Added word <00286>.
+
+% > Added word <00441>.
+
+% > Added word <00865>.
+
+% > Added word <00689>.
+
+% > Added word <00444>.
+
+% > Added word <00619>.
+
+% > Added word <00440>.
+
+% > Failed. Word <00729> already exists.
+
+% > Added word <00031>.
+
+% > Added word <00117>.
+
+% > Failed. Word <00097> already exists.
+
+% > Added word <00771>.
+
+% > Added word <00481>.
+
+% > Added word <00675>.
+
+% > Added word <00709>.
+
+% > Added word <00927>.
+
+% > Failed. Word <00567> already exists.
+
+% > Added word <00856>.
+
+% > Added word <00497>.
+
+% > Added word <00353>.
+
+% > Failed. Word <00586> already exists.
+
+% > Added word <00965>.
+
+% > Added word <00306>.
+
+% > Added word <00683>.
+
+% > Added word <00219>.
+
+% > Added word <00624>.
+
+% > Added word <00528>.
+
+% > Added word <00871>.
+
+% > Added word <00732>.
+
+% > Added word <00829>.
+
+% > Added word <00503>.
+
+% > Added word <00019>.
+
+% > Added word <00270>.
+
+% > Failed. Word <00368> already exists.
+
+% > Added word <00708>.
+
+% > Added word <00715>.
+
+% > Added word <00340>.
+
+% > Added word <00149>.
+
+% > Added word <00796>.
+
+% > Added word <00723>.
+
+% > Added word <00618>.
+
+% > Added word <00245>.
+
+% > Failed. Word <00846> already exists.
+
+% > Added word <00451>.
+
+% > Added word <00921>.
+
+% > Added word <00555>.
+
+% > Added word <00379>.
+
+% > Added word <00488>.
+
+% > Added word <00764>.
+
+% > Added word <00228>.
+
+% > Added word <00841>.
+
+% > Added word <00350>.
+
+% > Added word <00193>.
+
+% > Added word <00500>.
+
+% > Added word <00034>.
+
+% > Failed. Word <00764> already exists.
+
+% > Failed. Word <00124> already exists.
+
+% > Added word <00914>.
+
+% > Added word <00987>.
+
+% > Failed. Word <00856> already exists.
+
+% > Added word <00743>.
+
+% > Added word <00491>.
+
+% > Added word <00227>.
+
+% > Added word <00365>.
+
+% > Added word <00859>.
+
+% > Added word <00936>.
+
+% > Added word <00432>.
+
+% > Added word <00551>.
+
+% > Added word <00437>.
+
+% > Failed. Word <00228> already exists.
+
+% > Added word <00275>.
+
+% > Added word <00407>.
+
+% > Added word <00474>.
+
+% > Added word <00121>.
+
+% > Added word <00858>.
+
+% > Added word <00395>.
+
+% > Added word <00029>.
+
+% > Added word <00237>.
+
+% > Added word <00235>.
+
+% > Failed. Word <00793> already exists.
+
+% > Added word <00818>.
+
+% > Added word <00428>.
+
+% > Added word <00143>.
+
+% > Failed. Word <00011> already exists.
+
+% > Added word <00928>.
+
+% > Added word <00529>.
+
+% > Added word <00776>.
+
+% > Added word <00404>.
+
+% > Added word <00443>.
+
+% > Failed. Word <00763> already exists.
+
+% > Added word <00613>.
+
+% > Added word <00538>.
+
+% > Added word <00606>.
+
+% > Added word <00840>.
+
+% > Added word <00904>.
+
+% > Failed. Word <00818> already exists.
+
+% > Added word <00128>.
+
+% > Added word <00688>.
+
+% > Added word <00369>.
+
+% > Added word <00917>.
+
+% > Failed. Word <00917> already exists.
+
+% > Failed. Word <00996> already exists.
+
+% > Failed. Word <00324> already exists.
+
+% > Failed. Word <00743> already exists.
+
+% > Added word <00470>.
+
+% > Added word <00183>.
+
+% > Added word <00490>.
+
+% > Added word <00499>.
+
+% > Added word <00772>.
+
+% > Added word <00725>.
+
+% > Added word <00644>.
+
+% > Added word <00590>.
+
+% > Failed. Word <00505> already exists.
+
+% > Added word <00139>.
+
+% > Added word <00954>.
+
+% > Added word <00786>.
+
+% > Added word <00669>.
+
+% > Added word <00082>.
+
+% > Added word <00542>.
+
+% > Added word <00464>.
+
+% > Added word <00197>.
+
+% > Added word <00507>.
+
+% > Added word <00355>.
+
+% > Added word <00804>.
+
+% > Added word <00348>.
+
+% > Added word <00611>.
+
+% > Added word <00622>.
+
+% > Added word <00828>.
+
+% > Added word <00299>.
+
+% > Added word <00343>.
+
+% > Added word <00746>.
+
+% > Added word <00568>.
+
+% > Failed. Word <00340> already exists.
+
+% > Added word <00422>.
+
+% > Added word <00311>.
+
+% > Added word <00810>.
+
+% > Added word <00605>.
+
+% > Added word <00801>.
+
+% > Added word <00661>.
+
+% > Added word <00730>.
+
+% > Added word <00878>.
+
+% > Failed. Word <00305> already exists.
+
+% > Added word <00320>.
+
+% > Failed. Word <00736> already exists.
+
+% > Failed. Word <00444> already exists.
+
+% > Added word <00626>.
+
+% > Added word <00522>.
+
+% > Added word <00465>.
+
+% > Failed. Word <00708> already exists.
+
+% > Added word <00416>.
+
+% > Added word <00282>.
+
+% > Added word <00258>.
+
+% > Added word <00924>.
+
+% > Added word <00637>.
+
+% > Added word <00062>.
+
+% > Failed. Word <00624> already exists.
+
+% > Added word <00600>.
+
+% > Added word <00036>.
+
+% > Added word <00452>.
+
+% > Added word <00899>.
+
+% > Failed. Word <00379> already exists.
+
+% > Added word <00550>.
+
+% > Added word <00468>.
+
+% > Added word <00071>.
+
+% > Added word <00973>.
+
+% > Added word <00131>.
+
+% > Added word <00881>.
+
+% > Added word <00930>.
+
+% > Added word <00933>.
+
+% > Added word <00894>.
+
+% > Added word <00660>.
+
+% > Added word <00163>.
+
+% > Added word <00199>.
+
+% > Added word <00981>.
+
+% > Failed. Word <00899> already exists.
+
+% > Failed. Word <00996> already exists.
+
+% > Added word <00959>.
+
+% > Added word <00773>.
+
+% > Added word <00813>.
+
+% > Added word <00668>.
+
+% > Added word <00190>.
+
+% > Added word <00095>.
+
+% > Failed. Word <00926> already exists.
+
+% > Added word <00466>.
+
+% > Failed. Word <00084> already exists.
+
+% > Failed. Word <00340> already exists.
+
+% > Added word <00090>.
+
+% > Added word <00684>.
+
+% > Added word <00376>.
+
+% > Failed. Word <00542> already exists.
+
+% > Failed. Word <00936> already exists.
+
+% > Added word <00107>.
+
+% > Added word <00445>.
+
+% > Failed. Word <00756> already exists.
+
+% > Added word <00179>.
+
+% > Added word <00418>.
+
+% > Added word <00887>.
+
+% > Added word <00412>.
+
+% > Failed. Word <00348> already exists.
+
+% > Failed. Word <00172> already exists.
+
+% > Added word <00659>.
+
+% > Added word <00009>.
+
+% > Failed. Word <00336> already exists.
+
+% > Added word <00210>.
+
+% > Added word <00342>.
+
+% > Added word <00587>.
+
+% > Added word <00206>.
+
+% > Failed. Word <00301> already exists.
+
+% > Added word <00713>.
+
+% > Added word <00372>.
+
+% > Added word <00321>.
+
+% > Added word <00255>.
+
+% > Added word <00819>.
+
+% > Added word <00599>.
+
+% > Added word <00721>.
+
+% > Failed. Word <00904> already exists.
+
+% > Added word <00939>.
+
+% > Added word <00811>.
+
+% > Added word <00940>.
+
+% > Added word <00667>.
+
+% > Added word <00705>.
+
+% > Failed. Word <00228> already exists.
+
+% > Added word <00127>.
+
+% > Added word <00150>.
+
+% > Added word <00984>.
+
+% > Added word <00658>.
+
+% > Added word <00920>.
+
+% > Added word <00224>.
+
+% > Failed. Word <00422> already exists.
+
+% > Added word <00269>.
+
+% > Added word <00396>.
+
+% > Added word <00081>.
+
+% > Added word <00630>.
+
+% > Failed. Word <00084> already exists.
+
+% > Added word <00292>.
+
+% > Added word <00972>.
+
+% > Added word <00672>.
+
+% > Added word <00850>.
+
+% > Added word <00625>.
+
+% > Added word <00385>.
+
+% > Added word <00222>.
+
+% > Failed. Word <00299> already exists.
+
+% > Added word <00640>.
+
+% > Failed. Word <00042> already exists.
+
+% > Added word <00898>.
+
+% > Failed. Word <00713> already exists.
+
+% > Added word <00298>.
+
+% > Failed. Word <00190> already exists.
+
+% > Added word <00524>.
+
+% > Failed. Word <00590> already exists.
+
+% > Added word <00209>.
+
+% > Added word <00581>.
+
+% > Failed. Word <00819> already exists.
+
+% > Failed. Word <00336> already exists.
+
+% > Failed. Word <00732> already exists.
+
+% > Added word <00155>.
+
+% > Added word <00994>.
+
+% > Added word <00004>.
+
+% > Failed. Word <00379> already exists.
+
+% > Added word <00769>.
+
+% > Added word <00273>.
+
+% > Failed. Word <00776> already exists.
+
+% > Failed. Word <00850> already exists.
+
+% > Failed. Word <00255> already exists.
+
+% > Added word <00860>.
+
+% > Added word <00142>.
+
+% > Added word <00579>.
+
+% > Added word <00884>.
+
+% > Added word <00993>.
+
+% > Added word <00205>.
+
+% > Added word <00621>.
+
+% > Failed. Word <00567> already exists.
+
+% > Added word <00504>.
+
+% > Failed. Word <00613> already exists.
+
+% > Added word <00961>.
+
+% > Failed. Word <00754> already exists.
+
+% > Added word <00326>.
+
+% > Added word <00259>.
+
+% > Added word <00944>.
+
+% > Added word <00202>.
+
+% > Failed. Word <00202> already exists.
+
+% > Added word <00506>.
+
+% > Failed. Word <00784> already exists.
+
+% > Added word <00021>.
+
+% > Added word <00842>.
+
+% > Added word <00868>.
+
+% > Failed. Word <00528> already exists.
+
+% > Added word <00189>.
+
+% > Added word <00872>.
+
+% > Added word <00908>.
+
+% > Added word <00958>.
+
+% > Added word <00498>.
+
+% > Failed. Word <00036> already exists.
+
+% > Failed. Word <00808> already exists.
+
+% > Added word <00753>.
+
+% > Added word <00248>.
+
+% > Added word <00303>.
+
+% > Added word <00333>.
+
+% > Added word <00133>.
+
+% > Added word <00648>.
+
+% > Added word <00890>.
+
+% > Failed. Word <00754> already exists.
+
+% > Failed. Word <00567> already exists.
+
+% > Failed. Word <00746> already exists.
+
+% > Failed. Word <00368> already exists.
+
+% > Failed. Word <00529> already exists.
+
+% > Failed. Word <00500> already exists.
+
+% > Added word <00046>.
+
+% > Failed. Word <00788> already exists.
+
+% > Added word <00797>.
+
+% > Added word <00249>.
+
+% > Added word <00990>.
+
+% > Failed. Word <00303> already exists.
+
+% > Added word <00033>.
+
+% > Added word <00363>.
+
+% > Failed. Word <00497> already exists.
+
+% > Added word <00253>.
+
+% > Added word <00892>.
+
+% > Added word <00686>.
+
+% > Added word <00125>.
+
+% > Added word <00152>.
+
+% > Failed. Word <00996> already exists.
+
+% > Added word <00975>.
+
+% > Added word <00188>.
+
+% > Added word <00157>.
+
+% > Failed. Word <00729> already exists.
+
+% > Added word <00436>.
+
+% > Added word <00460>.
+
+% > Added word <00414>.
+
+% > Failed. Word <00921> already exists.
+
+% > Failed. Word <00460> already exists.
+
+% > Added word <00304>.
+
+% > Added word <00028>.
+
+% > Failed. Word <00027> already exists.
+
+% > Added word <00050>.
+
+% > Added word <00748>.
+
+% > Added word <00556>.
+
+% > Failed. Word <00902> already exists.
+
+% > Added word <00794>.
+
+% > Added word <00697>.
+
+% > Added word <00699>.
+
+% > Failed. Word <00043> already exists.
+
+% > Added word <00039>.
+
+% > Added word <00002>.
+
+% > Failed. Word <00428> already exists.
+
+% > Failed. Word <00403> already exists.
+
+% > Failed. Word <00500> already exists.
+
+% > Added word <00681>.
+
+% > Added word <00647>.
+
+% > Failed. Word <00538> already exists.
+
+% > Added word <00159>.
+
+% > Added word <00151>.
+
+% > Added word <00535>.
+
+% > Added word <00134>.
+
+% > Added word <00339>.
+
+% > Added word <00692>.
+
+% > Added word <00215>.
+
+% > Failed. Word <00127> already exists.
+
+% > Failed. Word <00504> already exists.
+
+% > Added word <00629>.
+
+% > Added word <00049>.
+
+% > Added word <00964>.
+
+% > Added word <00285>.
+
+% > Failed. Word <00429> already exists.
+
+% > Failed. Word <00343> already exists.
+
+% > Failed. Word <00335> already exists.
+
+% > Added word <00177>.
+
+% > Added word <00900>.
+
+% > Added word <00238>.
+
+% > Added word <00971>.
+
+% > Added word <00949>.
+
+% > Added word <00289>.
+
+% > Failed. Word <00367> already exists.
+
+% > Added word <00988>.
+
+% > Failed. Word <00292> already exists.
+
+% > Failed. Word <00795> already exists.
+
+% > Failed. Word <00743> already exists.
+
+% > Added word <00144>.
+
+% > Failed. Word <00829> already exists.
+
+% > Added word <00390>.
+
+% > Added word <00682>.
+
+% > Failed. Word <00340> already exists.
+
+% > Added word <00541>.
+
+% > Added word <00569>.
+
+% > Added word <00826>.
+
+% > Added word <00232>.
+
+% > Added word <00261>.
+
+% > Failed. Word <00042> already exists.
+
+% > Added word <00360>.
+
+% > Failed. Word <00117> already exists.
+
+% > Added word <00023>.
+
+% > Added word <00761>.
+
+% > Failed. Word <00081> already exists.
+
+% > Added word <00309>.
+
+% > Failed. Word <00190> already exists.
+
+% > Added word <00425>.
+
+% > Failed. Word <00996> already exists.
+
+% > Failed. Word <00367> already exists.
+
+% > Added word <00677>.
+
+% > Added word <00234>.
+
+% > Failed. Word <00690> already exists.
+
+% > Failed. Word <00626> already exists.
+
+% > Failed. Word <00524> already exists.
+
+% > Added word <00057>.
+
+% > Added word <00614>.
+
+% > Added word <00168>.
+
+% > Failed. Word <00205> already exists.
+
+% > Added word <00358>.
+
+% > Added word <00312>.
+
+% > Failed. Word <00386> already exists.
+
+% > Added word <00100>.
+
+% > Added word <00346>.
+
+% > Added word <00726>.
+
+% > Failed. Word <00994> already exists.
+
+% > Added word <00916>.
+
+% > Added word <00552>.
+
+% > Added word <00578>.
+
+% > Failed. Word <00529> already exists.
+
+% > Added word <00946>.
+
+% > Added word <00290>.
+
+% > Failed. Word <00647> already exists.
+
+% > Added word <00970>.
+
+% > Added word <00051>.
+
+% > Added word <00080>.
+
+% > Added word <00631>.
+
+% > Added word <00593>.
+
+% > Failed. Word <00857> already exists.
+
+% > Added word <00627>.
+
+% > Failed. Word <00312> already exists.
+
+% > Failed. Word <00886> already exists.
+
+% > Added word <00214>.
+
+% > Failed. Word <00355> already exists.
+
+% > Added word <00512>.
+
+% > Failed. Word <00090> already exists.
+
+% > Failed. Word <00412> already exists.
+
+% > Added word <00479>.
+
+% > Added word <00610>.
+
+% > Added word <00969>.
+
+% > Failed. Word <00189> already exists.
+
+% > Added word <00274>.
+
+% > Failed. Word <00355> already exists.
+
+% > Added word <00641>.
+
+% > Added word <00620>.
+
+% > Added word <00433>.
+
+% > Failed. Word <00987> already exists.
+
+% > Added word <00888>.
+
+% > Added word <00338>.
+
+% > Added word <00566>.
+
+% > Added word <00770>.
+
+% > Added word <00284>.
+
+% > Failed. Word <00856> already exists.
+
+% > Added word <00417>.
+
+% > Failed. Word <00606> already exists.
+
+% > Added word <00260>.
+
+% > Added word <00849>.
+
+% > Failed. Word <00237> already exists.
+
+% > Failed. Word <00205> already exists.
+
+% > Failed. Word <00059> already exists.
+
+% > Added word <00217>.
+
+% > Added word <00518>.
+
+% > Added word <00945>.
+
+% > Added word <00783>.
+
+% > Failed. Word <00873> already exists.
+
+% > Added word <00458>.
+
+% > Failed. Word <00873> already exists.
+
+% > Failed. Word <00637> already exists.
+
+% > Failed. Word <00289> already exists.
+
+% > Added word <00483>.
+
+% > Added word <00607>.
+
+% > Added word <00478>.
+
+% > Added word <00757>.
+
+% > Added word <00314>.
+
+% > Added word <00471>.
+
+% > Failed. Word <00729> already exists.
+
+% > Failed. Word <00100> already exists.
+
+% > Added word <00459>.
+
+% > Failed. Word <00618> already exists.
+
+% > Added word <00438>.
+
+% > Added word <00025>.
+
+% > Added word <00388>.
+
+% > Added word <00074>.
+
+% > Added word <00233>.
+
+% > Failed. Word <00157> already exists.
+
+% > Failed. Word <00681> already exists.
+
+% > Added word <00493>.
+
+% > Failed. Word <00358> already exists.
+
+% > Failed. Word <00270> already exists.
+
+% > Failed. Word <00699> already exists.
+
+% > Failed. Word <00417> already exists.
+
+% > Added word <00839>.
+
+% > Failed. Word <00569> already exists.
+
+% > Failed. Word <00363> already exists.
+
+% > Failed. Word <00622> already exists.
+
+% > Failed. Word <00794> already exists.
+
+% > Added word <00173>.
+
+% > Added word <00847>.
+
+% > Added word <00431>.
+
+% > Added word <00462>.
+
+% > Failed. Word <00682> already exists.
+
+% > Failed. Word <00390> already exists.
+
+% > Failed. Word <00292> already exists.
+
+% > Added word <00791>.
+
+% > Failed. Word <00057> already exists.
+
+% > Added word <00115>.
+
+% > Added word <00521>.
+
+% > Failed. Word <00157> already exists.
+
+% > Added word <00574>.
+
+% > Failed. Word <00491> already exists.
+
+% > Added word <00947>.
+
+% > Added word <00951>.
+
+% > Added word <00231>.
+
+% > Failed. Word <00021> already exists.
+
+% > Failed. Word <00537> already exists.
+
+% > Added word <00740>.
+
+% > Added word <00054>.
+
+% > Added word <00030>.
+
+% > Added word <00098>.
+
+% > Added word <00325>.
+
+% > Failed. Word <00081> already exists.
+
+% > Added word <00516>.
+
+% > Failed. Word <00516> already exists.
+
+% > Failed. Word <00002> already exists.
+
+% > Failed. Word <00231> already exists.
+
+% > Failed. Word <00139> already exists.
+
+% > Failed. Word <00796> already exists.
+
+% > Failed. Word <00404> already exists.
+
+% > Failed. Word <00338> already exists.
+
+% > Added word <00580>.
+
+% > Added word <00218>.
+
+% > Failed. Word <00021> already exists.
+
+% > Failed. Word <00970> already exists.
+
+% > Failed. Word <00862> already exists.
+
+% > Added word <00812>.
+
+% > Failed. Word <00379> already exists.
+
+% > Added word <00977>.
+
+% > Added word <00685>.
+
+% > Added word <00536>.
+
+% > Failed. Word <00904> already exists.
+
+% > Added word <00176>.
+
+% > Failed. Word <00483> already exists.
+
+% > Added word <00207>.
+
+% > Added word <00759>.
+
+% > Failed. Word <00857> already exists.
+
+% > Added word <00744>.
+
+% > Failed. Word <00499> already exists.
+
+% > Added word <00911>.
+
+% > Failed. Word <00127> already exists.
+
+% > Added word <00950>.
+
+% > Added word <00236>.
+
+% > Added word <00560>.
+
+% > Failed. Word <00818> already exists.
+
+% > Added word <00105>.
+
+% > Added word <00563>.
+
+% > Failed. Word <00049> already exists.
+
+% > Added word <00244>.
+
+% > Added word <00711>.
+
+% > Added word <00805>.
+
+% > Added word <00934>.
+
+% > Added word <00291>.
+
+% > Added word <00375>.
+
+% > Added word <00955>.
+
+% > Failed. Word <00614> already exists.
+
+% > Added word <00589>.
+
+% > Added word <00768>.
+
+% > Failed. Word <00993> already exists.
+
+% > Added word <00918>.
+
+% > Failed. Word <00805> already exists.
+
+% > Added word <00882>.
+
+% > Added word <00822>.
+
+% > Added word <00982>.
+
+% > Added word <00717>.
+
+% > Failed. Word <00030> already exists.
+
+% > Added word <00093>.
+
+% > Failed. Word <00574> already exists.
+
+% > Added word <00126>.
+
+% > Failed. Word <00593> already exists.
+
+% > Added word <00486>.
+
+% > Failed. Word <00253> already exists.
+
+% > Added word <00543>.
+
+% > Failed. Word <00074> already exists.
+
+% > Failed. Word <00814> already exists.
+
+% > Failed. Word <00713> already exists.
+
+% > Failed. Word <00179> already exists.
+
+% > Added word <00377>.
+
+% > Added word <00762>.
+
+% > Added word <00775>.
+
+% > Added word <00088>.
+
+% > Failed. Word <00919> already exists.
+
+% > Added word <00710>.
+
+% > Failed. Word <00732> already exists.
+
+% > Added word <00294>.
+
+% > Added word <00017>.
+
+% > Failed. Word <00346> already exists.
+
+% > Failed. Word <00235> already exists.
+
+% > Added word <00137>.
+
+% > Added word <00691>.
+
+% > Added word <00153>.
+
+% > Added word <00943>.
+
+% > Added word <00573>.
+
+% > Added word <00328>.
+
+% > Failed. Word <00925> already exists.
+
+% > Failed. Word <00291> already exists.
+
+% > Failed. Word <00710> already exists.
+
+% > Added word <00018>.
+
+% > Failed. Word <00217> already exists.
+
+% > Added word <00836>.
+
+% > Added word <00963>.
+
+% > Added word <00055>.
+
+% > Failed. Word <00090> already exists.
+
+% > Failed. Word <00858> already exists.
+
+% > Added word <00130>.
+
+% > Failed. Word <00904> already exists.
+
+% > Added word <00571>.
+
+% > Failed. Word <00661> already exists.
+
+% > Added word <00633>.
+
+% > Failed. Word <00685> already exists.
+
+% > Added word <00789>.
+
+% > Added word <00073>.
+
+% > Added word <00604>.
+
+% > Added word <00851>.
+
+% > Failed. Word <00805> already exists.
+
+% > Added word <00250>.
+
+% > Failed. Word <00868> already exists.
+
+% > Failed. Word <00503> already exists.
+
+% > Added word <00485>.
+
+% > Added word <00006>.
+
+% > Added word <00195>.
+
+% > Added word <00639>.
+
+% > Failed. Word <00949> already exists.
+
+% > Added word <00120>.
+
+% > Added word <00967>.
+
+% > Failed. Word <00226> already exists.
+
+% > Failed. Word <00763> already exists.
+
+% > Failed. Word <00677> already exists.
+
+% > Added word <00596>.
+
+% > Failed. Word <00981> already exists.
+
+% > Failed. Word <00865> already exists.
+
+% > Failed. Word <00560> already exists.
+
+% > Failed. Word <00036> already exists.
+
+% > Failed. Word <00955> already exists.
+
+% > Failed. Word <00770> already exists.
+
+% > Failed. Word <00518> already exists.
+
+% > Failed. Word <00211> already exists.
+
+% > Failed. Word <00342> already exists.
+
+% > Added word <00532>.
+
+% > Added word <00196>.
+
+% > Failed. Word <00379> already exists.
+
+% > Failed. Word <00321> already exists.
+
+% > Failed. Word <00270> already exists.
+
+% > Failed. Word <00984> already exists.
+
+% > Failed. Word <00172> already exists.
+
+% > Added word <00427>.
+
+% > Failed. Word <00234> already exists.
+
+% > Added word <00040>.
+
+% > Added word <00283>.
+
+% > Added word <00072>.
+
+% > Added word <00398>.
+
+% > Added word <00830>.
+
+% > Added word <00063>.
+
+% > Added word <00347>.
+
+% > Failed. Word <00950> already exists.
+
+% > Failed. Word <00030> already exists.
+
+% > Failed. Word <00573> already exists.
+
+% > Added word <00714>.
+
+% > Failed. Word <00059> already exists.
+
+% > Failed. Word <00522> already exists.
+
+% > Added word <00047>.
+
+% > Failed. Word <00924> already exists.
+
+% > Failed. Word <00082> already exists.
+
+% > Added word <00435>.
+
+% > Failed. Word <00232> already exists.
+
+% > Added word <00204>.
+
+% > Failed. Word <00954> already exists.
+
+% > Failed. Word <00443> already exists.
+
+% > Failed. Word <00898> already exists.
+
+% > Failed. Word <00486> already exists.
+
+% > Failed. Word <00640> already exists.
+
+% > Added word <00278>.
+
+% > Failed. Word <00159> already exists.
+
+% > Added word <00262>.
+
+% > Failed. Word <00262> already exists.
+
+% > Failed. Word <00683> already exists.
+
+% > Added word <00041>.
+
+% > Added word <00848>.
+
+% > Failed. Word <00723> already exists.
+
+% > Failed. Word <00324> already exists.
+
+% > Added word <00272>.
+
+% > Added word <00122>.
+
+% > Added word <00154>.
+
+% > Failed. Word <00335> already exists.
+
+% > Added word <00821>.
+
+% > Added word <00457>.
+
+% > Failed. Word <00365> already exists.
+
+% > Added word <00747>.
+
+% > Added word <00171>.
+
+% > Failed. Word <00776> already exists.
+
+% > Failed. Word <00269> already exists.
+
+% > Failed. Word <00218> already exists.
+
+% > Added word <00701>.
+
+% > Added word <00703>.
+
+% > Added word <00653>.
+
+% > Failed. Word <00933> already exists.
+
+% > Added word <00907>.
+
+% > Failed. Word <00959> already exists.
+
+% > Added word <00728>.
+
+% > Added word <00806>.
+
+% > Failed. Word <00797> already exists.
+
+% > Added word <00720>.
+
+% > Failed. Word <00084> already exists.
+
+% > Added word <00308>.
+
+% > Added word <00334>.
+
+% > Added word <00698>.
+
+% > Added word <00991>.
+
+% > Failed. Word <00376> already exists.
+
+% > Failed. Word <00898> already exists.
+
+% > Failed. Word <00715> already exists.
+
+% > Added word <00052>.
+
+% > Failed. Word <00171> already exists.
+
+% > Failed. Word <00189> already exists.
+
+% > Added word <00559>.
+
+% > Failed. Word <00506> already exists.
+
+% > Added word <00010>.
+
+% > Added word <00016>.
+
+% > Failed. Word <00224> already exists.
+
+% > Added word <00109>.
+
+% > Failed. Word <00539> already exists.
+
+% > Added word <00000>.
+
+% > Failed. Word <00378> already exists.
+
+% > Failed. Word <00109> already exists.
+
+% > Added word <00053>.
+
+% > Failed. Word <00081> already exists.
+
+% > Added word <00114>.
+
+% > Failed. Word <00338> already exists.
+
+% > Added word <00989>.
+
+% > Failed. Word <00426> already exists.
+
+% > Failed. Word <00067> already exists.
+
+% > Added word <00147>.
+
+% > Added word <00223>.
+
+% > Added word <00787>.
+
+% > Failed. Word <00231> already exists.
+
+% > Failed. Word <00532> already exists.
+
+% > Failed. Word <00122> already exists.
+
+% > Failed. Word <00281> already exists.
+
+% > Added word <00875>.
+
+% > Failed. Word <00850> already exists.
+
+% > Failed. Word <00179> already exists.
+
+% > Failed. Word <00590> already exists.
+
+% > Added word <00254>.
+
+% > Failed. Word <00350> already exists.
+
+% > Failed. Word <00131> already exists.
+
+% > Failed. Word <00813> already exists.
+
+% > Failed. Word <00857> already exists.
+
+% > Added word <00494>.
+
+% > Added word <00181>.
+
+% > Failed. Word <00081> already exists.
+
+% > Added word <00603>.
+
+% > Failed. Word <00720> already exists.
+
+% > Failed. Word <00433> already exists.
+
+% > Failed. Word <00982> already exists.
+
+% > Failed. Word <00181> already exists.
+
+% > Added word <00487>.
+
+% > Added word <00415>.
+
+% > Added word <00296>.
+
+% > Added word <00825>.
+
+% > Failed. Word <00404> already exists.
+
+% > Added word <00722>.
+
+% > Failed. Word <00892> already exists.
+
+% > Failed. Word <00551> already exists.
+
+% > Added word <00297>.
+
+% > Added word <00032>.
+
+% > Failed. Word <00134> already exists.
+
+% > Failed. Word <00181> already exists.
+
+% > Failed. Word <00506> already exists.
+
+% > Failed. Word <00415> already exists.
+
+% > Failed. Word <00057> already exists.
+
+% > Failed. Word <00708> already exists.
+
+% > Added word <00595>.
+
+% > Added word <00999>.
+
+% > Added word <00962>.
+
+% > Failed. Word <00297> already exists.
+
+% > Failed. Word <00483> already exists.
+
+% > Failed. Word <00776> already exists.
+
+% > Failed. Word <00154> already exists.
+
+% > Failed. Word <00977> already exists.
+
+% > Failed. Word <00309> already exists.
+
+% > Failed. Word <00587> already exists.
+
+% > Failed. Word <00932> already exists.
+
+% > Added word <00382>.
+
+% > Failed. Word <00021> already exists.
+
+% > Added word <00266>.
+
+% > Failed. Word <00563> already exists.
+
+% > Failed. Word <00860> already exists.
+
+% > Failed. Word <00682> already exists.
+
+% > Failed. Word <00211> already exists.
+
+% > Failed. Word <00685> already exists.
+
+% > Added word <00086>.
+
+% > Failed. Word <00285> already exists.
+
+% > Failed. Word <00930> already exists.
+
+% > Failed. Word <00990> already exists.
+
+% > Added word <00583>.
+
+% > Failed. Word <00314> already exists.
+
+% > Added word <00476>.
+
+% > Added word <00116>.
+
+% > Added word <00820>.
+
+% > Failed. Word <00892> already exists.
+
+% > Added word <00525>.
+
+% > Failed. Word <00528> already exists.
+
+% > Failed. Word <00839> already exists.
+
+% > Failed. Word <00525> already exists.
+
+% > Failed. Word <00490> already exists.
+
+% > Added word <00136>.
+
+% > Failed. Word <00360> already exists.
+
+% > Failed. Word <00618> already exists.
+
+% > Added word <00643>.
+
+% > Added word <00337>.
+
+% > Failed. Word <00928> already exists.
+
+% > Failed. Word <00582> already exists.
+
+% > Failed. Word <00621> already exists.
+
+% > Added word <00310>.
+
+% > Failed. Word <00955> already exists.
+
+% > Failed. Word <00888> already exists.
+
+% > Added word <00225>.
+
+% > Added word <00815>.
+
+% > Failed. Word <00570> already exists.
+
+% > Failed. Word <00437> already exists.
+
+% > Added word <00853>.
+
+% > Added word <00008>.
+
+% > Failed. Word <00722> already exists.
+
+% > Failed. Word <00783> already exists.
+
+% > Failed. Word <00350> already exists.
+
+% > Added word <00657>.
+
+% > Failed. Word <00097> already exists.
+
+% > Added word <00827>.
+
+% > Failed. Word <00126> already exists.
+
+% > Failed. Word <00269> already exists.
+
+% > Failed. Word <00071> already exists.
+
+% > Failed. Word <00651> already exists.
+
+% > Failed. Word <00149> already exists.
+
+% > Added word <00910>.
+
+% > Failed. Word <00528> already exists.
+
+% > Failed. Word <00639> already exists.
+
+% > Failed. Word <00398> already exists.
+
+% > Failed. Word <00888> already exists.
+
+% > Failed. Word <00610> already exists.
+
+% > Failed. Word <00393> already exists.
+
+% > Added word <00577>.
+
+% > Failed. Word <00890> already exists.
+
+% > Added word <00976>.
+
+% > Failed. Word <00199> already exists.
+
+% > Failed. Word <00552> already exists.
+
+% > Added word <00931>.
+
+% > Failed. Word <00087> already exists.
+
+% > Failed. Word <00777> already exists.
+
+% > Added word <00099>.
+
+% > Failed. Word <00657> already exists.
+
+% > Failed. Word <00566> already exists.
+
+% > Added word <00952>.
+
+% > Failed. Word <00017> already exists.
+
+% > Failed. Word <00641> already exists.
+
+% > Added word <00735>.
+
+% > Failed. Word <00368> already exists.
+
+% > Failed. Word <00298> already exists.
+
+% > Added word <00184>.
+
+% > Failed. Word <00195> already exists.
+
+% > Failed. Word <00776> already exists.
+
+% > Failed. Word <00805> already exists.
+
+% > Failed. Word <00266> already exists.
+
+% > Failed. Word <00428> already exists.
+
+% > Failed. Word <00954> already exists.
+
+% > Failed. Word <00528> already exists.
+
+% > Failed. Word <00308> already exists.
+
+% > Failed. Word <00593> already exists.
+
+% > Failed. Word <00278> already exists.
+
+% > Failed. Word <00197> already exists.
+
+% > Failed. Word <00555> already exists.
+
+% > Failed. Word <00672> already exists.
+
+% > Added word <00774>.
+
+% > Failed. Word <00445> already exists.
+
+% > Failed. Word <00000> already exists.
+
+% > Failed. Word <00325> already exists.
+
+% > Added word <00997>.
+
+% > Failed. Word <00283> already exists.
+
+% > Failed. Word <00412> already exists.
+
+% > Failed. Word <00127> already exists.
+
+% > Failed. Word <00382> already exists.
+
+% > Failed. Word <00421> already exists.
+
+% 
+> Good-bye.
+
+==================================================================
+
+Total Runtime: 0.001326
+
