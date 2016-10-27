@@ -44,17 +44,17 @@ int main(int argc, char* argv[]) {
                 printf("> Error: definition must be enclosed by quotation marks.\n");
             } else {
                 if (add_word(D, word, definition)) {
-                    printf("> Failed. Word %s already exists.\n", word);
+                    printf("> Failed. Word <%s> already exists.\n", word);
                 } else {
-                    printf("> Added word %s.\n", word);
+                    printf("> Added word <%s>.\n", word);
                 }
             }
             break;
         case DELETE:
             if (delete_word(D, word)) {
-                printf("> Failed. Word %s not found. \n", word);
+                printf("> Failed. Word <%s> not found. \n", word);
             } else {
-                printf("> Deleted word %s.\n", word);
+                printf("> Deleted word <%s>.\n", word);
             }
             break;
         case FIND:
