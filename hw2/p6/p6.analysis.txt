@@ -50,8 +50,9 @@ In theory, "marginal" cost per subsequent iteration should be:
 >>  Strategy 1: O(log n_1 + log n_2 +...+ log n_k)
     This is because a log n_i binary search must occur for each ith array.
 
->>  Strategy 2: O(k)
-    This is because it takes exactly k table lookups
+>>  Strategy 2: O(k + log(n_1 + n_2 + ... n_k))
+    This is because it takes exactly k table lookups and an initial binary
+    search over an array the holds all elements from all input arrays.
 
 >>  Strategy 3: O(k + log M_0)
     This is because it takes k-1 table lookups, but still requires an additional
@@ -60,6 +61,9 @@ In theory, "marginal" cost per subsequent iteration should be:
 
 The data corroborates these expectations, since Strategy 1 is the slowest, and
 Strategy 2 and 3 differ only by a small interval of 0.6 us per marginal iteration,
-as shown when the problem size is 1e7. This would match expectations due to
-the cost of the initial binary search in each Strategy 3 iteration.
+as shown when the problem size is 1e7. The binary search for Strategy 3 may be
+faster than the one in Strategy 2, due to smaller array size, but the table
+look-up procedure in Strategy 3 has a few more steps to it, due to accessing
+the p1 and p2 fields and checking the one additional index from point (d) in
+the instructions.
 
