@@ -100,12 +100,13 @@ double work_kernel(int iters, array_set arrays, long* (*solve)(double, array_set
         indices = solve(find, arrays, i == 0);
         elapsed += (clock() - start)/(double)CLOCKS_PER_SEC;
 //        if (arrays.array_2d != NULL) {
+//            printf("\n**********begin**********\n");
 //            printf("Finding %4.1lf: \n", find);
 //            for (int j=0; j < arrays.num_arrays; j++) {
 //                printf("%4.1lf  ", arrays.array_2d[j][indices[j]]);
 //            }
-//            printf("\n\n");
-//        }
+//            printf("\n**********end**********\n");
+        }
         free(indices);
     }
     return elapsed;
