@@ -88,7 +88,7 @@ int main(int argc, char* argv[]) {
 }
 
 double work_kernel(int iters, array_set arrays, long* (*solve)(double, array_set, int)) {
-    double factor = (arrays.minmax-arrays.min)/RAND_MAX;
+    double factor = (arrays.max-arrays.min)/RAND_MAX;
     double elapsed = 0;
     long* indices;
     clock_t start;
@@ -99,11 +99,13 @@ double work_kernel(int iters, array_set arrays, long* (*solve)(double, array_set
         start = clock();
         indices = solve(find, arrays, i == 0);
         elapsed += (clock() - start)/(double)CLOCKS_PER_SEC;
-//        printf("Finding %4.1lf: \n", find);
-//        for (int j=0; j < arrays.num_arrays; j++) {
-//            printf("%4.1lf  ", arrays.array_2d[j][indices[j]]);
+//        if (arrays.array_2d != NULL) {
+//            printf("Finding %4.1lf: \n", find);
+//            for (int j=0; j < arrays.num_arrays; j++) {
+//                printf("%4.1lf  ", arrays.array_2d[j][indices[j]]);
+//            }
+//            printf("\n\n");
 //        }
-//        printf("\n\n");
         free(indices);
     }
     return elapsed;
@@ -292,7 +294,7 @@ long* solution3(double find, array_set arrays, int new) {
             M[num_arrays-1][j].p1 = j;
         }
         for (int i=num_arrays-2; i >= 0; i--) {
-            M_lens[i] = arrays.lens[i] + M_lens[i+1]/2 + M_lens[i+1]%2;
+            M_lens[i] = arrays.lens[i] + M_lens[i+1]/2 + 1;
             M[i] = malloc(sizeof(M_node) * M_lens[i]);
             pos1 = pos2 = counter = 0;
             stop1 = arrays.lens[i];
@@ -313,12 +315,12 @@ long* solution3(double find, array_set arrays, int new) {
                     M[i][counter].val = dbl2;
                     M[i][counter].p1 = my_min(pos1, arrays.lens[i]-1);
                     M[i][counter].p2 = pos2;
-                    pos2 += 2;
+                    pos2 += (pos2 == M_lens[i+1]-2 ? 1 : 2); // always include last element in M_i+1
                 } else {
                     M[i][counter].val = dbl1;
                     M[i][counter].p1 = pos1++;
                     M[i][counter].p2 = pos2;
-                    pos2 += 2;
+                    pos2 += (pos2 == M_lens[i+1]-2 ? 1 : 2); // always include last element in M_i+1
                 }
                 counter++;
             }
