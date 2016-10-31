@@ -106,7 +106,7 @@ double work_kernel(int iters, array_set arrays, long* (*solve)(double, array_set
 //                printf("%4.1lf  ", arrays.array_2d[j][indices[j]]);
 //            }
 //            printf("\n**********end**********\n");
-        }
+//        }
         free(indices);
     }
     return elapsed;
