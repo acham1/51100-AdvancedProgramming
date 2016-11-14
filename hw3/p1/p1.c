@@ -6,11 +6,14 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
-#include "hashmap.h"
+#include <string.h>
+//#include "hashmap.h"
 
 #define MAX_WORD 50 /*including terminating '\0'*/
 #define MAX_DEF 500 /*including terminating '\0'*/
 #define MAX_BUFFER 100
+#define NUM_HASH_FNS 3
+#define DEFAULT_HASH_FN 1
 #define LOG_NAME "p1_log.txt"
 
 typedef enum {
@@ -18,22 +21,29 @@ typedef enum {
 } Command;
 
 Command get_command(char* arg1, char* arg2, char* mssg);
-void print_heading(void);
+void print_heading(int whichfn);
 void ungetch(char prev); 
 int getch(void);
 
 char buffer[MAX_BUFFER];
 int bufferpos = 0;
 
-int main(void) {
+int main(int argc, char** argv) {
     clock_t start, end;
-    char cmd[MAX_WORD];
     char arg1[MAX_DEF];
     char arg2[MAX_DEF];
     char mssg[MAX_DEF];
+    int whichfn = DEFAULT_HASH_FN;
     Command cmd;
 
-    print_heading();
+    if (argc > 1) {
+        whichfn = atoi(argv[1]);
+        if (whichfn < 1 || whichfn > NUM_HASH_FNS) {
+            whichfn = DEFAULT_HASH_FN;
+        }
+    }
+
+    print_heading(whichfn);
     start = clock();
     while (!feof(stdin)) {
         switch(cmd = get_command(arg1, arg2, mssg)) {
@@ -50,7 +60,7 @@ int main(void) {
             case READ:
                 break;
             case ERROR:
-                printf("error: %s", error);
+                printf("error: %s", mssg);
                 break;
             default:
                 printf("special error: invalid Command value\n");
@@ -58,6 +68,7 @@ int main(void) {
     }
     end = clock();
     printf("---------------------------------------------------------\n\n");
+    printf("Used hash function #%d of %d\n", whichfn, NUM_HASH_FNS);
     printf("Total processor time consumed: %lf", (double) (end-start) / CLOCKS_PER_SEC);
     return EXIT_SUCCESS;
 }
@@ -69,15 +80,21 @@ Command get_command(char* arg1, char* arg2, char* mssg) {
     return cmd;
 }
 
-void print_heading(void) {
-    printf("Welcome to hw3 p1 dictionary. The following operations are supported:\n");
+void print_heading(int whichfn) {
+    printf("Welcome to hw3 p1 dictionary.\n");
+    printf("[Reminder] Enter option command-line argument (integer between\n" 
+        "1 to %d, inclusive) to specify which of %d hash functions to use.\n"
+        "e.g. use the second hash function by entering ./a.out 1\n\n", 
+        NUM_HASH_FNS, NUM_HASH_FNS);
+    printf("Currently using hashfn %d\n\n", whichfn);
+    printf("The following operations are supported:\n");
     printf("%%find [key]\n");
     printf("%%delete [key]\n");
     printf("%%insert [key]\n");
     printf("%%find [key1] [key2]\n");
     printf("%%print\n");
-    printf("%%read [filename]\n");
-    printf("\nPlease enter your operations below: \n");
+    printf("%%read [filename]\n\n");
+    printf("Please enter your operations below: \n");
     printf("---------------------------------------------------------\n\n");
 }
 
