@@ -23,7 +23,12 @@ typedef enum {
 Command get_command(char* arg1, char* arg2, char* mssg);
 void print_heading(int whichfn);
 void ungetch(char prev); 
+void burntoend(void);
 int getch(void);
+
+int primes[] = {2, 5, 11, 23, 47, 97, 197, 397, 797, 1597, 3203, 
+    6421, 12853, 25717, 51437, 102877, 205759, 411527, 823117, 
+    1646237, 3292489, 6584983, 13169977};
 
 char buffer[MAX_BUFFER];
 int bufferpos = 0;
@@ -76,7 +81,7 @@ int main(int argc, char** argv) {
 // return 1 if problem getting command
 Command get_command(char* arg1, char* arg2, char* mssg) {
     Command cmd = ERROR;
-
+    char c;
     return cmd;
 }
 
@@ -112,4 +117,9 @@ int getch(void) {
     } else {
         return getc(stdin);
     }
+}
+
+void burntoend(void) {
+    char c;
+    while ((c = getch()) != EOF && c != '\n');
 }
