@@ -15,6 +15,7 @@
 #define NUM_HASH_FNS 3
 #define DEFAULT_HASH_FN 1
 #define LOG_NAME "p1_log.txt"
+#define NUM_PRIMES 23
 
 typedef enum {
     FIND1, FIND2, DELETE, INSERT, PRINT, READ, ERROR
@@ -29,9 +30,9 @@ int getch(void);
 int primes[] = {2, 5, 11, 23, 47, 97, 197, 397, 797, 1597, 3203, 
     6421, 12853, 25717, 51437, 102877, 205759, 411527, 823117, 
     1646237, 3292489, 6584983, 13169977};
-
 char buffer[MAX_BUFFER];
 int bufferpos = 0;
+int primespos = 0;
 
 int main(int argc, char** argv) {
     clock_t start, end;
@@ -81,7 +82,8 @@ int main(int argc, char** argv) {
 // return 1 if problem getting command
 Command get_command(char* arg1, char* arg2, char* mssg) {
     Command cmd = ERROR;
-    char c;
+    char c = getch();
+
     return cmd;
 }
 
