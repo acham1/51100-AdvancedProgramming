@@ -3,15 +3,21 @@
   * November 13, 2016
   * Homework 3, p1 */
 
-#include "p1.h"
 #include <stdio.h>
 #include <stdlib.h>
+#include <time.h>
+#include "hashmap.h"
 
 #define MAX_WORD 50 /*including terminating '\0'*/
 #define MAX_DEF 500 /*including terminating '\0'*/
 #define MAX_BUFFER 100
+#define LOG_NAME "p1_log.txt"
 
-int get_command(char* cmd, char* arg1, char* arg2, char* mssg);
+typedef enum {
+    FIND1, FIND2, DELETE, INSERT, PRINT, READ, ERROR
+} Command;
+
+Command get_command(char* arg1, char* arg2, char* mssg);
 void print_heading(void);
 void ungetch(char prev); 
 int getch(void);
@@ -20,27 +26,47 @@ char buffer[MAX_BUFFER];
 int bufferpos = 0;
 
 int main(void) {
+    clock_t start, end;
     char cmd[MAX_WORD];
     char arg1[MAX_DEF];
     char arg2[MAX_DEF];
     char mssg[MAX_DEF];
-    int errorsig;
+    Command cmd;
 
     print_heading();
+    start = clock();
     while (!feof(stdin)) {
-        if (errorsig = get_command(cmd, arg1, arg2, mssg)) {
-            printf("error: %s\n");
-            continue;
+        switch(cmd = get_command(arg1, arg2, mssg)) {
+            case FIND1:
+                break;
+            case FIND2:
+                break;
+            case DELETE:
+                break;
+            case INSERT: 
+                break;
+            case PRINT:
+                break;
+            case READ:
+                break;
+            case ERROR:
+                printf("error: %s", error);
+                break;
+            default:
+                printf("special error: invalid Command value\n");
         }
-
-
     }
+    end = clock();
+    printf("---------------------------------------------------------\n\n");
+    printf("Total processor time consumed: %lf", (double) (end-start) / CLOCKS_PER_SEC);
     return EXIT_SUCCESS;
 }
 
 // return 1 if problem getting command
-int get_command(char* command, char* word, char* defn) {
-    return 0;
+Command get_command(char* arg1, char* arg2, char* mssg) {
+    Command cmd = ERROR;
+
+    return cmd;
 }
 
 void print_heading(void) {
@@ -51,13 +77,15 @@ void print_heading(void) {
     printf("%%find [key1] [key2]\n");
     printf("%%print\n");
     printf("%%read [filename]\n");
+    printf("\nPlease enter your operations below: \n");
+    printf("---------------------------------------------------------\n\n");
 }
 
 void ungetch(char prev) {
     if (bufferpos < MAX_BUFFER) {
         buffer[bufferpos++] = prev;
     } else {
-        printf("error: exceeded max ungetch buffer\n");
+        printf("special error: exceeded max ungetch buffer\n");
     }
 }
 
