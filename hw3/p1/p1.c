@@ -8,7 +8,7 @@
 #include <time.h>
 #include <string.h>
 #include <ctype.h>
-//#include "hashmap.h"
+#include "hashmap.h"
 
 #define MAX_WORD 50 /*including terminating '\0'*/
 #define MAX_DEF 500 /*including terminating '\0'*/
@@ -17,31 +17,40 @@
 #define DEFAULT_HASH_FN 1
 #define LOG_NAME "p1_log.txt"
 #define NUM_PRIMES 23
+#define HASH_BASE 31
 
 typedef enum {
     FIND1, FIND2, DELETE, INSERT, PRINT, READ, ERROR, NONE
 } Command;
 
-Command get_command(char* arg1, char* arg2, char* mssg);
-void print_heading(int whichfn);
+Command getcommand(char* arg1, char* arg2, char* mssg);
+void printheading(int whichfn);
 Command txttocmd(char* txt);
+unsigned prehash(char* str);
+unsigned hash1(void* str);
+unsigned hash2(void* str);
+unsigned hash3(void* str);
 void ungetch(char prev); 
+void initpowers(void);
 void burntoend(void);
 int getch(void);
 
-int primes[] = {2, 5, 11, 23, 47, 97, 197, 397, 797, 1597, 3203, 
-    6421, 12853, 25717, 51437, 102877, 205759, 411527, 823117, 
-    1646237, 3292489, 6584983, 13169977};
+unsigned (*hashfunctions[NUM_HASH_FNS])(void* str) = {hash1, hash2, hash3};
+int primes[NUM_PRIMES] = {2, 5, 11, 23, 47, 97, 197, 397, 797, 
+    1597, 3203, 6421, 12853, 25717, 51437, 102877, 205759, 
+    411527, 823117, 1646237, 3292489, 6584983, 13169977};
+unsigned powers[MAX_WORD];
 char buffer[MAX_BUFFER];
 int bufferpos = 0;
 int primespos = 0;
 
 int main(int argc, char** argv) {
-    clock_t start, end;
+    unsigned (*hashfn)(void* str) = hashfunctions[0];
+    int whichfn = DEFAULT_HASH_FN;
     char arg1[MAX_DEF+1];
     char arg2[MAX_DEF+1];
     char mssg[MAX_DEF+1];
-    int whichfn = DEFAULT_HASH_FN;
+    clock_t start, end;
     Command cmd;
 
     if (argc > 1) {
@@ -49,12 +58,14 @@ int main(int argc, char** argv) {
         if (whichfn < 1 || whichfn > NUM_HASH_FNS) {
             whichfn = DEFAULT_HASH_FN;
         }
+        hashfn = hashfunctions[whichfn-1];
     }
 
-    print_heading(whichfn);
+    initpowers();
+    printheading(whichfn);
     start = clock();
     while (!feof(stdin)) {
-        switch(cmd = get_command(arg1, arg2, mssg)) {
+        switch(cmd = getcommand(arg1, arg2, mssg)) {
             case FIND1:
                 printf("        attempt: finding word \"%s\"\n", arg1);
                 break;
@@ -90,8 +101,7 @@ int main(int argc, char** argv) {
     return EXIT_SUCCESS;
 }
 
-// return 1 if problem getting command
-Command get_command(char* arg1, char* arg2, char* mssg) {
+Command getcommand(char* arg1, char* arg2, char* mssg) {
     char cmdtxt[MAX_WORD+1];
     int wordpos = 0;
     Command cmd;
@@ -189,7 +199,7 @@ Command get_command(char* arg1, char* arg2, char* mssg) {
     return cmd;
 }
 
-void print_heading(int whichfn) {
+void printheading(int whichfn) {
     printf("\n--------------------------START--------------------------\n");
     printf("Now using hash function #%d of %d\n\n", whichfn, NUM_HASH_FNS);
     printf("    Note: use optional command-line argument (integer from 1 to %d,\n" 
@@ -223,6 +233,13 @@ int getch(void) {
     }
 }
 
+void initpowers(void) {
+    powers[0] = (unsigned) 1;
+    for (int i = 1; i < MAX_WORD; i++) {
+        powers[i] = (unsigned) (HASH_BASE * powers[i-1]);
+    }
+}
+
 void burntoend(void) {
     char c;
     while ((c = getch()) != EOF && c != '\n');
@@ -242,4 +259,29 @@ Command txttocmd(char* txt) {
     } else {
         return ERROR;
     }
+}
+
+unsigned prehash(char* str) {
+    int len = strlen(str);
+    unsigned out = 0;
+
+    for (int i = 0; i < len; i++) {
+        out += powers[len-1-i] * str[i];
+    }
+    return out;
+}
+
+unsigned hash1(void* str) {
+    unsigned k = prehash(str);
+    return k;
+}
+
+unsigned hash2(void* str) {
+    unsigned k = prehash(str);
+    return k;
+}
+
+unsigned hash3(void* str) {
+    unsigned k = prehash(str);    
+    return k;
 }
