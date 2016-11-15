@@ -12,11 +12,14 @@
 
 #define MAX_WORD 50 /*including terminating '\0'*/
 #define MAX_DEF 500 /*including terminating '\0'*/
+#define LOG_NAME "p1_log.txt"
+#define DEFAULT_HASH_FN 1
+#define SUPER_DIR "../"
+#define TAB "        "
 #define MAX_BUFFER 100
 #define NUM_HASH_FNS 3
-#define DEFAULT_HASH_FN 1
-#define LOG_NAME "p1_log.txt"
 #define NUM_PRIMES 23
+#define SUB_DIR "p1/"
 #define HASH_BASE 31
 
 typedef enum {
@@ -24,9 +27,11 @@ typedef enum {
 } Command;
 
 Command getcommand(char* arg1, char* arg2, char* mssg);
+int readlist(FILE* fptr, char* word, char* def);
 void printheading(int whichfn);
 Command txttocmd(char* txt);
 unsigned prehash(char* str);
+FILE* myfopen(char* arg1);
 unsigned hash1(void* str);
 unsigned hash2(void* str);
 unsigned hash3(void* str);
@@ -50,8 +55,15 @@ int main(int argc, char** argv) {
     char arg1[MAX_DEF+1];
     char arg2[MAX_DEF+1];
     char mssg[MAX_DEF+1];
+    char path[MAX_DEF+1];
     clock_t start, end;
+    FILE* fptr = NULL;
+    Element* elmnt;
+    Hashmap* hmp;
     Command cmd;
+    int counter;
+    char* word;
+    char* def;
 
     if (argc > 1) {
         whichfn = atoi(argv[1]);
@@ -63,34 +75,57 @@ int main(int argc, char** argv) {
 
     initpowers();
     printheading(whichfn);
+    hmp = new_hashmap();
     start = clock();
     while (!feof(stdin)) {
         switch(cmd = getcommand(arg1, arg2, mssg)) {
             case FIND1:
-                printf("        attempt: finding word \"%s\"\n", arg1);
+                printf("attempt: finding word \"%s\"\n", TAB, arg1);
+                if (elmnt = hmp_find(hmp, arg1, hashfn)) {
+                    printf("%ssuccess: found word\n", TAB);
+                    printf("%s%s: %s\n", TAB, arg1, (char*) elmnt.value);
+                } else {
+                    printf("%serror: failed to find word; it may not exist\n", TAB);
+                }
                 break;
             case FIND2:
-                printf("        attempt: finding words between \"%s\" and \"%s\", inclusive\n", arg1, arg2);
+                printf("%sattempt: finding words between \"%s\" and \"%s\", inclusive\n", TAB, arg1, arg2);
                 break;
             case DELETE:
-                printf("        attempt: deleting word \"%s\"\n", arg1);
+                printf("%sattempt: deleting word \"%s\"\n", TAB, arg1);
+                if (elmnt = hmp_remove(hmp, arg1, hashfn)) {
+                    free(elmnt.key);
+                    free(elmnt.value);
+                    printf("%ssuccess: removed word\n", TAB);
+                } else {
+                    printf("%serror: failed to remove word; it may not exist\n", TAB);
+                }
                 break;
             case INSERT: 
-                printf("        attempt: inserting word \"%s\" with definition \"%s\"\n", arg1, arg2);
+                printf("%sattempt: inserting word \"%s\" with definition \"%s\"\n", TAB, arg1, arg2);
                 break;
             case PRINT:
-                printf("        attempt: printing\n");
+                printf("%sattempt: printing\n", TAB);
                 break;
             case READ:
-                printf("        attempt: reading file \"%s\"\n", arg1);
+                printf("%sattempt: reading file \"%s\"\n", TAB, arg1);
+                if (fptr = myfopen(arg1)) {
+                    counter = 0;
+                    while (readlist(fptr, arg1, arg2)) {
+                        hmp_insert(hmp, arg1, arg2, hashfn);
+                    }
+                    fclose(fptr);
+                } else {
+                    printf("%serror: failed to open file\n", TAB);
+                }
                 break;
             case ERROR:
-                printf("        error: %s\n", mssg);
+                printf("%serror: %s\n", TAB, mssg);
                 break;
             case NONE:
                 break;
             default:
-                printf("        special error: invalid Command value\n");
+                printf("%sspecial error: invalid Command value\n", TAB);
         }
     }
     end = clock();
@@ -284,4 +319,47 @@ unsigned hash2(void* str) {
 unsigned hash3(void* str) {
     unsigned k = prehash(str);    
     return k;
+}
+
+FILE* myfopen(char* arg1) {
+    FILE* fptr = fopen(arg1, "r");
+    char* path[MAX_DEF+1];
+    char* path2[MAX_DEF+1];
+
+    if (fptr == NULL) {
+        strcpy(path, SUPER_DIR);
+        strcat(path, arg1);
+        printf("error: failed to open file at %s; now trying %s\n", arg1, path);
+        fptr = fopen(path);
+        if (fptr == NULL) {
+            strcpy(path, SUB_DIR);
+            strcat(path, arg1);
+            printf("error: failed to open file at %s; now trying %s\n", path, path2);
+            fptr = fopen(path2);                        
+        }
+    }
+    return fptr;
+}
+
+// return num words read
+int readlist(FILE* fptr, char* word, char* def) {
+    int wordpos = 0;
+    int defpos = 0;
+    char c;
+    while (!feof(fptr) && isspace(c = getc(fptr)));
+    if (feof(fptr) || c == '\n') {
+        return 0;
+    }
+    word[wordpos++] = c;
+    while (!feof(fptr) && !isspace(c = getc(fptr))) {
+        word[wordpos++] = c;
+    }
+    word[wordpos++] = '\0';
+    while (!feof(fptr) && (c = getc(fptr)) != '"');
+    while (!feof(fptr) && (c = getc(fptr)) != '"') {
+        def[defpos++] = c;
+    }
+    def[defpos++] = '\0';
+    while (!feof(fptr) && getc(fptr) != '\n');
+    return 1;
 }
