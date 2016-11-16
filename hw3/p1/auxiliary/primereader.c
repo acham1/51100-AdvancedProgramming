@@ -14,6 +14,7 @@ int main(void) {
     FILE* fi = fopen(IN_FILE, "r");  
     FILE* fo = fopen(OUT_FILE, "w");
     char garbage[MAX_NUM_WIDTH+1];
+    int threshold = 2;
     int prevprime = 1;
     int primenum = 1;
 
@@ -26,10 +27,11 @@ int main(void) {
         return EXIT_FAILURE;
     }  
     while (!feof(fi) && fscanf(fi, "%s %d, %s", garbage, &primenum, garbage) != EOF) {
-        if (primenum >= 2*prevprime) {
-            fprintf(fo, "%d\n", primenum);
-            prevprime = primenum;
+        if (primenum > threshold) {
+            fprintf(fo, "%d\n", prevprime);
+            threshold *= 2;
         }
+        prevprime = primenum;
     }
 
     fclose(fi);

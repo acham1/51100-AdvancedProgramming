@@ -28,6 +28,9 @@ typedef enum {
 
 Command getcommand(char* arg1, char* arg2, char* mssg);
 int readlist(FILE* fptr, char* word, char* def);
+void filterprint(void* word, void* def);
+void printmap(void* word, void* def);
+int cmp(void* key1, void* key2);
 void printheading(int whichfn);
 Command txttocmd(char* txt);
 unsigned prehash(char* str);
@@ -41,24 +44,26 @@ void burntoend(void);
 int getch(void);
 
 unsigned (*hashfunctions[NUM_HASH_FNS])(void* str) = {hash1, hash2, hash3};
-int primes[NUM_PRIMES] = {2, 5, 11, 23, 47, 97, 197, 397, 797, 
-    1597, 3203, 6421, 12853, 25717, 51437, 102877, 205759, 
-    411527, 823117, 1646237, 3292489, 6584983, 13169977};
+int primes[NUM_PRIMES] = {2, 3, 7, 13, 31, 61, 127, 251, 509, 1021, 2039,
+    4093, 8191, 16381, 32749, 65521, 131071, 262139, 524287, 1048573,
+    2097143, 4194301, 8388593};
 unsigned powers[MAX_WORD];
 char buffer[MAX_BUFFER];
 int bufferpos = 0;
 int primespos = 0;
+char* externkey1;
+char* externkey2;
 
 int main(int argc, char** argv) {
     unsigned (*hashfn)(void* str) = hashfunctions[0];
     int whichfn = DEFAULT_HASH_FN;
+    FILE* logfile = NULL;
     char arg1[MAX_DEF+1];
     char arg2[MAX_DEF+1];
     char mssg[MAX_DEF+1];
-    char path[MAX_DEF+1];
     clock_t start, end;
     FILE* fptr = NULL;
-    Element* elmnt;
+    Element elmnt;
     Hashmap* hmp;
     Command cmd;
     int counter;
@@ -75,13 +80,16 @@ int main(int argc, char** argv) {
 
     initpowers();
     printheading(whichfn);
-    hmp = new_hashmap();
     start = clock();
+    hmp = hmp_create();
+    hmp->hashfn = hashfn;
+    logfile = fopen(LOG_NAME, "w");
     while (!feof(stdin)) {
         switch(cmd = getcommand(arg1, arg2, mssg)) {
             case FIND1:
-                printf("attempt: finding word \"%s\"\n", TAB, arg1);
-                if (elmnt = hmp_find(hmp, arg1, hashfn)) {
+                printf("%sattempt: finding word \"%s\"\n", TAB, arg1);
+                elmnt = hmp_find(hmp, arg1);
+                if (elmnt.key != NULL && elmnt.value != NULL) {
                     printf("%ssuccess: found word\n", TAB);
                     printf("%s%s: %s\n", TAB, arg1, (char*) elmnt.value);
                 } else {
@@ -90,31 +98,76 @@ int main(int argc, char** argv) {
                 break;
             case FIND2:
                 printf("%sattempt: finding words between \"%s\" and \"%s\", inclusive\n", TAB, arg1, arg2);
+                if (strcmp(arg1, arg2) < 0) {
+                    externkey1 = arg1;
+                    externkey2 = arg2;
+                    hmp_traverse(hmp, cmp, filterprint);
+                } else if (strcmp(arg1, arg2) > 0) {
+                    externkey1 = arg2;
+                    externkey2 = arg1;
+                    hmp_traverse(hmp, cmp, filterprint);
+                } else {
+                    elmnt = hmp_find(hmp, arg1);
+                    if (elmnt.key != NULL && elmnt.value != NULL) {
+                        printf("%s%s: %s\n", TAB, arg1, (char*) elmnt.value);
+                    }
+                }
+                printf("%ssuccess: printed all pairs between \"%s\" and \"%s\", inclusive\n", TAB, arg1, arg2);
                 break;
             case DELETE:
                 printf("%sattempt: deleting word \"%s\"\n", TAB, arg1);
-                if (elmnt = hmp_remove(hmp, arg1, hashfn)) {
+                elmnt = hmp_remove(hmp, arg1);
+                if (elmnt.key != NULL && elmnt.value != NULL) {
                     free(elmnt.key);
                     free(elmnt.value);
                     printf("%ssuccess: removed word\n", TAB);
+                    fprintf(logfile, "<delete> totalkeys: %u, totaladdress: %u, loadfactor: %f\n", hmp->numkeys, hmp->numbuckets, (double) hmp->numkeys/hmp->numbuckets);
+                    fprintf(logfile, "         min_occupancy: %u, max_occupancy: %u\n", hmp->minoccupancy, hmp->maxoccupancy);
                 } else {
                     printf("%serror: failed to remove word; it may not exist\n", TAB);
                 }
                 break;
             case INSERT: 
                 printf("%sattempt: inserting word \"%s\" with definition \"%s\"\n", TAB, arg1, arg2);
+                word = malloc(sizeof(char) * (strlen(arg1) + 1));
+                def = malloc(sizeof(char) * (strlen(arg2) + 1));
+                strcpy(word, arg1);
+                strcpy(word, arg2);
+                if (!hmp_insert(hmp, word, def)) {
+                    printf("success: inserted word\n");
+                    fprintf(logfile, "<insert> totalkeys: %u, totaladdress: %u, loadfactor: %f\n", hmp->numkeys, hmp->numbuckets, (double) hmp->numkeys/hmp->numbuckets);
+                    fprintf(logfile, "         min_occupancy: %u, max_occupancy: %u\n", hmp->minoccupancy, hmp->maxoccupancy);
+                } else {
+                    free(word);
+                    free(def);
+                }
                 break;
             case PRINT:
-                printf("%sattempt: printing\n", TAB);
+                printf("%sattempt: printing map alphabetically\n", TAB);
+                hmp_traverse(hmp, cmp, printmap);
+                printf("%ssuccess: printed map alphabetically\n", TAB);
                 break;
             case READ:
                 printf("%sattempt: reading file \"%s\"\n", TAB, arg1);
-                if (fptr = myfopen(arg1)) {
+                fptr = myfopen(arg1);
+                if (fptr != NULL) {
                     counter = 0;
                     while (readlist(fptr, arg1, arg2)) {
-                        hmp_insert(hmp, arg1, arg2, hashfn);
+                        word = malloc(sizeof(char) * (strlen(arg1) + 1));
+                        def = malloc(sizeof(char) * (strlen(arg2) + 1));
+                        strcpy(word, arg1);
+                        strcpy(word, arg2);
+                        if (!hmp_insert(hmp, word, def)) {
+                            counter++;
+                        } else {
+                            free(word);
+                            free(def);
+                        }
                     }
                     fclose(fptr);
+                    printf("%ssuccess: read file\n", TAB);
+                    fprintf(logfile, "< read > totalkeys: %u, totaladdress: %u, loadfactor: %f\n", hmp->numkeys, hmp->numbuckets, (double) hmp->numkeys/hmp->numbuckets);
+                    fprintf(logfile, "         min_occupancy: %u, max_occupancy: %u\n", hmp->minoccupancy, hmp->maxoccupancy);
                 } else {
                     printf("%serror: failed to open file\n", TAB);
                 }
@@ -133,6 +186,8 @@ int main(int argc, char** argv) {
     printf("Used hash function #%d of %d\n", whichfn, NUM_HASH_FNS);
     printf("Total processor time consumed: %lf\n", (double) (end-start) / CLOCKS_PER_SEC);
     printf("---------------------------END---------------------------\n\n");
+    hmp_deepdestroy(hmp);
+    fclose(logfile);
     return EXIT_SUCCESS;
 }
 
@@ -323,19 +378,19 @@ unsigned hash3(void* str) {
 
 FILE* myfopen(char* arg1) {
     FILE* fptr = fopen(arg1, "r");
-    char* path[MAX_DEF+1];
-    char* path2[MAX_DEF+1];
+    char path[MAX_DEF+1];
+    char path2[MAX_DEF+1];
 
     if (fptr == NULL) {
         strcpy(path, SUPER_DIR);
         strcat(path, arg1);
         printf("error: failed to open file at %s; now trying %s\n", arg1, path);
-        fptr = fopen(path);
+        fptr = fopen(path, "r");
         if (fptr == NULL) {
             strcpy(path, SUB_DIR);
             strcat(path, arg1);
             printf("error: failed to open file at %s; now trying %s\n", path, path2);
-            fptr = fopen(path2);                        
+            fptr = fopen(path2, "r");                        
         }
     }
     return fptr;
@@ -362,4 +417,18 @@ int readlist(FILE* fptr, char* word, char* def) {
     def[defpos++] = '\0';
     while (!feof(fptr) && getc(fptr) != '\n');
     return 1;
+}
+
+int cmp(void* key1, void* key2) {
+    return strcmp((char*) key1, (char*) key2);
+}
+
+void printmap(void* word, void* def) {
+    printf("%s%s: \"%s\"\n", TAB, (char*) word, (char*) def);
+}
+
+void filterprint(void* word, void* def) {
+    if (strcmp(externkey1, word) <= 0 && strcmp(externkey2, word) >= 0) {
+        printf("%s%s: \"%s\"\n", TAB, (char*) word, (char*) def);
+    }
 }

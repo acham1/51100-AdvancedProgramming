@@ -12,9 +12,11 @@ typedef struct Node {
     struct Node* next;
 } Node;
 
-typedef struct {
+typedef struct Linkedlist {
     Node* head;
     int numnodes;
 } Linkedlist;
+
+Linkedlist* ll_create(void);
 
 #endif
