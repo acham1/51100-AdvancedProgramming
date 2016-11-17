@@ -21,6 +21,7 @@
 #define NUM_PRIMES 24
 #define SUB_DIR "p1/"
 #define HASH_BASE 31
+#define p1_abs(a) ((a) < 0 ? (-a) : (a))
 
 typedef enum {
     FIND1, FIND2, DELETE, INSERT, PRINT, READ, ERROR, NONE
@@ -90,10 +91,10 @@ int main(int argc, char** argv) {
                 printf("%sattempt: finding word \"%s\"\n", TAB, arg1);
                 elmnt = hmp_find(hmp, arg1, cmp);
                 if (elmnt.key != NULL && elmnt.value != NULL) {
-                    printf("%ssuccess: found word\n", TAB);
+                    printf("%sSUCCESS: found word\n", TAB);
                     printf("%s%s: %s\n", TAB, arg1, (char*) elmnt.value);
                 } else {
-                    printf("%serror: failed to find word; it may not exist\n", TAB);
+                    printf("%sERROR: failed to find word; it may not exist\n", TAB);
                 }
                 break;
             case FIND2:
@@ -112,7 +113,7 @@ int main(int argc, char** argv) {
                         printf("%s%s: %s\n", TAB, arg1, (char*) elmnt.value);
                     }
                 }
-                printf("%ssuccess: printed all pairs between \"%s\" and \"%s\", inclusive\n", TAB, arg1, arg2);
+                printf("%sSUCCESS: printed all pairs between \"%s\" and \"%s\", inclusive\n", TAB, arg1, arg2);
                 break;
             case DELETE:
                 printf("%sattempt: deleting word \"%s\"\n", TAB, arg1);
@@ -120,11 +121,11 @@ int main(int argc, char** argv) {
                 if (elmnt.key != NULL && elmnt.value != NULL) {
                     free(elmnt.key);
                     free(elmnt.value);
-                    printf("%ssuccess: removed word\n", TAB);
+                    printf("%sSUCCESS: removed word\n", TAB);
                     fprintf(logfile, "<delete> totalkeys: %ld, totaladdress: %ld, loadfactor: %f\n", hmp->numkeys, hmp->numbuckets, (double) hmp->numkeys/hmp->numbuckets);
                     fprintf(logfile, "         min_occupancy: %ld, max_occupancy: %ld\n", hmp->minoccupancy, hmp->maxoccupancy);
                 } else {
-                    printf("%serror: failed to remove word; it may not exist\n", TAB);
+                    printf("%sERROR: failed to remove word; it may not exist\n", TAB);
                 }
                 break;
             case INSERT: 
@@ -134,11 +135,11 @@ int main(int argc, char** argv) {
                 strcpy(word, arg1);
                 strcpy(def, arg2);
                 if (!hmp_insert(hmp, word, def, cmp)) {
-                    printf("%ssuccess: inserted word\n", TAB);
+                    printf("%sSUCCESS: inserted word\n", TAB);
                     fprintf(logfile, "<insert> totalkeys: %ld, totaladdress: %ld, loadfactor: %f\n", hmp->numkeys, hmp->numbuckets, (double) hmp->numkeys/hmp->numbuckets);
                     fprintf(logfile, "         min_occupancy: %ld, max_occupancy: %ld\n", hmp->minoccupancy, hmp->maxoccupancy);
                 } else {
-                    printf("%serror: failed to insert word; it may already exist\n", TAB);
+                    printf("%sERROR: failed to insert word; it may already exist\n", TAB);
                     free(word);
                     free(def);
                 }
@@ -146,7 +147,7 @@ int main(int argc, char** argv) {
             case PRINT:
                 printf("%sattempt: printing map alphabetically\n", TAB);
                 hmp_traverse(hmp, cmp, printmap);
-                printf("%ssuccess: printed map alphabetically\n", TAB);
+                printf("%sSUCCESS: printed map alphabetically\n", TAB);
                 break;
             case READ:
                 printf("%sattempt: reading file \"%s\"\n", TAB, arg1);
@@ -157,7 +158,8 @@ int main(int argc, char** argv) {
                         word = malloc(sizeof(char) * (strlen(arg1) + 1));
                         def = malloc(sizeof(char) * (strlen(arg2) + 1));
                         strcpy(word, arg1);
-                        strcpy(word, arg2);
+                        strcpy(def, arg2);
+                        printf("%d) %s: %s\n", counter, word, def);
                         if (!hmp_insert(hmp, word, def, cmp)) {
                             counter++;
                         } else {
@@ -166,20 +168,20 @@ int main(int argc, char** argv) {
                         }
                     }
                     fclose(fptr);
-                    printf("%ssuccess: read file\n", TAB);
+                    printf("%sSUCCESS: read file\n", TAB);
                     fprintf(logfile, "< read > totalkeys: %ld, totaladdress: %ld, loadfactor: %f\n", hmp->numkeys, hmp->numbuckets, (double) hmp->numkeys/hmp->numbuckets);
                     fprintf(logfile, "         min_occupancy: %ld, max_occupancy: %ld\n", hmp->minoccupancy, hmp->maxoccupancy);
                 } else {
-                    printf("%serror: failed to open file\n", TAB);
+                    printf("%sERROR: failed to open file\n", TAB);
                 }
                 break;
             case ERROR:
-                printf("%serror: %s\n", TAB, mssg);
+                printf("%sERROR: %s\n", TAB, mssg);
                 break;
             case NONE:
                 break;
             default:
-                printf("%sspecial error: invalid Command value\n", TAB);
+                printf("%sspecial ERROR: invalid Command value\n", TAB);
         }
     }
     end = clock();
@@ -312,7 +314,7 @@ void ungetch(char prev) {
     if (bufferpos < MAX_BUFFER) {
         buffer[bufferpos++] = prev;
     } else {
-        printf("special error: exceeded max ungetch buffer\n");
+        printf("special ERROR: exceeded max ungetch buffer\n");
     }
 }
 
@@ -364,17 +366,21 @@ long prehash(char* str) {
 
 long hash1(Hashmap* h, void* str) {
     long k = prehash(str);
-    return k % h->numbuckets;
+    k = k % h->numbuckets;
+    printf("hash is: %ld\n", k);
+    return p1_abs(k);
 }
 
 long hash2(Hashmap* h, void* str) {
     long k = prehash(str);
-    return k % h->numbuckets;
+    k = k % h->numbuckets;
+    return p1_abs(k);
 }
 
 long hash3(Hashmap* h, void* str) {
-    long k = prehash(str);    
-    return k % h->numbuckets;
+    long k = prehash(str);
+    k = k % h->numbuckets;
+    return p1_abs(k);
 }
 
 FILE* myfopen(char* arg1) {
@@ -385,12 +391,12 @@ FILE* myfopen(char* arg1) {
     if (fptr == NULL) {
         strcpy(path, SUPER_DIR);
         strcat(path, arg1);
-        printf("error: failed to open file at %s; now trying %s\n", arg1, path);
+        printf("ERROR: failed to open file at %s; now trying %s\n", arg1, path);
         fptr = fopen(path, "r");
         if (fptr == NULL) {
             strcpy(path, SUB_DIR);
             strcat(path, arg1);
-            printf("error: failed to open file at %s; now trying %s\n", path, path2);
+            printf("ERROR: failed to open file at %s; now trying %s\n", path, path2);
             fptr = fopen(path2, "r");                        
         }
     }
