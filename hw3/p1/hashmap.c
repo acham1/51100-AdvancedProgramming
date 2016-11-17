@@ -35,7 +35,7 @@ static void hmp_insertlist(Hashmap* hmp, Linkedlist* ll, int (*cmp)(void*, void*
 }
 
 static void hmp_quicksort(Element* elmnts, long start, long end, int (*cmp)(void* key1, void*key2)) {
-    printf("start/end %ld %ld\n", start, end);
+//    printf("start/end %ld %ld\n", start, end);
     long i = start, j = start;
     void* key;
 
@@ -43,9 +43,9 @@ static void hmp_quicksort(Element* elmnts, long start, long end, int (*cmp)(void
         return;
     }
     key = elmnts[end].key;
-    for (int k = start; k <= end; k++) {
-        printf(">> %s\n", (char*) elmnts[k].key);
-    }
+//    for (int k = start; k <= end; k++) {
+//        printf(">> %s\n", (char*) elmnts[k].key);
+//    }
     while (i < end) {
 //        printf("%s %s\n", (char*) elmnts[i].key, (char*) elmnts[end].key);
         if (cmp(elmnts[i].key, key) < 0) {
@@ -54,9 +54,9 @@ static void hmp_quicksort(Element* elmnts, long start, long end, int (*cmp)(void
         }
         i++;
     }
-    printf("now about to swap %ld and %ld\n", j, end);
+//    printf("now about to swap %ld and %ld\n", j, end);
     hmp_swap(elmnts+j, elmnts+end);
-    printf("swapped\n");
+//    printf("swapped\n");
     hmp_quicksort(elmnts, start, j-1, cmp);
     hmp_quicksort(elmnts, j+1, end, cmp);
 }
@@ -79,7 +79,7 @@ int hmp_resize(Hashmap* hmp, long size, int (*cmp)(void*, void*)) {
     Hashmap newhmp;
     int i = 0;
 
-    printf("resizing w numkeys %ld/%ld\n", hmp->numkeys, hmp->numbuckets);
+//    printf("resizing w numkeys %ld/%ld\n", hmp->numkeys, hmp->numbuckets);
     if (size < hmp->numbuckets) {
         printf("special error: invalid resize input\n");
         return 1;
@@ -238,9 +238,9 @@ void hmp_traverse(Hashmap* hmp, int (*cmp)(void* key1, void* key2), void (*dosom
             }
         }
     }
-    printf("in qs\n");
+//    printf("in qs\n");
     hmp_quicksort(contents, 0, hmp->numkeys-1, cmp);
-    printf("out qs\n");
+//    printf("out qs\n");
     for (i = 0; i < hmp->numkeys; i++) {
         dosomething(contents[i].key, contents[i].value);
     }

@@ -159,7 +159,7 @@ int main(int argc, char** argv) {
                         def = malloc(sizeof(char) * (strlen(arg2) + 1));
                         strcpy(word, arg1);
                         strcpy(def, arg2);
-                        printf("%d) %s: %s\n", counter, word, def);
+//                        printf("%d) %s: %s\n", counter, word, def);
                         if (!hmp_insert(hmp, word, def, cmp)) {
                             counter++;
                         } else {
