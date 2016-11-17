@@ -88,7 +88,7 @@ int main(int argc, char** argv) {
     while (!feof(stdin)) {
         switch(cmd = getcommand(arg1, arg2, mssg)) {
             case FIND1:
-                printf("%sattempt: finding word \"%s\"\n", TAB, arg1);
+                printf("%sATTEMPT: finding word \"%s\"\n", TAB, arg1);
                 elmnt = hmp_find(hmp, arg1, cmp);
                 if (elmnt.key != NULL && elmnt.value != NULL) {
                     printf("%sSUCCESS: found word\n", TAB);
@@ -98,7 +98,7 @@ int main(int argc, char** argv) {
                 }
                 break;
             case FIND2:
-                printf("%sattempt: finding words between \"%s\" and \"%s\", inclusive\n", TAB, arg1, arg2);
+                printf("%sATTEMPT: finding words between \"%s\" and \"%s\", inclusive\n", TAB, arg1, arg2);
                 if (strcmp(arg1, arg2) < 0) {
                     externkey1 = arg1;
                     externkey2 = arg2;
@@ -116,7 +116,7 @@ int main(int argc, char** argv) {
                 printf("%sSUCCESS: printed all pairs between \"%s\" and \"%s\", inclusive\n", TAB, arg1, arg2);
                 break;
             case DELETE:
-                printf("%sattempt: deleting word \"%s\"\n", TAB, arg1);
+                printf("%sATTEMPT: deleting word \"%s\"\n", TAB, arg1);
                 elmnt = hmp_remove(hmp, arg1, cmp);
                 if (elmnt.key != NULL && elmnt.value != NULL) {
                     free(elmnt.key);
@@ -129,7 +129,7 @@ int main(int argc, char** argv) {
                 }
                 break;
             case INSERT: 
-                printf("%sattempt: inserting word \"%s\" with definition \"%s\"\n", TAB, arg1, arg2);
+                printf("%sATTEMPT: inserting word \"%s\" with definition \"%s\"\n", TAB, arg1, arg2);
                 word = malloc(sizeof(char) * (strlen(arg1) + 1));
                 def = malloc(sizeof(char) * (strlen(arg2) + 1));
                 strcpy(word, arg1);
@@ -145,12 +145,12 @@ int main(int argc, char** argv) {
                 }
                 break;
             case PRINT:
-                printf("%sattempt: printing map alphabetically\n", TAB);
+                printf("%sATTEMPT: printing map alphabetically\n", TAB);
                 hmp_traverse(hmp, cmp, printmap);
                 printf("%sSUCCESS: printed map alphabetically\n", TAB);
                 break;
             case READ:
-                printf("%sattempt: reading file \"%s\"\n", TAB, arg1);
+                printf("%sATTEMPT: reading file \"%s\"\n", TAB, arg1);
                 fptr = myfopen(arg1);
                 if (fptr != NULL) {
                     counter = 0;
