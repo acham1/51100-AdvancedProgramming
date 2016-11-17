@@ -1,4 +1,0 @@
-<insert> totalkeys: 1, totaladdress: 2, loadfactor: 0.500000
-         min_occupancy: 0, max_occupancy: 1
-<insert> totalkeys: 2, totaladdress: 4, loadfactor: 0.500000
-         min_occupancy: 0, max_occupancy: 1

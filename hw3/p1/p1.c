@@ -367,7 +367,7 @@ long prehash(char* str) {
 long hash1(Hashmap* h, void* str) {
     long k = prehash(str);
     k = k % h->numbuckets;
-    printf("hash is: %ld\n", k);
+//    printf("hash is: %ld\n", k);
     return p1_abs(k);
 }
 
@@ -419,7 +419,7 @@ int readlist(FILE* fptr, char* word, char* def) {
     word[wordpos++] = '\0';
     while (!feof(fptr) && (c = getc(fptr)) != '"');
     while (!feof(fptr) && (c = getc(fptr)) != '"') {
-        def[defpos++] = c;
+        def[defpos++] = tolower(c);
     }
     def[defpos++] = '\0';
     while (!feof(fptr) && getc(fptr) != '\n');

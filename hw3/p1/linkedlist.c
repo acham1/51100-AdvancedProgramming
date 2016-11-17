@@ -64,7 +64,7 @@ Node* ll_find(Linkedlist* ll, void* key, int (*cmp)(void*, void*)) {
         result = cmp(key, curr->key);
         if (result == 0) {
             return curr;
-        } else if (result > 0) {
+        } else if (result < 0) {
             return NULL;
         }
         curr = curr->next;
@@ -96,7 +96,7 @@ Node* ll_remove(Linkedlist* ll, void* key, int (*cmp)(void*, void*)) {
             prev->next = curr->next;
             ll->numnodes--;
             return curr;
-        } else if (result > 0) {
+        } else if (result < 0) {
             return NULL;
         }
         prev = curr;
