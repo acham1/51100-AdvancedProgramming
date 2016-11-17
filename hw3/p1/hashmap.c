@@ -192,6 +192,7 @@ Element hmp_remove(Hashmap* hmp, void* key, int (*cmp)(void*, void*)) {
             hmp->nummaxoccupancy--;
         }
     }
+    hmp->numkeys--;
     return elmnt;
 }
 

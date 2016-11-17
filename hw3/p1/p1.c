@@ -391,12 +391,12 @@ FILE* myfopen(char* arg1) {
     if (fptr == NULL) {
         strcpy(path, SUPER_DIR);
         strcat(path, arg1);
-        printf("ERROR: failed to open file at %s; now trying %s\n", arg1, path);
+        printf("%sERROR: failed to open file at %s; now trying %s\n", TAB, arg1, path);
         fptr = fopen(path, "r");
         if (fptr == NULL) {
-            strcpy(path, SUB_DIR);
-            strcat(path, arg1);
-            printf("ERROR: failed to open file at %s; now trying %s\n", path, path2);
+            strcpy(path2, SUB_DIR);
+            strcat(path2, arg1);
+            printf("%sERROR: failed to open file at %s; now trying %s\n", TAB, path, path2);
             fptr = fopen(path2, "r");                        
         }
     }
@@ -412,9 +412,9 @@ int readlist(FILE* fptr, char* word, char* def) {
     if (feof(fptr) || c == '\n') {
         return 0;
     }
-    word[wordpos++] = c;
+    word[wordpos++] = tolower(c);
     while (!feof(fptr) && !isspace(c = getc(fptr))) {
-        word[wordpos++] = c;
+        word[wordpos++] = tolower(c);
     }
     word[wordpos++] = '\0';
     while (!feof(fptr) && (c = getc(fptr)) != '"');
