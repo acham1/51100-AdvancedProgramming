@@ -14,9 +14,13 @@ typedef struct Node {
 
 typedef struct Linkedlist {
     Node* head;
-    int numnodes;
+    unsigned long numnodes;
 } Linkedlist;
 
 Linkedlist* ll_create(void);
-
+void ll_shallowdestroy(Linkedlist* ll);
+void ll_deepdestroy(Linkedlist* ll);
+Node* ll_find(Linkedlist* ll, void* key, int (*cmp)(void*, void*));
+Node* ll_remove(Linkedlist* ll, void* key, int (*cmp)(void*, void*));
+int ll_insert(Linkedlist* ll, void* key, void* value, int (*cmp)(void*, void*));
 #endif

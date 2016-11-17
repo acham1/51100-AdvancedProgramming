@@ -18,7 +18,7 @@
 #define TAB "        "
 #define MAX_BUFFER 100
 #define NUM_HASH_FNS 3
-#define NUM_PRIMES 23
+#define NUM_PRIMES 24
 #define SUB_DIR "p1/"
 #define HASH_BASE 31
 
@@ -33,21 +33,21 @@ void printmap(void* word, void* def);
 int cmp(void* key1, void* key2);
 void printheading(int whichfn);
 Command txttocmd(char* txt);
-unsigned prehash(char* str);
+long prehash(char* str);
 FILE* myfopen(char* arg1);
-unsigned hash1(void* str);
-unsigned hash2(void* str);
-unsigned hash3(void* str);
+long hash1(Hashmap* hmp, void* str);
+long hash2(Hashmap* hmp, void* str);
+long hash3(Hashmap* hmp, void* str);
 void ungetch(char prev); 
 void initpowers(void);
 void burntoend(void);
 int getch(void);
 
-unsigned (*hashfunctions[NUM_HASH_FNS])(void* str) = {hash1, hash2, hash3};
-int primes[NUM_PRIMES] = {2, 3, 7, 13, 31, 61, 127, 251, 509, 1021, 2039,
-    4093, 8191, 16381, 32749, 65521, 131071, 262139, 524287, 1048573,
+long (*hashfunctions[NUM_HASH_FNS])(Hashmap*, void* str) = {hash1, hash2, hash3};
+int primes[NUM_PRIMES] = {1, 2, 3, 7, 13, 31, 61, 127, 251, 509, 1021, 
+    2039, 4093, 8191, 16381, 32749, 65521, 131071, 262139, 524287, 1048573,
     2097143, 4194301, 8388593};
-unsigned powers[MAX_WORD];
+long powers[MAX_WORD];
 char buffer[MAX_BUFFER];
 int bufferpos = 0;
 int primespos = 0;
@@ -55,7 +55,7 @@ char* externkey1;
 char* externkey2;
 
 int main(int argc, char** argv) {
-    unsigned (*hashfn)(void* str) = hashfunctions[0];
+    long (*hashfn)(Hashmap*, void*) = hashfunctions[0];
     int whichfn = DEFAULT_HASH_FN;
     FILE* logfile = NULL;
     char arg1[MAX_DEF+1];
@@ -88,7 +88,7 @@ int main(int argc, char** argv) {
         switch(cmd = getcommand(arg1, arg2, mssg)) {
             case FIND1:
                 printf("%sattempt: finding word \"%s\"\n", TAB, arg1);
-                elmnt = hmp_find(hmp, arg1);
+                elmnt = hmp_find(hmp, arg1, cmp);
                 if (elmnt.key != NULL && elmnt.value != NULL) {
                     printf("%ssuccess: found word\n", TAB);
                     printf("%s%s: %s\n", TAB, arg1, (char*) elmnt.value);
@@ -107,7 +107,7 @@ int main(int argc, char** argv) {
                     externkey2 = arg1;
                     hmp_traverse(hmp, cmp, filterprint);
                 } else {
-                    elmnt = hmp_find(hmp, arg1);
+                    elmnt = hmp_find(hmp, arg1, cmp);
                     if (elmnt.key != NULL && elmnt.value != NULL) {
                         printf("%s%s: %s\n", TAB, arg1, (char*) elmnt.value);
                     }
@@ -116,13 +116,13 @@ int main(int argc, char** argv) {
                 break;
             case DELETE:
                 printf("%sattempt: deleting word \"%s\"\n", TAB, arg1);
-                elmnt = hmp_remove(hmp, arg1);
+                elmnt = hmp_remove(hmp, arg1, cmp);
                 if (elmnt.key != NULL && elmnt.value != NULL) {
                     free(elmnt.key);
                     free(elmnt.value);
                     printf("%ssuccess: removed word\n", TAB);
-                    fprintf(logfile, "<delete> totalkeys: %u, totaladdress: %u, loadfactor: %f\n", hmp->numkeys, hmp->numbuckets, (double) hmp->numkeys/hmp->numbuckets);
-                    fprintf(logfile, "         min_occupancy: %u, max_occupancy: %u\n", hmp->minoccupancy, hmp->maxoccupancy);
+                    fprintf(logfile, "<delete> totalkeys: %ld, totaladdress: %ld, loadfactor: %f\n", hmp->numkeys, hmp->numbuckets, (double) hmp->numkeys/hmp->numbuckets);
+                    fprintf(logfile, "         min_occupancy: %ld, max_occupancy: %ld\n", hmp->minoccupancy, hmp->maxoccupancy);
                 } else {
                     printf("%serror: failed to remove word; it may not exist\n", TAB);
                 }
@@ -132,12 +132,13 @@ int main(int argc, char** argv) {
                 word = malloc(sizeof(char) * (strlen(arg1) + 1));
                 def = malloc(sizeof(char) * (strlen(arg2) + 1));
                 strcpy(word, arg1);
-                strcpy(word, arg2);
-                if (!hmp_insert(hmp, word, def)) {
-                    printf("success: inserted word\n");
-                    fprintf(logfile, "<insert> totalkeys: %u, totaladdress: %u, loadfactor: %f\n", hmp->numkeys, hmp->numbuckets, (double) hmp->numkeys/hmp->numbuckets);
-                    fprintf(logfile, "         min_occupancy: %u, max_occupancy: %u\n", hmp->minoccupancy, hmp->maxoccupancy);
+                strcpy(def, arg2);
+                if (!hmp_insert(hmp, word, def, cmp)) {
+                    printf("%ssuccess: inserted word\n", TAB);
+                    fprintf(logfile, "<insert> totalkeys: %ld, totaladdress: %ld, loadfactor: %f\n", hmp->numkeys, hmp->numbuckets, (double) hmp->numkeys/hmp->numbuckets);
+                    fprintf(logfile, "         min_occupancy: %ld, max_occupancy: %ld\n", hmp->minoccupancy, hmp->maxoccupancy);
                 } else {
+                    printf("%serror: failed to insert word; it may already exist\n", TAB);
                     free(word);
                     free(def);
                 }
@@ -157,7 +158,7 @@ int main(int argc, char** argv) {
                         def = malloc(sizeof(char) * (strlen(arg2) + 1));
                         strcpy(word, arg1);
                         strcpy(word, arg2);
-                        if (!hmp_insert(hmp, word, def)) {
+                        if (!hmp_insert(hmp, word, def, cmp)) {
                             counter++;
                         } else {
                             free(word);
@@ -166,8 +167,8 @@ int main(int argc, char** argv) {
                     }
                     fclose(fptr);
                     printf("%ssuccess: read file\n", TAB);
-                    fprintf(logfile, "< read > totalkeys: %u, totaladdress: %u, loadfactor: %f\n", hmp->numkeys, hmp->numbuckets, (double) hmp->numkeys/hmp->numbuckets);
-                    fprintf(logfile, "         min_occupancy: %u, max_occupancy: %u\n", hmp->minoccupancy, hmp->maxoccupancy);
+                    fprintf(logfile, "< read > totalkeys: %ld, totaladdress: %ld, loadfactor: %f\n", hmp->numkeys, hmp->numbuckets, (double) hmp->numkeys/hmp->numbuckets);
+                    fprintf(logfile, "         min_occupancy: %ld, max_occupancy: %ld\n", hmp->minoccupancy, hmp->maxoccupancy);
                 } else {
                     printf("%serror: failed to open file\n", TAB);
                 }
@@ -182,7 +183,7 @@ int main(int argc, char** argv) {
         }
     }
     end = clock();
-    printf("---------------------------------------------------------\n");
+    printf("\n---------------------------------------------------------\n");
     printf("Used hash function #%d of %d\n", whichfn, NUM_HASH_FNS);
     printf("Total processor time consumed: %lf\n", (double) (end-start) / CLOCKS_PER_SEC);
     printf("---------------------------END---------------------------\n\n");
@@ -197,7 +198,7 @@ Command getcommand(char* arg1, char* arg2, char* mssg) {
     Command cmd;
     char c;
 
-    printf("    %%   ");
+    printf("\n    %%   ");
     /** receive the operation name **/
     while ((c = getch()) != EOF && c != '\n' && isspace(c));
     if (c == EOF || c == '\n') {
@@ -304,7 +305,7 @@ void printheading(int whichfn) {
     printf("    %%   find [key]\n");
     printf("    %%   print\n");
     printf("---------------------------------------------------------\n");
-    printf("Please enter your operations below: \n\n");
+    printf("Please enter your operations below: \n");
 }
 
 void ungetch(char prev) {
@@ -324,9 +325,9 @@ int getch(void) {
 }
 
 void initpowers(void) {
-    powers[0] = (unsigned) 1;
+    powers[0] = (long) 1;
     for (int i = 1; i < MAX_WORD; i++) {
-        powers[i] = (unsigned) (HASH_BASE * powers[i-1]);
+        powers[i] = (long) (HASH_BASE * powers[i-1]);
     }
 }
 
@@ -351,9 +352,9 @@ Command txttocmd(char* txt) {
     }
 }
 
-unsigned prehash(char* str) {
+long prehash(char* str) {
     int len = strlen(str);
-    unsigned out = 0;
+    long out = 0;
 
     for (int i = 0; i < len; i++) {
         out += powers[len-1-i] * str[i];
@@ -361,19 +362,19 @@ unsigned prehash(char* str) {
     return out;
 }
 
-unsigned hash1(void* str) {
-    unsigned k = prehash(str);
-    return k;
+long hash1(Hashmap* h, void* str) {
+    long k = prehash(str);
+    return k % h->numbuckets;
 }
 
-unsigned hash2(void* str) {
-    unsigned k = prehash(str);
-    return k;
+long hash2(Hashmap* h, void* str) {
+    long k = prehash(str);
+    return k % h->numbuckets;
 }
 
-unsigned hash3(void* str) {
-    unsigned k = prehash(str);    
-    return k;
+long hash3(Hashmap* h, void* str) {
+    long k = prehash(str);    
+    return k % h->numbuckets;
 }
 
 FILE* myfopen(char* arg1) {
@@ -420,7 +421,11 @@ int readlist(FILE* fptr, char* word, char* def) {
 }
 
 int cmp(void* key1, void* key2) {
-    return strcmp((char*) key1, (char*) key2);
+    int result;
+//    printf("in cmp\n");
+    result = strcmp((char*) key1, (char*) key2);
+//    printf("out cmp\n");
+    return result;
 }
 
 void printmap(void* word, void* def) {

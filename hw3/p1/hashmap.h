@@ -9,29 +9,32 @@
 #include "linkedlist.h"
 
 #define DEFAULT_LOAD_FACTOR_THRESHOLD 0.7
-
+#define HMP_GROWTH_FACTOR 2
+#define hmp_max(a, b) ((a) > (b) ? (a) : (b))
+  
 typedef struct {
     void* key;
     void* value;
 } Element;
 
-typedef struct {
+typedef struct Hashmap {
     Linkedlist** buckets;
-    unsigned numkeys;
-    unsigned numbuckets;
-    unsigned maxoccupancy;
-    unsigned minoccupancy;
-    unsigned numminoccupancy;
-    unsigned nummaxoccupancy;
+    long numkeys;
+    long numbuckets;
+    long maxoccupancy;
+    long minoccupancy;
+    long numminoccupancy;
+    long nummaxoccupancy;
     double loadfactorthresh;
-    unsigned (*hashfn)(void*);
+    long (*hashfn)(struct Hashmap*, void*);
 } Hashmap;
 
 Hashmap* hmp_create(void);
-int hmp_resize(unsigned);
-int hmp_insert(Hashmap* hmp, void* key, void* value);
-Element hmp_find(Hashmap* hmp, void* key);
-Element hmp_remove(Hashmap* hmp, void* key);
+int hmp_resize(Hashmap* hmp, long size, int (*cmp)(void*, void*));
+int hmp_insert(Hashmap* hmp, void* key, void* value, int (*cmp)(void*, void*));
+Element hmp_find(Hashmap* hmp, void* key, int (*cmp)(void*, void*));
+Element hmp_remove(Hashmap* hmp, void* key, int (*cmp)(void*, void*));
 void hmp_deepdestroy(Hashmap* hmp);
+void hmp_shallowdestroy(Hashmap* hmp);
 void hmp_traverse(Hashmap* hmp, int (*cmp)(void* key1, void* key2), void (*dosomething)(void*, void*));
 #endif
