@@ -12,8 +12,10 @@
 
 #define MAX_WORD 50 /*including terminating '\0'*/
 #define MAX_DEF 500 /*including terminating '\0'*/
+#define p1_abs(a) ((a) < 0 ? (-a) : (a))
 #define LOG_NAME "p1_log.txt"
 #define DEFAULT_HASH_FN 1
+#define BITS_PER_BYTE 8
 #define SUPER_DIR "../"
 #define TAB "        "
 #define MAX_BUFFER 100
@@ -21,7 +23,6 @@
 #define NUM_PRIMES 24
 #define SUB_DIR "p1/"
 #define HASH_BASE 31
-#define p1_abs(a) ((a) < 0 ? (-a) : (a))
 
 typedef enum {
     FIND1, FIND2, DELETE, INSERT, PRINT, READ, ERROR, NONE
@@ -50,6 +51,7 @@ long primes[NUM_PRIMES] = {1, 2, 3, 7, 13, 31, 61, 127, 251, 509, 1021,
     2097143, 4194301, 8388593};
 long powers[MAX_WORD];
 char buffer[MAX_BUFFER];
+int getexp(long M);
 int bufferpos = 0;
 int primespos = 0;
 char* externkey1;
@@ -302,9 +304,9 @@ void printheading(int whichfn) {
     printf("    Note: use optional command-line argument (integer from 1 to %d,\n" 
         "    inclusive) to specify which of %d hash functions to use.\n"
         "    example: ./a.out 1\n"
-        "    Hash function 1 (  normal  ): prehash, then mod on numbuckets\n"
-        "    Hash function 2 (most naive): always hash to 0\n"
-        "    Hash function 3 ( improved ): prehash, then mod on largest prime < numbuckets\n", 
+        "    Hash function 1: prehash, then mod on numbuckets\n"
+        "    Hash function 2: prehash, then middle-square\n"
+        "    Hash function 3: prehash, then mod on largest prime < numbuckets\n", 
         NUM_HASH_FNS, NUM_HASH_FNS);
     printf("---------------------------------------------------------\n");
     printf("The following operations are supported:\n\n");
@@ -372,19 +374,23 @@ long prehash(char* str) {
     return out;
 }
 
-// medium
+// simple mod
 long hash1(Hashmap* h, void* str) {
     long k = prehash(str);
     k = k % h->numbuckets;
     return p1_abs(k);
 }
 
-// naive 
+// middle square, assume numbuckets is power of 2
 long hash2(Hashmap* h, void* str) {
-    return 0;
+    int w = sizeof(long) * BITS_PER_BYTE;
+    long M = h->numbuckets;
+    int k = getexp(M);
+    long x = prehash(str);
+    return p1_abs((x*x) >> (w-k));
 }
 
-// better
+// mod over greatest lesser prime
 long hash3(Hashmap* h, void* str) {
     long prime = 1, lastprime = 1;
     long k = prehash(str);
@@ -396,6 +402,9 @@ long hash3(Hashmap* h, void* str) {
         }
         lastprime = prime;
     }    
+    if (prime < h->numbuckets) {
+        return hash1(h, str); // more than 8,388,593 buckets
+    }
     k = k % lastprime;
     return p1_abs(k);
 }
@@ -452,11 +461,23 @@ int cmp(void* key1, void* key2) {
 }
 
 void printmap(void* word, void* def) {
-    printf("%s%20s: \"%s\"\n", TAB, (char*) word, (char*) def);
+    printf("%s%15s: \"%s\"\n", TAB, (char*) word, (char*) def);
 }
 
 void filterprint(void* word, void* def) {
     if (strcmp(externkey1, word) <= 0 && strcmp(externkey2, word) >= 0) {
-        printf("%s%20s: \"%s\"\n", TAB, (char*) word, (char*) def);
+        printf("%s%15s: \"%s\"\n", TAB, (char*) word, (char*) def);
     }
+}
+
+int getexp(long M) {
+    int k = 0;
+
+//    printf("M: %ld ", M);
+    while (M) {
+        M = M >> 1;
+        k++;
+    }
+//    printf("k: %d\n", k);
+    return k;
 }
