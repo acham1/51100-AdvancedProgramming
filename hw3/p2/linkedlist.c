@@ -4,6 +4,7 @@
   * Homework 3, p2 */
 
 #include "linkedlist.h"
+#include <stdio.h>
 #include <stdlib.h>
   
 Linkedlist* ll_create(void) {
@@ -120,6 +121,7 @@ int ll_insert(Linkedlist* ll, void* key, void* value, int (*cmp)(void*, void*)) 
         return 0;
     }
     result = cmp(key, ll->head->key);
+//    printf("cmp %d %d result: %d\n", *(int*)key, *(int*) ll->head->key, result);
     if (result < 0) {
         tmp = malloc(sizeof(Node));
         tmp->key = key;

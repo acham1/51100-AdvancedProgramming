@@ -99,6 +99,7 @@ int hmp_resize(Hashmap* hmp, long size, int (*cmp)(void*, void*)) {
     }
     hmp_shallowdestroy(hmp);
     *hmp = newhmp;
+
     return 0;
 }
 
