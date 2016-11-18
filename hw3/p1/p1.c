@@ -45,7 +45,7 @@ void burntoend(void);
 int getch(void);
 
 long (*hashfunctions[NUM_HASH_FNS])(Hashmap*, void* str) = {hash1, hash2, hash3};
-int primes[NUM_PRIMES] = {1, 2, 3, 7, 13, 31, 61, 127, 251, 509, 1021, 
+long primes[NUM_PRIMES] = {1, 2, 3, 7, 13, 31, 61, 127, 251, 509, 1021, 
     2039, 4093, 8191, 16381, 32749, 65521, 131071, 262139, 524287, 1048573,
     2097143, 4194301, 8388593};
 long powers[MAX_WORD];
@@ -85,6 +85,8 @@ int main(int argc, char** argv) {
     hmp = hmp_create();
     hmp->hashfn = hashfn;
     logfile = fopen(LOG_NAME, "w");
+    fprintf(logfile, "HW3 P1 dictionary event log\n");
+    fprintf(logfile, "---------------------------\n");
     while (!feof(stdin)) {
         switch(cmd = getcommand(arg1, arg2, mssg)) {
             case FIND1:
@@ -190,6 +192,8 @@ int main(int argc, char** argv) {
     printf("Total processor time consumed: %lf\n", (double) (end-start) / CLOCKS_PER_SEC);
     printf("---------------------------END---------------------------\n\n");
     hmp_deepdestroy(hmp);
+    fprintf(logfile, "---------------------------\n");
+    fprintf(logfile, "End of log\n");
     fclose(logfile);
     return EXIT_SUCCESS;
 }
@@ -297,7 +301,11 @@ void printheading(int whichfn) {
     printf("Now using hash function #%d of %d\n\n", whichfn, NUM_HASH_FNS);
     printf("    Note: use optional command-line argument (integer from 1 to %d,\n" 
         "    inclusive) to specify which of %d hash functions to use.\n"
-        "    example: ./a.out 1\n", NUM_HASH_FNS, NUM_HASH_FNS);
+        "    example: ./a.out 1\n"
+        "    Hash function 1 (  normal  ): prehash, then mod on numbuckets\n"
+        "    Hash function 2 (most naive): always hash to 0\n"
+        "    Hash function 3 ( improved ): prehash, then mod on largest prime < numbuckets\n", 
+        NUM_HASH_FNS, NUM_HASH_FNS);
     printf("---------------------------------------------------------\n");
     printf("The following operations are supported:\n\n");
     printf("    %%   insert [key] [value]\n");
@@ -364,22 +372,31 @@ long prehash(char* str) {
     return out;
 }
 
+// medium
 long hash1(Hashmap* h, void* str) {
     long k = prehash(str);
     k = k % h->numbuckets;
-//    printf("hash is: %ld\n", k);
     return p1_abs(k);
 }
 
+// naive 
 long hash2(Hashmap* h, void* str) {
-    long k = prehash(str);
-    k = k % h->numbuckets;
-    return p1_abs(k);
+    return 0;
 }
 
+// better
 long hash3(Hashmap* h, void* str) {
+    long prime = 1, lastprime = 1;
     long k = prehash(str);
-    k = k % h->numbuckets;
+
+    for (int i=0; i < NUM_PRIMES; i++) {
+        prime = primes[i];
+        if (prime > h->numbuckets) {
+            break;
+        }
+        lastprime = prime;
+    }    
+    k = k % lastprime;
     return p1_abs(k);
 }
 
@@ -435,11 +452,11 @@ int cmp(void* key1, void* key2) {
 }
 
 void printmap(void* word, void* def) {
-    printf("%s%s: \"%s\"\n", TAB, (char*) word, (char*) def);
+    printf("%s%20s: \"%s\"\n", TAB, (char*) word, (char*) def);
 }
 
 void filterprint(void* word, void* def) {
     if (strcmp(externkey1, word) <= 0 && strcmp(externkey2, word) >= 0) {
-        printf("%s%s: \"%s\"\n", TAB, (char*) word, (char*) def);
+        printf("%s%20s: \"%s\"\n", TAB, (char*) word, (char*) def);
     }
 }
