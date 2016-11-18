@@ -42,7 +42,7 @@ int main(void) {
         arraywrepeats[i] = i;
     }
 
-    printf(">>  Appending %d repeats into the array\n", numrepeats);
+    printf(">>  Appending %d random repeats into the array\n", numrepeats);
     for (int i=0; i < numrepeats; i++) {
         arraywrepeats[numuniques + i] = rand() % numuniques;
     }
