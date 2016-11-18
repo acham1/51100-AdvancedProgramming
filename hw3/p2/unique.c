@@ -20,6 +20,7 @@ int uniq(void *f, int n, int sz, int (*equals)(void *, void *), int (*h)(const v
     hmp->hashfn = hashfn;
     globalequals = equals;
     for (int i=0; i < n; i++) {
+        // hmp_insert returns 1 if fail, 0 if success
         if (!hmp_insert(hmp, fc + i*sz, NULL, u_cmp)) {
             memcpy(tmparray + numuniques*sz, fc + i*sz, sz);
             numuniques++;

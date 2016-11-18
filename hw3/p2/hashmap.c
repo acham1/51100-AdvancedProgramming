@@ -1,7 +1,7 @@
 /** Alan Cham
   * MPCS 51100
-  * November 17, 2016
-  * Homework 3, p2 */
+  * November 14, 2016
+  * Homework 3, p1 */
 
 #include <stdlib.h>
 #include "linkedlist.h"
@@ -75,6 +75,7 @@ Hashmap* hmp_create(void) {
     return hmp;
 }
 
+// return 1 if fail, 0 if success
 int hmp_resize(Hashmap* hmp, long size, int (*cmp)(void*, void*)) {
     Hashmap newhmp;
     int i = 0;
@@ -99,10 +100,10 @@ int hmp_resize(Hashmap* hmp, long size, int (*cmp)(void*, void*)) {
     }
     hmp_shallowdestroy(hmp);
     *hmp = newhmp;
-
     return 0;
 }
 
+// return 1 if fail, 0 if success
 int hmp_insert(Hashmap* hmp, void* key, void* value, int (*cmp)(void*, void*)) {
     long h;
     int n;
@@ -139,6 +140,7 @@ int hmp_insert(Hashmap* hmp, void* key, void* value, int (*cmp)(void*, void*)) {
     return 0;
 }
 
+// return (key, value) if found, (Null, Null) otherwise
 Element hmp_find(Hashmap* hmp, void* key, int (*cmp)(void*, void*)) {
     Element elmnt = {NULL, NULL};
     long h;
@@ -159,6 +161,7 @@ Element hmp_find(Hashmap* hmp, void* key, int (*cmp)(void*, void*)) {
     return elmnt;
 }
 
+// return (key, value) if found, (Null, Null) otherwise
 Element hmp_remove(Hashmap* hmp, void* key, int (*cmp)(void*, void*)) {
     Element elmnt = {NULL, NULL};
     Node* n = NULL;
