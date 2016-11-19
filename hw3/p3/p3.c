@@ -112,13 +112,6 @@ double work_kernel(int iters, long* (*solve)(double, int)) {
         start = clock();
         indices = solve(find, i == 0);
         elapsed += (clock() - start)/(double)CLOCKS_PER_SEC;
-        if (i == iters-1) {
-            printf("find (%lf): ", find);
-            for (int j=0; j < NUM_ARRAYS; j++) {
-                printf("%lf ", array_2d[j][indices[j]]);
-            }
-            printf("\n");
-        }
         free(indices);
     }
     return elapsed * 1000; //convert to ms
