@@ -193,11 +193,13 @@ long* solution4(double find, int new) {
     b = my_max(0, b);
     b = my_min(b, numbins-1);
     for (int i=0; i < NUM_ARRAYS; i++) {
+        // binary search between the bin bounds
         indices[i] = db_bsearch(array_2d[i], bins[b].b1[i], bins[b].b2[i], lens[i], find);
     }
     return indices;
 }
 
+// determine the index bounds for each bin
 void setupsoln4(void) {
     double* lowerthresh = malloc(sizeof(double) * numbins);
     double* higherthresh = malloc(sizeof(double) * numbins);
