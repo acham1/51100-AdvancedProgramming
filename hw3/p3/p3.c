@@ -12,7 +12,7 @@
 #define my_min(x, y) ((x) < (y) ? (x) : (y))
 #define my_abs(x) (((x) < 0) ? -(x) : (x)) 
 #define NUM_WORK_ITERATIONS 1000000
-#define MAX_NUM_BINS 1000
+#define MAX_NUM_BINS 10000
 #define NUM_ARRAYS 68
 
 typedef struct M_node {
@@ -54,7 +54,7 @@ int main(int argc, char* argv[]) {
         return EXIT_FAILURE;
     print_header();
     srand(time(NULL));
-    for (int wi=1; wi <= NUM_WORK_ITERATIONS; wi*=100) {
+    for (int wi=1; wi <= NUM_WORK_ITERATIONS; wi*=10) {
         printf("%15.2e", (double) wi);       
 
         times[0] = work_kernel(wi, solution3);
@@ -79,12 +79,19 @@ int main(int argc, char* argv[]) {
         numbins = 1000;
         times[4] = work_kernel(wi, solution4);
         timesper[4] = times[4]/wi;
-        printf("%15.4lf\n", times[4]);
+        printf("%15.4lf", times[4]);
 
-        printf("%15.4s%15.4lf%15.4lf%15.4lf%15.4lf%15.4lf\n\n", "", 
-            timesper[0], timesper[1], timesper[2], timesper[3], timesper[4]);
+        numbins = 10000;
+        times[5] = work_kernel(wi, solution4);
+        timesper[5] = times[5]/wi;
+        printf("%15.4lf\n", times[5]);
+
+        printf("%15.4s%15.4lf%15.4lf%15.4lf%15.4lf%15.4lf%15.4lf\n\n", "", 
+            timesper[0], timesper[1], timesper[2], timesper[3], timesper[4], timesper[5]);
     }
 
+    printf("-------------------------------------------------------------------------\n");
+    printf("    Note   : Old refers to 3rd method in Hw2 P6; New refers to this hw's hash-like method\n");
     printf("-------------------------------------------------------------------------\n");
     for (int i = 0; i < NUM_ARRAYS; i++)
         free(array_2d[i]);
@@ -158,15 +165,14 @@ void load_arrays(char* file_name) {
 
 void print_header(void) {
     printf("-------------------------------------------------------------------------\n");
-    printf("Alan Cham\n");
-    printf("HW3 P3\n");
+    printf("    Alan Cham\n");
+    printf("    HW3 P3\n");
     printf("-------------------------------------------------------------------------\n");
     printf("Making raw performance analysis results:\n");
-    printf("Top    : total runtime (ms)\n");
-    printf("Bottom : average runtime per iteration (ms)\n");
-    printf("Note   : Old refers to 3rd method in Hw2 P6; New refers to this hw's hash-like method\n");
+    printf("    Top    : total runtime (ms)\n");
+    printf("    Bottom : average runtime per iteration (ms)\n");
     printf("-------------------------------------------------------------------------\n");
-    printf("%15s%15s%15s%15s%15s%15s\n", "Num Searches", "Old", "New(1 bin)", "New(10 bin)", "New(100 bin)", "New(1000 bin)");
+    printf("%15s%15s%15s%15s%15s%15s%15s\n", "Num Searches", "Old", "New(1 bin)", "New(10 bin)", "New(100 bin)", "New(1000 bin)", "New(10000 bin)");
 }
 
 int inputvalid(int argc, char* argv[]) {
