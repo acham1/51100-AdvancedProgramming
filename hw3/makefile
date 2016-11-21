@@ -1,7 +1,8 @@
 all: p1 p2 p3
 
 p1: p1/linkedlist.o p1/hashmap.o p1/p1.o
-	gcc -std=c99 -pedantic -Wall p1/linkedlist.o p1/hashmap.o p1/p1.o -o p1/p1Driver
+	gcc -std=c99 -pedantic -Wall p1/linkedlist.o p1/hashmap.o p1/p1.o -o p1/p1
+	rm p1/*.o
 
 p1/linkedlist.o: p1/linkedlist.c p1/linkedlist.h
 	gcc -std=c99 -pedantic -Wall -c p1/linkedlist.c -o p1/linkedlist.o
