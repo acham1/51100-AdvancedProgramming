@@ -1,0 +1,352 @@
+Alan Cham
+Quiz 1
+MPCS51011
+Fall 2016
+start time: 5:45
+end time: 7:00
+
+1.  In the classic Seinfeld rental car reservation skit shown at the
+beginning of class, Jerry explains to the rental car agent the
+distinction between *taking* and *holding* a reservation.  Explain how
+this might be a good analogy for the Linux implementation of malloc.
+http://man7.org/linux/man-pages/man3/free.3.html
+
+    [Answer] From the link provided, we have:
+    "By default, Linux follows an optimistic memory allocation strategy. 
+    This means that when malloc() returns non-NULL there is no guarantee 
+    that the memory really is available."
+    So the function can return a non-Null pointer, which one would intuitively
+    assume to mean that memory has been "held" and labeled via the pointer. 
+    However, linux does not guarantee that is the case.
+
+2.  Imagine you accidentally call malloc twice with the same return
+variable. Explain what bad may or does happen.
+
+ ptr = malloc(size);
+ ptr = malloc(size);
+
+    [Answer] The address from the first malloc call is now lost, and so
+    it cannot be used in a future call to free(). The memory from the 
+    original malloc call cannot be freed, so this can result in a memory
+    leak.
+
+3.  Given two pointers, p1 and p2, both of which are properly
+initialized to a non-NULL value, and can point to any type, sketch a
+function called alias(…) which, after being called, results in p2
+having the same value as p1 (i.e. p1 points to the same memory as p2).
+
+    #include <string.h> 
+
+    /* [Answer] To use this function, pass in the arguments &p1, &p2, sizeof(p1). */
+    void alias(void *p1_ptr, void *p2_ptr, size_t sz) {
+      memcpy(p2_ptr, p1_ptr, sz);
+    }
+
+4.  Given the following type declaration, write in the code to
+properly allocate and initialize an instance of **p1.
+
+int main(int argc, char **argv){
+  struct person{
+    char *last, *first;
+  } **p1;
+
+  /* [Answer] include allocation and initialization below */
+  const int MAX_NAME_LEN = 50;
+  char * temp_name = "bla";
+
+  p1 = malloc(sizeof(struct person *));
+  *p1 = malloc(sizeof(struct person));
+  char * lastname = malloc(sizeof(char) * MAX_NAME_LEN);
+  char * firstname = malloc(sizeof(char) * MAX_NAME_LEN);
+
+  (**p1).last = lastname;
+  (**p1).first = firstname;  
+  strcpy(lastname, temp_name);
+  strcpy(firstname, temp_name);
+}
+
+5. Each of the following snippets contains a common error related to C
+pointers. In each case, state in words the error or general rule that
+is being violated. Assume no other lines of code other than the
+standard definitions and syntax necessary to compile.
+
+   a) char *p;               e) int i,j;
+      p = "hello world";        int* iptr, jptr;
+      p[0] = 'H';               iptr = &i;
+                                jptr = &j;
+
+   b) char *p;               f) char *p;
+      *p = 3;                   strcpy(p, "hello world");
+
+   c) char p;                g) int *fptr;
+      char *pptr = &p;          fptr = 1;
+      *(pptr+2) = 'c';
+
+   d) char s[] = "Hello";    h) char *f[100];
+      s = "goodbye";            f[0] = getchar();
+
+    [Answer]
+    a)  p has been intialized to an address in 'read-only' memory.
+        Thus it is wrong to edit the data that p points to.
+    b)  p has been declared but not initialized. Then p is
+        dereferenced without giving it a valid memory address.
+    c)  The memory that (pptr+2) points to has not been allocated
+        on the stack or heap. Accessing that memory could result
+        in a segfault.
+    d)  s is of type char array, and "goodbye" literal can be cast
+        to type char pointer. Although char arrays can decay to
+        char pointer type, the reverse is not true, and one cannot
+        assign a char pointer to an array.
+    e)  The type of jptr is int, not int *. Thus it is wrong
+        to assign an address to it.
+    f)  p has not been intialized to a valid memory address.
+        Copying data into the memory that p points to could result
+        in a segfault.
+    g)  fptr has type int *, which is a pointer type, so it is
+        wrong to assign an integer type to it. Also fptr
+        does not point to valid memory address yet so even
+        if it were dereferenced, it would be wrong to write to
+        that memory at all.
+    h)  getchar() returns a char type. f[0] holds a char * type.
+        It is wrong to assign a char value to a char *.
+
+6. Sketch a program that uses the rand and srand functions in
+<stdlib.h>
+
+      int rand(void);
+      void srand(unsigned int seed);
+
+to print a psuedo-random float between specified values a and b. Use
+the time(..)  function to seed the random number generator.
+
+    [Answer]
+    #include <stdlib.h>
+    #include <time.h>
+    #include <stdio.h>
+
+    /* provide floats such that a <= b */
+    int main(int argc, char ** argv) {
+
+      float a = atof(argv[1]);
+      float b = atof(argv[2]);
+      float f;
+
+      srand(time(NULL));
+      f = a + rand()*(b-a)/RAND_MAX;
+      printf("%f", f);
+    }
+
+7.  Sketch a program that uses the div function in <stdlib.h>
+
+      div_t div(int numer, int denom); 
+
+to compute and print the quotient and remainder of 100 and 3.
+
+    [Answer] 
+    #include <stdlib.h>
+    #include <stdio.h>
+
+    int main(void) {
+      div_t d = div(100, 3);
+      printf("(quotient, remainder): %d, %d", d.quot, d.rem);
+      return 0;
+    }
+
+8.  Sketch a program that uses the asctime function in <time.h> 
+
+char *asctime(const struct tm *timeptr); 
+
+to print your birthday.
+
+    [Answer]
+    #include <time.h>
+    #include <stdio.h>
+
+    int main(void) {
+      struct tm bday = {0, 0, 0, 12, 9, 94, 0, 0, 0};
+      printf("%s", asctime(&bday));
+      return 0;
+    }
+
+9.  Sketch a program that uses the bsearch function in <stdlib.h>
+
+void *bsearch(const void *key, const void *base, size_t nitems, size_t size, 
+     int (*compar)(const void *, const void *)); 
+
+to print the address of element {10,0} in the following array of Pair
+
+  type: Pair p[] = { {-5,3}, {-1,-2}, {0,0}, { 1,3}, {2,-1}, {3,-2},
+  {5,-1}, {10,0}, {100,-1}};
+
+typedef struct pair_{
+  int x;
+  int y;
+} Pair;
+
+One pair is larger than another if it has a larger first element. A
+tie goes to the pair with a larger second element.
+
+    [Answer]
+    #include <stdio.h>
+    #include <stdlib.h>
+
+    Pair p[] = { {-5,3}, {-1,-2}, {0,0}, { 1,3}, {2,-1}, {3,-2},
+      {5,-1}, {10,0}, {100,-1}};
+   
+    int cmp(const void * a, const void * b) {
+      if (a->x > b->x) {
+        return 1;
+      } else if (a->x == b->x) {
+        if (a->y > b->y) {
+          return 1;
+        } else if (a->y == b->y) {
+          return 0;
+        } else {
+          return -1;
+        }
+      } else {
+        return -1;
+      }
+    }
+
+    int main(void) {
+      Pair key = {10, 0};
+      Pair * answer = bsearch(&key, p, 9, sizeof(Pair), cmp);
+      printf("%p", answer);
+      return 0;
+    }
+
+10. Sketch a program that uses the signal function in <signal.h>
+
+  void (*signal(int sig, void (*func)(int)))(int); 
+
+to create a custom (two line) segmentation fault (SIGSEGV)
+handler. Your program will create a segmentation fault by looping over
+some bad memory. The handler function (func) will catch the set fault
+and and print the value of the loop countered during which it
+occurred. That is, your handler will look something like:
+
+void catch_function(int signal)
+{
+  printf("segmentation fault at loop index: %d\n",i);
+  exit(1);
+}
+
+where i is the globally visible loop counter.
+
+    [Answer]
+    #include <signal.h>
+    #include <stdio.h>
+
+    void catch_function(int signal) {
+      printf("segmentation fault at loop index: %d\n",i);
+      exit(1);
+    }
+
+    int main(void) {
+      void (*handler)(int);
+      handler = signal(SIGSEGV, catch_function);
+      int * ptr;
+      while (ptr++) {
+        *ptr = 0;
+      }
+      return 0;
+    }
+
+
+11. (extra credit) For each function below, replace the generic
+
+function name with one that describes what it does. Assume that node
+
+is a pointer to the root of a binary search tree of integers defined
+
+as:
+
+
+
+typedef struct tnode_{
+
+  int data;
+
+  struct tnode_ *left, *right;
+
+} Node;
+
+
+
+
+
+
+
+int foo1(Node* node) {
+
+  if (node==NULL) {
+
+    return(0);
+
+  } else {
+
+    return(foo1(node->left) + 1 + foo1(node->right));
+
+  }
+
+} 
+
+
+
+
+
+int foo2(Node* node) {
+
+  if (node==NULL) {
+
+    return(0);
+
+  }
+
+  else {
+
+    int lDepth = foo2(node->left);
+
+    int rDepth = foo2(node->right);
+
+
+
+    if (lDepth > rDepth) return(lDepth+1);
+
+    else return(rDepth+1);
+
+  }
+
+} 
+
+
+
+void foo3(Node* node) {
+
+  if (node==NULL) {
+
+    return;
+
+  }
+
+  else {
+
+    Node* temp;
+
+
+
+    foo3(node->left);
+
+    foo3(node->right);
+
+
+
+    temp = node->left;
+
+    node->left = node->right;
+
+    node->right = temp;
+
+  }}
+

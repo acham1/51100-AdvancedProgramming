@@ -1,0 +1,66 @@
+#####################################################################
+Grade:  93 / 100
+Student: 
+Email: 
+Class: MPCS 51100 Fall 2016
+Homework: 2
+#####################################################################
+General notes:
+
+In the future, please provide a makefile or instructions on how to
+compile your code.
+
+#####################################################################
+Problem 1: Work Kernel    Grade:  8 / 10
+
+Nice job on your analysis.
+
+It would be better to put the pragma before the outer loop. There is
+an overhead associated with thread startup, and by parallelizing the
+inner loop you incur this cost at each iteration of the outer loop.
+By parallelizing the outer loop instead I see a speedup of up to
+about a factor of 3 for higher thread count (note that you would
+then need to set the inner counter j as private or declare it within
+the for loop).
+
+Also note that you do not need to set m, n, U, and V as firstprivate.
+All of these can be shared --- m, n, and U are the same for all
+threads and are read only. V is updated, but no two threads ever
+attempt to update the same location in memory. Finally, U and V are
+dynamically allocated, so marking these variables as private would
+not in fact make the arrays private to each thread, only the pointers
+to the arrays.
+
+#####################################################################
+Problem 2: Matrix Multiplication    Grade:  10 / 10
+
+Looks good. See comment above about firstprivate.
+
+#####################################################################
+Problem 3: Mandelbrot    Grade:  15 / 15
+
+Good.
+
+#####################################################################
+Problem 4: Dictionary    Grade:  15 / 20
+
+Can't compile, -5
+
+p4a_tree.c:4:10: error: 'p4a_tree.h' file not found with <angled> include; use
+      "quotes" instead
+
+If you have more than one file to compile, it might be safer to provide a Makefile as well.
+
+Usually <> is for predefined headers and "" for user-defined header
+
+p4c is very good. You could improve on it, by providing graph that shows the growth of sequential/random insertion time.
+
+#####################################################################
+Problem 5: isBST    Grade:  20 / 20
+
+Great code
+
+#####################################################################
+Problem 6: Fractional Cascading    Grade:  25 / 25
+
+Nice job!
