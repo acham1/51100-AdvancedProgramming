@@ -182,7 +182,7 @@ int inputvalid(int argc, char* argv[]) {
     }
     load_arrays(argv[1]);
     if (array_2d == NULL) {
-        printf("Error: unable to open arrays file %s.\n", argv[1]);
+        printf("Error: unable to open arrays file %s. Please check that it's in the right directory.\n", argv[1]);
         return 0;
     }
     return 1;
