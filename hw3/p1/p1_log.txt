@@ -1,14 +1,8 @@
 HW3 P1 dictionary event log
 ---------------------------
-<insert> totalkeys: 1, totaladdress: 2, loadfactor: 0.500000
-         min_occupancy: 0, max_occupancy: 1
-<insert> totalkeys: 2, totaladdress: 4, loadfactor: 0.500000
-         min_occupancy: 0, max_occupancy: 1
-<insert> totalkeys: 3, totaladdress: 8, loadfactor: 0.375000
-         min_occupancy: 0, max_occupancy: 2
-< read > totalkeys: 203, totaladdress: 512, loadfactor: 0.396484
+< read > totalkeys: 200, totaladdress: 512, loadfactor: 0.390625
          min_occupancy: 0, max_occupancy: 3
-< read > totalkeys: 1199, totaladdress: 2048, loadfactor: 0.585449
+< read > totalkeys: 1196, totaladdress: 2048, loadfactor: 0.583984
          min_occupancy: 0, max_occupancy: 5
 ---------------------------
 End of log

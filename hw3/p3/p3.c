@@ -54,7 +54,7 @@ int main(int argc, char* argv[]) {
         return EXIT_FAILURE;
     print_header();
     srand(time(NULL));
-    for (int wi=1; wi <= NUM_WORK_ITERATIONS; wi*=10) {
+    for (long wi=1; wi <= NUM_WORK_ITERATIONS; wi*=10) {
         printf("%15.2e", (double) wi);       
 
         times[0] = work_kernel(wi, solution3);
