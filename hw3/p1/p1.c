@@ -191,7 +191,7 @@ int main(int argc, char** argv) {
     end = clock();
     printf("\n---------------------------------------------------------\n");
     printf("Used hash function #%d of %d\n", whichfn, NUM_HASH_FNS);
-    printf("Total processor time consumed: %lf\n", (double) (end-start) / CLOCKS_PER_SEC);
+    printf("Total processor time consumed(s): %lf\n", (double) (end-start) / CLOCKS_PER_SEC);
     printf("---------------------------END---------------------------\n\n");
     hmp_deepdestroy(hmp);
     fprintf(logfile, "---------------------------\n");

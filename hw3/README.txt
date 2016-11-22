@@ -6,8 +6,8 @@ HW3 README
 The executable for each part of the assignment will be located inside its
 respective subdirectory of hw3 (e.g. the p3 executable will be located at 
 hw3/p3/p3). In order to produce the executables for p1, p2, and p3, simply 
-type "make" into the terminal and press return. Simply enter "make clean" to 
-remove executables when finished.
+type "make" into the terminal from the hw3 directory and press return. Simply 
+enter "make clean" from the hw3 directory to remove executables when finished.
 
 >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
