@@ -38,18 +38,32 @@ I.  p1
 
         "dict.txt"
         Number of words:            200
-        Total insertion time (ms):
-        Max occupancy:  
+        Total insertion time (ms):  (1) 1.049   (2) 1.065   (3) 0.994
+        Max occupancy:              (1) 3       (2) 11      (3) 3
 
         "dict2.txt"
         Number of words:            996
-        Total insertion time (ms):
-        Max occupancy:  
+        Total insertion time (ms):  (1) 2.970   (2) 3.051   (3) 3.079
+        Max occupancy:              (1) 4       (2) 33      (3) 4
 
         "dict.txt" AND "dict2.txt"
         Number of words:            1196
-        Total insertion time (ms):
-        Max occupancy:
+        Total insertion time (ms):  (1) 3.683   (2) 3.702   (3) 3.734
+        Max occupancy:              (1) 5       (2) 40      (3) 4
+
+        From the above, it appears that all three hash methods give about the
+    the same level of performance in terms of running time. However, the second
+    method, i.e. middle-square, has the worst performance in terms of hash
+    collisions. For the combined "dict.txt" and "dict2.txt" input, this method
+    produced at least one bucket holding 40 collisions. One possible 
+    explanation, according to this source, is that:
+
+        http://brpreiss.com/books/opus4/html/page212.html
+
+    keys with many leading zeros are prone to collision. If that is the case
+    here, then it may be solvable by using a different pre-hashing function
+    to pair with the middle-square method, such that the pre-hash output would
+    ideally make integers with fewer leading zeros.
 
 >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
@@ -70,7 +84,7 @@ II. p2
     elements into the beginning of the array, the first X elements of the 
     resulting array are traversed to verify that all integer values between 0 
     and X-1 have been placed into the resulting smaller array, stripped of 
-    repetitions.
+    repetitions. 
 
 >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
