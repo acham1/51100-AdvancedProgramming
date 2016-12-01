@@ -33,6 +33,7 @@ typedef struct AllPairDistances {
 
 typedef struct Graph {
     long numverts; // vertices capacity
+    long occupancy;// actual number of vertices 
     Linkedlist** adjlists; // 
 } Graph;
 

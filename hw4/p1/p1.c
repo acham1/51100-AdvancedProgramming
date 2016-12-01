@@ -12,6 +12,7 @@
 int printheading(FILE** f, int argc, char* argv[]);
 
 int main(int argc, char* argv[]) {
+    long numE = 0;
     Graph* g;
     FILE* f;
     Node* n;
@@ -25,7 +26,8 @@ int main(int argc, char* argv[]) {
     g = dw_readgraph(f);
 
     printf(">>  Printing graph edges\n");
-    for (long i = 0; i < g->numverts; i++) {
+    for (long i = 0; i < g->occupancy; i++) {
+        numE += g->adjlists[i]->numnodes;
         n = g->adjlists[i]->head;
         printf("vertex %ld has %ld outdegree\n", i, g->adjlists[i]->numnodes);
         while (n != NULL) {
@@ -35,6 +37,7 @@ int main(int argc, char* argv[]) {
     }
 
     printf(">>  Destroying graph.\n");
+    printf(">>  Found %ld edges total\n", numE);
     destroygraph(g);    
     return EXIT_SUCCESS;
 }

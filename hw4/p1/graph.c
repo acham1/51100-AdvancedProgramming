@@ -7,6 +7,7 @@
 // create empty graph with memory allocated for defaults sizes
 Graph* creategraph(void) {
     Graph* g = malloc(sizeof(Graph));
+    g->occupancy = 0;
     g->numverts = DEFAULT_NUM_VERTICES;
     g->adjlists = malloc(DEFAULT_NUM_VERTICES * sizeof(Linkedlist*));
     for (int i = 0; i < DEFAULT_NUM_VERTICES; i++) {
@@ -29,7 +30,7 @@ Graph* dw_readgraph(FILE* f) {
     while (!feof(f)) {
         if (!dw_readedge(f, &from, &to, &weight)) {
             newsz = g->numverts;
-            while (newsz < from || newsz < to) {
+            while (newsz < from+1 || newsz < to+1) {
                 newsz *= GRAPH_CAPACITY_GROWTH_FACTOR;
             }
             if (newsz > g->numverts) {
@@ -39,6 +40,8 @@ Graph* dw_readgraph(FILE* f) {
                 }
                 g->numverts = newsz;
             }
+            g->occupancy = graph_max(g->occupancy, from+1);
+            g->occupancy = graph_max(g->occupancy, to+1);
             tmpkey = malloc(sizeof(long));
             *tmpkey = to;
             tmpval = malloc(sizeof(long));
@@ -54,6 +57,7 @@ void destroygraph(Graph* g) {
         ll_deepdestroy(g->adjlists[i]);
     }
     free(g->adjlists);
+    free(g);
 }
 
 // read an edge into the memory at from, to and weight
