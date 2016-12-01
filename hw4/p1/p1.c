@@ -9,17 +9,48 @@
 #define EXPECTED_ARGC 2
 #define GRAPH_FILE_INDEX 1
 
+int printheading(FILE** f, int argc, char* argv[]);
+
 int main(int argc, char* argv[]) {
     FILE* f;
 
-    if (argc < EXPECTED_ARGC) {
-        printf("Error: please enter graph file path as command-line argument.\n");
-        return EXIT_FAILURE;
-    } else if ((f = fopen(argv[GRAPH_FILE_INDEX], "r")) == NULL) {
-        printf("Error: failed to find graph file at location %s\n", argv[GRAPH_FILE_INDEX]);
+    if (printheading(&f, argc, argv)) {
+        printf("********************************************************************************\n");
+        printf(">>  End of test. Please retry with correct input.\n");
+        printf("********************************************************************************\n");
         return EXIT_FAILURE;
     }
+    printf(">>  Creating graph from graph file.\n");
+    Graph g = dw_readgraph(f);
 
+    printf(">>  Printing graph edges\n");
+    for (int i = 0; i < g.occ; i++) {
+        for (int j = 0; j < g.adjocc[i]; j++) {
+            printf("%ld %ld %ld\n", (long) i, g.adj[i][j], g.weight[i][j]);
+        }
+    }
+
+    printf(">>  Destroying graph.\n");
+    destroygraph(g);
     
     return EXIT_SUCCESS;
+}
+
+// validate input and return 1 if error, 0 otherwise
+int printheading(FILE** f, int argc, char* argv[]) {
+    printf("********************************************************************************\n");
+    printf(">>  Alan Cham\n");
+    printf(">>  MPCS 51100\n");
+    printf(">>  HW4 p1 Driver\n");
+    printf("********************************************************************************\n");
+    if (argc < EXPECTED_ARGC) {
+        printf(">>  Error: please enter graph file path as command-line argument.\n");
+        return 1;
+    } else if ((*f = fopen(argv[GRAPH_FILE_INDEX], "r")) == NULL) {
+        printf(">>  Error: failed to find graph file at location %s\n", argv[GRAPH_FILE_INDEX]);
+        return 1;
+    } else {
+        printf(">>  Success: opening file at %s.\n", argv[GRAPH_FILE_INDEX]);
+    }
+    return 0;
 }

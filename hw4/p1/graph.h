@@ -15,7 +15,7 @@
 #define ADJ_GROWTH_FACTOR 2
 #define ADJ_ARRAY_GROWTH_FACTOR 2
 #define DEFAULT_GRAPH_CAPACITY 10
-#define DEFAULT_ADJ_ARRAY_CAPACITY 10
+#define DEFAULT_ADJ_ARRAY_CAPACITY 9
 
 #define graph_max(a, b) ((a) > (b) ? (a) : (b))
 
