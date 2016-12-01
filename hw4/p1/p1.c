@@ -14,6 +14,7 @@ int printheading(FILE** f, int argc, char* argv[]);
 int main(int argc, char* argv[]) {
     Graph* g;
     FILE* f;
+    Node* n;
 
     if (printheading(&f, argc, argv)) {
         printf(">>  End of test. Please retry with correct input.\n");
@@ -24,9 +25,12 @@ int main(int argc, char* argv[]) {
     g = dw_readgraph(f);
 
     printf(">>  Printing graph edges\n");
-    for (int i = 0; i < g->occ; i++) {
-        for (int j = 0; j < g->adjocc[i]; j++) {
-            printf("%d %ld %ld\n", i, g->adj[i][j], g->weight[i][j]);
+    for (long i = 0; i < g->numverts; i++) {
+        n = g->adjlists[i]->head;
+        printf("vertex %ld has %ld outdegree\n", i, g->adjlists[i]->numnodes);
+        while (n != NULL) {
+            printf("%ld %ld %ld\n", i, *(long*) n->key, *(long*) n->value);
+            n = n->next;
         }
     }
 

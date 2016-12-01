@@ -9,13 +9,12 @@
 #include <string.h>
 #include <ctype.h>
 #include <stdlib.h>
+#include "linkedlist.h"
 
 #define NUM_EDGE_ARGS 3
 #define MAX_LINE_WIDTH 200
-#define ADJ_GROWTH_FACTOR 2
-#define ADJ_ARRAY_GROWTH_FACTOR 2
-#define DEFAULT_GRAPH_CAPACITY 1
-#define DEFAULT_ADJ_ARRAY_CAPACITY 1
+#define DEFAULT_NUM_VERTICES 1
+#define GRAPH_CAPACITY_GROWTH_FACTOR 2
 
 #define graph_max(a, b) ((a) > (b) ? (a) : (b))
 
@@ -33,12 +32,8 @@ typedef struct AllPairDistances {
 } AllPairDistances;
 
 typedef struct Graph {
-    long cap;      // vertices capacity
-    long occ;      // occupancy; i.e. number of vertices
-    long** adj;    // adjacency arrays
-    long** weight; // edge weights
-    long* adjcap;  // adjacency array capacity
-    long* adjocc;  // adjacency array occupancy
+    long numverts; // vertices capacity
+    Linkedlist** adjlists; // 
 } Graph;
 
 // create empty graph with memory allocated for defaults sizes
