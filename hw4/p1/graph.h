@@ -42,19 +42,19 @@ typedef struct Graph {
 } Graph;
 
 // create empty graph with memory allocated for defaults sizes
-Graph creategraph(void);
+Graph* creategraph(void);
 
 // read directed, weighted graph from FILE* f, in following format
 // ignores any line starting with #
 // vertices given as integer values
 // each edge on separate line, like such: <fromV> <toV> <weight>
 // return negative value for numV if error
-Graph dw_readgraph(FILE* f);
+Graph* dw_readgraph(FILE* f);
 
 // expand the number of vertices in the graph to newsz
 void resizegraph(Graph* g, long newsz);
 
-void destroygraph(Graph g);
+void destroygraph(Graph* g);
 
 // read an edge into the memory at from, to and weight
 // return 1 if fail, 0 otherwise

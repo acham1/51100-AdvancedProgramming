@@ -12,27 +12,26 @@
 int printheading(FILE** f, int argc, char* argv[]);
 
 int main(int argc, char* argv[]) {
+    Graph* g;
     FILE* f;
 
     if (printheading(&f, argc, argv)) {
-        printf("********************************************************************************\n");
         printf(">>  End of test. Please retry with correct input.\n");
         printf("********************************************************************************\n");
         return EXIT_FAILURE;
     }
     printf(">>  Creating graph from graph file.\n");
-    Graph g = dw_readgraph(f);
+    g = dw_readgraph(f);
 
     printf(">>  Printing graph edges\n");
-    for (int i = 0; i < g.occ; i++) {
-        for (int j = 0; j < g.adjocc[i]; j++) {
-            printf("%ld %ld %ld\n", (long) i, g.adj[i][j], g.weight[i][j]);
+    for (int i = 0; i < g->occ; i++) {
+        for (int j = 0; j < g->adjocc[i]; j++) {
+            printf("%d %ld %ld\n", i, g->adj[i][j], g->weight[i][j]);
         }
     }
 
     printf(">>  Destroying graph.\n");
-    destroygraph(g);
-    
+    destroygraph(g);    
     return EXIT_SUCCESS;
 }
 
