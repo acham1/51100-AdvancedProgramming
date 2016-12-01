@@ -49,14 +49,18 @@ Graph dw_readgraph(FILE* f) {
                 printf("resizing adjacency array capacity (%ld, %ld, %ld)\n", from, g.adjocc[from], g.adjcap[from]);
                 newadjarr = calloc(g.adjcap[from] * ADJ_ARRAY_GROWTH_FACTOR, sizeof(long));
                 printf("1\n");
-                memcpy(newadjarr, g.adj[from], g.adjocc[from]);
+                memcpy(newadjarr, g.adj[from], sizeof(long) * g.adjocc[from]);
                 printf("2\n");
+                printf("Printing out contents of adj[from]\n");
+                for (int i = 0; i < g.adjocc[from]; i++) {
+                    printf("%d has %ld\n", i, g.adj[from][i]);
+                    printf("%d has %ld\n", i, newadjarr[i]);
+                }
                 free(g.adj[from]);
                 printf("3\n");
                 g.adj[from] = newadjarr;
                 printf("4\n");
                 g.adjcap[from] *= ADJ_ARRAY_GROWTH_FACTOR;
-                printf("end resizing\n");
             }
             adjocc = g.adjocc[from]++;
             g.adj[from][adjocc] = to;

@@ -14,8 +14,8 @@
 #define MAX_LINE_WIDTH 200
 #define ADJ_GROWTH_FACTOR 2
 #define ADJ_ARRAY_GROWTH_FACTOR 2
-#define DEFAULT_GRAPH_CAPACITY 10
-#define DEFAULT_ADJ_ARRAY_CAPACITY 9
+#define DEFAULT_GRAPH_CAPACITY 1
+#define DEFAULT_ADJ_ARRAY_CAPACITY 1
 
 #define graph_max(a, b) ((a) > (b) ? (a) : (b))
 
