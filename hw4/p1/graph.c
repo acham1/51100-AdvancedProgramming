@@ -10,7 +10,7 @@ Graph* creategraph(void) {
     g->occupancy = 0;
     g->numverts = DEFAULT_NUM_VERTICES;
     g->adjlists = malloc(DEFAULT_NUM_VERTICES * sizeof(Linkedlist*));
-    for (int i = 0; i < DEFAULT_NUM_VERTICES; i++) {
+    for (long i = 0; i < DEFAULT_NUM_VERTICES; i++) {
         g->adjlists[i] = ll_create();
     }
     return g;
@@ -35,7 +35,7 @@ Graph* dw_readgraph(FILE* f) {
             }
             if (newsz > g->numverts) {
                 g->adjlists = realloc(g->adjlists, newsz * sizeof(Linkedlist*));
-                for (int i = g->numverts; i < newsz; i++) {
+                for (long i = g->numverts; i < newsz; i++) {
                     g->adjlists[i] = ll_create();
                 }
                 g->numverts = newsz;
@@ -53,7 +53,7 @@ Graph* dw_readgraph(FILE* f) {
 }
 
 void destroygraph(Graph* g) {
-    for (int i = 0; i < g->numverts; i++) {
+    for (long i = 0; i < g->numverts; i++) {
         ll_deepdestroy(g->adjlists[i]);
     }
     free(g->adjlists);

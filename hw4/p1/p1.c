@@ -5,6 +5,7 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include "graph.h"
+#include "dijkstra.h"
 
 #define EXPECTED_ARGC 2
 #define GRAPH_FILE_INDEX 1

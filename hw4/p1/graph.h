@@ -18,19 +18,6 @@
 
 #define graph_max(a, b) ((a) > (b) ? (a) : (b))
 
-typedef struct SingleSourceDistances {
-    long source;   // source vertex
-    long n;        // total vertices
-    long* dist;    // distance array
-    char* reach;   // reachability array
-} SingleSourceDistances;
-
-typedef struct AllPairDistances {
-    long n;        // total vertices
-    long** dist;   // distances matrix
-    char** reach;  // reachability matrix
-} AllPairDistances;
-
 typedef struct Graph {
     long numverts; // vertices capacity
     long occupancy;// actual number of vertices 
