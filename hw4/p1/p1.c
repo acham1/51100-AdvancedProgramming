@@ -25,6 +25,7 @@ int main(int argc, char* argv[]) {
     printf(">>  Creating graph from graph file.\n");
     g = dw_readgraph(f);
     printf(">>  Running Dijkstra on each vertex serially.\n");
+//    for (long i = 6296; i == 6296; i++) {
     for (long i = 0; i < g->occupancy; i++) {
         printf("Dijkstra on vertex %ld\n", i);
         ssd = dijkstra(g, i);

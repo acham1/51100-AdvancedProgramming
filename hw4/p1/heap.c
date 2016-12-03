@@ -3,6 +3,7 @@
   * HW4 P1 */
 
 #include "heap.h"
+#include <stdio.h>
 
 static void mh_heapify(Minheap* mh, long pos) {
     char lvalid, rvalid;
@@ -129,6 +130,7 @@ void mh_deepdestroy(Minheap* mh) {
         free(mh->values[i]);
     }
     free(mh->heapindex);
+    free(mh->values);
     free(mh->heap);
     free(mh);
 }
