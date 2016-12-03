@@ -27,6 +27,9 @@ Minheap* mh_create(int (*cmp)(void* k1, void* k2));
 // return 1 if error; otherwise 0
 int mh_add(Minheap* mh, void* newval);
 
+// return NULL if error, pointer to replaced 
+void* mh_decreasekey(Minheap* mh, long id, void* newval);
+
 void* mh_extractmin(Minheap* mh);
 
 void mh_deepdestroy(Minheap* mh);

@@ -4,6 +4,33 @@
 
 #include "heap.h"
 
+static void mh_heapify(Minheap* mh, long pos) {
+    char lvalid, rvalid;
+    long child, ltmp;
+    void* vtmp;
+
+    lvalid = (pos*2 + 1 < mh->occupancy);
+    rvalid = (pos*2 + 2 < mh->occupancy);
+    if (lvalid && rvalid) {
+        child = mh->cmp(mh->values[pos*2+1], mh->values[pos*2+2]) ? pos*2 + 1 : pos*2 + 2;
+    } else if (lvalid) {
+        child = pos*2 + 1;
+    } else {
+        return;
+    }
+    if (mh->cmp(mh->values[child], mh->values[pos])) {
+        vtmp = mh->values[child];
+        mh->values[child] = mh->values[pos];
+        mh->values[pos] = vtmp;
+        ltmp = mh->heap[pos];
+        mh->heap[pos] = mh->heap[child];
+        mh->heap[child] = ltmp;
+        mh->heapindex[mh->heap[pos]] = pos;
+        mh->heapindex[mh->heap[child]] = child;
+        mh_heapify(mh, child);
+    }
+}
+
 // heap is not expandable, input total num elements at creation
 Minheap* mh_create(int (*cmp)(void* k1, void* k2)) {
     Minheap* mh = malloc(sizeof(Minheap));
@@ -33,9 +60,8 @@ int mh_add(Minheap* mh, void* newval) {
     mh->values[pos] = newval;
     parent = (pos-1)/2;
     while (pos > 0 && mh->cmp(mh->values[pos], mh->values[parent])) {
-        tmp = mh->heapindex[pos];
-        mh->heapindex[pos] = mh->heapindex[parent];
-        mh->heapindex[parent] = tmp;
+        mh->heapindex[mh->heap[pos]] = parent;
+        mh->heapindex[mh->heap[parent]] = pos;
         tmp = mh->heap[pos];
         mh->heap[pos] = mh->heap[parent];
         mh->heap[parent] = tmp;
@@ -48,10 +74,40 @@ int mh_add(Minheap* mh, void* newval) {
     return 0;
 }
 
+// return NULL if error, pointer to replaced 
+void* mh_decreasekey(Minheap* mh, long id, void* newval) {
+    void* original, * tmpval;
+    long pos, parent, tmp;
+
+    if (id >= mh->occupancy || mh->heapindex[id] == -1) {
+        return NULL;
+    }
+    pos = mh->heapindex[id];
+    original = mh->values[pos];
+    mh->values[pos] = newval;
+    parent = (pos-1)/2;
+    if (pos > 0 && mh->cmp(mh->values[pos], mh->values[parent])) {
+        while (pos > 0 && mh->cmp(mh->values[pos], mh->values[parent])) {
+            mh->heapindex[mh->heap[pos]] = parent;
+            mh->heapindex[mh->heap[parent]] = pos;
+            tmp = mh->heap[pos];
+            mh->heap[pos] = mh->heap[parent];
+            mh->heap[parent] = tmp;
+            tmpval = mh->values[pos];
+            mh->values[pos] = mh->values[parent];
+            mh->values[parent] = tmpval;
+            pos = parent;
+            parent = (pos-1)/2;
+        }
+    } else {
+        mh_heapify(mh, pos);
+    }
+    return original;
+}
+
 void* mh_extractmin(Minheap* mh) {
-    long pos, last, leftchild, rightchild, tmp2;
-    void* themin, * tmp;
-    char heapify;
+    long pos, last;
+    void* themin;
 
     pos = --(mh->occupancy);
     themin = mh->values[0];
@@ -63,35 +119,7 @@ void* mh_extractmin(Minheap* mh) {
         mh->heapindex[last] = 0;
         mh->values[0] = mh->values[pos];
         mh->values[pos] = NULL;
-        pos = 0;
-        heapify = 1;
-        while (heapify) {
-            leftchild = pos*2 + 1;
-            rightchild = pos*2 + 2;
-            if (leftchild < mh->occupancy && mh->cmp(mh->values[leftchild], mh->values[pos])) {
-                tmp = mh->values[leftchild];
-                mh->values[leftchild] = mh->values[pos];
-                mh->values[pos] = tmp;
-                tmp2 = mh->heap[pos];
-                mh->heap[pos] = mh->heap[leftchild];
-                mh->heap[leftchild] = tmp2;
-                mh->heapindex[mh->heap[pos]] = pos;
-                mh->heapindex[mh->heap[leftchild]] = leftchild;
-                pos = leftchild;
-            } else if (rightchild < mh->occupancy && mh->cmp(mh->values[rightchild], mh->values[pos])) {
-                tmp = mh->values[rightchild];
-                mh->values[rightchild] = mh->values[pos];
-                mh->values[pos] = tmp;
-                tmp2 = mh->heap[pos];
-                mh->heap[pos] = mh->heap[rightchild];
-                mh->heap[rightchild] = tmp2;
-                mh->heapindex[mh->heap[pos]] = pos;
-                mh->heapindex[mh->heap[rightchild]] = rightchild;
-                pos = rightchild;
-            } else {
-                heapify = 0;
-            }
-        }
+        mh_heapify(mh, 0);
     }
     return themin;
 }
