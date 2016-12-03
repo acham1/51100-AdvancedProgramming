@@ -13,10 +13,9 @@
 int printheading(FILE** f, int argc, char* argv[]);
 
 int main(int argc, char* argv[]) {
-    long numE = 0;
+    SingleSourceDistances* ssd;
     Graph* g;
     FILE* f;
-    Node* n;
 
     if (printheading(&f, argc, argv)) {
         printf(">>  End of test. Please retry with correct input.\n");
@@ -25,20 +24,15 @@ int main(int argc, char* argv[]) {
     }
     printf(">>  Creating graph from graph file.\n");
     g = dw_readgraph(f);
-
-    printf(">>  Printing graph edges\n");
+    printf(">>  Running Dijkstra on each vertex serially.\n");
     for (long i = 0; i < g->occupancy; i++) {
-        numE += g->adjlists[i]->numnodes;
-        n = g->adjlists[i]->head;
-        printf("vertex %ld has %ld outdegree\n", i, g->adjlists[i]->numnodes);
-        while (n != NULL) {
-            printf("%ld %ld %ld\n", i, *(long*) n->key, *(long*) n->value);
-            n = n->next;
-        }
+        printf("Dijkstra on vertex %ld\n", i);
+        ssd = dijkstra(g, i);
+        free(ssd->dist);
+        free(ssd->reach);
+        free(ssd);
     }
-
     printf(">>  Destroying graph.\n");
-    printf(">>  Found %ld edges total\n", numE);
     destroygraph(g);    
     return EXIT_SUCCESS;
 }

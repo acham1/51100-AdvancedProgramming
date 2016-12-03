@@ -16,6 +16,12 @@ typedef struct SingleSourceDistances {
     char* reach;   // reachability array
 } SingleSourceDistances;
 
+typedef struct Dvertex {
+    long vertnum;
+    long distance;
+    char reachable;
+} Dvertex;
+
 // returns pointer to allocated SingleSourceDistances using Graph g
 // and source s; returns NULL if fail
 SingleSourceDistances* dijkstra(Graph* g, long s);
