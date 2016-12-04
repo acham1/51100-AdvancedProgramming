@@ -31,7 +31,19 @@ p2/heap.o: p2/heap.c p2/heap.h
 	gcc -std=c99 -pedantic -Wall -c p2/heap.c -o p2/heap.o
 
 p3: p3/p3
-p3/p3: p3/p3.o
+p3/p3: p3/p3.o p3/graph.o p3/heap.o p3/linkedlist.o p3/dijkstra.o
+	gcc -std=c99 -pedantic -Wall -fopenmp p3/p3.o p3/graph.o p3/heap.o p3/linkedlist.o p3/dijkstra.o -o p3/p3
+	rm p3/*.o
+p3/p3.o: p3/p3.c p3/graph.h p3/heap.h p3/linkedlist.h p3/dijkstra.h
+	gcc -std=c99 -pedantic -Wall -c -fopenmp p3/p3.c -o p3/p3.o
+p3/dijkstra.o: p3/dijkstra.c p3/dijkstra.h p3/graph.h p3/heap.h p3/linkedlist.h
+	gcc -std=c99 -pedantic -Wall -c -fopenmp p3/dijkstra.c -o p3/dijkstra.o
+p3/graph.o: p3/graph.c p3/graph.h p3/linkedlist.h
+	gcc -std=c99 -pedantic -Wall -c p3/graph.c -o p3/graph.o
+p3/linkedlist.o: p3/linkedlist.c p3/linkedlist.h
+	gcc -std=c99 -pedantic -Wall -c p3/linkedlist.c -o p3/linkedlist.o
+p3/heap.o: p3/heap.c p3/heap.h
+	gcc -std=c99 -pedantic -Wall -c p3/heap.c -o p3/heap.o
 
 p4: p4/p4
 p4/p4: p4/p4.o
