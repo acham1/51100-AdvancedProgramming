@@ -28,7 +28,7 @@ int main(int argc, char* argv[]) {
     g = dw_readgraph(f);
     printf(">>  Running Dijkstra on each vertex serially.\n");
     start = clock();
-#pragma omp parallel for shared(g)
+#pragma omp parallel for shared(g), private(ssd), schedule(dynamic)
     for (long i = 0; i < g->occupancy; i++) {
 //        printf(">> Dijkstra on source vertex %ld\n", i);
         ssd = dijkstra(g, i);
