@@ -57,7 +57,7 @@ SingleSourceDistances* dijkstra(Graph* g, long s) {
     vert = mh_extractmin(mh);
     while (vert != NULL && vert->reachable) {
         i = vert->vertnum;
-        printf("Extracted vertex %ld with distance (%ld)\n", i, vert->distance);
+//        printf("Extracted vertex %ld with distance (%ld)\n", i, vert->distance);
         d->dist[i] = vert->distance;
         d->reach[i] = 1;
         n = g->adjlists[i]->head;
