@@ -26,7 +26,7 @@ int main(int argc, char* argv[]) {
     printf(">>  Creating graph from graph file.\n");
     g = dw_readgraph(f);
     for (int numthreads = 1; numthreads <= omp_get_max_threads(); numthreads *= 2) {
-        printf(">>  Running Dijkstra on each vertex in parallel with %2d threads. ", numthreads);
+        printf(">>  %2d threads. Computing all-pairs, parallelized outside Dijkstra. ", numthreads);
         fflush(stdout);
         start = omp_get_wtime();
 #pragma omp parallel for shared(g), private(ssd), schedule(dynamic), num_threads(numthreads)

@@ -1,7 +1,7 @@
 /** Alan Cham
   * MPCS 51100
-  * November 13, 2016
-  * Homework 3, p1 */
+  * November 31, 2016
+  * Homework 4 p1 */
 
 #include "linkedlist.h"
 #include <stdlib.h>
