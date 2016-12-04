@@ -123,9 +123,9 @@ SingleSourceDistances* dijkstra_omp(MatGraph* mg, long s, int numthreads) {
             }
         }
         tmp = LONG_MAX;
-#pragma omp parallel for num_threads(numthreads)
+//#pragma omp parallel for num_threads(numthreads)
         for (long i = 0; i < d->n; i++) {
-#pragma omp critical (deckey)
+//#pragma omp critical (deckey)
             if (!visited[i] && d->dist[i] < tmp) {
                 tmp = d->dist[i];                
                 min = i;

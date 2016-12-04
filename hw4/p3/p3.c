@@ -11,6 +11,7 @@
 
 #define EXPECTED_ARGC 2
 #define GRAPH_FILE_INDEX 1
+#define HARD_CODE_LIMIT 8
 
 int printheading(FILE** f, int argc, char* argv[]);
 
@@ -28,12 +29,12 @@ int main(int argc, char* argv[]) {
     printf(">>  Creating graph from graph file.\n");
     g = dw_readgraph(f);
     mg = adjtomat(g);
-    printf(">> *The following results are obtained by parallelizing 'within' each\n"
-        "    single-source computation\n");
-    for (int numthreads = 1; numthreads <= omp_get_max_threads(); numthreads *= 2) {
+//    for (int numthreads = omp_get_max_threads(); numthreads >= 1; numthreads /= 2) {
+    for (int numthreads = 1; numthreads <= HARD_CODE_LIMIT; numthreads *= 2) {
         printf(">>  %2d threads. Computing all-pairs, parallelized within Dijsktra. ", numthreads);
         fflush(stdout);
         start = omp_get_wtime();
+//        for (long i = 0; i <= 10; i++) {
         for (long i = 0; i < g->occupancy; i++) {
             ssd = dijkstra_omp(mg, i, numthreads);
             free(ssd->dist);
@@ -57,7 +58,9 @@ int printheading(FILE** f, int argc, char* argv[]) {
     printf(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>\n");
     printf(">>  Alan Cham\n");
     printf(">>  MPCS 51100\n");
-    printf(">>  HW4 p3 Driver\n");
+    printf(">>  HW4 p3 Driver\n\n");
+    printf(">> *The following results are obtained by parallelizing 'within' each\n"
+        "    single-source computation\n");
     printf(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>\n");
     if (argc < EXPECTED_ARGC) {
         printf(">>  Error: please enter graph file path as command-line argument.\n");
