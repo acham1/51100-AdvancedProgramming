@@ -7,6 +7,7 @@
 #include <stdio.h>
 #include "graph.h"
 #include "dijkstra.h"
+#include <omp.h>
 
 #define EXPECTED_ARGC 2
 #define GRAPH_FILE_INDEX 1
@@ -27,6 +28,7 @@ int main(int argc, char* argv[]) {
     g = dw_readgraph(f);
     printf(">>  Running Dijkstra on each vertex serially.\n");
     start = clock();
+#pragma omp parallel for shared(g)
     for (long i = 0; i < g->occupancy; i++) {
 //        printf(">> Dijkstra on source vertex %ld\n", i);
         ssd = dijkstra(g, i);
