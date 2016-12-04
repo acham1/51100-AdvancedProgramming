@@ -25,21 +25,23 @@ int main(int argc, char* argv[]) {
     }
     printf(">>  Creating graph from graph file.\n");
     g = dw_readgraph(f);
-    printf(">>  Running Dijkstra on each vertex in parallel.\n");
-    start = omp_get_wtime();
-#pragma omp parallel for shared(g), private(ssd), schedule(dynamic)
-    for (long i = 0; i < g->occupancy; i++) {
-//        printf(">> Dijkstra on source vertex %ld\n", i);
-        ssd = dijkstra(g, i);
-        free(ssd->dist);
-        free(ssd->reach);
-        free(ssd);
+    for (int numthreads = 1; numthreads <= omp_get_max_threads(); numthreads *= 2) {
+        printf(">>  Running Dijkstra on each vertex in parallel with %2d threads. ");
+        start = omp_get_wtime();
+#pragma omp parallel for shared(g), private(ssd), schedule(dynamic), num_threads(numthreads)
+        for (long i = 0; i < g->occupancy; i++) {
+//            printf(">> Dijkstra on source vertex %ld\n", i);
+            ssd = dijkstra(g, i);
+            free(ssd->dist);
+            free(ssd->reach);
+            free(ssd);
+        }
+        end = omp_get_wtime();
+        printf("(Results %5.2lf s)\n", end-start);
     }
-    end = omp_get_wtime();
+    printf(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>\n");
     printf(">>  Destroying graph.\n");
     destroygraph(g);
-    printf(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>\n");
-    printf(">>  Total time for all pairs: %4.2lf s\n", end-start);
     printf(">>  End of test.\n");
     printf(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>\n");
     return EXIT_SUCCESS;
@@ -50,7 +52,7 @@ int printheading(FILE** f, int argc, char* argv[]) {
     printf(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>\n");
     printf(">>  Alan Cham\n");
     printf(">>  MPCS 51100\n");
-    printf(">>  HW4 p1 Driver\n");
+    printf(">>  HW4 p2 Driver\n");
     printf(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>\n");
     if (argc < EXPECTED_ARGC) {
         printf(">>  Error: please enter graph file path as command-line argument.\n");
