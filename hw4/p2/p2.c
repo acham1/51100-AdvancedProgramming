@@ -2,7 +2,6 @@
   * MPCS 51100
   * HW4 P1 */
 
-#include <time.h>
 #include <stdlib.h>
 #include <stdio.h>
 #include "graph.h"
@@ -16,7 +15,7 @@ int printheading(FILE** f, int argc, char* argv[]);
 
 int main(int argc, char* argv[]) {
     SingleSourceDistances* ssd;
-    clock_t start, end;
+    double start, end;
     Graph* g;
     FILE* f;
 
@@ -26,8 +25,8 @@ int main(int argc, char* argv[]) {
     }
     printf(">>  Creating graph from graph file.\n");
     g = dw_readgraph(f);
-    printf(">>  Running Dijkstra on each vertex serially.\n");
-    start = clock();
+    printf(">>  Running Dijkstra on each vertex in parallel.\n");
+    start = omp_get_wtime();
 #pragma omp parallel for shared(g), private(ssd), schedule(dynamic)
     for (long i = 0; i < g->occupancy; i++) {
 //        printf(">> Dijkstra on source vertex %ld\n", i);
@@ -36,11 +35,11 @@ int main(int argc, char* argv[]) {
         free(ssd->reach);
         free(ssd);
     }
-    end = clock();
+    end = omp_get_wtime();
     printf(">>  Destroying graph.\n");
     destroygraph(g);
     printf(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>\n");
-    printf(">>  Total time for all pairs: %4.2lf s\n", (double)(end-start)/CLOCKS_PER_SEC);
+    printf(">>  Total time for all pairs: %4.2lf s\n", end-start);
     printf(">>  End of test.\n");
     printf(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>\n");
     return EXIT_SUCCESS;
