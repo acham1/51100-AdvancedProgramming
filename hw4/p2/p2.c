@@ -1,6 +1,6 @@
 /** Alan Cham
   * MPCS 51100
-  * HW4 P1 */
+  * HW4 P2 */
 
 #include <stdlib.h>
 #include <stdio.h>

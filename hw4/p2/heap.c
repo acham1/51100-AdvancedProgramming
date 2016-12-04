@@ -1,6 +1,7 @@
 /** Alan Cham
   * MPCS 51100
-  * HW4 P1 */
+  * November 31, 2016
+  * HW4 P2 */
 
 #include "heap.h"
 #include <stdio.h>
