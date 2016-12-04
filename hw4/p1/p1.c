@@ -25,7 +25,7 @@ int main(int argc, char* argv[]) {
     }
     printf(">>  Creating graph from graph file.\n");
     g = dw_readgraph(f);
-    printf(">>  Running Dijkstra on each vertex serially.\n");
+    printf(">>  Running Dijkstra on each vertex serially. ");
     start = clock();
     for (long i = 0; i < g->occupancy; i++) {
 //        printf(">> Dijkstra on source vertex %ld\n", i);
@@ -35,10 +35,10 @@ int main(int argc, char* argv[]) {
         free(ssd);
     }
     end = clock();
+    printf("(Results %5.2lf s)\n", (double)(end-start)/CLOCKS_PER_SEC);
+    printf(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>\n");
     printf(">>  Destroying graph.\n");
     destroygraph(g);
-    printf(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>\n");
-    printf(">>  Total time for all pairs: %4.2lf s\n", (double)(end-start)/CLOCKS_PER_SEC);
     printf(">>  End of test.\n");
     printf(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>\n");
     return EXIT_SUCCESS;
