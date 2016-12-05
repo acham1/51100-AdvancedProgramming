@@ -1,0 +1,28 @@
+#####################################################################
+Grade:  100 / 100
+Student:
+Email:
+Class: MPCS 51100 Fall 2016
+Homework: 3
+#####################################################################
+Problem 1: Dictionary    Grade:  30 / 30
+
+Your code looks good.
+
+I think you shouldn't initialize a hash table with the size as small as 1,
+since it's not useful and slow.
+
+#####################################################################
+Problem 2: Unique    Grade:  20 / 20
+
+Good code, but need more comment.
+
+You don't need a second loop in uniq() since the array is contiguous,
+you could use just one memcpy()
+
+#####################################################################
+Problem 3: Search    Grade:  50 / 50
+
+Nice job on implementation. Good, thorough analysis.
+
+#####################################################################
