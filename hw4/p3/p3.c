@@ -18,6 +18,7 @@ int printheading(FILE** f, int argc, char* argv[]);
 int main(int argc, char* argv[]) {
     SingleSourceDistances* ssd;
     double start, end;
+    MatGraph* mg;
     Graph* g;
     FILE* f;
 
@@ -27,6 +28,7 @@ int main(int argc, char* argv[]) {
     }
     printf(">>  Creating graph from graph file.\n");
     g = dw_readgraph(f);
+    mg = adjtomat(g);
 //    for (int numthreads = omp_get_max_threads(); numthreads >= 1; numthreads /= 2) {
     for (int numthreads = 1; numthreads <= HARD_CODE_LIMIT; numthreads *= 2) {
         printf(">>  %2d threads. Computing all-pairs, parallelized within Dijsktra. ", numthreads);
@@ -34,7 +36,7 @@ int main(int argc, char* argv[]) {
         start = omp_get_wtime();
 //        for (long i = 0; i <= 10; i++) {
         for (long i = 0; i < g->occupancy; i++) {
-            ssd = dijkstra_omp(g, i, numthreads);
+            ssd = dijkstra_omp(mg, i, numthreads);
             free(ssd->dist);
             free(ssd->reach);
             free(ssd);
@@ -45,6 +47,7 @@ int main(int argc, char* argv[]) {
     printf(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>\n");
     printf(">>  Destroying graph.\n");
     destroygraph(g);
+    destroymatgraph(mg);
     printf(">>  End of test.\n");
     printf(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>\n");
     return EXIT_SUCCESS;

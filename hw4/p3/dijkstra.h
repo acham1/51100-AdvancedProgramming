@@ -30,6 +30,6 @@ SingleSourceDistances* dijkstra(Graph* g, long s);
 
 // returns pointer to allocated SingleSourceDistances using Graph g
 // and source s; returns NULL if fail
-SingleSourceDistances* dijkstra_omp(Graph* g, long s, int numthreads);
+SingleSourceDistances* dijkstra_omp(MatGraph* mg, long s, int numthreads);
 
 #endif

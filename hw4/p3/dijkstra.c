@@ -88,18 +88,17 @@ SingleSourceDistances* dijkstra(Graph* g, long s) {
 
 // returns pointer to allocated SingleSourceDistances using Graph g
 // and source s; returns NULL if fail
-SingleSourceDistances* dijkstra_omp(Graph* g, long s, int numthreads) {
-    long min, tmp, neighbor, weight;
+SingleSourceDistances* dijkstra_omp(MatGraph* mg, long s, int numthreads) {
     SingleSourceDistances* d;
     char* visited;
-    Node* n;
+    long min, tmp;
 
-    if (s >= g->occupancy) {
+    if (s >= mg->numverts) {
         return NULL;
     }
     d = malloc(sizeof(SingleSourceDistances));
     d->source = s;
-    d->n = g->occupancy;
+    d->n = mg->numverts;
     d->dist = malloc(sizeof(long) * d->n);
     d->reach = malloc(sizeof(char) * d->n);
     visited = malloc(sizeof(char) * d->n);
@@ -116,19 +115,17 @@ SingleSourceDistances* dijkstra_omp(Graph* g, long s, int numthreads) {
     while (tmp != LONG_MAX) {
         visited[min] = 1;
 //        printf("Extract %ld with weight %ld\n", min, d->dist[min]);
-        n = g->adjlists[min]->head;
-        while (n != NULL) {
-            neighbor = *(long*)n->key;
-            weight = *(long*)n->value;
-            if (!visited[neighbor] && d->dist[neighbor] > d->dist[min] + weight) {
-                d->dist[neighbor] = d->dist[min] + weight;
-                d->reach[neighbor] = 1;
+#pragma omp parallel for num_threads(numthreads)
+        for (long i = 0; i < d->n; i++) {
+            if (mg->adjmat[min][i] && !visited[i] && d->dist[i] > d->dist[min] + mg->weightmat[min][i]) {
+                d->dist[i] = d->dist[min] + mg->weightmat[min][i];
+                d->reach[i] = 1;
             }
         }
         tmp = LONG_MAX;
-#pragma omp parallel for num_threads(numthreads)
+//#pragma omp parallel for num_threads(numthreads)
         for (long i = 0; i < d->n; i++) {
-#pragma omp critical (deckey)
+//#pragma omp critical (deckey)
             if (!visited[i] && d->dist[i] < tmp) {
                 tmp = d->dist[i];                
                 min = i;
