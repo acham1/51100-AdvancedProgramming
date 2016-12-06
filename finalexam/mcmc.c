@@ -50,6 +50,7 @@ int main(void) {
             Q[i][j] = (double) 1 / NUM_INCREMENTS;
         }
     }
+    total = 0;
     x = START;
     for (int i = 0; i < NUM_SAMPLES; i++) {
         newx = mcmc_sample(x);
@@ -62,10 +63,10 @@ int main(void) {
                 x = newx;
             }
         }
-        h = f(x) / normed_boltzman(x);
+        h = f(x);
         total += h;
     }
-    integral = total/NUM_SAMPLES;
+    integral = total*(END-START)/NUM_SAMPLES;
     printf("Estimate is %lf\n", integral);
     for (int i = 0; i < NUM_INCREMENTS; i++) {
         free(Q[i]);
