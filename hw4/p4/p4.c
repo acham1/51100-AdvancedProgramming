@@ -6,7 +6,7 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include "graph.h"
-#include "dfs.h"
+//#include "dfs.h"
 
 #define EXPECTED_ARGC 2
 #define GRAPH_FILE_INDEX 1
@@ -15,7 +15,6 @@
 int printheading(FILE** f, int argc, char* argv[]);
 
 int main(int argc, char* argv[]) {
-    double start, end;
     Graph* g;
     FILE* f;
 
@@ -38,9 +37,7 @@ int printheading(FILE** f, int argc, char* argv[]) {
     printf(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>\n");
     printf(">>  Alan Cham\n");
     printf(">>  MPCS 51100\n");
-    printf(">>  HW4 p3 Driver\n\n");
-    printf(">> *The following results are obtained by parallelizing 'within' each\n"
-        "    single-source computation\n");
+    printf(">>  HW4 p4 Driver\n\n");
     printf(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>\n");
     if (argc < EXPECTED_ARGC) {
         printf(">>  Error: please enter markov graph file path as command-line argument.\n");

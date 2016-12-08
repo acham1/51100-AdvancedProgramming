@@ -39,6 +39,7 @@ int main(int argc, char* argv[]) {
     printf("(Results %5.2lf s)\n", (double)(end-start)/CLOCKS_PER_SEC);
     printf(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>\n");
     printf(">>  Destroying graph.\n");
+    free(f);
     destroygraph(g);
     printf(">>  End of test.\n");
     printf(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>\n");

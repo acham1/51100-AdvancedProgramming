@@ -21,9 +21,10 @@ Graph* creategraph(void) {
 // return negative value for numV if error
 Graph* markov_readgraph(FILE* f) {
     char s[MAX_LINE_WIDTH+1];
-    double* weight, * tmpval;
+    double* tmpval, weight;
     long from, to, newsz;
     long* tmpkey;
+    char* tok;
     Graph* g;
 
     g = creategraph(); 
@@ -31,7 +32,9 @@ Graph* markov_readgraph(FILE* f) {
         if (!fgets(s, MAX_LINE_WIDTH+1, f) || !sscanf(s, " %ld ", &from)) {
             continue;
         }
-        if (!dw_readedge(f, &from, &to, &weight)) {
+        tok = strtok(s, MARKOV_TOKENS);
+        while ((tok = strtok(NULL, MARKOV_TOKENS)) != NULL) {
+            sscanf(tok, "%ld, %lf", &to, &weight);
             newsz = g->numverts;
             while (newsz < from+1 || newsz < to+1) {
                 newsz *= GRAPH_CAPACITY_GROWTH_FACTOR;
@@ -47,7 +50,7 @@ Graph* markov_readgraph(FILE* f) {
             g->occupancy = graph_max(g->occupancy, to+1);
             tmpkey = malloc(sizeof(long));
             *tmpkey = to;
-            tmpval = malloc(sizeof(long));
+            tmpval = malloc(sizeof(double));
             *tmpval = weight;
             ll_insert(g->adjlists[from], tmpkey, tmpval, NULL);
         }

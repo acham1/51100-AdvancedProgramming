@@ -46,6 +46,7 @@ int main(int argc, char* argv[]) {
     }
     printf(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>\n");
     printf(">>  Destroying graph.\n");
+    fclose(f);
     destroygraph(g);
     destroymatgraph(mg);
     printf(">>  End of test.\n");
