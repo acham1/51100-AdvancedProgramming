@@ -12,8 +12,9 @@
 #include <stdlib.h>
 #include "linkedlist.h"
 
+#define MARKOV_TOKENS " []"
 #define NUM_EDGE_ARGS 3
-#define MAX_LINE_WIDTH 200
+#define MAX_LINE_WIDTH 10000
 #define DEFAULT_NUM_VERTICES 1
 #define GRAPH_CAPACITY_GROWTH_FACTOR 2
 
@@ -24,7 +25,6 @@ typedef struct Graph {
     long occupancy;// actual number of vertices 
     Linkedlist** adjlists; // array of adjacency lists
 } Graph;
-
 
 typedef struct MatGraph {
     long numverts; // number of vertices in graph
@@ -41,6 +41,10 @@ Graph* creategraph(void);
 // each edge on separate line, like such: <fromV> <toV> <weight>
 // return negative value for numV if error
 Graph* dw_readgraph(FILE* f);
+
+// read markov graph from file
+// return negative value for numV if error
+Graph* markov_readgraph(FILE* f);
 
 // expand the number of vertices in the graph to newsz
 void resizegraph(Graph* g, long newsz);

@@ -17,6 +17,44 @@ Graph* creategraph(void) {
     return g;
 }
 
+// read markov graph from file
+// return negative value for numV if error
+Graph* markov_readgraph(FILE* f) {
+    char s[MAX_LINE_WIDTH+1];
+    double* weight, * tmpval;
+    long from, to, newsz;
+    long* tmpkey;
+    Graph* g;
+
+    g = creategraph(); 
+    while (!feof(f)) {
+        if (!fgets(s, MAX_LINE_WIDTH+1, f) || !sscanf(s, " %ld ", &from)) {
+            continue;
+        }
+        if (!dw_readedge(f, &from, &to, &weight)) {
+            newsz = g->numverts;
+            while (newsz < from+1 || newsz < to+1) {
+                newsz *= GRAPH_CAPACITY_GROWTH_FACTOR;
+            }
+            if (newsz > g->numverts) {
+                g->adjlists = realloc(g->adjlists, newsz * sizeof(Linkedlist*));
+                for (long i = g->numverts; i < newsz; i++) {
+                    g->adjlists[i] = ll_create();
+                }
+                g->numverts = newsz;
+            }
+            g->occupancy = graph_max(g->occupancy, from+1);
+            g->occupancy = graph_max(g->occupancy, to+1);
+            tmpkey = malloc(sizeof(long));
+            *tmpkey = to;
+            tmpval = malloc(sizeof(long));
+            *tmpval = weight;
+            ll_insert(g->adjlists[from], tmpkey, tmpval, NULL);
+        }
+    }
+    return g;    
+}
+
 // read directed, weighted graph from FILE* f, in following format
 // ignores any line starting with #
 // vertices given as integer values

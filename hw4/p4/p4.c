@@ -6,8 +6,7 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include "graph.h"
-#include "dijkstra.h"
-#include <omp.h>
+#include "dfs.h"
 
 #define EXPECTED_ARGC 2
 #define GRAPH_FILE_INDEX 1
@@ -16,9 +15,7 @@
 int printheading(FILE** f, int argc, char* argv[]);
 
 int main(int argc, char* argv[]) {
-    SingleSourceDistances* ssd;
     double start, end;
-    MatGraph* mg;
     Graph* g;
     FILE* f;
 
@@ -26,28 +23,11 @@ int main(int argc, char* argv[]) {
         printf(">>  End of test. Please retry with correct input.\n");
         return EXIT_FAILURE;
     }
-    printf(">>  Creating graph from graph file.\n");
-    g = dw_readgraph(f);
-    mg = adjtomat(g);
-//    for (int numthreads = omp_get_max_threads(); numthreads >= 1; numthreads /= 2) {
-    for (int numthreads = 1; numthreads <= HARD_CODE_LIMIT; numthreads *= 2) {
-        printf(">>  %2d threads. Computing all-pairs, parallelized within Dijsktra. ", numthreads);
-        fflush(stdout);
-        start = omp_get_wtime();
-//        for (long i = 0; i <= 10; i++) {
-        for (long i = 0; i < g->occupancy; i++) {
-            ssd = dijkstra_omp(mg, i, numthreads);
-            free(ssd->dist);
-            free(ssd->reach);
-            free(ssd);
-        }
-        end = omp_get_wtime();
-        printf("(Results %5.2lf s)\n", end-start);
-    }
+    printf(">>  Creating markov graph from markov graph file.\n");
+    g = markov_readgraph(f);
     printf(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>\n");
     printf(">>  Destroying graph.\n");
     destroygraph(g);
-    destroymatgraph(mg);
     printf(">>  End of test.\n");
     printf(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>\n");
     return EXIT_SUCCESS;
@@ -63,13 +43,13 @@ int printheading(FILE** f, int argc, char* argv[]) {
         "    single-source computation\n");
     printf(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>\n");
     if (argc < EXPECTED_ARGC) {
-        printf(">>  Error: please enter graph file path as command-line argument.\n");
+        printf(">>  Error: please enter markov graph file path as command-line argument.\n");
         return 1;
     } else if ((*f = fopen(argv[GRAPH_FILE_INDEX], "r")) == NULL) {
-        printf(">>  Error: failed to find graph file at location %s\n", argv[GRAPH_FILE_INDEX]);
+        printf(">>  Error: failed to find markov graph file at location %s\n", argv[GRAPH_FILE_INDEX]);
         return 1;
     } else {
-        printf(">>  Success: opening file at %s.\n", argv[GRAPH_FILE_INDEX]);
+        printf(">>  Success: opening markov graph file at %s.\n", argv[GRAPH_FILE_INDEX]);
     }
     return 0;
 }
