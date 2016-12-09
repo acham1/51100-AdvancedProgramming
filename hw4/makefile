@@ -46,7 +46,17 @@ p3/heap.o: p3/heap.c p3/heap.h
 	gcc -std=c99 -pedantic -Wall -c p3/heap.c -o p3/heap.o
 
 p4: p4/p4
-p4/p4: p4/p4.o
+p4/p4: p4/p4.o p4/graph.o p4/linkedlist.o p4/bfs.o
+	gcc -std=c99 -pedantic -Wall p4/p4.o p4/graph.o p4/linkedlist.o p4/bfs.o -o p4/p4
+	rm p4/*.o
+p4/p4.o: p4/p4.c p4/graph.h p4/bfs.h p4/linkedlist.h
+	gcc -std=c99 -pedantic -Wall -c p4/p4.c -o p4/p4.o
+p4/graph.o: p4/graph.c p4/graph.h p4/linkedlist.h
+	gcc -std=c99 -pedantic -Wall -c p4/graph.c -o p4/graph.o
+p4/linkedlist.o: p4/linkedlist.c p4/linkedlist.h
+	gcc -std=c99 -pedantic -Wall -c p4/linkedlist.c -o p4/linkedlist.o
+p4/bfs.o: p4/bfs.c p4/bfs.h
+	gcc -std=c99 -pedantic -Wall -c p4/bfs.c -o p4/bfs.o
 
 p5: p5/p5
 p5/p5: p5/p5.o
