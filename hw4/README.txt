@@ -16,30 +16,13 @@ III.    P3 Parallelization Inside Dijkstra
 *******************************************************************************
 
  IV.    P4 Periodicity
-        https://en.wikipedia.org/wiki/Aperiodic_graph
-        - Perform a depth-first search of G. 
-        - For each e in G that connects a vertex on level i of the depth-
-        - first search tree to a vertex on level j, let ke = j - i - 1.
-        - Compute greatest common divisor of the set of numbers ke.
+        http://cecas.clemson.edu/~shierd/Shier/markov.pdf
 
 *******************************************************************************
 
   V.    P5 Irreducibility
         https://en.wikipedia.org/wiki/Kosaraju%27s_algorithm
-        For each vertex u of the graph, mark u as unvisited. Let L be empty.
-        For each vertex u of the graph do Visit(u), where Visit(u) is the 
-            recursive subroutine:
-            If u is unvisited then:
-                Mark u as visited.
-                For each out-neighbour v of u, do Visit(v).
-                Prepend u to L.
-            Otherwise do nothing.
-        For each element u of L in order, do Assign(u,u) where Assign(u,root) 
-            is the recursive  subroutine:
-            If u has not been assigned to a component then:
-                Assign u as belonging to the component whose root is root.
-                For each in-neighbour v of u, do Assign(v,root).
-            Otherwise do nothing.
+        DFS and DFS on transpose
 
 *******************************************************************************
 
