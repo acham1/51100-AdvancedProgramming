@@ -74,7 +74,15 @@ p5/dfs.o: p5/dfs.c p5/dfs.h
 	gcc -std=c99 -pedantic -Wall -c p5/dfs.c -o p5/dfs.o
 
 p6: p6/p6
-p6/p6: p6/p6.o
+p6/p6: p6/p6.o p6/graph.o p6/linkedlist.o
+	gcc -std=c99 -pedantic -Wall p6/p6.o p6/graph.o p6/linkedlist.o -o p6/p6
+	rm p6/*.o
+p6/p6.o: p6/p6.c p6/graph.h p6/linkedlist.h
+	gcc -std=c99 -pedantic -Wall -c p6/p6.c -o p6/p6.o
+p6/graph.o: p6/graph.c p6/graph.h p6/linkedlist.h
+	gcc -std=c99 -pedantic -Wall -c p6/graph.c -o p6/graph.o
+p6/linkedlist.o: p6/linkedlist.c p6/linkedlist.h
+	gcc -std=c99 -pedantic -Wall -c p6/linkedlist.c -o p6/linkedlist.o
 
 clean:
 	rm p1/*.o p2/*.o p3/*.o p4/*.o p5/*.o p6/*.o p1/p1 p2/p2 p3/p3 p4/p4 p5/p5 p6/p6
