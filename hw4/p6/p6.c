@@ -1,7 +1,7 @@
 /** Alan Cham
   * MPCS 51100
   * November 31, 2016
-  * HW4 P5 */
+  * HW4 P6 */
 
 #include <stdlib.h>
 #include <stdio.h>
