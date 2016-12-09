@@ -12,7 +12,7 @@
 #include <stdlib.h>
 #include "linkedlist.h"
 
-#define MARKOV_TOKENS " []\n"
+#define MARKOV_TOKENS "[\n"
 #define NUM_EDGE_ARGS 3
 #define MAX_LINE_WIDTH 10000
 #define DEFAULT_NUM_VERTICES 1
