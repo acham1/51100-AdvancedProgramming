@@ -1,7 +1,7 @@
 /** Alan Cham
   * MPCS 51100
   * November 31, 2016
-  * HW4 P4 */
+  * HW4 P5 */
 
 #include <stdlib.h>
 #include <stdio.h>
@@ -65,7 +65,7 @@ int printheading(FILE** f, int argc, char* argv[]) {
     printf(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>\n");
     printf(">>  Alan Cham\n");
     printf(">>  MPCS 51100\n");
-    printf(">>  HW4 p4 Driver\n");
+    printf(">>  HW4 p5 Driver\n");
     printf(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>\n");
     if (argc < EXPECTED_ARGC) {
         printf(">>  Error: please enter markov graph file path as command-line argument.\n");

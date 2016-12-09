@@ -1,7 +1,7 @@
 /** Alan Cham
   * MPCS 51100
   * November 31, 2016
-  * Homework 4 p4 */
+  * Homework 4 p5 */
 
 #ifndef LINKED_LIST_H
 #define LINKED_LIST_H
