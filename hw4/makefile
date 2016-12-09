@@ -59,7 +59,19 @@ p4/bfs.o: p4/bfs.c p4/bfs.h
 	gcc -std=c99 -pedantic -Wall -c p4/bfs.c -o p4/bfs.o
 
 p5: p5/p5
-p5/p5: p5/p5.o
+p5/p5: p5/p5.o p5/graph.o p5/linkedlist.o p5/dfs.o p5/scc.o
+	gcc -std=c99 -pedantic -Wall p5/p5.o p5/graph.o p5/linkedlist.o p5/dfs.o p5/scc.o -o p5/p5
+	rm p5/*.o
+p5/p5.o: p5/p5.c p5/graph.h p5/dfs.h p5/linkedlist.h p5/scc.h
+	gcc -std=c99 -pedantic -Wall -c p5/p5.c -o p5/p5.o
+p5/graph.o: p5/graph.c p5/graph.h p5/linkedlist.h
+	gcc -std=c99 -pedantic -Wall -c p5/graph.c -o p5/graph.o
+p5/linkedlist.o: p5/linkedlist.c p5/linkedlist.h
+	gcc -std=c99 -pedantic -Wall -c p5/linkedlist.c -o p5/linkedlist.o
+p5/scc.o: p5/scc.c p5/scc.h p5/dfs.h p5/graph.h p5/linkedlist.h
+	gcc -std=c99 -pedantic -Wall -c p5/scc.c -o p5/scc.o
+p5/dfs.o: p5/dfs.c p5/dfs.h
+	gcc -std=c99 -pedantic -Wall -c p5/dfs.c -o p5/dfs.o
 
 p6: p6/p6
 p6/p6: p6/p6.o

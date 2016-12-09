@@ -9,6 +9,7 @@ DFSresults* create_DFSresults(Graph* g) {
     DFSresults* d;
 
     d = malloc(sizeof(DFSresults));
+    d->numtree = 0;
     d->visited = calloc(g->occupancy, sizeof(char));
     d->parent = calloc(g->occupancy, sizeof(long));
     d->length = calloc(g->occupancy, sizeof(long));
@@ -40,6 +41,8 @@ DFSresults* dfsvisit(Graph* g, long s, DFSresults* d) {
         }
         n = n->next;
     }
+    d->numtree++;
+//    printf("finished %ld\n", s);
     return d;
 }
 

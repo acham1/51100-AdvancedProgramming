@@ -61,4 +61,6 @@ int dw_readedge(FILE* f, long* from, long* to, long* weight);
 // NULL if fail
 MatGraph* adjtomat(Graph* g);
 
+Graph* transposegraph(Graph* g);
+
 #endif

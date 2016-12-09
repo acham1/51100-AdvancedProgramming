@@ -7,8 +7,9 @@
 #define DFS_H
 
 #include "graph.h"
-
+  
 typedef struct DFSresults {
+    long numtree;
     long* parent;
     char* visited; 
     long* length;

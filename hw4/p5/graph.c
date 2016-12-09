@@ -149,3 +149,28 @@ void destroymatgraph(MatGraph* mg) {
     free(mg->adjmat);
     free(mg);
 }
+
+Graph* transposegraph(Graph* g) {
+    long* p, j;
+    Graph* t;
+    Node* n;
+
+    t = malloc(sizeof(Graph));
+    t->occupancy = g->occupancy;
+    t->numverts = t->occupancy;
+    t->adjlists = malloc(t->occupancy * sizeof(Linkedlist*));
+    for (long i = 0; i < t->occupancy; i++) {
+        t->adjlists[i] = ll_create();
+    }
+    for (long u = 0; u < g->occupancy; u++) {
+        n = g->adjlists[u]->head;
+        while (n != NULL) {
+            j = *(long*)n->key;
+            p = malloc(sizeof(long));
+            *p = u;
+            ll_insert(t->adjlists[j], p, NULL, NULL);
+            n = n->next;
+        }
+    }
+    return t;
+}
