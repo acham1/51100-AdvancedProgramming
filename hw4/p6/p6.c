@@ -8,7 +8,7 @@
 #include "graph.h"
 #include <time.h>
 
-#define NUM_SAMPLES 1000000
+#define NUM_SAMPLES 10000000
 #define EXPECTED_ARGC 2
 #define GRAPH_FILE_INDEX 1
 #define HARD_CODE_LIMIT 8
